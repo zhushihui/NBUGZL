@@ -1,6 +1,6 @@
 ﻿define(function(require, exports, module) {
 
-	var config = {
+	var  config = {
 
 		/*
 			业务线开发模式，转测时置false
