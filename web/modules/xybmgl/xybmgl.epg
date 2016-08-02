@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="xybmgl" desc="学院部门管理" permissionLevel="">
+    <actions>
+      <action name="XX0301_QUERY" ref="model:XX0301.QUERY" url="src/datamodel/xybm/XX0301.edm" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="XX0301_DELETE" ref="model:XX0301.DELETE" url="src/datamodel/xybm/XX0301.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="XX0301_SAVE" ref="model:XX0301.SAVE" url="src/datamodel/xybm/XX0301.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>
