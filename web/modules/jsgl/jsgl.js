@@ -1,5 +1,5 @@
 ﻿define(function(require, exports, module) {
-
+ 
 	var utils = require('utils');
 	var bs = require('./jsglBS');
 	var jsglSave = require('./jsglSave');
