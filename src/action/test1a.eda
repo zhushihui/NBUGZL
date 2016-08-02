@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="testa" name="test1a" saveLog="true" totalCountType="AUTO" type="QUERY"/>
+</model:Model>

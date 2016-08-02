@@ -38,7 +38,7 @@
     <fonts name="Arial" size="8" bold="true"/>
   </pi:Diagram>
   <model:Model>
-    <actionFlow id="test" name="test" showStackWhenError="true" stackName="test_stack">
+    <actionFlow id="testb" name="testb" showStackWhenError="true" stackName="test_stack">
       <begin id="begin" name="开始"/>
       <end id="end" name="结束"/>
     </actionFlow>
