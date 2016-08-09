@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="cssz" desc="参数设置" permissionLevel="">
+    <actions>
+      <action name="szcs" ref="action:szcs" url="src/action/szcs.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_COURSE_WORKLOAD_SAVE" ref="model:NBU_COURSE_WORKLOAD.SAVE" url="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_COURSES_SAVE" ref="model:NBU_COURSES.SAVE" url="src/datamodel/kcgl/NBU_COURSES.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="szcsdzl" ref="action:szcsdzl" url="src/actionflow/szcsdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>

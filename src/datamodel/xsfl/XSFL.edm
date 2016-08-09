@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="XSFL" queryOrder="" type="table">
+    <item caption="学时分类ID" colName="XSFLID" groupName="" length="32" name="XSFLID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="分类名称" colName="MC" groupName="" length="50" name="MC" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="类型归属，1：讲课，2：实验；3：实践；9：总学时/周" colName="LXGS" groupName="" length="1" name="LXGS" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="备注" colName="BZ" groupName="" length="300" name="BZ" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

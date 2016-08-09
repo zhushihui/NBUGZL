@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="教师工作量" name="jsgzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select #auto[select]&#xD;
+from jg0101 a, nbu_teacher_workload b,jx0404 c,xx0301 d&#xD;
+where a.jg0101id = b.jg0101id and b.jx0404id = c.jx0404id and c.ksdw = d.xx0301id&#xD;
+#sub[and $]</sql>
+  </actionModel>
+</model:Model>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="查询教师信息" displayRef="biz:JG_XX" displayRefInclude="JG0101ID,JGH,XM,SFZJH,DWMC,GKDW,BZ" displayRefPath="src/parammodel/JG_XX.epm" displayRefPrj="nbugzl" name="cxjsxx" paramRef="biz:JG_XX" paramRefInclude="JG0101ID,JGH,XM,SFZJH,DWMC,GKDW,BZ" paramRefPath="src/parammodel/JG_XX.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select * from jg0101 left join&#xD;
+xx0301 on jg0101.XX0301ID = xx0301.XX0301ID &#xD;
+#sub[where $]</sql>
+  </actionModel>
+</model:Model>

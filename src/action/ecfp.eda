@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="二次分配" displayRef="biz:JG_TW_COURSES_CW" displayRefInclude="YEAR,TERM,JG0101ID,CWID,WORKTYPE,KCID,KCMC,XM,D1,D2,D3,D4,D5,D6" displayRefPath="src/parammodel/JG_TW_COURSES_CW.epm" displayRefPrj="nbugzl" name="ecfp" paramRef="biz:JG_TW_COURSES_CW" paramRefInclude="YEAR,TERM,JG0101ID,CWID,WORKTYPE,KCID,KCMC,XM,D1,D2,D3,D4,D5,D6" paramRefPath="src/parammodel/JG_TW_COURSES_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select nbu_course_workload.YEAR,nbu_course_workload.TERM,nbu_teacher_workload.jg0101id,nbu_course_workload.cwid,nbu_courses.worktype,nbu_courses.kcid,nbu_courses.kcmc,d.xm,nbu_teacher_workload.d1,nbu_teacher_workload.d2,nbu_teacher_workload.d3,nbu_teacher_workload.d4,nbu_teacher_workload.d5,nbu_teacher_workload.d6 &#xD;
+from nbu_courses,nbu_teacher_workload ,nbu_course_workload ,jg0101 d &#xD;
+where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;
+and nbu_course_workload.kcid = nbu_courses.kcid &#xD;
+and nbu_teacher_workload.jg0101id = d.jg0101id &#xD;
+and nbu_course_workload.zrn = '2015'&#xD;
+#sub[and $]</sql>
+  </actionModel>
+</model:Model>

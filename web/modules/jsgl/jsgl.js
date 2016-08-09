@@ -1,5 +1,5 @@
 ﻿define(function(require, exports, module) {
- 
+
 	var utils = require('utils');
 	var bs = require('./jsglBS');
 	var jsglSave = require('./jsglSave');
@@ -13,12 +13,12 @@
             this.initView();
 
 			this.eventMap = {
-				"[data-action=add]": this.actionAdd,
+//				"[data-action=add]": this.actionAdd,
 				"[data-action=edit]": this.actionEdit,
-				"[data-action=detail]": this.actionDetail,
-				"[data-action=delete]": this.actionDelete,
-				"[data-action=export]": this.actionExport,
-				"[data-action=import]": this.actionImport,
+//				"[data-action=detail]": this.actionDetail,
+//				"[data-action=delete]": this.actionDelete,
+//				"[data-action=export]": this.actionExport,
+//				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn
 			};
 		},
@@ -28,21 +28,21 @@
             this._initTable();
         },
 
-        actionAdd: function(){
-        	var jsglNewTpl = utils.loadCompiledPage('jsglSave');
-        	$.bhPaperPileDialog.show({
-        		content: jsglNewTpl.render({}),
-        		title: "新建",
-        		ready: function($header, $body, $footer){
-        			jsglSave.initialize();
-            	}
-            });
-        },
+//        actionAdd: function(){
+//        	var jsglNewTpl = utils.loadCompiledPage('jsglSave');
+//        	$.bhPaperPileDialog.show({
+//        		content: jsglNewTpl.render({}),
+//        		title: "新建",
+//        		ready: function($header, $body, $footer){
+//        			jsglSave.initialize();
+//            	}
+//            });
+//        },
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
         	var jsglEditTpl = utils.loadCompiledPage('jsglSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'JG0101_QUERY', {JG0101ID:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'cxjsxx', {JG0101ID:id});
         	
         	$.bhPaperPileDialog.show({
         		content: jsglEditTpl.render({}),
@@ -56,60 +56,60 @@
             });
         },
         
-        actionDetail: function(e){
-        	var id = $(e.target).attr("data-x-wid");
-        	var jsglViewTpl = utils.loadCompiledPage('jsglSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'JG0101_QUERY', {JG0101ID:id});
-        	
-        	$.bhPaperPileDialog.show({
-        		content: jsglViewTpl.render({}),
-        		title: "查看",
-        		ready: function($header, $body, $footer){
-        			jsglView.initialize(data.rows[0]);
-            	}
-            });
-        },
+//        actionDetail: function(e){
+//        	var id = $(e.target).attr("data-x-wid");
+//        	var jsglViewTpl = utils.loadCompiledPage('jsglSave');
+//        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'cxjsxx', {JG0101ID:id});
+//        	
+//        	$.bhPaperPileDialog.show({
+//        		content: jsglViewTpl.render({}),
+//        		title: "查看",
+//        		ready: function($header, $body, $footer){
+//        			jsglView.initialize(data.rows[0]);
+//            	}
+//            });
+//        },
         
-        actionDelete: function(){
-    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
-    		if(row.length > 0){
-    			var params = row.map(function(el){
-    				return {JG0101ID:el.JG0101ID, XXX:el.XXX};	//模型主键
-    			});
-    			bs.del(params).done(function(data){
-    				alert("数据删除成功");
-    				$('#emapdatatable').emapdatatable('reload');
-    			});
-    		}
-        },
+//        actionDelete: function(){
+//    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
+//    		if(row.length > 0){
+//    			var params = row.map(function(el){
+//    				return {JG0101ID:el.JG0101ID, XXX:el.XXX};	//模型主键
+//    			});
+//    			bs.del(params).done(function(data){
+//    				alert("数据删除成功");
+//    				$('#emapdatatable').emapdatatable('reload');
+//    			});
+//    		}
+//        },
         
-        actionExport: function(){
-        	bs.exportData({}).done(function(data){
-        	});
-        },
+//        actionExport: function(){
+//        	bs.exportData({}).done(function(data){
+//        	});
+//        },
 
-		actionImport: function(){
-        	$.emapImport({
-	        	"contextPath": contextPath,
-	        	"app": "nbugzl",
-	        	"module": "modules",
-	        	"page": "jsgl",
-	        	"action": "JG0101_QUERY",
-	        	//"tplUrl": "modules/htgl/dataModel.T_JZG_HT.xls",
-	        	"preCallback": function() {
-	        	},
-	        	"closeCallback": function() {
-	        		$('#emapdatatable').emapdatatable('reload');
-	        	},
-	    	});
-        },
-        
+//		actionImport: function(){
+//        	$.emapImport({
+//	        	"contextPath": contextPath,
+//	        	"app": "nbugzl",
+//	        	"module": "modules",
+//	        	"page": "jsgl",
+//	        	"action": "cxjsxx",
+//	        	//"tplUrl": "modules/htgl/dataModel.T_JZG_HT.xls",
+//	        	"preCallback": function() {
+//	        	},
+//	        	"closeCallback": function() {
+//	        		$('#emapdatatable').emapdatatable('reload');
+//	        	},
+//	    	});
+//        },
+//        
         actionCustomColumn: function(){
         	$('#emapdatatable').emapdatatable('selectToShowColumns');
         },
         
 		_initAdvanceQuery: function() {
-            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'JG0101_QUERY', "search");
+            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'cxjsxx', "search");
             var $query = $('#emapAdvancedQuery').emapAdvancedQuery({
                 data: searchData,
                 contextPath : contextPath,
@@ -127,7 +127,8 @@
         _initTable: function() {
             var tableOptions = {
                 pagePath: bs.api.pageModel,
-                action: 'JG0101_QUERY',
+                action: 'cxjsxx',
+                height:null,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
@@ -139,8 +140,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="detail" data-x-wid=' + rowData.JG0101ID + '>' + '详情' + '</a>'+ 
-                            ' | <a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.JG0101ID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.JG0101ID + '>' + '编辑' + '</a>';
                         }
                     }
                 }]

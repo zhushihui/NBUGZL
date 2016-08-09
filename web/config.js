@@ -42,7 +42,7 @@
 			需要展示的模块
 		 */
 		"MODULES": [
-		 {            title:"学院部门管理",            route:"xybmgl"         }         ,{            title:"教师管理",            route:"jsgl"         }         //placeHolder_module
+		 {            title:"学院部门管理",            route:"xybmgl"         }         ,{            title:"教师管理",            route:"jsgl"         }         ,{            title:"参数设置",            route:"cssz"         }         ,{            title:"课程工作量",            route:"kcgzl"         }         ,{            title:"二次分配",            route:"ecfp"         }         ,{            title:"参数查询",            route:"cscx"         }         //placeHolder_module
 		],
 
 		/*
@@ -59,11 +59,12 @@
 			"userInfo": {
 				"image": "./public/images/user.png",
 				"info": [
-					"工号",
-					"姓名 性别",
-					"学校 部门",
-					"邮箱",
-					"电话"
+					"工号:" + pageMeta.params.userId,
+					"姓名:" + pageMeta.params.userName,
+					"角色:" + pageMeta.params.roleId
+//					"学校 部门",
+//					"邮箱",
+//					"电话"
 				],
 				"logoutHref": "javascript:void(0);"
 			}

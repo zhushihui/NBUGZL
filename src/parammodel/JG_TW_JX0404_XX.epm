@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <bizModel name="JG_TW_JX0404_XX">
+    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR,TERM:TERM,JG0101ID:JG0101ID,CWID:CWID,GKDW:GKDW,REM:REM,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
+      <item groupName="" name="TW_ID" originName="TW_ID"/>
+      <item groupName="" name="YEAR" originName="YEAR"/>
+      <item groupName="" name="TERM" originName="TERM"/>
+      <item groupName="" name="JG0101ID" originName="JG0101ID"/>
+      <item groupName="" name="CWID" originName="CWID"/>
+      <item groupName="" name="GKDW" originName="GKDW"/>
+      <item groupName="" name="REM" originName="REM"/>
+      <item groupName="" name="LOCKS" originName="LOCKS"/>
+      <item groupName="" name="D" originName="D"/>
+      <item groupName="" name="D1" originName="D1"/>
+      <item groupName="" name="D2" originName="D2"/>
+      <item groupName="" name="D3" originName="D3"/>
+      <item groupName="" name="D4" originName="D4"/>
+      <item groupName="" name="D5" originName="D5"/>
+      <item groupName="" name="D6" originName="D6"/>
+      <item groupName="" name="JX0404ID" originName="JX0404ID"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
+      <item groupName="" name="XX0301ID" originName="XX0301ID"/>
+      <item groupName="" name="DWH" originName="DWH"/>
+      <item groupName="" name="DWMC" originName="DWMC"/>
+      <item groupName="" name="BZ" originName="BZ"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/kkjh/JX0404.edm" include="JX0404ID:JX0404ID_1,XNXQ01ID:XNXQ01ID,JX02ID:JX02ID,KSDW:KSDW,XKRS:XKRS,ZH:ZH,ZXS:ZXS,XF:XF,ISDEL:ISDEL,TZDLB:TZDLB" modelName="model:DB_EMAP_BIZ_BASE/JX0404" prjRef="nbugzl" tableAlias="JX0404">
+      <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
+      <item groupName="" name="XNXQ01ID" originName="XNXQ01ID"/>
+      <item groupName="" name="JX02ID" originName="JX02ID"/>
+      <item groupName="" name="KSDW" originName="KSDW"/>
+      <item groupName="" name="XKRS" originName="XKRS"/>
+      <item groupName="" name="ZH" originName="ZH"/>
+      <item groupName="" name="ZXS" originName="ZXS"/>
+      <item groupName="" name="XF" originName="XF"/>
+      <item groupName="" name="ISDEL" originName="ISDEL"/>
+      <item groupName="" name="TZDLB" originName="TZDLB"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/js/JG0101.edm" include="JG0101ID:JG0101ID_1,JGH:JGH,XM:XM,SFZJLXM:SFZJLXM,SFZJH:SFZJH,XX0301ID:XX0301ID_1,GKDW:GKDW_1" modelName="model:DB_EMAP_BIZ_BASE/JG0101" prjRef="nbugzl" tableAlias="JG0101">
+      <item groupName="" name="JG0101ID_1" originName="JG0101ID"/>
+      <item groupName="" name="JGH" originName="JGH"/>
+      <item groupName="" name="XM" originName="XM"/>
+      <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
+      <item groupName="" name="SFZJH" originName="SFZJH"/>
+      <item groupName="" name="XX0301ID_1" originName="XX0301ID"/>
+      <item groupName="" name="GKDW_1" originName="GKDW"/>
+    </dataModelRef>
+  </bizModel>
+</model:Model>

@@ -1,15 +1,17 @@
 ﻿define(function(require, exports, module) {
 
 	var utils = require('utils');
-	var bs = require('./xybmglBS');
-	var xybmglSave = require('./xybmglSave');
-	var xybmglView = require('./xybmglView');
+	var bs = require('./csszBS');
+	var csszSave = require('./csszSave');
+	var csszView = require('./csszView');
+	var csszParam = require('./csszParam');
 
 	var viewConfig = {
 		initialize: function() {
-			var view = utils.loadCompiledPage('xybmgl');
+			var view = utils.loadCompiledPage('cssz');
             this.$rootElement.html(view.render({}), true);
-            this.pushSubView([xybmglSave]);
+            this.pushSubView([csszSave]);
+            this.pushSubView([csszParam]);
             this.initView();
 
 			this.eventMap = {
@@ -19,7 +21,8 @@
 //				"[data-action=delete]": this.actionDelete,
 //				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
-				"[data-action=custom-column]": this.actionCustomColumn
+				"[data-action=custom-column]": this.actionCustomColumn,
+				"[data-action=batchModify]": this.actionBatchModify				
 			};
 		},
 
@@ -28,27 +31,46 @@
             this._initTable();
         },
 
+        
+        actionBatchModify: function() {
+             	var row = $("#emapdatatable").emapdatatable("checkedRecords");
+             	var csszEditTpl = utils.loadCompiledPage('csszParam');
+             	if (row.length > 0) {
+         			var params = row.map(function(el){
+         				return {KCID:el.KCID, XXX:el.XXX};	//模型主键
+         			});
+                 	$.bhPaperPileDialog.show({
+                 		content: csszEditTpl.render({}),
+                 		title: "编辑",
+                 		ready: function($header, $body, $footer){
+                 			csszParam.initialize();    		          			
+                     	}
+                     });
+             	}
+             },
+        
+        
 //        actionAdd: function(){
-//        	var xybmglNewTpl = utils.loadCompiledPage('xybmglSave');
+//        	var csszNewTpl = utils.loadCompiledPage('csszSave');
 //        	$.bhPaperPileDialog.show({
-//        		content: xybmglNewTpl.render({}),
+//        		content: csszNewTpl.render({}),
 //        		title: "新建",
 //        		ready: function($header, $body, $footer){
-//        			xybmglSave.initialize();
+//        			csszSave.initialize();
 //            	}
 //            });
 //        },
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
-        	var xybmglEditTpl = utils.loadCompiledPage('xybmglSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'XX0301_QUERY', {XX0301ID:id});
+        	var csszEditTpl = utils.loadCompiledPage('csszSave');
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'szcs', {KCID:id});
         	
         	$.bhPaperPileDialog.show({
-        		content: xybmglEditTpl.render({}),
+        		content: csszEditTpl.render({}),
         		title: "编辑",
         		ready: function($header, $body, $footer){
-        			xybmglSave.initialize();
+        			csszSave.initialize();
         			
         			$("#emapForm").emapForm("setValue", data.rows[0]);
         			
@@ -58,14 +80,14 @@
         
 //        actionDetail: function(e){
 //        	var id = $(e.target).attr("data-x-wid");
-//        	var xybmglViewTpl = utils.loadCompiledPage('xybmglSave');
-//        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'XX0301_QUERY', {XX0301ID:id});
+//        	var csszViewTpl = utils.loadCompiledPage('csszSave');
+//        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'szcs', {KCID:id});
 //        	
 //        	$.bhPaperPileDialog.show({
-//        		content: xybmglViewTpl.render({}),
+//        		content: csszViewTpl.render({}),
 //        		title: "查看",
 //        		ready: function($header, $body, $footer){
-//        			xybmglView.initialize(data.rows[0]);
+//        			csszView.initialize(data.rows[0]);
 //            	}
 //            });
 //        },
@@ -74,7 +96,7 @@
 //    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
 //    		if(row.length > 0){
 //    			var params = row.map(function(el){
-//    				return {XX0301ID:el.XX0301ID, XXX:el.XXX};	//模型主键
+//    				return {KCID:el.KCID, XXX:el.XXX};	//模型主键
 //    			});
 //    			bs.del(params).done(function(data){
 //    				alert("数据删除成功");
@@ -87,14 +109,14 @@
 //        	bs.exportData({}).done(function(data){
 //        	});
 //        },
-
+//
 //		actionImport: function(){
 //        	$.emapImport({
 //	        	"contextPath": contextPath,
 //	        	"app": "nbugzl",
 //	        	"module": "modules",
-//	        	"page": "xybmgl",
-//	        	"action": "XX0301_QUERY",
+//	        	"page": "cssz",
+//	        	"action": "szcs",
 //	        	//"tplUrl": "modules/htgl/dataModel.T_JZG_HT.xls",
 //	        	"preCallback": function() {
 //	        	},
@@ -109,7 +131,7 @@
         },
         
 		_initAdvanceQuery: function() {
-            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'XX0301_QUERY', "search");
+            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'szcs', "search");
             var $query = $('#emapAdvancedQuery').emapAdvancedQuery({
                 data: searchData,
                 contextPath : contextPath,
@@ -127,7 +149,8 @@
         _initTable: function() {
             var tableOptions = {
                 pagePath: bs.api.pageModel,
-                action: 'XX0301_QUERY',
+                action: 'szcs',
+                height:null,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
@@ -139,7 +162,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.XX0301ID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.KCID + '>' + '编辑' + '</a>';
                         }
                     }
                 }]

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <bizModel name="COURSE_CW" order="CWID,YEAR,TERM,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCMC_1,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6">
+    <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,GROUPS:GROUPS,KCMC:KCMC,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
+      <item groupName="" name="CWID" originName="CWID">
+        <attribute name="web.hidden" value="true"/>
+      </item>
+      <item groupName="课程信息" name="YEAR" originName="YEAR">
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.readonly" value="true"/>
+      </item>
+      <item groupName="课程信息" name="TERM" originName="TERM">
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.readonly" value="true"/>
+      </item>
+      <item groupName="" name="GROUPS" originName="GROUPS"/>
+      <item groupName="课程信息" name="KCMC" originName="KCMC">
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.readonly" value="true"/>
+      </item>
+      <item groupName="" name="R" originName="R"/>
+      <item groupName="" name="WEEKS" originName="WEEKS"/>
+      <item groupName="" name="LXSRS" originName="LXSRS"/>
+      <item groupName="" name="LOCKS" originName="LOCKS"/>
+      <item groupName="" name="D" originName="D"/>
+      <item groupName="" name="D1" originName="D1"/>
+      <item groupName="" name="D2" originName="D2"/>
+      <item groupName="" name="D3" originName="D3"/>
+      <item groupName="" name="D4" originName="D4"/>
+      <item groupName="" name="D5" originName="D5"/>
+      <item groupName="" name="D6" originName="D6"/>
+      <item groupName="" name="JX0404ID" originName="JX0404ID"/>
+      <item groupName="" name="J" originName="J"/>
+      <item groupName="" name="ZRN" originName="ZRN"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCID:KCID,KCMC:KCMC_1,KCYWMC:KCYWMC,XX0301ID:XX0301ID,XF:XF,ZXS:ZXS,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
+      <item groupName="课程信息" name="KCID" originName="KCID">
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.readonly" value="true"/>
+      </item>
+      <item groupName="" name="KCMC_1" originName="KCMC"/>
+      <item groupName="" name="KCYWMC" originName="KCYWMC"/>
+      <item groupName="" name="XX0301ID" originName="XX0301ID"/>
+      <item groupName="" name="XF" originName="XF"/>
+      <item groupName="" name="ZXS" originName="ZXS"/>
+      <item groupName="" name="JXXS" originName="JXXS"/>
+      <item groupName="" name="SYXS" originName="SYXS"/>
+      <item groupName="" name="SJXS" originName="SJXS"/>
+      <item groupName="" name="XXXS" originName="XXXS"/>
+      <item groupName="" name="SXXS" originName="SXXS"/>
+      <item groupName="" name="SXXXS" originName="SXXXS"/>
+      <item groupName="" name="ZS" originName="ZS"/>
+      <item groupName="工作量计算参数" name="WORKTYPE" originName="WORKTYPE">
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="useDicType" value="toDisplay"/>
+        <attribute name="web.xtype" value="select"/>
+        <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
+        <attribute name="builder" value="m_value_equal"/>
+        <attribute name="dic" value="f41622c3-475d-4804-99fb-64f982a749ab"/>
+      </item>
+      <item groupName="" name="TYPE" originName="TYPE"/>
+      <item groupName="" name="REM" originName="REM"/>
+      <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
+      <item groupName="" name="SUBJECTCLASS" originName="SUBJECTCLASS"/>
+      <item groupName="" name="CREATETIME" originName="CREATETIME"/>
+      <item groupName="" name="BBKY" originName="BBKY"/>
+      <item groupName="工作量计算参数" name="K4" originName="K4"/>
+      <item groupName="工作量计算参数" name="K5" originName="K5"/>
+      <item groupName="工作量计算参数" name="C1" originName="C1"/>
+      <item groupName="工作量计算参数" name="C2" originName="C2"/>
+      <item groupName="工作量计算参数" name="C3" originName="C3"/>
+      <item groupName="工作量计算参数" name="C4" originName="C4"/>
+      <item groupName="工作量计算参数" name="C6" originName="C6"/>
+    </dataModelRef>
+  </bizModel>
+</model:Model>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="更新参数KC" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxcskc" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_COURSES" paramFixRefInclude="WORKTYPE,K4,K5,C1,C2,C3,C4,C6,KCID" paramFixRefPath="src/datamodel/kcgl/NBU_COURSES.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update NBU_COURSES set &#xD;
+WORKTYPE=?,K4=?,K5=?,C1=?,C2=?,&#xD;
+C3=?,C4=?,C6=?&#xD;
+where&#xD;
+KCID = ?</sql>
+  </actionModel>
+</model:Model>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="更新参数保存" displayRef="biz:COURSE_CW" displayRefInclude="K4,K5,C1,C2,C3,C4,C6,J" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="gxcsbc" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCMC_1,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select  nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
+nbu_courses.C2,nbu_courses.C3,nbu_courses.C4,nbu_courses.C6,nbu_course_workload.J &#xD;
+from &#xD;
+nbu_courses,nbu_course_workload&#xD;
+where nbu_courses.KCID = nbu_course_workload.KCID&#xD;
+#sub[and $]&#xD;
+group by&#xD;
+nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
+nbu_courses.C2,nbu_courses.C3,nbu_courses.C4,nbu_courses.C6,nbu_course_workload.J</sql>
+  </actionModel>
+</model:Model>

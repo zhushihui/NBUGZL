@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="JX0404" queryOrder="" type="table">
+    <item caption="主键ID，开课计划表" colName="JX0404ID" groupName="" length="32" name="JX0404ID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学年学期ID，格式：2014-2015-2" colName="XNXQ01ID" groupName="" length="32" name="XNXQ01ID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程ID，对应课程库信息表jx02id" colName="JX02ID" groupName="" length="32" name="JX02ID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="开设单位，学院表ID，xx0301id" colName="KSDW" groupName="" length="32" name="KSDW" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="选课人数R" colName="XKRS" groupName="" length="" name="XKRS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="组号" colName="ZH" groupName="" length="2" name="ZH" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="总学时" colName="ZXS" groupName="" length="5,1" name="ZXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学分" colName="XF" groupName="" length="5,1" name="XF" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="该记录是否已删除，0：未删，1：已删" colName="ISDEL" groupName="" length="1" name="ISDEL" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="通知单类别，1:正常、2:补考、3:辅修" colName="TZDLB" groupName="" length="2" name="TZDLB" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

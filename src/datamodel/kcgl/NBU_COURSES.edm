@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="NBU_COURSES" queryOrder="" type="table">
+    <item caption="课程编号" colName="KCID" groupName="" length="32" name="KCID" pK="true" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程名称" colName="KCMC" groupName="" length="60" name="KCMC" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="web.quickSearch" value="true"/>
+    </item>
+    <item caption="课程英文名称" colName="KCYWMC" groupName="" length="120" name="KCYWMC" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学院ID" colName="XX0301ID" groupName="" length="40" name="XX0301ID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程学分" colName="XF" groupName="" length="5,1" name="XF" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="总学时" colName="ZXS" groupName="" length="7,1" name="ZXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="教学学时" colName="JXXS" groupName="" length="5,1" name="JXXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="实验学时" colName="SYXS" groupName="" length="5,1" name="SYXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="上机学时" colName="SJXS" groupName="" length="5,1" name="SJXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="自主学习学时" colName="XXXS" groupName="" length="5,1" name="XXXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="实习学时" colName="SXXS" groupName="" length="5,1" name="SXXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="实训学时" colName="SXXXS" groupName="" length="5,1" name="SXXXS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程实践周数" colName="ZS" groupName="" length="5,1" name="ZS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="工作量计算类型" colName="WORKTYPE" groupName="" length="30" name="WORKTYPE" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="类型" colName="TYPE" groupName="" length="3" name="TYPE" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="备注" colName="REM" groupName="" length="200" name="REM" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程介绍" colName="INTRODUCE" groupName="" length="200" name="INTRODUCE" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学科大类" colName="SUBJECTCLASS" groupName="" length="2" name="SUBJECTCLASS" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="建课时间" colName="CREATETIME" groupName="" length="15" name="CREATETIME" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="本部还是科院" colName="BBKY" groupName="" length="5" name="BBKY" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="K4课程设计、实习课程系数" colName="K4" groupName="" length="22" name="K4" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="K5毕业设计课程系数" colName="K5" groupName="" length="22" name="K5" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="C1理论课程标准班人数" colName="C1" groupName="" length="" name="C1" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="C2实验课程标准班人数" colName="C2" groupName="" length="" name="C2" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="C3实训课程标准班人数" colName="C3" groupName="" length="" name="C3" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="C4课程设计、实习标准班人数" colName="C4" groupName="" length="" name="C4" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="C6测试类课程标准班人数" colName="C6" groupName="" length="" name="C6" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

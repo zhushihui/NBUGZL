@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><page:Pages xmlns:page="http://www.wisedu.com/emap/model/page"><page permissionLevel="" name="index" desc="index"/></page:Pages>
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="index" desc="index" permissionLevel="">
+    <params>
+      <param name="userId" from="env:custom.currentUserId"/>
+      <param name="userName" from="env:custom.currentUserName"/>
+      <param name="roleId" from="env:custom.currentRole"/>
+      <param name="time" from="env:custom.dataBaseTime"/>
+    </params>
+  </page>
+</page:Pages>

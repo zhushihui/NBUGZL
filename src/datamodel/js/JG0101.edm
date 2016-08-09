@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
   <dataModel name="JG0101" queryOrder="" type="table">
-    <item caption="教师ID(主键)" colName="JG0101ID" groupName="" length="32" name="JG0101ID" pK="true" type="String">
+    <item caption="教师ID" colName="JG0101ID" groupName="" length="32" name="JG0101ID" pK="true" type="String">
       <attribute name="enabled" value="true"/>
+      <attribute name="web.hidden" value="true"/>
     </item>
     <item caption="教工号" colName="JGH" groupName="" length="10" name="JGH" type="String">
       <attribute name="enabled" value="true"/>
@@ -12,14 +13,17 @@
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
     </item>
-    <item caption="证件类型码，身份证，护照等" colName="SFZJLXM" groupName="" length="1" name="SFZJLXM" type="String">
+    <item caption="证件类型码" colName="SFZJLXM" groupName="" length="1" name="SFZJLXM" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="证件号码，身份证号" colName="SFZJH" groupName="" length="20" name="SFZJH" type="String">
+    <item caption="身份证号" colName="SFZJH" groupName="" length="20" name="SFZJH" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
     </item>
-    <item caption="学院ID,学院表中的ID" colName="XX0301ID" groupName="" length="32" name="XX0301ID" type="String">
+    <item caption="学院ID" colName="XX0301ID" groupName="" length="32" name="XX0301ID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="归口单位" colName="GKDW" groupName="" length="60" name="GKDW" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <rowFactors/>

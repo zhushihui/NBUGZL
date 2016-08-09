@@ -1,15 +1,15 @@
 ﻿define(function(require, exports, module) {
 
 	var utils = require('utils');
-	var bs = require('./xybmglBS');
-	var xybmglSave = require('./xybmglSave');
-	var xybmglView = require('./xybmglView');
+	var bs = require('./ecfpBS');
+	var ecfpSave = require('./ecfpSave');
+	var ecfpView = require('./ecfpView');
 
 	var viewConfig = {
 		initialize: function() {
-			var view = utils.loadCompiledPage('xybmgl');
+			var view = utils.loadCompiledPage('ecfp');
             this.$rootElement.html(view.render({}), true);
-            this.pushSubView([xybmglSave]);
+            this.pushSubView([ecfpSave]);
             this.initView();
 
 			this.eventMap = {
@@ -29,43 +29,44 @@
         },
 
 //        actionAdd: function(){
-//        	var xybmglNewTpl = utils.loadCompiledPage('xybmglSave');
+//        	var ecfpNewTpl = utils.loadCompiledPage('ecfpSave');
 //        	$.bhPaperPileDialog.show({
-//        		content: xybmglNewTpl.render({}),
+//        		content: ecfpNewTpl.render({}),
 //        		title: "新建",
 //        		ready: function($header, $body, $footer){
-//        			xybmglSave.initialize();
+//        			ecfpSave.initialize();
 //            	}
 //            });
 //        },
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
-        	var xybmglEditTpl = utils.loadCompiledPage('xybmglSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'XX0301_QUERY', {XX0301ID:id});
+        	var jg0101id = $(e.target).attr("bh");
+        	var ecfpEditTpl = utils.loadCompiledPage('ecfpSave');
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfp', {CWID:id,JG0101ID:jg0101id});
         	
         	$.bhPaperPileDialog.show({
-        		content: xybmglEditTpl.render({}),
-        		title: "编辑",
+        		content: ecfpEditTpl.render({}),
+        		title: "添加教师",
         		ready: function($header, $body, $footer){
-        			xybmglSave.initialize();
+        			ecfpSave.initialize();
         			
         			$("#emapForm").emapForm("setValue", data.rows[0]);
         			
             	}
             });
         },
-        
+//        
 //        actionDetail: function(e){
 //        	var id = $(e.target).attr("data-x-wid");
-//        	var xybmglViewTpl = utils.loadCompiledPage('xybmglSave');
-//        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'XX0301_QUERY', {XX0301ID:id});
+//        	var ecfpViewTpl = utils.loadCompiledPage('ecfpSave');
+//        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfp', {WID:id});
 //        	
 //        	$.bhPaperPileDialog.show({
-//        		content: xybmglViewTpl.render({}),
+//        		content: ecfpViewTpl.render({}),
 //        		title: "查看",
 //        		ready: function($header, $body, $footer){
-//        			xybmglView.initialize(data.rows[0]);
+//        			ecfpView.initialize(data.rows[0]);
 //            	}
 //            });
 //        },
@@ -74,7 +75,7 @@
 //    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
 //    		if(row.length > 0){
 //    			var params = row.map(function(el){
-//    				return {XX0301ID:el.XX0301ID, XXX:el.XXX};	//模型主键
+////    				return {XSBH:el.XSBH, XXX:el.XXX};	//模型主键
 //    			});
 //    			bs.del(params).done(function(data){
 //    				alert("数据删除成功");
@@ -87,14 +88,14 @@
 //        	bs.exportData({}).done(function(data){
 //        	});
 //        },
-
+//
 //		actionImport: function(){
 //        	$.emapImport({
 //	        	"contextPath": contextPath,
 //	        	"app": "nbugzl",
 //	        	"module": "modules",
-//	        	"page": "xybmgl",
-//	        	"action": "XX0301_QUERY",
+//	        	"page": "ecfp",
+//	        	"action": "ecfp",
 //	        	//"tplUrl": "modules/htgl/dataModel.T_JZG_HT.xls",
 //	        	"preCallback": function() {
 //	        	},
@@ -109,7 +110,7 @@
         },
         
 		_initAdvanceQuery: function() {
-            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'XX0301_QUERY', "search");
+            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'ecfp', "search");
             var $query = $('#emapAdvancedQuery').emapAdvancedQuery({
                 data: searchData,
                 contextPath : contextPath,
@@ -127,7 +128,8 @@
         _initTable: function() {
             var tableOptions = {
                 pagePath: bs.api.pageModel,
-                action: 'XX0301_QUERY',
+                action: 'ecfp',
+                height:null,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
@@ -139,7 +141,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.XX0301ID + '>' + '编辑' + '</a>';
+                        	return '<a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.CWID + ' bh=' + rowData.JG0101ID + '>' + '添加' + '</a>';
                         }
                     }
                 }]

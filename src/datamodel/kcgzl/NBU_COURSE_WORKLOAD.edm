@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="NBU_COURSE_WORKLOAD" queryOrder="" type="table">
+    <item caption="主键" colName="CWID" groupName="" length="32" name="CWID" pK="true" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学年" colName="YEAR" groupName="" length="10" name="YEAR" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学期" colName="TERM" groupName="" length="10" name="TERM" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程编号" colName="KCID" groupName="" length="32" name="KCID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="组号" colName="GROUPS" groupName="" length="5" name="GROUPS" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程名称" colName="KCMC" groupName="" length="100" name="KCMC" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="web.quickSearch" value="true"/>
+    </item>
+    <item caption="R实际人数" colName="R" groupName="" length="" name="R" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="课程周数" colName="WEEKS" groupName="" length="5,1" name="WEEKS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="留学生人数" colName="LXSRS" groupName="" length="" name="LXSRS" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="锁定，数据是否可修改" colName="LOCKS" groupName="" length="2" name="LOCKS" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D课程工作总量" colName="D" groupName="" length="22" name="D" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D1工作总量1" colName="D1" groupName="" length="22" name="D1" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D2工作总量2" colName="D2" groupName="" length="22" name="D2" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D3工作总量3" colName="D3" groupName="" length="22" name="D3" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D4工作总量4" colName="D4" groupName="" length="22" name="D4" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D5工作总量5" colName="D5" groupName="" length="22" name="D5" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="D6工作总量6" colName="D6" groupName="" length="22" name="D6" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="开课计划表id" colName="JX0404ID" groupName="" length="32" name="JX0404ID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="参数J" colName="J" groupName="" length="22" name="J" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学年" colName="ZRN" groupName="" length="10" name="ZRN" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

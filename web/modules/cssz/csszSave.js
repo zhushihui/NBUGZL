@@ -1,10 +1,10 @@
 define(function(require, exports, module) {
     var utils = require('utils');
-    var bs = require('./jsglBS');
+    var bs = require('./csszBS');
 
     var viewConfig = {
         initialize: function() {
-        	var mode = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'cxjsxx', 'form');
+        	var mode = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'szcs', 'form');
             $("#emapForm").emapForm({
                 data: mode,
                 model: 'h',

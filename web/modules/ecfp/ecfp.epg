@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="ecfp" desc="二次分配" permissionLevel="">
+    <actions>
+      <action name="ecfp" ref="action:ecfp" url="src/action/ecfp.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>

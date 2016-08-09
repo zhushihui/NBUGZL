@@ -2,7 +2,7 @@
 	var utils = require('utils');
 	var bs = {
 		api: {
-			pageModel: 'modules/jsgl.do',
+			pageModel: 'modules/ecfp.do',
 			resultProfile: './mock/resultProfile.json'
 		},
 		getDemoMainModel: function() {
@@ -17,12 +17,12 @@
 		},
 		save: function(formData){
 			//TODO 将formData提交到后台动作上
-			return BH_UTILS.doAjax('../modules/jsgl/JG0101_SAVE.do', formData);
+			return BH_UTILS.doAjax('../modules/ecfp/ecfp.do', formData);
 		},
 		del: function(params){
 			//TODO 添加删除动作
-//			return BH_UTILS.doAjax('../modules/jsgl/cxjsxx_DELETE.do', {
-//				cxjsxx_DELETE:JSON.stringify(params)
+//			return BH_UTILS.doAjax('../modules/ecfp/T_PXXX_XSJBXX_DELETE.do', {
+//				T_PXXX_XSJBXX_DELETE:JSON.stringify(params)
 //			});
 		},
 		exportData: function(obj){
@@ -30,8 +30,8 @@
 					root: contextPath,
 					app : "nbugzl",
 					module : "modules",
-					page : 'jsgl',
-					action : 'cxjsxx'
+					page : 'ecfp',
+					action : 'ecfp'
 			};
 			//选择字段导出
 			$('#emapdatatable').emapdatatable('selectColumnsExport', params);	
