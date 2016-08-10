@@ -17,7 +17,7 @@ NBU_COURSES.C6 as &quot;C6&quot;, NBU_COURSE_WORKLOAD.J as &quot;J&quot;,&#xD;
 NBU_COURSES.WORKTYPE as &quot;WORKTYPE&quot;&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
-and nbu_course_workload.zrn = '2015'&#xD;
+and nbu_course_workload.zrn = to_char(sysdate,'yyyy') - 1&#xD;
 #sub[and $]&#xD;
 group by&#xD;
 NBU_COURSE_WORKLOAD.CWID,NBU_COURSE_WORKLOAD.YEAR,NBU_COURSE_WORKLOAD.TERM, NBU_COURSES.KCID, NBU_COURSE_WORKLOAD.KCMC, NBU_COURSES.K4, NBU_COURSES.K5, NBU_COURSES.C1, NBU_COURSES.C2, NBU_COURSES.C3, NBU_COURSES.C4, NBU_COURSES.C6, NBU_COURSE_WORKLOAD.J,&#xD;

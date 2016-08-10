@@ -38,9 +38,9 @@ define(function(require, exports, module) {
 
 	    			});
 				}
-				alert("数据保存成功");
+				alert("鏁版嵁淇濆瓨鎴愬姛");
 				$('#emapdatatable').emapdatatable('reload');
-				$.bhPaperPileDialog.hide();//关闭当前弹窗
+				$.bhPaperPileDialog.hide();//锟截闭碉拷前锟斤拷锟斤拷
         	}
         }
 

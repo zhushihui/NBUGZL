@@ -1,9 +1,14 @@
 eclipse.preferences.version=1
+encoding//src/action/gxcsj.eda=UTF-8
 encoding//web/modules/cscx/cscx.html=UTF-8
 encoding//web/modules/cssz/cssz.html=UTF-8
+encoding//web/modules/cssz/cssz.js=UTF-8
+encoding//web/modules/cssz/csszBS.js=UTF-8
 encoding//web/modules/cssz/csszParam.html=UTF-8
+encoding//web/modules/cssz/csszParam.js=UTF-8
 encoding//web/modules/cssz/csszSave.html=UTF-8
 encoding//web/modules/cssz/csszSave.js=UTF-8
+encoding//web/modules/cssz/csszView.js=UTF-8
 encoding//web/modules/ecfp/ecfp.html=UTF-8
 encoding//web/modules/ecfp/ecfpSave.html=UTF-8
 encoding//web/modules/ecfp/ecfpSave.js=UTF-8
