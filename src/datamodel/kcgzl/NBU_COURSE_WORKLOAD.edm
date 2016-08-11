@@ -32,31 +32,31 @@
     <item caption="锁定，数据是否可修改" colName="LOCKS" groupName="" length="2" name="LOCKS" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D课程工作总量" colName="D" groupName="" length="10,10" name="D" type="double">
+    <item caption="D课程工作总量" colName="D" groupName="" length="" name="D" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D1工作总量1" colName="D1" groupName="" length="5,10" name="D1" type="double">
+    <item caption="D1工作总量1" colName="D1" groupName="" length="" name="D1" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D2工作总量2" colName="D2" groupName="" length="5,10" name="D2" type="double">
+    <item caption="D2工作总量2" colName="D2" groupName="" length="" name="D2" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D3工作总量3" colName="D3" groupName="" length="5,10" name="D3" type="double">
+    <item caption="D3工作总量3" colName="D3" groupName="" length="" name="D3" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D4工作总量4" colName="D4" groupName="" length="5,10" name="D4" type="double">
+    <item caption="D4工作总量4" colName="D4" groupName="" length="" name="D4" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D5工作总量5" colName="D5" groupName="" length="5,10" name="D5" type="double">
+    <item caption="D5工作总量5" colName="D5" groupName="" length="" name="D5" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D6工作总量6" colName="D6" groupName="" length="5,10" name="D6" type="double">
+    <item caption="D6工作总量6" colName="D6" groupName="" length="" name="D6" type="double">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="开课计划表id" colName="JX0404ID" groupName="" length="32" name="JX0404ID" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="参数J" colName="J" groupName="" length="5,2" name="J" type="double">
+    <item caption="参数J" colName="J" groupName="" length="" name="J" type="double">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="学年" colName="ZRN" groupName="" length="10" name="ZRN" type="String">

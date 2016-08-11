@@ -62,10 +62,10 @@
     <item caption="本部还是科院" colName="BBKY" groupName="" length="5" name="BBKY" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="K4课程设计、实习课程系数" colName="K4" groupName="" length="5,2" name="K4" type="double">
+    <item caption="K4课程设计、实习课程系数" colName="K4" groupName="" length="" name="K4" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="K5毕业设计课程系数" colName="K5" groupName="" length="5,2" name="K5" type="double">
+    <item caption="K5毕业设计课程系数" colName="K5" groupName="" length="" name="K5" type="double">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="C1理论课程标准班人数" colName="C1" groupName="" length="" name="C1" type="double">
