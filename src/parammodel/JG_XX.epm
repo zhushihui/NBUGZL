@@ -28,6 +28,7 @@
         <attribute name="web.xtype" value="select"/>
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+        <attribute name="web.quickSearch" value="true"/>
       </item>
     </dataModelRef>
   </bizModel>

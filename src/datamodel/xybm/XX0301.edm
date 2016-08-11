@@ -7,6 +7,7 @@
     </item>
     <item caption="单位号" colName="DWH" groupName="" length="32" name="DWH" type="String">
       <attribute name="enabled" value="true"/>
+      <attribute name="web.quickSearch" value="true"/>
     </item>
     <item caption="单位名称" colName="DWMC" groupName="" length="60" name="DWMC" type="String">
       <attribute name="enabled" value="true"/>

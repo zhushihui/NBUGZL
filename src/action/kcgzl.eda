@@ -5,6 +5,7 @@
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
 and nbu_course_workload.zrn = to_char(sysdate,'yyyy') - 1&#xD;
-#sub[and $]</sql>
+#sub[and $]&#xD;
+order by nbu_courses.kcmc</sql>
   </actionModel>
 </model:Model>

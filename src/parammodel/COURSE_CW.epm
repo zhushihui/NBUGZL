@@ -30,7 +30,9 @@
       <item groupName="" name="D5" originName="D5"/>
       <item groupName="" name="D6" originName="D6"/>
       <item groupName="" name="JX0404ID" originName="JX0404ID"/>
-      <item groupName="工作量计算参数" name="J" originName="J"/>
+      <item groupName="工作量计算参数" name="J" originName="J">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
       <item groupName="" name="ZRN" originName="ZRN"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCID:KCID,KCMC:KCMC_1,KCYWMC:KCYWMC,XX0301ID:XX0301ID,XF:XF,ZXS:ZXS,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
@@ -64,13 +66,27 @@
       <item groupName="" name="SUBJECTCLASS" originName="SUBJECTCLASS"/>
       <item groupName="" name="CREATETIME" originName="CREATETIME"/>
       <item groupName="" name="BBKY" originName="BBKY"/>
-      <item groupName="工作量计算参数" name="K4" originName="K4"/>
-      <item groupName="工作量计算参数" name="K5" originName="K5"/>
-      <item groupName="工作量计算参数" name="C1" originName="C1"/>
-      <item groupName="工作量计算参数" name="C2" originName="C2"/>
-      <item groupName="工作量计算参数" name="C3" originName="C3"/>
-      <item groupName="工作量计算参数" name="C4" originName="C4"/>
-      <item groupName="工作量计算参数" name="C6" originName="C6"/>
+      <item groupName="工作量计算参数" name="K4" originName="K4">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
+      <item groupName="工作量计算参数" name="K5" originName="K5">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
+      <item groupName="工作量计算参数" name="C1" originName="C1">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
+      <item groupName="工作量计算参数" name="C2" originName="C2">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
+      <item groupName="工作量计算参数" name="C3" originName="C3">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
+      <item groupName="工作量计算参数" name="C4" originName="C4">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
+      <item groupName="工作量计算参数" name="C6" originName="C6">
+        <attribute name="web.checkType" value="custom[number]"/>
+      </item>
     </dataModelRef>
   </bizModel>
 </model:Model>

@@ -40,7 +40,7 @@ define(function(require, exports, module) {
 				}
 				alert("数据保存成功");
 				$('#emapdatatable').emapdatatable('reload');
-				$.bhPaperPileDialog.hide();//�رյ�ǰ����
+				$.bhPaperPileDialog.hide();
         	}
         }
 

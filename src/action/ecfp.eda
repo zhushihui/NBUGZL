@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="二次分配" displayRef="biz:JG_TW_COURSES_CW" displayRefInclude="YEAR,TERM,JG0101ID,CWID,WORKTYPE,KCID,KCMC,XM,D1,D2,D3,D4,D5,D6" displayRefPath="src/parammodel/JG_TW_COURSES_CW.epm" displayRefPrj="nbugzl" name="ecfp" paramRef="biz:JG_TW_COURSES_CW" paramRefInclude="YEAR,TERM,JG0101ID,CWID,WORKTYPE,KCID,KCMC,XM,D1,D2,D3,D4,D5,D6" paramRefPath="src/parammodel/JG_TW_COURSES_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select nbu_course_workload.YEAR,nbu_course_workload.TERM,nbu_teacher_workload.jg0101id,nbu_course_workload.cwid,nbu_courses.worktype,nbu_courses.kcid,nbu_courses.kcmc,d.xm,nbu_teacher_workload.d1,nbu_teacher_workload.d2,nbu_teacher_workload.d3,nbu_teacher_workload.d4,nbu_teacher_workload.d5,nbu_teacher_workload.d6 &#xD;
-from nbu_courses,nbu_teacher_workload ,nbu_course_workload ,jg0101 d &#xD;
+  <actionModel caption="二次分配" displayRef="biz:JG_TW_CW_XX_COURSES" displayRefInclude="YEAR,TERM,JG0101ID,DWMC,KCID,KCMC,XM,WORKTYPE,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1" displayRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" displayRefPrj="nbugzl" name="ecfp" paramRef="biz:JG_TW_CW_XX_COURSES" paramRefInclude="CWID,YEAR,TERM,KCID,KCMC,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XX0301ID,DWMC,JG0101ID_1,XM,XX0301ID_1,GKDW_1,XX0301ID_2,WORKTYPE" paramRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select nbu_course_workload.YEAR,nbu_course_workload.TERM,&#xD;
+nbu_teacher_workload.jg0101id,nbu_courses.worktype,&#xD;
+xx0301.dwmc,nbu_courses.kcid,&#xD;
+nbu_courses.kcmc,jg0101.xm,&#xD;
+round(nbu_teacher_workload.d1,2) as d1_1,&#xD;
+round(nbu_teacher_workload.d2,2) as d2_1, &#xD;
+round(nbu_teacher_workload.d3,2) as d3_1,&#xD;
+round(nbu_teacher_workload.d4,2) as d4_1,&#xD;
+round(nbu_teacher_workload.d5,2) as d5_1,&#xD;
+round(nbu_teacher_workload.d6,2) as d6_1&#xD;
+from nbu_courses,nbu_teacher_workload ,&#xD;
+nbu_course_workload ,jg0101,xx0301	&#xD;
 where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;
 and nbu_course_workload.kcid = nbu_courses.kcid &#xD;
-and nbu_teacher_workload.jg0101id = d.jg0101id &#xD;
-and nbu_course_workload.zrn = '2015'&#xD;
-#sub[and $]</sql>
+and nbu_teacher_workload.jg0101id = jg0101.jg0101id&#xD;
+and nbu_courses.xx0301id = xx0301.xx0301id&#xD;
+and nbu_course_workload.zrn = to_char(sysdate,'yyyy') - 1&#xD;
+#sub[and $]&#xD;
+group by&#xD;
+NBU_COURSE_WORKLOAD.YEAR,&#xD;
+NBU_COURSE_WORKLOAD.TERM, nbu_teacher_workload.jg0101id,&#xD;
+nbu_courses.worktype,xx0301.dwmc,nbu_courses.kcid,&#xD;
+nbu_courses.kcmc,jg0101.xm,nbu_teacher_workload.d1,&#xD;
+nbu_teacher_workload.d2,nbu_teacher_workload.d3,&#xD;
+nbu_teacher_workload.d4,&#xD;
+nbu_teacher_workload.d5,nbu_teacher_workload.d6&#xD;
+order by nbu_courses.kcmc</sql>
   </actionModel>
 </model:Model>

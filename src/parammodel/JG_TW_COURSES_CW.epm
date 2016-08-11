@@ -72,7 +72,13 @@
       <item groupName="" name="SXXS" originName="SXXS"/>
       <item groupName="" name="SXXXS" originName="SXXXS"/>
       <item groupName="" name="ZS" originName="ZS"/>
-      <item groupName="" name="WORKTYPE" originName="WORKTYPE"/>
+      <item groupName="" name="WORKTYPE" originName="WORKTYPE">
+        <attribute name="useDicType" value="toDisplay"/>
+        <attribute name="web.xtype" value="select"/>
+        <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
+        <attribute name="builder" value="m_value_equal"/>
+        <attribute name="dic" value="f41622c3-475d-4804-99fb-64f982a749ab"/>
+      </item>
       <item groupName="" name="TYPE" originName="TYPE"/>
       <item groupName="" name="REM_1" originName="REM"/>
       <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
