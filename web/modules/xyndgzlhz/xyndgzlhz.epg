@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="xyndgzlhz" desc="学院年度工作量汇总" permissionLevel="">
+    <actions>
+      <action name="xyjxgzl" ref="action:xyjxgzl" url="src/action/xyjxgzl.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>

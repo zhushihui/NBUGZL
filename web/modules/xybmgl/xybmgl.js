@@ -128,6 +128,7 @@
             var tableOptions = {
                 pagePath: bs.api.pageModel,
                 action: 'XX0301_QUERY',
+                height:null,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'

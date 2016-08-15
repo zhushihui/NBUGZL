@@ -50,6 +50,9 @@
     <item caption="开课计划表ID" colName="JX0404ID" groupName="" length="32" name="JX0404ID" type="String">
       <attribute name="enabled" value="true"/>
     </item>
+    <item caption="教师学时分类ID" colName="XSFLID" groupName="" length="32" name="XSFLID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
     <rowFactors/>
   </dataModel>
 </model:Model>

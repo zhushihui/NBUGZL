@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="jsgrgzlmx" desc="教师个人工作量明细" permissionLevel="">
+    <actions>
+      <action name="jsgrgzlmx" ref="action:jsgrgzlmx" url="src/action/jsgrgzlmx.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>

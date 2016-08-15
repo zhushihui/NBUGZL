@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <bizModel name="JG_TW_COURSES_CW_JX_XX" order="CWID,YEAR,TERM,KCID,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XX0301ID,DWH,DWMC,BZ,JX0404ID_2,XNXQ01ID,JX02ID,KSDW,XKRS,ZH,ZXS,XF,ISDEL,TZDLB,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC_1,KCYWMC,XX0301ID_2,XF_1,ZXS_1,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6">
+    <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,KCID:KCID,GROUPS:GROUPS,KCMC:KCMC,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
+      <item groupName="" name="CWID" originName="CWID"/>
+      <item groupName="" name="YEAR" originName="YEAR">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
+      <item groupName="" name="TERM" originName="TERM">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
+      <item groupName="" name="KCID" originName="KCID"/>
+      <item groupName="" name="GROUPS" originName="GROUPS"/>
+      <item groupName="" name="KCMC" originName="KCMC"/>
+      <item groupName="" name="R" originName="R"/>
+      <item groupName="" name="WEEKS" originName="WEEKS"/>
+      <item groupName="" name="LXSRS" originName="LXSRS"/>
+      <item groupName="" name="LOCKS" originName="LOCKS"/>
+      <item caption="D课程总工作量" groupName="" name="D" originName="D"/>
+      <item groupName="" name="D1" originName="D1"/>
+      <item groupName="" name="D2" originName="D2"/>
+      <item groupName="" name="D3" originName="D3"/>
+      <item groupName="" name="D4" originName="D4"/>
+      <item groupName="" name="D5" originName="D5"/>
+      <item groupName="" name="D6" originName="D6"/>
+      <item groupName="" name="JX0404ID" originName="JX0404ID"/>
+      <item groupName="" name="J" originName="J"/>
+      <item caption="自然年" groupName="" name="ZRN" originName="ZRN">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,GKDW:GKDW,REM:REM,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
+      <item groupName="" name="TW_ID" originName="TW_ID"/>
+      <item groupName="" name="YEAR_1" originName="YEAR"/>
+      <item groupName="" name="TERM_1" originName="TERM"/>
+      <item groupName="" name="JG0101ID" originName="JG0101ID"/>
+      <item groupName="" name="CWID_1" originName="CWID"/>
+      <item groupName="" name="GKDW" originName="GKDW">
+        <attribute name="useDicType" value="toDisplay"/>
+        <attribute name="web.xtype" value="select"/>
+        <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
+        <attribute name="builder" value="m_value_equal"/>
+        <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+      </item>
+      <item groupName="" name="REM" originName="REM"/>
+      <item groupName="" name="LOCKS_1" originName="LOCKS"/>
+      <item caption="D教师个人工作量" groupName="" name="D_1" originName="D"/>
+      <item groupName="" name="D1_1" originName="D1"/>
+      <item groupName="" name="D2_1" originName="D2"/>
+      <item groupName="" name="D3_1" originName="D3"/>
+      <item groupName="" name="D4_1" originName="D4"/>
+      <item groupName="" name="D5_1" originName="D5"/>
+      <item groupName="" name="D6_1" originName="D6"/>
+      <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
+      <item groupName="" name="XX0301ID" originName="XX0301ID"/>
+      <item groupName="" name="DWH" originName="DWH"/>
+      <item caption="开课学院" groupName="" name="DWMC" originName="DWMC"/>
+      <item groupName="" name="BZ" originName="BZ"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/kkjh/JX0404.edm" include="JX0404ID:JX0404ID_2,XNXQ01ID:XNXQ01ID,JX02ID:JX02ID,KSDW:KSDW,XKRS:XKRS,ZH:ZH,ZXS:ZXS,XF:XF,ISDEL:ISDEL,TZDLB:TZDLB" modelName="model:DB_EMAP_BIZ_BASE/JX0404" prjRef="nbugzl" tableAlias="JX0404">
+      <item groupName="" name="JX0404ID_2" originName="JX0404ID"/>
+      <item groupName="" name="XNXQ01ID" originName="XNXQ01ID"/>
+      <item groupName="" name="JX02ID" originName="JX02ID"/>
+      <item groupName="" name="KSDW" originName="KSDW"/>
+      <item groupName="" name="XKRS" originName="XKRS"/>
+      <item groupName="" name="ZH" originName="ZH"/>
+      <item groupName="" name="ZXS" originName="ZXS"/>
+      <item groupName="" name="XF" originName="XF"/>
+      <item groupName="" name="ISDEL" originName="ISDEL"/>
+      <item groupName="" name="TZDLB" originName="TZDLB"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/js/JG0101.edm" include="JG0101ID:JG0101ID_1,JGH:JGH,XM:XM,SFZJLXM:SFZJLXM,SFZJH:SFZJH,XX0301ID:XX0301ID_1,GKDW:GKDW_1" modelName="model:DB_EMAP_BIZ_BASE/JG0101" prjRef="nbugzl" tableAlias="JG0101">
+      <item groupName="" name="JG0101ID_1" originName="JG0101ID"/>
+      <item groupName="" name="JGH" originName="JGH"/>
+      <item groupName="" name="XM" originName="XM"/>
+      <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
+      <item groupName="" name="SFZJH" originName="SFZJH">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
+      <item groupName="" name="XX0301ID_1" originName="XX0301ID"/>
+      <item groupName="" name="GKDW_1" originName="GKDW"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCID:KCID_1,KCMC:KCMC_1,KCYWMC:KCYWMC,XX0301ID:XX0301ID_2,XF:XF_1,ZXS:ZXS_1,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM_1,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
+      <item groupName="" name="KCID_1" originName="KCID"/>
+      <item groupName="" name="KCMC_1" originName="KCMC"/>
+      <item groupName="" name="KCYWMC" originName="KCYWMC"/>
+      <item groupName="" name="XX0301ID_2" originName="XX0301ID"/>
+      <item groupName="" name="XF_1" originName="XF"/>
+      <item groupName="" name="ZXS_1" originName="ZXS"/>
+      <item groupName="" name="JXXS" originName="JXXS"/>
+      <item groupName="" name="SYXS" originName="SYXS"/>
+      <item groupName="" name="SJXS" originName="SJXS"/>
+      <item groupName="" name="XXXS" originName="XXXS"/>
+      <item groupName="" name="SXXS" originName="SXXS"/>
+      <item groupName="" name="SXXXS" originName="SXXXS"/>
+      <item groupName="" name="ZS" originName="ZS"/>
+      <item groupName="" name="WORKTYPE" originName="WORKTYPE"/>
+      <item groupName="" name="TYPE" originName="TYPE"/>
+      <item groupName="" name="REM_1" originName="REM"/>
+      <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
+      <item groupName="" name="SUBJECTCLASS" originName="SUBJECTCLASS"/>
+      <item groupName="" name="CREATETIME" originName="CREATETIME"/>
+      <item groupName="" name="BBKY" originName="BBKY"/>
+      <item groupName="" name="K4" originName="K4"/>
+      <item groupName="" name="K5" originName="K5"/>
+      <item groupName="" name="C1" originName="C1"/>
+      <item groupName="" name="C2" originName="C2"/>
+      <item groupName="" name="C3" originName="C3"/>
+      <item groupName="" name="C4" originName="C4"/>
+      <item groupName="" name="C6" originName="C6"/>
+    </dataModelRef>
+  </bizModel>
+</model:Model>

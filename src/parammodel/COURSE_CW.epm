@@ -56,8 +56,8 @@
         <attribute name="web.quickSearch" value="true"/>
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="web.xtype" value="select"/>
-        <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
-        <attribute name="builder" value="m_value_equal"/>
+        <attribute name="web.search.quickSearchXtype" value="text"/>
+        <attribute name="builder" value="equal"/>
         <attribute name="dic" value="f41622c3-475d-4804-99fb-64f982a749ab"/>
       </item>
       <item groupName="" name="TYPE" originName="TYPE"/>
