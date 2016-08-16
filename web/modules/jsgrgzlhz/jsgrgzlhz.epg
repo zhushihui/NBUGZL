@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
   <page name="jsgrgzlhz" desc="教师个人工作量汇总" permissionLevel="">
+    <params>
+      <param name="JG0101ID" from="env:custom.currentUserId"/>
+    </params>
     <actions>
       <action name="jsgrgzlhz" ref="action:jsgrgzlhz" url="src/action/jsgrgzlhz.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
     </actions>

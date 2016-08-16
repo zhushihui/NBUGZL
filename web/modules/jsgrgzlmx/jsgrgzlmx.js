@@ -123,12 +123,14 @@
                 querySetting: data
             });
         },
-
+        
         _initTable: function() {
+//        	var params1 = {JG0101ID : pageMeta.params.userId};
             var tableOptions = {
                 pagePath: bs.api.pageModel,
                 action: 'jsgrgzlmx',
                 height:null,
+//                params : params1,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
