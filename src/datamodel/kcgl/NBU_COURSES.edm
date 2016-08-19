@@ -83,6 +83,14 @@
     <item caption="C6测试类课程标准班人数" colName="C6" groupName="" length="" name="C6" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <rowFactors/>
+    <rowFactors>
+      <rowFactor id="b430ad2a-88fc-4ad5-804e-d560f1ec53a2" name="xueyuanguanliyuan_ecfp">
+        <sql>nbu_courses.xx0301id IN&#xD;
+(select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
+      </rowFactor>
+      <rowFactor id="f6ee966b-34ec-4cc7-a029-8cfb4b8c7f82" name="xuexiaoguanliyuan_ecfp">
+        <sql>1=1</sql>
+      </rowFactor>
+    </rowFactors>
   </dataModel>
 </model:Model>
