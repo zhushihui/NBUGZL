@@ -62,6 +62,9 @@
     <item caption="学年" colName="ZRN" groupName="" length="10" name="ZRN" type="String">
       <attribute name="enabled" value="true"/>
     </item>
+    <item caption="此课程是否已分配,0:未分配，1：已分配" colName="ISFP" groupName="" length="2" name="ISFP" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
     <rowFactors/>
   </dataModel>
 </model:Model>

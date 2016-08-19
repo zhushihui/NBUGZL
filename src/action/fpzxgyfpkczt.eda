@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配之修改已分配课程状态" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpzxgyfpkczt" orderIndex="" paramFixRef="biz:JG_TW_CW_XX_COURSES" paramFixRefInclude="CWID" paramFixRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update nbu_course_workload set isfp='1' where cwid=?</sql>
+  </actionModel>
+</model:Model>

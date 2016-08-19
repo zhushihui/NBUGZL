@@ -33,22 +33,37 @@
       <item groupName="" name="TW_ID" originName="TW_ID"/>
       <item groupName="" name="YEAR_1" originName="YEAR"/>
       <item groupName="" name="TERM_1" originName="TERM"/>
-      <item groupName="" name="JG0101ID" originName="JG0101ID">
-        <attribute name="web.quickSearch" value="true"/>
-      </item>
+      <item groupName="" name="JG0101ID" originName="JG0101ID"/>
       <item groupName="" name="CWID_1" originName="CWID"/>
       <item groupName="" name="GKDW" originName="GKDW"/>
       <item groupName="" name="REM" originName="REM"/>
       <item groupName="" name="LOCKS_1" originName="LOCKS"/>
-      <item groupName="" name="D_1" originName="D"/>
-      <item caption="D1比例（理论）" groupName="二次分配比例" name="D1_1" originName="D1"/>
-      <item caption="D2比例（实践）" groupName="二次分配比例" name="D2_1" originName="D2"/>
-      <item caption="D3比例（实训）" groupName="二次分配比例" name="D3_1" originName="D3"/>
-      <item caption="D4比例（实习）" groupName="二次分配比例" name="D4_1" originName="D4"/>
-      <item caption="D5比例（毕业设计）" groupName="二次分配比例" name="D5_1" originName="D5"/>
-      <item caption="D6比例（测试类教学）" groupName="二次分配比例" name="D6_1" originName="D6"/>
+      <item caption="工作总量" groupName="" name="D_1" originName="D"/>
+      <item caption="D1比例（理论）" groupName="二次分配比例" name="D1_1" originName="D1">
+        <attribute name="web.required" value="true"/>
+      </item>
+      <item caption="D2比例（实践）" groupName="二次分配比例" name="D2_1" originName="D2">
+        <attribute name="web.required" value="true"/>
+      </item>
+      <item caption="D3比例（实训）" groupName="二次分配比例" name="D3_1" originName="D3">
+        <attribute name="web.required" value="true"/>
+      </item>
+      <item caption="D4比例（实习）" groupName="二次分配比例" name="D4_1" originName="D4">
+        <attribute name="web.required" value="true"/>
+      </item>
+      <item caption="D5比例（毕业设计）" groupName="二次分配比例" name="D5_1" originName="D5">
+        <attribute name="web.required" value="true"/>
+      </item>
+      <item caption="D6比例（测试类教学）" groupName="二次分配比例" name="D6_1" originName="D6">
+        <attribute name="web.required" value="true"/>
+      </item>
       <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
-      <item groupName="" name="XSFLID" originName="XSFLID"/>
+      <item groupName="" name="XSFLID" originName="XSFLID">
+        <attribute name="web.hidden" value="true"/>
+        <attribute name="web.grid.hidden" value="true"/>
+        <attribute name="web.form.hidden" value="true"/>
+        <attribute name="web.search.hidden" value="true"/>
+      </item>
       <item groupName="" name="FATHERID" originName="FATHERID"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
@@ -76,6 +91,7 @@
         <attribute name="web.search.quickSearchXtype" value="text"/>
         <attribute name="web.quickSearch" value="true"/>
         <attribute name="web.required" value="true"/>
+        <attribute name="web.readonly" value="false"/>
       </item>
       <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
       <item groupName="" name="SFZJH" originName="SFZJH"/>
