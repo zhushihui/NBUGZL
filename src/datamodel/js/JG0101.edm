@@ -8,10 +8,12 @@
     <item caption="教工号" colName="JGH" groupName="" length="10" name="JGH" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
+      <attribute name="web.readonly" value="true"/>
     </item>
     <item caption="姓名" colName="XM" groupName="" length="30" name="XM" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
+      <attribute name="web.readonly" value="true"/>
     </item>
     <item caption="证件类型码" colName="SFZJLXM" groupName="" length="1" name="SFZJLXM" type="String">
       <attribute name="enabled" value="true"/>
@@ -19,12 +21,24 @@
     <item caption="身份证号" colName="SFZJH" groupName="" length="20" name="SFZJH" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
+      <attribute name="web.readonly" value="true"/>
     </item>
-    <item caption="学院ID" colName="XX0301ID" groupName="" length="32" name="XX0301ID" type="String">
+    <item caption="单位名称" colName="XX0301ID" groupName="" length="32" name="XX0301ID" type="String">
       <attribute name="enabled" value="true"/>
+      <attribute name="useDicType" value="toDisplay"/>
+      <attribute name="web.xtype" value="select"/>
+      <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
+      <attribute name="builder" value="m_value_equal"/>
+      <attribute name="dic" value="b96531c3-3a81-433a-ba36-aa8c5eec2c3f"/>
+      <attribute name="web.readonly" value="true"/>
     </item>
     <item caption="归口单位" colName="GKDW" groupName="" length="60" name="GKDW" type="String">
       <attribute name="enabled" value="true"/>
+      <attribute name="useDicType" value="toDisplay"/>
+      <attribute name="web.xtype" value="select"/>
+      <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
+      <attribute name="builder" value="m_value_equal"/>
+      <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
     </item>
     <rowFactors/>
   </dataModel>

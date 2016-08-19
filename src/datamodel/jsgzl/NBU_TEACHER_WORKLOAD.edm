@@ -57,5 +57,17 @@
       <attribute name="enabled" value="true"/>
     </item>
     <rowFactors/>
+    <rowFactors>
+      <rowFactor factorType="ALL" id="234c782f-0fcb-4d69-85b3-ea419f53801e" name="jiaoshi">
+        <sql>NBU_TEACHER_WORKLOAD.JG0101ID=${custom.currentUserId}</sql>
+      </rowFactor>
+      <rowFactor id="2f731544-127e-4181-aa1e-d2dd4a4fc0fd" name="xueyuanguanliyuan">
+        <sql>jg0101.gkdw IN&#xD;
+(select gkdw from jg0101 where jg0101id=${custom.currentUserId})</sql>
+      </rowFactor>
+      <rowFactor id="984dd788-297a-4d3d-9a23-7965104411b4" name="xuexiaoguanliyuan">
+        <sql>1=1</sql>
+      </rowFactor>
+    </rowFactors>
   </dataModel>
 </model:Model>

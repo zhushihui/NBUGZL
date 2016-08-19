@@ -1,6 +1,11 @@
 eclipse.preferences.version=1
 encoding//src/action/gxcsj.eda=UTF-8
 encoding//web/modules/cscx/cscx.html=UTF-8
+encoding//web/modules/cscx/cscx.js=UTF-8
+encoding//web/modules/cscx/cscxBS.js=UTF-8
+encoding//web/modules/cscx/cscxSave.html=UTF-8
+encoding//web/modules/cscx/cscxSave.js=UTF-8
+encoding//web/modules/cscx/cscxView.js=UTF-8
 encoding//web/modules/cssz/cssz.html=UTF-8
 encoding//web/modules/cssz/cssz.js=UTF-8
 encoding//web/modules/cssz/csszBS.js=UTF-8
