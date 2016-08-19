@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="更新教师D1D6" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxjsd1d6" orderIndex="" paramFixRef="" paramFixRefInclude="" paramFixRefPath="" paramFixRefPrj="" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update nbu_teacher_workload t set (t.D1,t.D2,t.D3,t.D4,t.D5,t.D6)= (&#xD;
+ select case when p.xsflid ='1' or p.xsflid ='2' &#xD;
+            then 1/p.num&#xD;
+            else 0&#xD;
+            end as D1,&#xD;
+        case when p.xsflid ='3' or p.xsflid ='4'   &#xD;
+            then 1/p.num&#xD;
+            else 0&#xD;
+            end as D2,&#xD;
+        case when p.xsflid ='6' &#xD;
+            then 1/p.num&#xD;
+            else 0&#xD;
+            end as D3, &#xD;
+        case when p.xsflid ='5' &#xD;
+            then 1/p.num&#xD;
+            else 0&#xD;
+            end as D4,&#xD;
+        case when p.xsflid ='11' &#xD;
+            then 1/p.num&#xD;
+            else 0&#xD;
+            end as D5,&#xD;
+        case when p.xsflid ='12'         &#xD;
+            then 1/p.num&#xD;
+            else 0&#xD;
+            end as D6&#xD;
+from  (select a.cwid,count(a.cwid) as num,a.xsflid&#xD;
+from  nbu_teacher_workload a &#xD;
+inner join nbu_course_workload b on a.cwid = b.cwid&#xD;
+where b.zrn = to_char(add_months(trunc(sysdate), -12),'YYYY') &#xD;
+group by a.cwid,a.xsflid ) p  &#xD;
+where t.cwid = p.cwid and t.xsflid =p.xsflid  )</sql>
+  </actionModel>
+</model:Model>

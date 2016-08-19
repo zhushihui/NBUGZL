@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:model="http://www.wisedu.com/emap/model/model" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms">
+  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="actionflow" name="a" snapToGrid="true" pictogramLinks="/0/@children.0/@link /0/@children.0/@children.0/@link /0/@children.1/@link /0/@children.1/@children.0/@link /0/@children.2/@link /0/@children.2/@children.0/@link /0/@children.3/@link /0/@children.3/@children.0/@link /0/@children.4/@link /0/@children.4/@children.0/@link /0/@connections.0/@link /0/@connections.1/@link /0/@connections.2/@link /0/@connections.3/@link /0/@children.5/@link /0/@children.5/@children.0/@link /0/@connections.4/@link /0/@children.6/@link /0/@children.6/@children.0/@link /0/@children.7/@link /0/@children.7/@children.0/@link /0/@connections.5/@link /0/@connections.6/@link /0/@connections.7/@link /0/@children.8/@link /0/@children.8/@children.0/@link /0/@children.9/@link /0/@children.9/@children.0/@link /0/@children.10/@link /0/@children.10/@children.0/@link /0/@connections.8/@link /0/@connections.9/@link /0/@connections.10/@link" version="0.10.0">
+    <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <link businessObjects="/1"/>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="56" y="258">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="36" height="56" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="36" height="36" id="com.wisedu.emap.studio.editor.actionfloweditor.start_large" stretchH="false" stretchV="false" proportional="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@begin"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.0"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="36" height="20" y="36" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="开始"/>
+        <link businessObjects="/1/@actionFlow/@begin"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="56" x="1210" y="273">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="36" height="56" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="36" height="36" id="com.wisedu.emap.studio.editor.actionfloweditor.end_large" stretchH="false" stretchV="false" proportional="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@end"/>
+      <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.4"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="36" height="20" y="36" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="结束"/>
+        <link businessObjects="/1/@actionFlow/@end"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="70" x="105" y="251">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="36" height="70" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="36" height="50" id="com.wisedu.emap.studio.editor.actionfloweditor.assignment_large" stretchH="false" stretchV="false" proportional="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@assignment.0"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.1" incomingConnections="/0/@connections.0"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="36" height="20" y="50" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="判读赋值"/>
+        <link businessObjects="/1/@actionFlow/@assignment.0"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="629" y="182">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@actionNode.0"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.2" incomingConnections="/0/@connections.5"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="新建教师工作量"/>
+        <link businessObjects="/1/@actionFlow/@actionNode.0"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="805" y="276">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@actionNode.1"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.3" incomingConnections="/0/@connections.2 /0/@connections.7"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="修改旧教师工作量"/>
+        <link businessObjects="/1/@actionFlow/@actionNode.1"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="1007" y="276">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@actionNode.2"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.4" incomingConnections="/0/@connections.3"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="更新教师工作量的D"/>
+        <link businessObjects="/1/@actionFlow/@actionNode.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="207" y="261">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@actionNode.3"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.8" incomingConnections="/0/@connections.1"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="判断是否有教师"/>
+        <link businessObjects="/1/@actionFlow/@actionNode.3"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="629" y="335">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@actionNode.4"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.7" incomingConnections="/0/@connections.6"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="修改教师工作量"/>
+        <link businessObjects="/1/@actionFlow/@actionNode.4"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="70" x="487" y="151">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="36" height="70" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="36" height="50" id="com.wisedu.emap.studio.editor.actionfloweditor.assignment_large" stretchH="false" stretchV="false" proportional="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@assignment.1"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.5" incomingConnections="/0/@connections.9"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="36" height="20" y="50" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="新建赋值"/>
+        <link businessObjects="/1/@actionFlow/@assignment.1"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="70" x="487" y="362">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="36" height="70" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="36" height="50" id="com.wisedu.emap.studio.editor.actionfloweditor.assignment_large" stretchH="false" stretchV="false" proportional="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@assignment.2"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.6" incomingConnections="/0/@connections.10"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="36" height="20" y="50" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="修改赋值"/>
+        <link businessObjects="/1/@actionFlow/@assignment.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="56" height="70" x="383" y="251">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="50" height="70" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="50" height="50" id="com.wisedu.emap.studio.editor.actionfloweditor.gateway_large" stretchH="false" stretchV="false" proportional="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@gateway.0"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.9 /0/@connections.10" incomingConnections="/0/@connections.8"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="50" height="20" y="50" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="网关"/>
+        <link businessObjects="/1/@actionFlow/@gateway.0"/>
+      </children>
+    </children>
+    <styles lineWidth="2" filled="true" lineVisible="true" transparency="0.0" id="COMMON-VALUES" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
+      <styles foreground="/0/@colors.2" lineStyle="UNSPECIFIED" filled="false" id="ECLASS-TEXT" font="/0/@fonts.0" angle="0"/>
+      <styles background="/0/@colors.4" foreground="/0/@colors.3" lineStyle="UNSPECIFIED" filled="true" id="E-CLASS" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
+        <renderingStyle>
+          <adaptedGradientColoredAreas definedStyleId="blue-white-gloss" gradientType="0">
+            <adaptedGradientColoredAreas styleAdaption="0">
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                  <color red="248" green="251" blue="254"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="1">
+                  <color red="248" green="251" blue="254"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="1">
+                  <color red="237" green="245" blue="252"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="2">
+                  <color red="237" green="245" blue="252"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="2">
+                  <color red="222" green="237" blue="250"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="3">
+                  <color red="222" green="237" blue="250"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="3">
+                  <color red="212" green="231" blue="248"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="2">
+                  <color red="250" green="251" blue="252"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="2">
+                  <color red="226" green="229" blue="233"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                  <color red="226" green="229" blue="233"/>
+                </end>
+              </gradientColor>
+            </adaptedGradientColoredAreas>
+            <adaptedGradientColoredAreas styleAdaption="1">
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                  <color red="238" green="246" blue="253"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="1">
+                  <color red="238" green="246" blue="253"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="1">
+                  <color red="208" green="230" blue="249"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="2">
+                  <color red="208" green="230" blue="249"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="2">
+                  <color red="172" green="210" blue="244"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="3">
+                  <color red="172" green="210" blue="244"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="3">
+                  <color red="129" green="185" blue="234"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="2">
+                  <color red="170" green="208" blue="242"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="2">
+                  <color red="154" green="191" blue="224"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                  <color red="154" green="191" blue="224"/>
+                </end>
+              </gradientColor>
+            </adaptedGradientColoredAreas>
+            <adaptedGradientColoredAreas styleAdaption="2">
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                  <color red="245" green="249" blue="254"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="1">
+                  <color red="245" green="249" blue="254"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="1">
+                  <color red="226" green="239" blue="252"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="2">
+                  <color red="226" green="239" blue="252"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="2">
+                  <color red="203" green="227" blue="249"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="3">
+                  <color red="203" green="227" blue="249"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="3">
+                  <color red="187" green="218" blue="247"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="2">
+                  <color red="197" green="224" blue="247"/>
+                </end>
+              </gradientColor>
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="2">
+                  <color red="178" green="205" blue="229"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                  <color red="178" green="205" blue="229"/>
+                </end>
+              </gradientColor>
+            </adaptedGradientColoredAreas>
+            <adaptedGradientColoredAreas styleAdaption="3">
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                  <color red="153" green="204"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                  <color red="51" green="153" blue="102"/>
+                </end>
+              </gradientColor>
+            </adaptedGradientColoredAreas>
+            <adaptedGradientColoredAreas styleAdaption="4">
+              <gradientColor>
+                <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                  <color red="255" green="204"/>
+                </start>
+                <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                  <color red="255" green="102"/>
+                </end>
+              </gradientColor>
+            </adaptedGradientColoredAreas>
+          </adaptedGradientColoredAreas>
+        </renderingStyle>
+      </styles>
+      <styles foreground="/0/@colors.2" lineStyle="UNSPECIFIED" filled="false" id="TEXT-DECORATOR-TEXT" font="/0/@fonts.1" angle="0"/>
+    </styles>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@anchors.0" end="/0/@children.2/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@begin/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@anchors.0" end="/0/@children.6/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@assignment.0/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.3/@anchors.0" end="/0/@children.4/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@actionNode.0/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.4/@anchors.0" end="/0/@children.5/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@actionNode.1/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.5/@anchors.0" end="/0/@children.1/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@actionNode.2/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.8/@anchors.0" end="/0/@children.3/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@assignment.1/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.9/@anchors.0" end="/0/@children.7/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@assignment.2/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.7/@anchors.0" end="/0/@children.4/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@actionNode.4/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.6/@anchors.0" end="/0/@children.10/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@actionNode.3/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.10/@anchors.0" end="/0/@children.8/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@gateway.0/@path.0"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-63" y="-1" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="0 : first($pdsfyjs_Result) == null"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.10/@anchors.0" end="/0/@children.9/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@gateway.0/@path.1"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-69" y="-17" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="0 : first($pdsfyjs_Result) != null"/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
+    <colors red="227" green="238" blue="249"/>
+    <colors red="255" green="255" blue="255"/>
+    <colors/>
+    <colors red="98" green="131" blue="167"/>
+    <colors red="187" green="218" blue="247"/>
+    <colors red="206" green="238" blue="112"/>
+    <fonts name="Arial" size="8" bold="true"/>
+    <fonts name="Arial" size="8" italic="true"/>
+  </pi:Diagram>
+  <model:Model>
+    <actionFlow id="ecfpdzl" name="二次分配动作流" showStackWhenError="true" stackName="ecfpdzl_stack">
+      <begin id="begin" name="开始">
+        <path id="84806d8b-5f19-4e69-83b2-7310160cbb8b" name="" order="0" to="pdfz"/>
+      </begin>
+      <end id="end" name="结束"/>
+      <actionNode id="xjjsgzl" name="新建教师工作量" edaRef="src/action/fpzxjjsgzl.eda" multiple="false" prjRef="nbugzl" ref="action:fpzxjjsgzl">
+        <path id="1c077033-a1c2-4b20-b515-989f5b9088aa" name="" order="0" to="xgjjsgzl"/>
+      </actionNode>
+      <actionNode id="xgjjsgzl" name="修改旧教师工作量" edaRef="src/action/fpzxgjjsgzl.eda" multiple="false" prjRef="nbugzl" ref="action:fpzxgjjsgzl">
+        <path id="645b144f-18c6-4d8c-b2d7-595aae4a47cf" name="" order="0" to="gxjsgzld"/>
+      </actionNode>
+      <actionNode id="gxjsgzld" name="更新教师工作量的D" edaRef="src/action/fpzgxjsgzldd.eda" multiple="false" prjRef="nbugzl" ref="action:fpzgxjsgzldd">
+        <path id="a73ceba4-aec3-4aaa-8bfe-9d826af11c43" name="" order="0" to="end"/>
+      </actionNode>
+      <actionNode id="pdsfyjs" name="判断是否有教师" edaRef="src/action/fpzsfyjs.eda" multiple="false" prjRef="nbugzl" ref="action:fpzsfyjs">
+        <path id="117b56a3-a254-4bbe-8f74-ac552702a45a" name="" order="0" to="55b3dcd0_0860_4fb4_a5ea_13b2cd56a7cd"/>
+      </actionNode>
+      <actionNode id="xgjsgzl" name="修改教师工作量" edaRef="src/action/fpzxgjsgzl.eda" multiple="false" prjRef="nbugzl" ref="action:fpzxgjsgzl">
+        <path id="1b4d666a-cd2e-43fa-8e68-df11f132b3a3" name="" order="0" to="xgjjsgzl"/>
+      </actionNode>
+      <assignment id="pdfz" name="判读赋值">
+        <path id="13de14f7-cf08-4f68-a85c-4079c24d3c72" name="" order="0" to="pdsfyjs"/>
+        <expression>$pdsfyjs.CWID:=param.CWID</expression>
+        <expression>$pdsfyjs.JG0101ID:=param.XM</expression>
+        <expression>$pdsfyjs.XSFLID:=param.XSFLID</expression>
+      </assignment>
+      <assignment id="xjfu" name="新建赋值">
+        <path id="3670dac9-e19a-4b60-9909-b490708af895" name="" order="0" to="xjjsgzl"/>
+        <expression>$xjjsgzl.YEAR:=param.YEAR</expression>
+        <expression>$xjjsgzl.TERM:=param.TERM</expression>
+        <expression>$xjjsgzl.JG0101ID:=param.XM</expression>
+        <expression>$xjjsgzl.CWID:=param.CWID</expression>
+        <expression>$xjjsgzl.JX0404ID:=param.JX0404ID</expression>
+        <expression>$xjjsgzl.XSFLID:=param.XSFLID</expression>
+        <expression>$xjjsgzl.D1_1:=param.D1</expression>
+        <expression>$xjjsgzl.D2_1:=param.D2</expression>
+        <expression>$xjjsgzl.D3_1:=param.D3</expression>
+        <expression>$xjjsgzl.D4_1:=param.D4</expression>
+        <expression>$xjjsgzl.D5_1:=param.D5</expression>
+        <expression>$xjjsgzl.D6_1:=param.D6</expression>
+        <expression>$xjjsgzl.FATHERID:=param.JG0101ID</expression>
+        <expression>$xgjjsgzl.D1_1:=param.D1_1</expression>
+        <expression>$xgjjsgzl.D2_1:=param.D2_1</expression>
+        <expression>$xgjjsgzl.D3_1:=param.D3_1</expression>
+        <expression>$xgjjsgzl.D4_1:=param.D4_1</expression>
+        <expression>$xgjjsgzl.D5_1:=param.D5_1</expression>
+        <expression>$xgjjsgzl.D6_1:=param.D6_1</expression>
+        <expression>$xgjjsgzl.TW_ID:=param.TW_ID</expression>
+        <expression>$gxjsgzld.CWID:=param.CWID</expression>
+      </assignment>
+      <assignment id="xgfz" name="修改赋值">
+        <path id="0b02a128-cf5a-4000-abb2-8341332f8002" name="" order="0" to="xgjsgzl"/>
+        <expression>$xgjsgzl.D1_1:=param.D1</expression>
+        <expression>$xgjsgzl.D2_1:=param.D2</expression>
+        <expression>$xgjsgzl.D3_1:=param.D3</expression>
+        <expression>$xgjsgzl.D4_1:=param.D4</expression>
+        <expression>$xgjsgzl.D5_1:=param.D5</expression>
+        <expression>$xgjsgzl.D6_1:=param.D6</expression>
+        <expression>$xgjsgzl.FATHERID:=param.JG0101ID</expression>
+        <expression>$xgjsgzl.TW_ID:=$pdsfyjs_Result.TW_ID</expression>
+        <expression>$xgjjsgzl.D1_1:=param.D1_1</expression>
+        <expression>$xgjjsgzl.D2_1:=param.D2_1</expression>
+        <expression>$xgjjsgzl.D3_1:=param.D3_1</expression>
+        <expression>$xgjjsgzl.D4_1:=param.D4_1</expression>
+        <expression>$xgjjsgzl.D5_1:=param.D5_1</expression>
+        <expression>$xgjjsgzl.D6_1:=param.D6_1</expression>
+        <expression>$xgjjsgzl.TW_ID:=param.TW_ID</expression>
+        <expression>$gxjsgzld.CWID:=param.CWID</expression>
+      </assignment>
+      <gateway id="55b3dcd0_0860_4fb4_a5ea_13b2cd56a7cd" name="网关">
+        <path id="b1fef05a-865c-4044-a190-6d94fa99807e" name="0 : first($pdsfyjs_Result) == null" order="0" to="xjfu">
+          <expression>first($pdsfyjs_Result) == null</expression>
+        </path>
+        <path id="87d78059-8bac-465c-a30c-c80a75c448a0" name="0 : first($pdsfyjs_Result) != null" order="0" to="xgfz">
+          <expression>first($pdsfyjs_Result) != null</expression>
+        </path>
+      </gateway>
+    </actionFlow>
+  </model:Model>
+</xmi:XMI>

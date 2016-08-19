@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
-  <bizModel name="JG_TW_CW_XX_COURSES" order="CWID,YEAR,TERM,KCID,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XX0301ID,DWH,DWMC,BZ,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC_1,KCYWMC,XX0301ID_2,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6">
+  <bizModel name="JG_TW_CW_XX_COURSES" order="CWID,YEAR,TERM,KCID,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XX0301ID,DWH,DWMC,BZ,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC_1,KCYWMC,XX0301ID_2,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,XSFLID,FATHERID">
     <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,KCID:KCID,GROUPS:GROUPS,KCMC:KCMC,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
       <item groupName="" name="CWID" originName="CWID"/>
       <item groupName="" name="YEAR" originName="YEAR">
@@ -29,7 +29,7 @@
       <item groupName="" name="J" originName="J"/>
       <item groupName="" name="ZRN" originName="ZRN"/>
     </dataModelRef>
-    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,GKDW:GKDW,REM:REM,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
+    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,GKDW:GKDW,REM:REM,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1,XSFLID:XSFLID,FATHERID:FATHERID" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
       <item groupName="" name="TW_ID" originName="TW_ID"/>
       <item groupName="" name="YEAR_1" originName="YEAR"/>
       <item groupName="" name="TERM_1" originName="TERM"/>
@@ -48,6 +48,8 @@
       <item caption="D5比例（毕业设计）" groupName="二次分配比例" name="D5_1" originName="D5"/>
       <item caption="D6比例（测试类教学）" groupName="二次分配比例" name="D6_1" originName="D6"/>
       <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
+      <item groupName="" name="XSFLID" originName="XSFLID"/>
+      <item groupName="" name="FATHERID" originName="FATHERID"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
       <item groupName="" name="XX0301ID" originName="XX0301ID"/>
@@ -59,6 +61,7 @@
         <attribute name="web.search.quickSearchXtype" value="text"/>
         <attribute name="web.quickSearch" value="true"/>
         <attribute name="web.xtype" value="select"/>
+        <attribute name="web.required" value="true"/>
       </item>
       <item groupName="" name="BZ" originName="BZ"/>
     </dataModelRef>
@@ -72,6 +75,7 @@
         <attribute name="dic" value="357cc625-ed46-48ca-a98f-156ed823c2ad"/>
         <attribute name="web.search.quickSearchXtype" value="text"/>
         <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.required" value="true"/>
       </item>
       <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
       <item groupName="" name="SFZJH" originName="SFZJH"/>
@@ -99,6 +103,7 @@
         <attribute name="builder" value="m_value_equal"/>
         <attribute name="dic" value="f41622c3-475d-4804-99fb-64f982a749ab"/>
         <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.form.hidden" value="true"/>
       </item>
       <item groupName="" name="TYPE" originName="TYPE"/>
       <item groupName="" name="REM_1" originName="REM"/>

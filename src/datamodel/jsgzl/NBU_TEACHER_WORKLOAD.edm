@@ -29,28 +29,31 @@
     <item caption="D教师工作总量" colName="D" groupName="" length="" name="D" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D1工作总量比例1" colName="D1" groupName="" length="" name="D1" type="double">
+    <item caption="工作总量比例1" colName="D1" groupName="" length="" name="D1" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D2工作总量比例2" colName="D2" groupName="" length="" name="D2" type="double">
+    <item caption="工作总量比例2" colName="D2" groupName="" length="" name="D2" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D3工作总量比例3" colName="D3" groupName="" length="" name="D3" type="double">
+    <item caption="工作总量比例3" colName="D3" groupName="" length="" name="D3" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D4工作总量比例4" colName="D4" groupName="" length="" name="D4" type="double">
+    <item caption="工作总量比例4" colName="D4" groupName="" length="" name="D4" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D5工作总量比例5" colName="D5" groupName="" length="" name="D5" type="double">
+    <item caption="工作总量比例5" colName="D5" groupName="" length="" name="D5" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D6工作总量比例6" colName="D6" groupName="" length="" name="D6" type="double">
+    <item caption="工作总量比例6" colName="D6" groupName="" length="" name="D6" type="double">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="开课计划表ID" colName="JX0404ID" groupName="" length="32" name="JX0404ID" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="教师学时分类ID" colName="XSFLID" groupName="" length="32" name="XSFLID" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="分配人" colName="FATHERID" groupName="" length="32" name="FATHERID" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <rowFactors/>

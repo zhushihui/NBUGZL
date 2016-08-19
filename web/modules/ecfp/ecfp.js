@@ -40,18 +40,42 @@
 //        },
         
  	   actionEdit: function(e){
-        	var id = $(e.target).attr("data-x-wid");
-        	var jg0101id = $(e.target).attr("bh");
+        	var twid = $(e.target).attr("data-x-wid");
         	var ecfpEditTpl = utils.loadCompiledPage('ecfpSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfp', {CWID:id,JG0101ID:jg0101id});
-        	
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfp', {TW_ID:twid});
+        	//数据整理
+        	var dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
+        			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
+        			TW_ID:data.rows[0].TW_ID,D1_1:'0',D2_1:'0',D3_1:'0',D4_1:'0',D5_1:'0',D6_1:'0'};
+        	var dataThree ={D1:data.rows[0].D1_1,D2:data.rows[0].D2_1,D3:data.rows[0].D3_1,D4:data.rows[0].D4_1,D5:data.rows[0].D5_1,D6:data.rows[0].D6_1};
+        	//var o = '111'
         	$.bhPaperPileDialog.show({
         		content: ecfpEditTpl.render({}),
         		title: "添加教师",
         		ready: function($header, $body, $footer){
-        			ecfpSave.initialize();
-        			
-        			$("#emapForm").emapForm("setValue", data.rows[0]);
+        			ecfpSave.initialize();	
+        			$("#emapForm").emapForm("setValue", dataTwo);
+        			//主列表教师的工作量比例
+        			$("#d_param").val(JSON.stringify(dataThree));
+        			//设置工作量比例是否可修改
+        			if(dataThree.D1 == "0"){
+        				$('input[name="D1_1"]').attr("disabled","true"); 
+        			}
+        			if(dataThree.D2 == "0"){
+        				$('input[name="D2_1"]').attr("disabled","true"); 
+        			}
+        			if(dataThree.D3 == "0"){
+        				$('input[name="D3_1"]').attr("disabled","true"); 
+        			}
+        			if(dataThree.D4 == "0"){
+        				$('input[name="D4_1"]').attr("disabled","true"); 
+        			}
+        			if(dataThree.D5 == "0"){
+        				$('input[name="D5_1"]').attr("disabled","true"); 
+        			}
+        			if(dataThree.D6 == "0"){
+        				$('input[name="D6_1"]').attr("disabled","true"); 
+        			}
         			
             	}
             });
@@ -141,7 +165,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                        	return '<a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.CWID + ' bh=' + rowData.JG0101ID + '>' + '添加' + '</a>';
+                        	return '<a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '分配' + '</a>';
                         }
                     }
                 }]

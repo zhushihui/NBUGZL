@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配之修改旧教师工作量" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpzxgjjsgzl" orderIndex="" paramFixRef="biz:JG_TW_CW_XX_COURSES" paramFixRefInclude="D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,TW_ID" paramFixRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update NBU_TEACHER_WORKLOAD &#xD;
+set D1=(1-?)*D1,D2=(1-?)*D2,D3=(1-?)*D3,&#xD;
+D4=(1-?)*D4,D5=(1-?)*D5,D6=(1-?)*D6&#xD;
+where TW_ID = ?</sql>
+  </actionModel>
+</model:Model>

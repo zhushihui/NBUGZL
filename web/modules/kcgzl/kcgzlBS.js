@@ -25,6 +25,10 @@
 //				T_PXXX_XSJBXX_DELETE:JSON.stringify(params)
 //			});
 		},
+		reckon: function(formData){ 
+			//TODO 使用工作量计算动作流
+			return BH_UTILS.doAjax('../modules/kcgzl/gzljsdzl.do', formData);
+		},
 		exportData: function(obj){
 			var params = {
 					root: contextPath,

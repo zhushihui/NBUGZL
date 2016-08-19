@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="更新课程D1D6" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxkcd1d6" orderIndex="" paramFixRef="" paramFixRefInclude="" paramFixRefPath="" paramFixRefPrj="" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update nbu_course_workload a set (a.D1,a.D2,a.D3,a.D4,a.D5,a.D6)= (&#xD;
+select case when  b.jxxs&lt;>0 or b.xxxs&lt;>0 &#xD;
+            then round((b.jxxs+b.xxxs)/17*18*a.J*decode(floor(a.r/b.c1),0,1,1+(a.r-b.c1)/a.r),3)&#xD;
+            when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='课堂教学' or b.worktype='1' or b.worktype='自主学习' or b.worktype='2')&#xD;
+            then round(b.zxs/17*18*a.J*decode(floor(a.r/b.c1),0,1,1+(a.r-b.c1)/a.r),3)&#xD;
+            else 0&#xD;
+            end as D1 ,&#xD;
+        case when b.syxs&lt;>0 or b.sjxs&lt;>0 &#xD;
+            then round((b.syxs+b.sjxs)/17*18+0.5*(b.syxs+b.sjxs)/17*18*decode(floor(a.r/b.c2),0,0,(a.r-b.c2)/b.c2),3)&#xD;
+            when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='实验' or b.worktype='3' or b.worktype='上机' or b.worktype='4')&#xD;
+            then round(b.zxs/17*18+0.5*(b.syxs+b.sjxs)/17*18*decode(floor(a.r/b.c2),0,0,(a.r-b.c2)/b.c2),3)&#xD;
+            else 0&#xD;
+            end as D2, &#xD;
+        case when b.sxxxs&lt;>0      &#xD;
+            then round(b.sxxxs/17*18*decode(floor(a.r/b.c3),0,1,1+(a.r-b.c3)/a.r),3)&#xD;
+             when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='实训' or b.worktype='6')&#xD;
+             then round(b.zxs/17*18*decode(floor(a.r/b.c3),0,1,1+(a.r-b.c3)/a.r),3)&#xD;
+            else 0&#xD;
+            end as D3, &#xD;
+       case when b.sxxs&lt;>0   &#xD;
+            then round(a.J*b.k4*20*(b.sxxs/32)*decode(floor(a.r/b.c4),0,1,a.r/b.c4),3)&#xD;
+             when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='实习' or b.worktype='5')&#xD;
+             then round(a.J*b.k4*20*(b.zxs/32)*decode(floor(a.r/b.c4),0,1,a.r/b.c4),3)&#xD;
+            else 0&#xD;
+            end as D4,&#xD;
+       case when b.worktype='毕业设计' or b.worktype='11'&#xD;
+            then round(b.k5*a.r*b.xf,3)&#xD;
+            when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='毕业设计' or b.worktype='11')&#xD;
+            then round(b.k5*a.r*b.xf,3)&#xD;
+            else 0&#xD;
+            end as D5,&#xD;
+       case when b.worktype='测试类教学' or b.worktype='12'&#xD;
+            then round(a.r/b.c6*6,3)&#xD;
+             when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='测试类教学' or b.worktype='12')&#xD;
+             then round(a.r/b.c6*6,3)&#xD;
+            else 0&#xD;
+            end as D6&#xD;
+ &#xD;
+from nbu_courses b  &#xD;
+where a.kcid = b.kcid and a.zrn = to_char(add_months(trunc(sysdate), -12),'YYYY') &#xD;
+)</sql>
+  </actionModel>
+</model:Model>

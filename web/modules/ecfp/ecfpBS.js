@@ -16,8 +16,8 @@
 			return def.promise();
 		},
 		save: function(formData){
-			//TODO 将formData提交到后台动作上
-			return BH_UTILS.doAjax('../modules/ecfp/ecfp.do', formData);
+			//TODO 将formData提交到自定义动作流上
+			return BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', formData);
 		},
 		del: function(params){
 			//TODO 添加删除动作

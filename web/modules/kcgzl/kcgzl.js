@@ -19,7 +19,8 @@
 //				"[data-action=delete]": this.actionDelete,
 //				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
-				"[data-action=custom-column]": this.actionCustomColumn
+				"[data-action=custom-column]": this.actionCustomColumn,
+				"[data-action=reckon]": this.actionReckon
 			};
 		},
 
@@ -106,6 +107,38 @@
         
         actionCustomColumn: function(){
         	$('#emapdatatable').emapdatatable('selectToShowColumns');
+        },
+        
+        actionReckon: function(){
+        	BH_UTILS.bhDialogSuccess({
+                title:'操作提示',
+                content:'是否进行工作量计算',
+                buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
+                	//工作量计算动作流 
+                	$('#jqxLoader').css({'visibility' : 'visible','display' : 'block'});////打开等待界面
+                	bs.reckon({}).done(function(data){
+                		$('#jqxLoader').css({'visibility' : 'hidden','display' : 'none'});//关闭等待界面
+                		if(data.code == "0"){
+                			BH_UTILS.bhDialogSuccess({
+                                title:'操作提示',
+                                content:'工作量计算成功',
+                                callback:function(){
+                                }
+                            });
+                			$('#emapdatatable').emapdatatable('reload');//刷新列表
+                			$.bhPaperPileDialog.hide();//关闭当前弹窗
+                		}else{
+                			BH_UTILS.bhDialogDanger({
+                                title:'操作提示',
+                                content:'工作量计算失败,请确认K、C等参数是否输入!',
+                                buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+                            });
+                		}
+        			});
+                }},{text:'取消',className:'bh-btn-warning',callback:function(){                        	
+                }}]
+            });
+        	
         },
         
 		_initAdvanceQuery: function() {

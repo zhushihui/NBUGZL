@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="分配之是否有教师" displayRef="biz:JG_TW_CW_XX_COURSES" displayRefInclude="TW_ID" displayRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" displayRefPrj="nbugzl" name="fpzsfyjs" paramFixRef="biz:JG_TW_CW_XX_COURSES" paramFixRefInclude="CWID,JG0101ID,XSFLID" paramFixRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramFixRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select #auto[select] from NBU_TEACHER_WORKLOAD &#xD;
+where cwid = ? and jg0101id = ? and xsflid = ?</sql>
+  </actionModel>
+</model:Model>
