@@ -5,6 +5,6 @@
 select nvl(a.D1*b.D1,0)+nvl(a.D2*b.D2,0)+nvl(a.D3*b.D3,0)+nvl(a.D4*b.D4,0)+nvl(a.D5*b.D5,0)+nvl(a.D6*b.D6,0) as D&#xD;
 from nbu_course_workload b &#xD;
 where a.cwid = b.cwid and b.zrn = to_char(add_months(trunc(sysdate), -12),'YYYY') &#xD;
-)</sql>
+) where a.jx0404id is not null</sql>
   </actionModel>
 </model:Model>

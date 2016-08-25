@@ -2,6 +2,7 @@
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
   <actionModel authorityIndex="" caption="更新课程D" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxkcd" orderIndex="" paramFixRef="" paramFixRefInclude="" paramFixRefPath="" paramFixRefPrj="" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update nbu_course_workload &#xD;
-set D = nvl(D1,0)+nvl(D2,0)+nvl(D3,0)+nvl(D4,0)+nvl(D5,0)+nvl(D6,0) </sql>
+set D = nvl(D1,0)+nvl(D2,0)+nvl(D3,0)+nvl(D4,0)+nvl(D5,0)+nvl(D6,0) &#xD;
+where jx0404id is not null</sql>
   </actionModel>
 </model:Model>
