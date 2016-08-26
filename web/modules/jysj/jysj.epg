@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="jysj" desc="教研数据" permissionLevel="">
+    <actions>
+      <action name="jysjdr" ref="action:jysjdr" url="src/action/jysjdr.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="jysjdrdzl" ref="action:jysjdrdzl" url="src/actionflow/jysjdrdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>

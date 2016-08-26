@@ -43,6 +43,7 @@ from  nbu_teacher_workload a &#xD;
 inner join nbu_course_workload b on a.cwid = b.cwid&#xD;
 where b.zrn = to_char(add_months(trunc(sysdate), -12),'YYYY') &#xD;
 group by a.cwid,a.xsflid,b.isfp ) p  &#xD;
-where t.cwid = p.cwid and t.xsflid =p.xsflid  )</sql>
+where t.cwid = p.cwid and t.xsflid =p.xsflid  )&#xD;
+where t.jx0404id is not null</sql>
   </actionModel>
 </model:Model>
