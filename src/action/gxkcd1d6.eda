@@ -41,6 +41,6 @@ select case when  b.jxxs&lt;>0 or b.xxxs&lt;>0 &#xD;
  &#xD;
 from nbu_courses b  &#xD;
 where a.kcid = b.kcid and a.zrn = to_char(add_months(trunc(sysdate), -12),'YYYY') &#xD;
-)</sql>
+) where a.jx0404id is not null</sql>
   </actionModel>
 </model:Model>
