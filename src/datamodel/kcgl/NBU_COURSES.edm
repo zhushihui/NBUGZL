@@ -44,7 +44,7 @@
     <item caption="工作量计算类型" colName="WORKTYPE" groupName="" length="30" name="WORKTYPE" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="类型" colName="TYPE" groupName="" length="3" name="TYPE" type="String">
+    <item caption="类型" colName="TYPE" groupName="" length="20" name="TYPE" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="备注" colName="REM" groupName="" length="200" name="REM" type="String">
