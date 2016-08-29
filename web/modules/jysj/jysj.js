@@ -16,7 +16,7 @@
 				"[data-action=add]": this.actionAdd,
 				"[data-action=edit]": this.actionEdit,
 				"[data-action=detail]": this.actionDetail,
-				"[data-action=delete]": this.actionDelete,
+//				"[data-action=delete]": this.actionDelete,
 				"[data-action=export]": this.actionExport,
 				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn
@@ -131,6 +131,7 @@
             var tableOptions = {
                 pagePath: bs.api.pageModel,
                 action: 'jysjdr',
+                height:null,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
@@ -142,8 +143,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="detail" data-x-wid=' + rowData.WID + '>' + '详情' + '</a>'+ 
-                            ' | <a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.WID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.WID + '>' + '编辑' + '</a>';
                         }
                     }
                 }]

@@ -17,7 +17,7 @@
 		},
 		save: function(formData){
 			//TODO 将formData提交到后台动作上
-//			return BH_UTILS.doAjax('../modules/jysj/T_PXXX_XSJBXX_SAVE.do', formData);
+			return BH_UTILS.doAjax('../modules/jysj/sjglydtzjdzl.do', formData);
 		},
 		del: function(params){
 			//TODO 添加删除动作
