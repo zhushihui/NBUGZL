@@ -3,18 +3,8 @@
   <bizModel name="b7fa2d53-c144-475c-ba98-8c4e6424bb5b">
     <item name="cusName" type="String"/>
   </bizModel>
-  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCID,WORKTYPE,K4,K5,C1,C2,C3,C4,C6,J" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCMC_1,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select  &#xD;
-NBU_COURSE_WORKLOAD.YEAR as &quot;YEAR&quot;, &#xD;
-NBU_COURSE_WORKLOAD.TERM as &quot;TERM&quot;, &#xD;
-NBU_COURSES.KCID as &quot;KCID&quot;, &#xD;
-NBU_COURSE_WORKLOAD.KCMC1 as &quot;KCMC&quot;, &#xD;
-NBU_COURSES.WORKTYPE as &quot;WORKTYPE&quot;,&#xD;
-NBU_COURSES.K4 as &quot;K4&quot;, &#xD;
-NBU_COURSES.K5 as &quot;K5&quot;, &#xD;
-NBU_COURSES.C1 as &quot;C1&quot;, NBU_COURSES.C2 as &quot;C2&quot;, &#xD;
-NBU_COURSES.C3 as &quot;C3&quot;, NBU_COURSES.C4 as &quot;C4&quot;, &#xD;
-NBU_COURSES.C6 as &quot;C6&quot;, NBU_COURSE_WORKLOAD.J as &quot;J&quot;&#xD;
+  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCID,KCMC1,WORKTYPE,K4,K5,C1,C2,C3,C4,C6,J" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCMC_1,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select  #auto[select]&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
 and nbu_course_workload.zrn = to_char(sysdate,'yyyy') - 1&#xD;
