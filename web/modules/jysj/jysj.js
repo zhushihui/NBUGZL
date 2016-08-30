@@ -98,7 +98,7 @@
 	        	"params" : params,
 	        	"page": "jysj",
 	        	"action": "jysjdrdzl",
-	        	"tplUrl": "modules/htgl/JY_DATA_IMPORT.xls",
+	        	"tplUrl": "modules/jysj/JY_DATA_IMPORT.xls",
 	        	"preCallback": function() {
 	        	},
 	        	"closeCallback": function() {

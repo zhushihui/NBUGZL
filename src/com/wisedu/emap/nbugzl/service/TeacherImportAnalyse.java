@@ -1,5 +1,6 @@
 package com.wisedu.emap.nbugzl.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -12,11 +13,13 @@ import com.wisedu.emap.model2.IEmapModel;
 @Service("NBUGZL.src.com.wisedu.emap.nbugzl.service.TeacherImportAnalyse")
 public class TeacherImportAnalyse implements IImportAnalyse {
 
+	@SuppressWarnings("deprecation")
 	public String actionAnalyse(Map<String, Object> arg0, IEmapModel arg1) {
 		// TODO 自动生成的方法存根
 		arg0.put("CWID", GuidUtil.getRandomGuid());
 		arg0.put("KCID", GuidUtil.getRandomGuid());
 		arg0.put("TW_ID", GuidUtil.getRandomGuid());
+		arg0.put("ZRN", (new Date()).getYear() + 1900);
 		// arg0.put("LOCKS", "1");
 		return null;
 	}
