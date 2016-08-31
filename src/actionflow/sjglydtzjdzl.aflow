@@ -321,13 +321,13 @@
         <path id="712bf7fe-122f-462f-b544-428af2b7999c" name="" order="0" to="3d8f3d97_acd0_4814_be78_eb84c96a6d51"/>
       </begin>
       <end id="end" name="结束"/>
-      <actionNode id="gxcourses" name="更新courses" multiple="false">
+      <actionNode id="gxcourses" name="更新courses" edaRef="src/action/sjglygxcourses.eda" multiple="false" prjRef="nbugzl" ref="action:sjglygxcourses">
         <path id="7054ec84-ebe9-414c-ab0f-aea7d6d01f6b" name="" order="0" to="gxtw"/>
       </actionNode>
-      <actionNode id="gxtw" name="更新tw" multiple="false">
+      <actionNode id="gxtw" name="更新tw" edaRef="src/action/sjglygxtw.eda" multiple="false" prjRef="nbugzl" ref="action:sjglygxtw">
         <path id="af99f6c5-25ee-42c0-b1fe-731d4871de9b" name="" order="0" to="gxcw"/>
       </actionNode>
-      <actionNode id="gxcw" name="更新cw" multiple="false">
+      <actionNode id="gxcw" name="更新cw" edaRef="src/action/sjglygxcw.eda" multiple="false" prjRef="nbugzl" ref="action:sjglygxcw">
         <path id="522b081a-6956-4142-87b5-c5f77b9eba41" name="" order="0" to="end"/>
       </actionNode>
       <assignment id="3d8f3d97_acd0_4814_be78_eb84c96a6d51" name="赋值">
@@ -338,6 +338,10 @@
         <expression>$gxcw.KCMC1:=param.KCMC1</expression>
         <expression>$gxcw.YEAR:=param.YEAR</expression>
         <expression>$gxcw.D:=param.D</expression>
+        <expression>$gxcourses.REM:=param.REM</expression>
+        <expression>$gxcourses.KCID:=param.KCID</expression>
+        <expression>$gxcw.CWID:=param.CWID</expression>
+        <expression>$gxtw.CWID:=param.CWID</expression>
       </assignment>
     </actionFlow>
   </model:Model>

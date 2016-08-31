@@ -15,6 +15,10 @@
 			});
 			return def.promise();
 		},
+		checkpass: function(formData){ 
+			//TODO 使用工作量计算动作流
+			return BH_UTILS.doAjax('../modules/jysj/shsj.do', formData);
+		},
 		save: function(formData){
 			//TODO 将formData提交到后台动作上
 			return BH_UTILS.doAjax('../modules/jysj/sjglydtzjdzl.do', formData);
