@@ -24,6 +24,7 @@
 			};
 		},
 
+
 		initView : function() {
 			this._initAdvanceQuery();
 			this._initTable();

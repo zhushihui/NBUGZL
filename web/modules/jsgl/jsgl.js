@@ -129,11 +129,13 @@
                 pagePath: bs.api.pageModel,
                 action: 'cxjsxx',
                 height:null,
-                customColumns: [{
+                customColumns: [
+//                                {
+//                    colIndex: '0',
+//                    type: 'checkbox'
+//                }, 
+                {
                     colIndex: '0',
-                    type: 'checkbox'
-                }, {
-                    colIndex: '1',
                     type: 'tpl',
                     column: {
                         text: '操作',

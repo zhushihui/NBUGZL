@@ -128,10 +128,12 @@
             var tableOptions = {
                 pagePath: bs.api.pageModel,
                 action: 'cscx',
-                customColumns: [{
-                    colIndex: '0',
-                    type: 'checkbox'
-                }, {
+                customColumns: [
+//                                {
+//                    colIndex: '0',
+//                    type: 'checkbox'
+//                }, 
+                {
 //                    colIndex: '1',
 //                    type: 'tpl',
                     column: {
