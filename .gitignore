@@ -1,3 +1,5 @@
 /bin
 /classes
 .classpath
+/.settings
+app_info.xml
