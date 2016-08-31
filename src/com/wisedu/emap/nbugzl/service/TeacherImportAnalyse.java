@@ -16,10 +16,10 @@ public class TeacherImportAnalyse implements IImportAnalyse {
 	@SuppressWarnings("deprecation")
 	public String actionAnalyse(Map<String, Object> arg0, IEmapModel arg1) {
 		// TODO 自动生成的方法存根
-		arg0.put("CWID", GuidUtil.getRandomGuid());
-		arg0.put("KCID", GuidUtil.getRandomGuid());
-		arg0.put("TW_ID", GuidUtil.getRandomGuid());
-		arg0.put("ZRN", (new Date()).getYear() + 1900);
+		arg0.put("CWID", GuidUtil.getRandomGuid());//增加nbu_course_workload表的唯一主键
+		arg0.put("KCID", GuidUtil.getRandomGuid());//增加courses表的唯一主键
+		arg0.put("TW_ID", GuidUtil.getRandomGuid());//增加nbu_teacher_workload表的唯一主键
+		arg0.put("ZRN", (new Date()).getYear() + 1900);//增加导入的年份
 		// arg0.put("LOCKS", "1");
 		return null;
 	}

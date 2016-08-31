@@ -288,7 +288,7 @@
     <fonts name="Arial" size="8" italic="true"/>
   </pi:Diagram>
   <model:Model>
-    <actionFlow id="jysjdrdzl" name="教研数据导入动作流" displayRef="biz:JY_DATA_IMPORT" displayRefInclude="KCMC,ZRN,JG0101ID,D,TYPE,KCMC1,REM_1" displayRefPath="src/parammodel/JY_DATA_IMPORT.epm" displayRefPrj="nbugzl" showStackWhenError="true" stackName="jysjdrdzl_stack">
+    <actionFlow id="jysjdrdzl" name="教研数据导入动作流" displayRef="biz:JY_DATA_IMPORT" displayRefInclude="KCMC,ZRN,JG0101ID,D,TYPE,KCMC1,REM" displayRefPath="src/parammodel/JY_DATA_IMPORT.epm" displayRefPrj="nbugzl" showStackWhenError="true" stackName="jysjdrdzl_stack">
       <begin id="begin" name="开始">
         <path id="11925ee5-6703-440b-9232-5fe7f908ef48" name="" order="0" to="course"/>
       </begin>
