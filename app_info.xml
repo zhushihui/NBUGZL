@@ -2,7 +2,7 @@
 
 <package_info> 
   <!-- 依赖EMAP底座版本 -->  
-  <emap_version>1.7.59</emap_version>  
+  <emap_version>1.7.62</emap_version>  
   <!-- 依赖信息 -->  
   <dependences> 
     <dependence> 
