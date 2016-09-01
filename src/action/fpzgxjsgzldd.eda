@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel authorityIndex="" caption="分配之更新教师工作量的D" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpzgxjsgzldd" orderIndex="" paramFixRef="biz:JG_TW_CW_XX_COURSES" paramFixRefInclude="CWID" paramFixRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+  <actionModel authorityIndex="" caption="分配之更新教师工作量的D" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpzgxjsgzldd" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="CWID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update nbu_teacher_workload a set a.D =(&#xD;
 select nvl(a.D1*b.D1,0)+nvl(a.D2*b.D2,0)+nvl(a.D3*b.D3,0)+nvl(a.D4*b.D4,0)+nvl(a.D5*b.D5,0)+nvl(a.D6*b.D6,0) as D&#xD;
 from nbu_course_workload b &#xD;
