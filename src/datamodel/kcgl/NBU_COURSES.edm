@@ -91,6 +91,15 @@
       <rowFactor id="f6ee966b-34ec-4cc7-a029-8cfb4b8c7f82" name="xuexiaoguanliyuan_ecfp">
         <sql>1=1</sql>
       </rowFactor>
+      <rowFactor id="fcf47791-ab47-4e9d-8e13-93d3d33dca12" name="jiaoyanzhidaoshujvguanliyuan">
+        <sql>nbu_courses.TYPE =  '教研建设'</sql>
+      </rowFactor>
+      <rowFactor id="756b4514-5e1f-4767-b207-5bf5d36e9851" name="xueshengzhidaoshujvguanliyuan">
+        <sql>nbu_courses.TYPE = '学生指导'</sql>
+      </rowFactor>
+      <rowFactor id="d742ee45-148d-447d-ac0e-b1cd24760653" name="qitajiaoxueshujvguanliyuan">
+        <sql>nbu_courses.TYPE = '其他教学'</sql>
+      </rowFactor>
     </rowFactors>
   </dataModel>
 </model:Model>
