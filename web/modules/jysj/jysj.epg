@@ -4,6 +4,8 @@
     <actions>
       <action name="jysjdr" ref="action:jysjdr" url="src/action/jysjdr.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="jysjdrdzl" ref="action:jysjdrdzl" url="src/actionflow/jysjdrdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="shsj" ref="action:shsj" url="src/action/shsj.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="sjglydtzjdzl" ref="action:sjglydtzjdzl" url="src/actionflow/sjglydtzjdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

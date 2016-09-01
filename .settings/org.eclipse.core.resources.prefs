@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/action/gxcsj.eda=UTF-8
+encoding//src/com/wisedu/emap/nbugzl/service/ActionFlowImportSave.java=UTF-8
 encoding//web/modules/cscx/cscx.html=UTF-8
 encoding//web/modules/cscx/cscx.js=UTF-8
 encoding//web/modules/cscx/cscxBS.js=UTF-8
@@ -33,6 +34,9 @@ encoding//web/modules/jsgrgzlmx/jsgrgzlmxBS.js=UTF-8
 encoding//web/modules/jsgrgzlmx/jsgrgzlmxSave.html=UTF-8
 encoding//web/modules/jsgrgzlmx/jsgrgzlmxSave.js=UTF-8
 encoding//web/modules/jsgrgzlmx/jsgrgzlmxView.js=UTF-8
+encoding//web/modules/jysj/jysj.html=UTF-8
+encoding//web/modules/jysj/jysjSave.html=UTF-8
+encoding//web/modules/jysj/jysjSave.js=UTF-8
 encoding//web/modules/kcgzl/kcgzl.html=UTF-8
 encoding//web/modules/kcgzl/kcgzlSave.html=UTF-8
 encoding//web/modules/kcgzl/kcgzlSave.js=UTF-8

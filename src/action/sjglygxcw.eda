@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="数据管理员更新cw" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="sjglygxcw" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" paramFixRefInclude="KCMC1,YEAR,D,CWID" paramFixRefPath="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update NBU_COURSE_WORKLOAD set &#xD;
+KCMC1=nvl(?,KCMC1),YEAR=nvl(?,YEAR),D=nvl(?,D)&#xD;
+where&#xD;
+CWID = ?</sql>
+  </actionModel>
+</model:Model>

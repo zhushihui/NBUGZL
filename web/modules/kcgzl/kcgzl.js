@@ -162,10 +162,12 @@
                 pagePath: bs.api.pageModel,
                 action: 'kcgzl',
                 height:null,
-                customColumns: [{
-                    colIndex: '0',
-                    type: 'checkbox'
-                }, {
+                customColumns: [
+//                                {
+//                    colIndex: '0',
+//                    type: 'checkbox'
+//                }, 
+                {
                    
                     column: {
                         text: '操作',

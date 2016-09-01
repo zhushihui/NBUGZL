@@ -25,11 +25,18 @@ public class ActionFlowImportSave implements IImportSave {
 	public String save(IEmapModel arg0, Map<?, ?> arg1) {
 
 		DaoParam dao = new DaoParam();
+		DaoParam dao1 = new DaoParam();
 		for (Map.Entry<?, ?> entry : arg1.entrySet()) {
 			System.out.println("key= " + entry.getKey() + " and value= "
 					+ entry.getValue());
 			dao.addParam((String) entry.getKey(), entry.getValue());
+			dao1.addParam((String) entry.getKey(), entry.getValue());
+			if((String)entry.getKey() == "D"){
+				dao.addParam("D1", entry.getValue());
+				dao1.addParam("D1", 1);
+			}			
 		}
+		
 		DataModelContainer d1 = appContext.getDataModel("NBU_COURSES");
 		IDataModelUpdateAction a1 = d1.getUpdateAction(ActionType.SAVE);
 
@@ -40,7 +47,7 @@ public class ActionFlowImportSave implements IImportSave {
 		IDataModelUpdateAction a3 = d3.getUpdateAction(ActionType.ADD);
 		a1.execute(dao);
 		a2.execute(dao);
-		a3.execute(dao);
+		a3.execute(dao1);
 		
 		
 		return null;
