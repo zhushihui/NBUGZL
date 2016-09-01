@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel authorityIndex="" caption="审核数据" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="shsj" orderIndex="" paramFixRef="" paramFixRefInclude="CWID" paramFixRefPath="" paramFixRefPrj="" paramRef="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,ISFP,KCMC1" paramRefPath="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="UPDATE">
+  <actionModel authorityIndex="" caption="审核数据" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="shsj" orderIndex="" paramFixRef="" paramFixRefInclude="CWID" paramFixRefPath="" paramFixRefPrj="" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,ISFP,KCMC1" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update NBU_COURSE_WORKLOAD&#xD;
 set LOCKS=0&#xD;
-where TYPE = '教研建设' or TYPE = '学生指导' &#xD;
-or TYPE = '其他教学'&#xD;
-#sub[and $]</sql>
+where exists&#xD;
+(select 1 from nbu_courses where nbu_courses.kcid = NBU_COURSE_WORKLOAD.kcid and (nbu_courses.TYPE = '教研建设' or nbu_courses.TYPE = '学生指导' &#xD;
+or nbu_courses.TYPE = '其他教学'))</sql>
   </actionModel>
 </model:Model>

@@ -342,6 +342,7 @@
         <expression>$gxcourses.KCID:=param.KCID</expression>
         <expression>$gxcw.CWID:=param.CWID</expression>
         <expression>$gxtw.CWID:=param.CWID</expression>
+        <expression>$gxcourses.XX0301ID:=param.XX0301ID</expression>
       </assignment>
     </actionFlow>
   </model:Model>
