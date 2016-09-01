@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配修改之删除子工作比例" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpxgzsczgzbl" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="TW_ID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>delete nbu_teacher_workload where tw_id=?</sql>
+  </actionModel>
+</model:Model>

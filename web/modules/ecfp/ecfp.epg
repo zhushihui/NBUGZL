@@ -4,6 +4,9 @@
     <actions>
       <action name="ecfp" ref="action:ecfp" url="src/action/ecfp.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfpdzl" ref="action:ecfpdzl" url="src/actionflow/ecfpdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="ecfpxg" ref="action:ecfpxg" url="src/action/ecfpxg.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="ecfpxgdzl" ref="action:ecfpxgdzl" url="src/actionflow/ecfpxgdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="ecfpxgscdzl" ref="action:ecfpxgscdzl" url="src/actionflow/ecfpxgscdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>
