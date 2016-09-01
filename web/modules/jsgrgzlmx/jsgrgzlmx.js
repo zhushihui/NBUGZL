@@ -84,8 +84,20 @@
         },
         
         actionExport: function(){
-        	bs.exportData({}).done(function(data){
-        	});
+			var params = {
+					root: contextPath,
+					app : "nbugzl",
+					module : "modules",
+					page : 'jsgrgzlmx',
+					action : 'jsgrgzlmx'
+			};
+			var querySetting = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+			if (querySetting) {
+				params['querySetting'] = querySetting;
+			}
+			$('#emapdatatable').emapdatatable('selectColumnsExport', params);	
+//        	bs.exportData({}).done(function(data){
+//        	});
         },
 
 		actionImport: function(){

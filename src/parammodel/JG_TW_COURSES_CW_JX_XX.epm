@@ -55,8 +55,12 @@
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
       <item groupName="" name="XX0301ID" originName="XX0301ID"/>
-      <item groupName="" name="DWH" originName="DWH"/>
-      <item caption="开课学院" groupName="" name="DWMC" originName="DWMC"/>
+      <item groupName="" name="DWH" originName="DWH">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
+      <item caption="开课学院" groupName="" name="DWMC" originName="DWMC">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
       <item groupName="" name="BZ" originName="BZ"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/kkjh/JX0404.edm" include="JX0404ID:JX0404ID_2,XNXQ01ID:XNXQ01ID,JX02ID:JX02ID,KSDW:KSDW,XKRS:XKRS,ZH:ZH,ZXS:ZXS,XF:XF,ISDEL:ISDEL,TZDLB:TZDLB" modelName="model:DB_EMAP_BIZ_BASE/JX0404" prjRef="nbugzl" tableAlias="JX0404">

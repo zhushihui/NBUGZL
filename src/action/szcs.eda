@@ -7,7 +7,8 @@
     <sql>select  #auto[select]&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
-and nbu_course_workload.zrn = to_char(sysdate,'yyyy') - 1&#xD;
+and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
+and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
 group by&#xD;
 NBU_COURSE_WORKLOAD.YEAR,&#xD;
