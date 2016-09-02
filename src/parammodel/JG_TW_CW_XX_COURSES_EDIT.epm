@@ -39,7 +39,7 @@
         <attribute name="web.form.required" value="true"/>
         <attribute name="web.checkType" value=""/>
       </item>
-      <item groupName="二次分配比例" name="D2_1" originName="D2">
+      <item caption="D2比例（实践）" groupName="二次分配比例" name="D2_1" originName="D2">
         <attribute name="web.form.required" value="true"/>
       </item>
       <item caption="D3比例（实训）" groupName="二次分配比例" name="D3_1" originName="D3">
