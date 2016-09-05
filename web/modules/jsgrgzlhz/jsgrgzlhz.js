@@ -142,13 +142,14 @@
                 pagePath: bs.api.pageModel,
                 action: 'jsgrgzlhz',
                 height:null,
+                sortable: true,
 //                params : params1,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
                 }, {
 //                    colIndex: '1',
-//                    type: 'tpl',
+//                    type: 'tpl',,
                     column: {
                         text: '操作',
                         align: 'center',

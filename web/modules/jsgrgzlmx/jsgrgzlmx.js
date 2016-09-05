@@ -143,6 +143,7 @@
                 action: 'jsgrgzlmx',
                 height:null,
 //                params : params1,
+                sortable: true,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
