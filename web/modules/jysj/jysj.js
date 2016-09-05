@@ -24,61 +24,38 @@
 			};
 		},
 
-
 		initView : function() {
 			this._initAdvanceQuery();
 			this._initTable();
 		},
 
 		actionCheckpass : function() {
-			var row = $("#emapdatatable").emapdatatable("checkedRecords");
-			if (row.length == 0) {
-				BH_UTILS.bhDialogDanger({
-					title : '操作提示',
-					content : '请选择审核数据',
-					buttons : [ {
-						text : '确认',
-						className : 'bh-btn-warning',
-						callback : function() {
-						}
-					} ]
-				});
-			} else {
-				BH_UTILS.bhDialogSuccess({
-					title : '操作提示',
-					content : '是否通过审核',
-					buttons : [ {
-						text : '确认',
-						className : 'bh-btn-success',
-						callback : function() {
-							var p = {};
-							var params = row.map(function(el) {
-								return {
-									CWID : el.CWID,
-									XXX : el.XXX
-								}; // 模型主键
-							});
-							for (var i = 0; i < params.length; i++) {
-								p['CWID'] = params[i].CWID;
-								bs.checkpass(p).done(function(data) {
-								});
+			BH_UTILS.bhDialogSuccess({
+				title : '操作提示',
+				content : '是否通过审核',
+				buttons : [ {
+					text : '确认',
+					className : 'bh-btn-success',
+					callback : function() {
+						bs.checkpass().done(function(data) {
+						});
+
+						BH_UTILS.bhDialogSuccess({
+							title : '操作提示',
+							content : '审核通过',
+							callback : function() {
+								$('#emapdatatable').emapdatatable('reload');
 							}
-							BH_UTILS.bhDialogSuccess({
-								title : '操作提示',
-								content : '审核通过',
-								callback : function() {
-								}
-							});
-							$('#emapdatatable').emapdatatable('reload');
-						}
-					}, {
-						text : '取消',
-						className : 'bh-btn-warning',
-						callback : function() {
-						}
-					} ]
-				});
-			}
+						});
+						
+					}
+				}, {
+					text : '取消',
+					className : 'bh-btn-warning',
+					callback : function() {
+					}
+				} ]
+			});
 		},
 
 		actionAdd : function() {
@@ -146,24 +123,35 @@
 		},
 
 		actionImport : function() {
-			var params = {
-				"analyse" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.TeacherImportAnalyse",
-				"save" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.ActionFlowImportSave"
-			};
-			$.emapImport({
-				"contextPath" : contextPath,
-				"app" : "nbugzl",
-				"module" : "modules",
-				"params" : params,
-				"page" : "jysj",
-				"action" : "jysjdrdzl",
-				"tplUrl" : "modules/jysj/JY_DATA_IMPORT.xls",
-				"preCallback" : function() {
-				},
-				"closeCallback" : function() {
-					$('#emapdatatable').emapdatatable('reload');
-				},
-			});
+			bs.importData().done(function(data) {
+				var data1 = WIS_EMAP_SERV.getData(bs.api.pageModel, 'NBU_IMPORT_FLAG_QUERY');
+				if(data1.rows[0].DRZT == 1){
+					BH_UTILS.bhDialogDanger({
+                        title:'操作提示',
+                        content:'禁止导入',
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+                    });
+					}else{
+						var params = {
+								"analyse" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.TeacherImportAnalyse",
+								"save" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.ActionFlowImportSave"
+						};
+						$.emapImport({
+							"contextPath" : contextPath,
+							"app" : "nbugzl",
+							"module" : "modules",
+							"params" : params,
+							"page" : "jysj",
+							"action" : "jysjdrdzl",
+							"tplUrl" : "modules/jysj/JY_DATA_IMPORT.xls",
+							"preCallback" : function() {
+							},
+							"closeCallback" : function() {
+								$('#emapdatatable').emapdatatable('reload');
+							},
+						});
+					}
+				});
 		},
 
 		actionCustomColumn : function() {
@@ -193,24 +181,23 @@
 				action : 'jysjdr',
 				height : null,
 				customColumns : [
-						{
-							colIndex : '0',
-							type : 'checkbox'
-						},
-						{
-							colIndex : '1',
-							type : 'tpl',
-							column : {
-								text : '操作',
-								align : 'center',
-								cellsAlign : 'center',
-								cellsRenderer : function(row, column, value,
-										rowData) {
-									return '<a href="javascript:void(0)" data-action="edit" data-x-wid='
-											+ rowData.CWID + '>' + '编辑' + '</a>';
-								}
-							}
-						} ]
+				// {
+				// colIndex : '0',
+				// type : 'checkbox'
+				// },
+				{
+					colIndex : '0',
+					type : 'tpl',
+					column : {
+						text : '操作',
+						align : 'center',
+						cellsAlign : 'center',
+						cellsRenderer : function(row, column, value, rowData) {
+							return '<a href="javascript:void(0)" data-action="edit" data-x-wid='
+									+ rowData.CWID + '>' + '编辑' + '</a>';
+						}
+					}
+				} ]
 			};
 			$('#emapdatatable').emapdatatable(tableOptions);
 		}

@@ -6,6 +6,7 @@
       <action name="jysjdrdzl" ref="action:jysjdrdzl" url="src/actionflow/jysjdrdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="shsj" ref="action:shsj" url="src/action/shsj.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="sjglydtzjdzl" ref="action:sjglydtzjdzl" url="src/actionflow/sjglydtzjdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_IMPORT_FLAG_QUERY" ref="model:NBU_IMPORT_FLAG.QUERY" url="src/datamodel/drzt/NBU_IMPORT_FLAG.edm" multiple="true" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

@@ -31,10 +31,10 @@ public class ActionFlowImportSave implements IImportSave {
 					+ entry.getValue());
 			dao.addParam((String) entry.getKey(), entry.getValue());
 			dao1.addParam((String) entry.getKey(), entry.getValue());
-			if((String)entry.getKey() == "D"){
+			if(((String)entry.getKey()).equals("D")){
 				dao.addParam("D1", entry.getValue());
 				dao1.addParam("D1", 1);
-			}			
+			}	
 		}
 		
 		DataModelContainer d1 = appContext.getDataModel("NBU_COURSES");
