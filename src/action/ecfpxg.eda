@@ -19,7 +19,7 @@ nbu_course_workload ,jg0101	&#xD;
 where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;
 and nbu_course_workload.kcid = nbu_courses.kcid &#xD;
 and nbu_teacher_workload.jg0101id = jg0101.jg0101id&#xD;
-and nbu_course_workload.zrn = to_char(sysdate,'yyyy') - 1&#xD;
+and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
 #sub[and $]&#xD;
 group by&#xD;
 NBU_COURSE_WORKLOAD.YEAR,NBU_COURSE_WORKLOAD.TERM, &#xD;
