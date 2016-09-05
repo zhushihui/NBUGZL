@@ -93,7 +93,9 @@
       <item groupName="" name="C6" originName="C6"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="DWMC:DWMC" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
-      <item groupName="" name="DWMC" originName="DWMC"/>
+      <item groupName="" name="DWMC" originName="DWMC">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
     </dataModelRef>
   </bizModel>
 </model:Model>

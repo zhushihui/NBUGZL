@@ -15,6 +15,9 @@
 			});
 			return def.promise();
 		},
+		importData:function(formData){
+			return BH_UTILS.doAjax('../modules/jysj/NBU_IMPORT_FLAG_QUERY.do', formData);
+		},
 		checkpass: function(formData){ 
 			//TODO 使用工作量计算动作流
 			return BH_UTILS.doAjax('../modules/jysj/shsj.do', formData);

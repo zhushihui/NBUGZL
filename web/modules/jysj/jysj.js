@@ -123,24 +123,35 @@
 		},
 
 		actionImport : function() {
-			var params = {
-				"analyse" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.TeacherImportAnalyse",
-				"save" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.ActionFlowImportSave"
-			};
-			$.emapImport({
-				"contextPath" : contextPath,
-				"app" : "nbugzl",
-				"module" : "modules",
-				"params" : params,
-				"page" : "jysj",
-				"action" : "jysjdrdzl",
-				"tplUrl" : "modules/jysj/JY_DATA_IMPORT.xls",
-				"preCallback" : function() {
-				},
-				"closeCallback" : function() {
-					$('#emapdatatable').emapdatatable('reload');
-				},
-			});
+			bs.importData().done(function(data) {
+				var data1 = WIS_EMAP_SERV.getData(bs.api.pageModel, 'NBU_IMPORT_FLAG_QUERY');
+				if(data1.rows[0].DRZT == 1){
+					BH_UTILS.bhDialogDanger({
+                        title:'操作提示',
+                        content:'禁止导入',
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+                    });
+					}else{
+						var params = {
+								"analyse" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.TeacherImportAnalyse",
+								"save" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.ActionFlowImportSave"
+						};
+						$.emapImport({
+							"contextPath" : contextPath,
+							"app" : "nbugzl",
+							"module" : "modules",
+							"params" : params,
+							"page" : "jysj",
+							"action" : "jysjdrdzl",
+							"tplUrl" : "modules/jysj/JY_DATA_IMPORT.xls",
+							"preCallback" : function() {
+							},
+							"closeCallback" : function() {
+								$('#emapdatatable').emapdatatable('reload');
+							},
+						});
+					}
+				});
 		},
 
 		actionCustomColumn : function() {
@@ -170,10 +181,10 @@
 				action : 'jysjdr',
 				height : null,
 				customColumns : [
-				//						{
-				//							colIndex : '0',
-				//							type : 'checkbox'
-				//						},
+				// {
+				// colIndex : '0',
+				// type : 'checkbox'
+				// },
 				{
 					colIndex : '0',
 					type : 'tpl',
