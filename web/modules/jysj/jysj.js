@@ -128,7 +128,7 @@
 				if(data1.rows[0].DRZT == 1){
 					BH_UTILS.bhDialogDanger({
                         title:'操作提示',
-                        content:'禁止导入',
+                        content:'禁止导入，请联系学校管理员。',
                         buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
                     });
 					}else{
