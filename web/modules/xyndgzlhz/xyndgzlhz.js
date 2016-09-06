@@ -129,6 +129,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'xyjxgzl',
                 height:null,
+                sortable:true,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'
