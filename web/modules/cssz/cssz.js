@@ -141,7 +141,7 @@
         },
 
         _searchCallback: function(e, data, opts) {
-            $('#emapdatatable').emapdatatable('reload', {
+            $('#emapdatatable').emapdatatable('reloadFirstPage', {
                 querySetting: data
             });
         },
