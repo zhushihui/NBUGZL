@@ -4,7 +4,7 @@
     <sql>select &#xD;
 nbu_course_workload.zrn,&#xD;
 nbu_teacher_workload.jg0101id,jg0101.xm,jg0101.sfzjh,&#xD;
-sum(nbu_teacher_workload.D) as customName0,xx0301.dwmc,jg0101.gkdw&#xD;
+round(sum(nbu_teacher_workload.D),3) as customName0,xx0301.dwmc,jg0101.gkdw&#xD;
 from nbu_courses,nbu_teacher_workload,&#xD;
 nbu_course_workload,jg0101,jx0404,xx0301	&#xD;
 where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;

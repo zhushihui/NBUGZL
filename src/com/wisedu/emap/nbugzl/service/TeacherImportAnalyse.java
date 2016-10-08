@@ -1,5 +1,6 @@
 package com.wisedu.emap.nbugzl.service;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -23,10 +24,11 @@ public class TeacherImportAnalyse implements IImportAnalyse {
 	@SuppressWarnings("deprecation")
 	public String actionAnalyse(Map<String, Object> arg0, IEmapModel arg1) {
 		// TODO 自动生成的方法存根
+		Calendar c = Calendar.getInstance();
 		arg0.put("CWID", GuidUtil.getRandomGuid());//增加nbu_course_workload表的唯一主键
 		arg0.put("KCID", GuidUtil.getRandomGuid());//增加courses表的唯一主键
 		arg0.put("TW_ID", GuidUtil.getRandomGuid());//增加nbu_teacher_workload表的唯一主键
-		arg0.put("ZRN", (new Date()).getYear() + 1900);//增加导入的年份
+		arg0.put("ZRN", c.get(Calendar.YEAR));//增加导入的年份
 		return null;
 	}
 
