@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="教师单位字典" conditionIndex="" displayRef="biz:JG_XX" displayRefInclude="JG0101ID,XM" displayRefPath="src/parammodel/JG_XX.epm" displayRefPrj="nbugzl" name="jsdwzd" paramFixRef="" paramFixRefInclude="XM" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:JG_XX" paramRefInclude="XM" paramRefPath="src/parammodel/JG_XX.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select  a.jg0101id,a.xm ||'-'|| b.DWMC as xm&#xD;
+from JG0101 a,xx0301 b where a.XX0301ID= b.XX0301ID&#xD;
+#sub[and $]</sql>
+  </actionModel>
+</model:Model>

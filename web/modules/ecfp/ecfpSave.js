@@ -16,47 +16,42 @@ define(function(require, exports, module) {
                 '[data-action=save]': this.save
             };
         },
+        popupDialogDanger : function(od) {
+        	var p = {
+        			title:'操作提示',
+                    content:od+'比例只能小于等于1',
+                    buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
+        	return p;
+        },
         //分配保存
         save: function(){
         	if( $("#emapForm").emapValidate('validate') ){
         		//获取界面参数
         		var formData = $("#emapForm").emapForm("getValue");
         		if( formData.D1_1>1){
-        			BH_UTILS.bhDialogDanger({
-                        title:'操作提示',
-                        content:'D1比例只能小于等于1',
-                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                    });
+        			BH_UTILS.bhDialogDanger(
+        				this.popupDialogDanger('D1')
+        			);
         		}else if(formData.D2_1>1){
-        			BH_UTILS.bhDialogDanger({
-                        title:'操作提示',
-                        content:'D2比例只能小于等于1',
-                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                    });
+        			BH_UTILS.bhDialogDanger(
+        				this.popupDialogDanger('D2')
+        			);
         		}else if(formData.D3_1>1){
-        			BH_UTILS.bhDialogDanger({
-                        title:'操作提示',
-                        content:'D3比例只能小于等于1',
-                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                    });
+        			BH_UTILS.bhDialogDanger(
+        				this.popupDialogDanger('D3')	
+        			);
         		}else if(formData.D4_1>1){
-        			BH_UTILS.bhDialogDanger({
-                        title:'操作提示',
-                        content:'D4比例只能小于等于1',
-                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                    });
+					 BH_UTILS.bhDialogDanger(
+						this.popupDialogDanger('D4')
+					 );
         		}else if(formData.D5_1>1){
-        			BH_UTILS.bhDialogDanger({
-                        title:'操作提示',
-                        content:'D5比例只能小于等于1',
-                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                    });
+        			BH_UTILS.bhDialogDanger(
+        				this.popupDialogDanger('D5')
+        			);
         		}else if(formData.D6_1>1){
-        			BH_UTILS.bhDialogDanger({
-                        title:'操作提示',
-                        content:'D6比例只能小于等于1',
-                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                    });
+        			BH_UTILS.bhDialogDanger(
+        				this.popupDialogDanger('D6')
+        			);
         		}else{
         			BH_UTILS.bhDialogSuccess({
                         title:'操作提示',

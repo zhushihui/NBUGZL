@@ -87,11 +87,12 @@
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="web.xtype" value="select"/>
         <attribute name="builder" value="m_value_equal"/>
-        <attribute name="dic" value="357cc625-ed46-48ca-a98f-156ed823c2ad"/>
+        <attribute name="dic" value="0ea35516-01c3-4889-96f4-ac7de7f80db9"/>
         <attribute name="web.search.quickSearchXtype" value="text"/>
         <attribute name="web.quickSearch" value="true"/>
         <attribute name="web.required" value="true"/>
         <attribute name="web.readonly" value="false"/>
+        <attribute name="web.search.xtype" value="multi-select2"/>
       </item>
       <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
       <item groupName="" name="SFZJH" originName="SFZJH"/>
