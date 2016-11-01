@@ -20,8 +20,8 @@
     </item>
     <item caption="身份证号" colName="SFZJH" groupName="" length="20" name="SFZJH" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.quickSearch" value="true"/>
-      <attribute name="web.readonly" value="true"/>
+      <attribute name="web.hidden" value="true"/>
+      <attribute name="web.grid.hidden" value="true"/>
     </item>
     <item caption="单位名称" colName="XX0301ID" groupName="" length="32" name="XX0301ID" type="String">
       <attribute name="enabled" value="true"/>
