@@ -4,6 +4,7 @@
     <params/>
     <actions>
       <action name="jsgrgzlmx" ref="action:jsgrgzlmx" url="src/action/jsgrgzlmx.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_TEACHER_WORKLOAD_SAVE" ref="model:NBU_TEACHER_WORKLOAD.SAVE" url="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

@@ -42,7 +42,7 @@
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
         	var jsgrgzlmxEditTpl = utils.loadCompiledPage('jsgrgzlmxSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'jsgrgzlmx', {WID:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'jsgrgzlmx', {TW_ID:id});
         	
         	$.bhPaperPileDialog.show({
         		content: jsgrgzlmxEditTpl.render({}),
@@ -59,7 +59,7 @@
         actionDetail: function(e){
         	var id = $(e.target).attr("data-x-wid");
         	var jsgrgzlmxViewTpl = utils.loadCompiledPage('jsgrgzlmxSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'jsgrgzlmx', {WID:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'jsgrgzlmx', {TW_ID:id});
         	
         	$.bhPaperPileDialog.show({
         		content: jsgrgzlmxViewTpl.render({}),
@@ -145,18 +145,17 @@
 //                params : params1,
                 sortable: true,
                 customColumns: [{
-                    colIndex: '0',
-                    type: 'checkbox'
+//                    colIndex: '0',
+//                    type: 'checkbox'
                 }, {
-//                    colIndex: '1',
-//                    type: 'tpl',
+                    colIndex: '0',
+                    type: 'tpl',
                     column: {
                         text: '操作',
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="detail" data-x-wid=' + rowData.WID + '>' + '详情' + '</a>'+ 
-                            ' | <a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.WID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.TW_ID + '>' + '编辑' + '</a>';
                         }
                     }
                 }]
