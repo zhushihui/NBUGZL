@@ -100,10 +100,12 @@ define(function(require, exports, module) {
                 			//修改旧教师工作量
                 			var fourData = {'D1':formData.D1_1,'D2':formData.D2_1,'D3':formData.D3_1,'D4':formData.D4_1,
                 					'D5':formData.D5_1,'D6':formData.D6_1,'TW_ID':formData.TW_ID};
-                			//更新教师D
+                			//转换教师工作量
                 			var fiveData = {'CWID':formData.CWID};
-                			//修改已分配课程状态
+                			//更新教师D
                 			var sixData = {'CWID':formData.CWID};
+                			//修改已分配课程状态
+                			var sevenData = {'CWID':formData.CWID};
                 			//参数格式转换
                 			var sendParam1 = JSON.stringify(firstData);
                 			var sendParam1_1 = JSON.stringify(firstDataTwo);
@@ -112,9 +114,10 @@ define(function(require, exports, module) {
                 			var sendParam4 = JSON.stringify(fourData);
                 			var sendParam5 = JSON.stringify(fiveData);
                 			var sendParam6 = JSON.stringify(sixData);
+                			var sendParam7 = JSON.stringify(sevenData);
                 			//参数存入参数组中
                 			var param = {'pdsfyjs':sendParam1,'pdfidsfxt':sendParam1_1,'xjjsgzl':sendParam2,'xgjsgzl':sendParam3,
-                					'xgjjsgzl':sendParam4,'gxjsgzld':sendParam5,'xgyfpkczt':sendParam6};
+                					'xgjjsgzl':sendParam4,'zhjsgzl':sendParam5,'gxjsgzld':sendParam6,'xgyfpkczt':sendParam7};
                 			//使用二次分配工作流
                 			BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', param).done(function(data){
                 				if(data.code == "0"){

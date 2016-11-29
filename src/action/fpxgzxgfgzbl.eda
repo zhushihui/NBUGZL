@@ -2,8 +2,12 @@
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
   <actionModel authorityIndex="" caption="分配修改之修改父工作比例" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpxgzxgfgzbl" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="D1,D2,D3,D4,D5,D6,TW_ID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update NBU_TEACHER_WORKLOAD &#xD;
-set D1=D1+?,D2=D2+?,D3=D3+?,&#xD;
-D4=D4+?,D5=D5+?,D6=D6+?&#xD;
+set D1=to_char(D1+?,'FM0.99999999')&#xD;
+,D2=to_char(D2+?,'FM0.99999999')&#xD;
+,D3=to_char(D3+?,'FM0.99999999')&#xD;
+,D4=to_char(D4+?,'FM0.99999999')&#xD;
+,D5=to_char(D5+?,'FM0.99999999')&#xD;
+,D6=to_char(D6+?,'FM0.99999999')&#xD;
 where TW_ID = ?</sql>
   </actionModel>
 </model:Model>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配之转换教师工作量" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpzzhjsgzl" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="CWID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update NBU_TEACHER_WORKLOAD &#xD;
+set D1=case when D1='0.' or D1='1.'  then to_char(D1,'FM9') else D1 end &#xD;
+,D2=case when D2='0.' or D2='1.'  then to_char(D2,'FM9') else D2 end   &#xD;
+,D3=case when D3='0.' or D3='1.'  then to_char(D3,'FM9') else D3 end &#xD;
+,D4=case when D4='0.' or D4='1.'  then to_char(D4,'FM9') else D4 end &#xD;
+,D5=case when D5='0.' or D5='1.'  then to_char(D5,'FM9') else D5 end &#xD;
+,D6=case when D6='0.' or D6='1.'  then to_char(D6,'FM9') else D6 end &#xD;
+where CWID = ?</sql>
+  </actionModel>
+</model:Model>
