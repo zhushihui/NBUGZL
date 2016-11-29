@@ -39,7 +39,13 @@
         <attribute name="web.quickSearch" value="false"/>
       </item>
       <item groupName="" name="CWID_1" originName="CWID"/>
-      <item groupName="" name="GKDW" originName="GKDW"/>
+      <item groupName="" name="GKDW" originName="GKDW">
+        <attribute name="useDicType" value="toDisplay"/>
+        <attribute name="web.xtype" value="select"/>
+        <attribute name="web.search.xtype" value="multi-select2"/>
+        <attribute name="builder" value="m_value_equal"/>
+        <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+      </item>
       <item groupName="" name="LOCKS_1" originName="LOCKS"/>
       <item groupName="" name="D_1" originName="D"/>
       <item groupName="" name="D1_1" originName="D1"/>

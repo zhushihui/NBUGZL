@@ -5,6 +5,6 @@
 set LOCKS=0&#xD;
 where exists&#xD;
 (select 1 from nbu_courses where nbu_courses.kcid = NBU_COURSE_WORKLOAD.kcid and (nbu_courses.TYPE = '教研建设' or nbu_courses.TYPE = '学生指导' &#xD;
-or nbu_courses.TYPE = '其他教学'))</sql>
+or nbu_courses.TYPE = '其他教学' or nbu_courses.TYPE = '研究生院'))</sql>
   </actionModel>
 </model:Model>

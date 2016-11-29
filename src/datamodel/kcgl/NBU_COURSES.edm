@@ -100,6 +100,9 @@
       <rowFactor id="d742ee45-148d-447d-ac0e-b1cd24760653" name="qitajiaoxueshujvguanliyuan">
         <sql>nbu_courses.TYPE = '其他教学'</sql>
       </rowFactor>
+      <rowFactor id="25af303c-6dcf-49f4-83b3-ec70a530be6d" name="yanjiushengyuanshujuguanliyuan">
+        <sql>nbu_courses.TYPE =  '研究生院'</sql>
+      </rowFactor>
     </rowFactors>
   </dataModel>
 </model:Model>
