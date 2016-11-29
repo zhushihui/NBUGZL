@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
-  <bizModel mainDataModel="NBU_COURSES" name="JG_TW_CW_XX_COURSES" order="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XX0301ID,DWH,DWMC,BZ,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC,KCYWMC,XX0301ID_2,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,XSFLID,FATHERID,KCMC1">
+  <bizModel mainDataModel="NBU_COURSES" name="JG_TW_CW_XX_COURSES" order="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,XX0301ID,DWH,DWMC,BZ,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC,KCYWMC,XX0301ID_2,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,FATHERID">
     <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,KCID:KCID,GROUPS:GROUPS,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN,KCMC1:KCMC1" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
       <item groupName="" name="CWID" originName="CWID"/>
       <item groupName="" name="YEAR" originName="YEAR">
@@ -38,33 +38,16 @@
       <item groupName="" name="GKDW" originName="GKDW"/>
       <item groupName="" name="REM" originName="REM"/>
       <item groupName="" name="LOCKS_1" originName="LOCKS"/>
-      <item caption="工作总量" groupName="" name="D_1" originName="D"/>
-      <item caption="D1比例（理论）" groupName="二次分配比例" name="D1_1" originName="D1">
-        <attribute name="web.required" value="true"/>
-      </item>
-      <item caption="D2比例（实践）" groupName="二次分配比例" name="D2_1" originName="D2">
-        <attribute name="web.required" value="true"/>
-      </item>
-      <item caption="D3比例（实训）" groupName="二次分配比例" name="D3_1" originName="D3">
-        <attribute name="web.required" value="true"/>
-      </item>
-      <item caption="D4比例（实习）" groupName="二次分配比例" name="D4_1" originName="D4">
-        <attribute name="web.required" value="true"/>
-      </item>
-      <item caption="D5比例（毕业设计）" groupName="二次分配比例" name="D5_1" originName="D5">
-        <attribute name="web.required" value="true"/>
-      </item>
-      <item caption="D6比例（测试类教学）" groupName="二次分配比例" name="D6_1" originName="D6">
-        <attribute name="web.required" value="true"/>
-      </item>
+      <item groupName="" name="D_1" originName="D"/>
+      <item groupName="二次分配比例" name="D1_1" originName="D1"/>
+      <item groupName="二次分配比例" name="D2_1" originName="D2"/>
+      <item groupName="二次分配比例" name="D3_1" originName="D3"/>
+      <item groupName="二次分配比例" name="D4_1" originName="D4"/>
+      <item groupName="二次分配比例" name="D5_1" originName="D5"/>
+      <item groupName="二次分配比例" name="D6_1" originName="D6"/>
       <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
-      <item groupName="" name="XSFLID" originName="XSFLID">
-        <attribute name="web.hidden" value="true"/>
-        <attribute name="web.grid.hidden" value="true"/>
-        <attribute name="web.form.hidden" value="true"/>
-        <attribute name="web.search.hidden" value="true"/>
-      </item>
-      <item caption="父分配ID" groupName="" name="FATHERID" originName="FATHERID"/>
+      <item groupName="" name="XSFLID" originName="XSFLID"/>
+      <item groupName="" name="FATHERID" originName="FATHERID"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
       <item groupName="" name="XX0301ID" originName="XX0301ID"/>

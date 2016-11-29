@@ -2,8 +2,13 @@
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
   <actionModel authorityIndex="" caption="分配之修改旧教师工作量" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpzxgjjsgzl" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="D1,D2,D3,D4,D5,D6,TW_ID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update NBU_TEACHER_WORKLOAD &#xD;
-set D1=(1-?)*D1,D2=(1-?)*D2,D3=(1-?)*D3,&#xD;
-D4=(1-?)*D4,D5=(1-?)*D5,D6=(1-?)*D6&#xD;
-where TW_ID = ?</sql>
+set D1=to_char((1-?)*D1,'FM0.99999999') &#xD;
+,D2=to_char((1-?)*D2,'FM0.99999999')  &#xD;
+,D3=to_char((1-?)*D3,'FM0.99999999')&#xD;
+,D4=to_char((1-?)*D4,'FM0.99999999')&#xD;
+,D5=to_char((1-?)*D5,'FM0.99999999')&#xD;
+,D6=to_char((1-?)*D6,'FM0.99999999')&#xD;
+where TW_ID = ?&#xD;
+</sql>
   </actionModel>
 </model:Model>

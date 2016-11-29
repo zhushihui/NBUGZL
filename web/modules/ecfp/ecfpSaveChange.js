@@ -76,16 +76,19 @@ define(function(require, exports, module) {
                 			var thirdData = {'TW_ID':formData.TW_ID};
                 			//更新教师工作量D
                 			var fourData = {'CWID':formData.CWID};
+                			//转换教师工作比例
+                			var fiveData = {'CWID':formData.CWID};
                 			//参数格式转换
                 			var sendParam1 = JSON.stringify(firstData);
                 			var sendParam2 = JSON.stringify(secondData);
                 			var sendParam3 = JSON.stringify(thirdData);
                 			var sendParam4 = JSON.stringify(fourData);
+                			var sendParam5 = JSON.stringify(fiveData);
                 			//参数存入参数组中
                 			//二次分配修改删除工作流的参数组
-                			var param = {'xgfgzbl':sendParam1,'sczgzbl':sendParam3,'gxgzld':sendParam4};
+                			var param = {'xgfgzbl':sendParam1,'sczgzbl':sendParam3,'zhjsgzbl':sendParam5,'gxgzld':sendParam4};
                 			//二次分配修改工作流的参数组
-                			var param2 = {'xgfgzbl':sendParam1,'xgzgzbl':sendParam2,'gxgzld':sendParam4};
+                			var param2 = {'xgfgzbl':sendParam1,'xgzgzbl':sendParam2,'zhjsgzbl':sendParam5,'gxgzld':sendParam4};
                 			//判断是否所有比例都为0
                 			if(formData.D1_1 == 0 && formData.D2_1 == 0 && formData.D3_1 == 0 && formData.D4_1 == 0 && formData.D5_1 == 0 && formData.D6_1 == 0){
                 				//使用二次分配修改删除工作流
