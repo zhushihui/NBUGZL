@@ -3,7 +3,7 @@
   <bizModel name="b7fa2d53-c144-475c-ba98-8c4e6424bb5b">
     <item name="cusName" type="String"/>
   </bizModel>
-  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCID,KCMC1,WORKTYPE,K4,K5,C1,C2,C3,C4,C6,J" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCMC_1,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCID,KCMC1,WORKTYPE,K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
     <sql>select  #auto[select]&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
@@ -16,7 +16,8 @@ NBU_COURSE_WORKLOAD.TERM, NBU_COURSES.KCID, &#xD;
 NBU_COURSE_WORKLOAD.KCMC1, NBU_COURSES.WORKTYPE,&#xD;
 NBU_COURSES.K4, NBU_COURSES.K5, NBU_COURSES.C1, &#xD;
 NBU_COURSES.C2, NBU_COURSES.C3, NBU_COURSES.C4, &#xD;
-NBU_COURSES.C6, NBU_COURSE_WORKLOAD.J&#xD;
+NBU_COURSES.C6, NBU_COURSE_WORKLOAD.J,&#xD;
+NBU_COURSES.XYZCBL&#xD;
 order by nbu_course_workload.kcmc1&#xD;
 </sql>
   </actionModel>

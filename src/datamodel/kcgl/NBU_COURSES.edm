@@ -77,10 +77,13 @@
     <item caption="C3实训课程标准班人数" colName="C3" groupName="" length="" name="C3" type="double">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="C4课程设计、实习标准班人数" colName="C4" groupName="" length="" name="C4" type="double">
+    <item caption="C4课程设计、实习标准班人数" colName="C4" foreignName="" groupName="" length="" name="C4" type="double">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="C6测试类课程标准班人数" colName="C6" groupName="" length="" name="C6" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="学院自筹学时比例" colName="XYZCBL" groupName="" length="50" name="XYZCBL" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <rowFactors>

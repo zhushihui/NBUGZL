@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
-  <bizModel mainDataModel="NBU_COURSES" name="JY_DATA_IMPORT" order="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,ISFP,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,FATHERID,KCID,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,KCID_1,DWMC">
+  <bizModel mainDataModel="NBU_COURSES" name="JY_DATA_IMPORT" order="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,ISFP,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,FATHERID,KCID,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,KCID_1,DWMC,XYZCBL">
     <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,GROUPS:GROUPS,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN,ISFP:ISFP,KCMC1:KCMC1,KCID:KCID_1" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
       <item groupName="" name="CWID" originName="CWID">
         <attribute name="web.hidden" value="true"/>
@@ -58,7 +58,7 @@
       <item groupName="" name="XSFLID" originName="XSFLID"/>
       <item groupName="" name="FATHERID" originName="FATHERID"/>
     </dataModelRef>
-    <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCID:KCID,KCMC:KCMC,KCYWMC:KCYWMC,XX0301ID:XX0301ID,XF:XF,ZXS:ZXS,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
+    <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCID:KCID,KCMC:KCMC,KCYWMC:KCYWMC,XX0301ID:XX0301ID,XF:XF,ZXS:ZXS,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6,XYZCBL:XYZCBL" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
       <item groupName="" name="KCID" originName="KCID">
         <attribute name="web.hidden" value="true"/>
       </item>
@@ -97,6 +97,7 @@
       <item groupName="" name="C3" originName="C3"/>
       <item groupName="" name="C4" originName="C4"/>
       <item groupName="" name="C6" originName="C6"/>
+      <item groupName="" name="XYZCBL" originName="XYZCBL"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="DWMC:DWMC" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
       <item groupName="" name="DWMC" originName="DWMC">

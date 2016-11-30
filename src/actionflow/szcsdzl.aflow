@@ -314,6 +314,7 @@
         <expression>$szcskc.KCID:=param.KCID</expression>
         <expression>$szcsj.KCID:=param.KCID</expression>
         <expression>$szcskc.WORKTYPE:=param.WORKTYPE</expression>
+        <expression>$szcskc.XYZCBL:=param.XYZCBL</expression>
       </assignment>
     </actionFlow>
   </model:Model>
