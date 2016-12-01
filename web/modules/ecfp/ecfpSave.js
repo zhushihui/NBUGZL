@@ -53,10 +53,10 @@ define(function(require, exports, module) {
         				this.popupDialogDanger('D6')
         			);
         		}else{
-        			BH_UTILS.bhDialogSuccess({
-                        title:'操作提示',
-                        content:'是否进行二次分配',
-                        buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
+//        			BH_UTILS.bhDialogSuccess({
+//                        title:'操作提示',
+//                        content:'是否进行二次分配',
+//                        buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
                         	var otherData = JSON.parse($('#d_param').val());  
                 			//计算D1-D6
                 			formData.D1 = otherData.D1==null?0:otherData.D1*formData.D1_1;
@@ -121,25 +121,25 @@ define(function(require, exports, module) {
                 			//使用二次分配工作流
                 			BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', param).done(function(data){
                 				if(data.code == "0"){
-                					BH_UTILS.bhDialogSuccess({
-                                        title:'操作提示',
-                                        content:'二次分配成功',
-                                        callback:function(){
-                                        }
-                                    });
+//                					BH_UTILS.bhDialogSuccess({
+//                                        title:'操作提示',
+//                                        content:'二次分配成功',
+//                                        callback:function(){
+//                                        }
+//                                    });
                 					$('#emapdatatable').emapdatatable('reload');
                 					$.bhPaperPileDialog.hide();//关闭当前弹窗
                 				}else{
                 					BH_UTILS.bhDialogDanger({
                                         title:'操作提示',
-                                        content:'二次分配失败',
+                                        content:'拆分失败',
                                         buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
                                     });
                 				}
                 			});
-                        }},{text:'取消',className:'bh-btn-warning',callback:function(){                        	
-                        }}]
-                    });
+//                        }},{text:'取消',className:'bh-btn-warning',callback:function(){                        	
+//                        }}]
+//                    });
         		}
         	}
         }

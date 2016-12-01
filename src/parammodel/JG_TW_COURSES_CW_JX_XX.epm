@@ -124,7 +124,9 @@
       <item groupName="" name="WORKTYPE" originName="WORKTYPE">
         <attribute name="web.form.hidden" value="true"/>
       </item>
-      <item groupName="" name="TYPE" originName="TYPE"/>
+      <item caption="数据类型" groupName="" name="TYPE" originName="TYPE">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
       <item groupName="" name="REM_1" originName="REM"/>
       <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
       <item groupName="" name="SUBJECTCLASS" originName="SUBJECTCLASS"/>

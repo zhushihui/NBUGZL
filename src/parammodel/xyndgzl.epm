@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
-  <bizModel name="xyndgzl" order="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,XX0301ID,DWH,DWMC,BZ,JX0404ID_2,XNXQ01ID,JX02ID,KSDW,XKRS,ZH,ZXS,XF,ISDEL,TZDLB,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW,KCID_1,KCMC,KCYWMC,XX0301ID_2,XF_1,ZXS_1,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,xueyuanD">
+  <bizModel name="xyndgzl" order="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,XX0301ID,DWH,DWMC,BZ,JX0404ID_2,XNXQ01ID,JX02ID,KSDW,XKRS,ZH,ZXS,XF,ISDEL,TZDLB,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW,KCID_1,KCMC,KCYWMC,XX0301ID_2,XF_1,ZXS_1,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,xueyuanD,GKDW_1">
     <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,KCID:KCID,GROUPS:GROUPS,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN,KCMC1:KCMC1" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
       <item groupName="" name="CWID" originName="CWID"/>
       <item groupName="" name="YEAR" originName="YEAR">
@@ -25,7 +25,7 @@
       <item groupName="" name="ZRN" originName="ZRN"/>
       <item groupName="" name="KCMC1" originName="KCMC1"/>
     </dataModelRef>
-    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,REM:REM,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1,XSFLID:XSFLID" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
+    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,REM:REM,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1,XSFLID:XSFLID,GKDW:GKDW_1" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
       <item groupName="" name="TW_ID" originName="TW_ID"/>
       <item groupName="" name="YEAR_1" originName="YEAR"/>
       <item groupName="" name="TERM_1" originName="TERM"/>
@@ -46,6 +46,13 @@
       <item groupName="" name="D6_1" originName="D6"/>
       <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
       <item groupName="" name="XSFLID" originName="XSFLID"/>
+      <item groupName="" name="GKDW_1" originName="GKDW">
+        <attribute name="useDicType" value="toDisplay"/>
+        <attribute name="web.xtype" value="select"/>
+        <attribute name="web.search.xtype" value="multi-select2"/>
+        <attribute name="builder" value="m_value_equal"/>
+        <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+      </item>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
       <item groupName="" name="XX0301ID" originName="XX0301ID"/>
