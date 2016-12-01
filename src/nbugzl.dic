@@ -8,4 +8,5 @@
   <dictionaryTable dataModelPath="src/action/jsdwzd.eda" dataModelProject="nbugzl" dicType="BASIC" id="0ea35516-01c3-4889-96f4-ac7de7f80db9" jsonCode="" keyColumn="JG0101ID" name="教师单位" orderColumn="JG0101ID" ref="" refAction="action:jsdwzd" refAllFields="true" valueColumn="XM">
     <jsonFrage></jsonFrage>
   </dictionaryTable>
+  <dictionaryTable dataModelPath="src/action/kchkcmczd.eda" dataModelProject="nbugzl" dicType="BASIC" id="197d1a61-6e2d-43f7-bbca-9bb4c8779aeb" keyColumn="KCID" name="课程号课程名称字典" orderColumn="KCID" ref="" refAction="action:kchkcmczd" refAllFields="true" valueColumn="KCMC"/>
 </dictionary:DictionaryTables>

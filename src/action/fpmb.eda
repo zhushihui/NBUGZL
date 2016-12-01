@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="分配模板" displayRef="biz:DT_JG_COURSES" displayRefInclude="KCID,KCMC,JG0101ID,XM,D1,D2,D4,D3,D5,D6,DTNAME" displayRefPath="src/parammodel/DT_JG_COURSES.epm" displayRefPrj="nbugzl" name="fpmb" paramRef="biz:DT_JG_COURSES" paramRefInclude="JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID,GKDW,DT_ID,KCID,JG0101ID,D,KCID_1,KCMC,KCYWMC,XX0301ID_1,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE_1,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,STATUS,DTNAME,TYPE,D1,D2,D4,D3,D5,D6" paramRefPath="src/parammodel/DT_JG_COURSES.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select &#xD;
+nbu_divide_template.kcid,nbu_courses.kcmc,&#xD;
+nbu_divide_template.jg0101id,jg0101.xm,&#xD;
+nbu_divide_template.D1,nbu_divide_template.D2,&#xD;
+nbu_divide_template.D3,nbu_divide_template.D4,&#xD;
+nbu_divide_template.D5,nbu_divide_template.D6,&#xD;
+nbu_divide_template.dtname&#xD;
+from nbu_courses,nbu_divide_template,jg0101&#xD;
+where nbu_courses.kcid = nbu_divide_template.kcid&#xD;
+and jg0101.jg0101id = nbu_divide_template.jg0101id&#xD;
+#sub[and $]&#xD;
+group by nbu_divide_template.dtname,&#xD;
+nbu_divide_template.kcid,nbu_courses.kcmc,&#xD;
+nbu_divide_template.jg0101id,jg0101.xm,&#xD;
+nbu_divide_template.D1,nbu_divide_template.D2,&#xD;
+nbu_divide_template.D3,nbu_divide_template.D4,&#xD;
+nbu_divide_template.D5,nbu_divide_template.D6</sql>
+  </actionModel>
+</model:Model>

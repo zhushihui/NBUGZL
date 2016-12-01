@@ -11,6 +11,7 @@
 			var view = utils.loadCompiledPage('ecfp');
             this.$rootElement.html(view.render({}), true);
             this.pushSubView([ecfpSave,ecfpChange]);//js界面添加
+            this.pushSubView(ecfpDivide);
             this.initView();
 
 			this.eventMap = {
@@ -40,6 +41,7 @@
 //            	}
 //            });
 //        },
+        
         //打开分配界面
  	   actionEdit: function(e){
         	var twid = $(e.target).attr("data-x-wid");
