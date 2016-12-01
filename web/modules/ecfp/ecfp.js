@@ -11,7 +11,6 @@
 			var view = utils.loadCompiledPage('ecfp');
             this.$rootElement.html(view.render({}), true);
             this.pushSubView([ecfpSave,ecfpChange]);//js界面添加
-            this.pushSubView(ecfpDivide);
             this.initView();
 
 			this.eventMap = {
