@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="学院教学工作量" conditionIndex="1" displayRef="biz:xyndgzl" displayRefInclude="ZRN,xueyuanD,GKDW_1" displayRefPath="src/parammodel/xyndgzl.epm" displayRefPrj="nbugzl" name="xyjxgzl" orderIndex="2" paramRef="biz:xyndgzl" paramRefInclude="CWID,YEAR,TERM,KCID,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,XX0301ID,DWH,DWMC,BZ,JX0404ID_2,XNXQ01ID,JX02ID,KSDW,XKRS,ZH,ZXS,XF,ISDEL,TZDLB,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,KCID_1,KCYWMC,XX0301ID_2,XF_1,ZXS_1,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,xueyuanD,KCMC1,GKDW_1" paramRefPath="src/parammodel/xyndgzl.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+  <actionModel caption="学院教学工作量" conditionIndex="1" displayRef="biz:xyndgzl" displayRefInclude="ZRN,xueyuanD,GKDW_1,TYPE" displayRefPath="src/parammodel/xyndgzl.epm" displayRefPrj="nbugzl" name="xyjxgzl" orderIndex="2" paramRef="biz:xyndgzl" paramRefInclude="CWID,YEAR,TERM,KCID,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,XX0301ID,DWH,DWMC,BZ,JX0404ID_2,XNXQ01ID,JX02ID,KSDW,XKRS,ZH,ZXS,XF,ISDEL,TZDLB,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,KCID_1,KCYWMC,XX0301ID_2,XF_1,ZXS_1,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,xueyuanD,KCMC1,GKDW_1" paramRefPath="src/parammodel/xyndgzl.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
     <sql>select&#xD;
+zrn,&#xD;
+xueyuanD,GKDW_1,type&#xD;
+from(select&#xD;
 nbu_course_workload.zrn,&#xD;
-round(sum(nbu_teacher_workload.D),3) as xueyuanD,nbu_teacher_workload.gkdw as GKDW_1 &#xD;
+round(sum(nbu_teacher_workload.D),3) as xueyuanD,nbu_teacher_workload.gkdw as GKDW_1,nbu_courses.type &#xD;
 from nbu_courses,nbu_teacher_workload,&#xD;
 nbu_course_workload&#xD;
 where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;
 and nbu_course_workload.kcid = nbu_courses.kcid&#xD;
 #sub[and $]&#xD;
-group by nbu_teacher_workload.gkdw,nbu_course_workload.zrn&#xD;
-#sub[order by $]</sql>
+group by nbu_teacher_workload.gkdw,nbu_course_workload.zrn,nbu_courses.type&#xD;
+#sub[order by $]) a where a.xueyuanD > 0</sql>
   </actionModel>
 </model:Model>

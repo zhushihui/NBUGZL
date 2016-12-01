@@ -52,6 +52,7 @@
         <attribute name="web.search.xtype" value="multi-select2"/>
         <attribute name="builder" value="m_value_equal"/>
         <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+        <attribute name="web.quickSearch" value="true"/>
       </item>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
@@ -90,7 +91,7 @@
       </item>
       <item groupName="" name="XX0301ID_1" originName="XX0301ID"/>
       <item groupName="" name="GKDW" originName="GKDW">
-        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.quickSearch" value="false"/>
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="web.xtype" value="select"/>
         <attribute name="web.search.quickSearchXtype" value="select"/>
@@ -115,7 +116,9 @@
       <item groupName="" name="SXXXS" originName="SXXXS"/>
       <item groupName="" name="ZS" originName="ZS"/>
       <item groupName="" name="WORKTYPE" originName="WORKTYPE"/>
-      <item groupName="" name="TYPE" originName="TYPE"/>
+      <item groupName="" name="TYPE" originName="TYPE">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
       <item groupName="" name="REM_1" originName="REM"/>
       <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
       <item groupName="" name="SUBJECTCLASS" originName="SUBJECTCLASS"/>
