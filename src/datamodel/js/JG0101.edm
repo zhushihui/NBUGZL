@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
   <dataModel name="JG0101" queryOrder="" type="table">
-    <item caption="教师ID" colName="JG0101ID" groupName="" length="32" name="JG0101ID" pK="true" type="String">
+    <item caption="教师身份证号" colName="JG0101ID" groupName="" length="32" name="JG0101ID" pK="true" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.hidden" value="true"/>
     </item>
@@ -46,6 +46,9 @@
       <attribute name="web.hidden" value="true"/>
       <attribute name="web.grid.hidden" value="true"/>
       <attribute name="web.search.hidden" value="true"/>
+    </item>
+    <item caption="教师类型" colName="STATUS" groupName="" length="20" name="STATUS" type="String">
+      <attribute name="enabled" value="true"/>
     </item>
     <rowFactors>
       <rowFactor id="fb0cc36a-914f-4e77-97ec-45e956842577" name="xueyuanguanliyuan">
