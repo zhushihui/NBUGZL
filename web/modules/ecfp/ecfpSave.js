@@ -11,11 +11,25 @@ define(function(require, exports, module) {
                 model: 'h',
                 root:WIS_EMAP_SERV.getContextPath()
             });
-            
+            var modecopy = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'mbkc', 'form');
+            $("#copyForm").emapForm({
+                data: modecopy,
+                model: 'h',
+                root:WIS_EMAP_SERV.getContextPath()
+            });
             this.eventMap = {
-                '[data-action=save]': this.save
+                '[data-action=save]': this.save,
+				"[data-action=manual]": this.actionManual,
+				"[data-action=copy]": this.actionCopy
             };
         },
+        actionManual :function() {
+        	alert("manual");
+        },
+        actionCopy : function() {
+        	alert("copy");
+        }
+        ,
         //分配保存
         save: function(){
         	if( $("#emapForm").emapValidate('validate') ){
