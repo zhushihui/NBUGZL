@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
-  <bizModel name="JG_XX" order="DWH,DWMC,JG0101ID,JGH,XM,SFZJLXM,SFZJH,XX0301ID,GKDW">
+  <bizModel mainDataModel="JG0101" name="JG_XX" order="DWH,DWMC,JG0101ID,JGH,XM,SFZJLXM,SFZJH,XX0301ID,GKDW,STATUS">
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="DWH:DWH,DWMC:DWMC" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
-      <item groupName="" name="DWH" originName="DWH"/>
+      <item groupName="" name="DWH" originName="DWH">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
       <item groupName="" name="DWMC" originName="DWMC">
         <attribute name="web.readonly" value="true"/>
+        <attribute name="web.quickSearch" value="false"/>
       </item>
     </dataModelRef>
-    <dataModelRef edmRef="src/datamodel/js/JG0101.edm" include="JG0101ID:JG0101ID,JGH:JGH,XM:XM,SFZJLXM:SFZJLXM,SFZJH:SFZJH,XX0301ID:XX0301ID,GKDW:GKDW" modelName="model:DB_EMAP_BIZ_BASE/JG0101" prjRef="nbugzl" tableAlias="JG0101">
-      <item groupName="" name="JG0101ID" originName="JG0101ID">
-        <attribute name="web.readonly" value="true"/>
+    <dataModelRef edmRef="src/datamodel/js/JG0101.edm" include="JG0101ID:JG0101ID,JGH:JGH,XM:XM,SFZJLXM:SFZJLXM,SFZJH:SFZJH,XX0301ID:XX0301ID,GKDW:GKDW,STATUS:STATUS" modelName="model:DB_EMAP_BIZ_BASE/JG0101" prjRef="nbugzl" tableAlias="JG0101">
+      <item caption="教师身份证号" groupName="" name="JG0101ID" originName="JG0101ID">
+        <attribute name="web.readonly" value="false"/>
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.hidden" value="false"/>
+        <attribute name="web.checkType" value="custom[chinaIdLoose]"/>
+        <attribute name="web.required" value="true"/>
       </item>
       <item groupName="" name="JGH" originName="JGH">
-        <attribute name="web.readonly" value="true"/>
+        <attribute name="web.readonly" value="false"/>
+        <attribute name="web.quickSearch" value="false"/>
       </item>
       <item groupName="" name="XM" originName="XM">
-        <attribute name="web.readonly" value="true"/>
+        <attribute name="web.readonly" value="false"/>
+        <attribute name="web.required" value="true"/>
       </item>
       <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
       <item groupName="" name="SFZJH" originName="SFZJH">
         <attribute name="web.readonly" value="true"/>
       </item>
-      <item groupName="" name="XX0301ID" originName="XX0301ID"/>
+      <item groupName="" name="XX0301ID" originName="XX0301ID">
+        <attribute name="web.form.hidden" value="false"/>
+        <attribute name="web.readonly" value="false"/>
+        <attribute name="web.required" value="true"/>
+      </item>
       <item groupName="" name="GKDW" originName="GKDW">
         <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
         <attribute name="builder" value="m_value_equal"/>
@@ -29,6 +42,10 @@
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
         <attribute name="web.quickSearch" value="true"/>
+      </item>
+      <item groupName="" name="STATUS" originName="STATUS">
+        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.form.hidden" value="true"/>
       </item>
     </dataModelRef>
   </bizModel>

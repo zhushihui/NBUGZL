@@ -16,15 +16,6 @@ define(function(require, exports, module) {
                 '[data-action=saveChange]': this.change
             };
         },
-        //修改保存
-        popupDialogDanger : function(od,nd) {
-        	var p = {
-        			title:'操作提示',
-                    content:od+'比例不能大于' + nd,
-                    buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
-        	return p;
-        },
-        
         change: function(){
         	if( $("#emapForm").emapValidate('validate') ){
         		//获取界面参数

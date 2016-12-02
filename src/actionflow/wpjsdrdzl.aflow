@@ -236,12 +236,12 @@
     <fonts name="Arial" size="8" italic="true"/>
   </pi:Diagram>
   <model:Model>
-    <actionFlow id="wpjsdrdzl" name="外聘教师导入动作流" displayRef="biz:JG_ZB_WP" displayRefInclude="JG0101ID_,XM_,DWH_,STATUS_" displayRefPath="src/parammodel/JG_ZB_WP.epm" displayRefPrj="nbugzl" showStackWhenError="true" stackName="wpjsdrdzl_stack">
+    <actionFlow id="wpjsdrdzl" name="外聘教师导入动作流" displayRef="biz:JG_XX" displayRefInclude="JG0101ID,XM,XX0301ID,STATUS" displayRefPath="src/parammodel/JG_XX.epm" displayRefPrj="nbugzl" showStackWhenError="true" stackName="wpjsdrdzl_stack">
       <begin id="begin" name="开始">
         <path id="10c952bd-9769-4a8b-967d-19e7c2bc747a" name="" order="0" to="wpjsdr"/>
       </begin>
       <end id="end" name="结束"/>
-      <actionNode id="wpjsdr" name="外聘教师导入" edaRef="src/action/wpjsxz.eda" multiple="false" prjRef="nbugzl" ref="action:wpjsxz">
+      <actionNode id="wpjsdr" name="外聘教师导入" edaRef="src/datamodel/js/JG0101.edm" multiple="false" prjRef="nbugzl" ref="model:JG0101.SAVE">
         <path id="ca79340e-d2b1-4a59-a32b-10f9b451bcaa" name="" order="0" to="end"/>
       </actionNode>
     </actionFlow>

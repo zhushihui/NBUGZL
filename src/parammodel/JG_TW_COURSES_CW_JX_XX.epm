@@ -126,6 +126,7 @@
       </item>
       <item caption="数据类型" groupName="" name="TYPE" originName="TYPE">
         <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.form.readonly" value="true"/>
       </item>
       <item groupName="" name="REM_1" originName="REM"/>
       <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
