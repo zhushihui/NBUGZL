@@ -4,6 +4,8 @@
     <actions>
       <action name="cxjsxx" ref="action:cxjsxx" url="src/action/cxjsxx.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="JG0101_SAVE" ref="model:JG0101.SAVE" url="src/datamodel/js/JG0101.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_WP_JG0101_SAVE" ref="model:NBU_WP_JG0101.SAVE" url="src/datamodel/js/NBU_WP_JG0101.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="wpjsdrdzl" ref="action:wpjsdrdzl" url="src/actionflow/wpjsdrdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

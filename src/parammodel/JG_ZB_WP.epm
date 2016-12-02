@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <bizModel name="JG_ZB_WP" order="JGH,SFZJLXM,SFZJH,XX0301ID,GKDW,JG0101ID,XM,JG0101ID_,XM_,DWH_,STATUS_">
+    <dataModelRef edmRef="src/datamodel/js/JG0101.edm" include="JGH:JGH,SFZJLXM:SFZJLXM,SFZJH:SFZJH,XX0301ID:XX0301ID,GKDW:GKDW" modelName="model:DB_EMAP_BIZ_BASE/JG0101" prjRef="nbugzl" tableAlias="JG0101">
+      <item groupName="" name="JGH" originName="JGH"/>
+      <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
+      <item groupName="" name="SFZJH" originName="SFZJH"/>
+      <item groupName="" name="XX0301ID" originName="XX0301ID"/>
+      <item groupName="" name="GKDW" originName="GKDW"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/js/NBU_WP_JG0101.edm" include="JG0101ID:JG0101ID,XM:XM" modelName="model:DB_EMAP_BIZ_BASE/NBU_WP_JG0101" prjRef="nbugzl" tableAlias="NBU_WP_JG0101">
+      <item caption="教工号" groupName="" name="JG0101ID" originName="JG0101ID"/>
+      <item caption="姓名" groupName="" name="XM" originName="XM"/>
+    </dataModelRef>
+    <item caption="教工号" colName="JG0101ID_" custom="true" length="50" name="JG0101ID_" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="web.quickSearch" value="true"/>
+    </item>
+    <item caption="姓名" colName="XM_" custom="true" length="50" name="XM_" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="web.quickSearch" value="true"/>
+    </item>
+    <item caption="单位名称" colName="DWH_" custom="true" length="20" name="DWH_" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="useDicType" value="toDisplay"/>
+      <attribute name="web.xtype" value="select"/>
+      <attribute name="web.search.xtype" value="multi-select2"/>
+      <attribute name="builder" value="m_value_equal"/>
+      <attribute name="dic" value="b96531c3-3a81-433a-ba36-aa8c5eec2c3f"/>
+    </item>
+    <item caption="教师类型" colName="STATUS_" custom="true" length="20" name="STATUS_" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="web.quickSearch" value="true"/>
+      <attribute name="web.form.hidden" value="true"/>
+    </item>
+  </bizModel>
+</model:Model>
