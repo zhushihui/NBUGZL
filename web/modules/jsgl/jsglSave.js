@@ -18,7 +18,13 @@ define(function(require, exports, module) {
         save: function(){
         	if( $("#emapForm").emapValidate('validate') ){
         		var formData = $("#emapForm").emapForm("getValue");
-        		bs.save(formData).done(function(data){
+        		var convertData = {
+        				JG0101ID : formData.JG0101ID_,
+        				XM : formData.XM_,
+        				DWH : formData.DWH_,
+        				STATUS : formData.STATUS_	
+        		}
+        		bs.save(convertData).done(function(data){
     				//alert("数据保存成功");
         			
         			BH_UTILS.bhDialogSuccess({

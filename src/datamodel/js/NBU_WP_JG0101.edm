@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="NBU_WP_JG0101" queryOrder="" type="table">
+    <item caption="" colName="JG0101ID" groupName="" length="50" name="JG0101ID" pK="true" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="" colName="XM" groupName="" length="50" name="XM" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="" colName="DWH" groupName="" length="20" name="DWH" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="" colName="STATUS" groupName="" length="20" name="STATUS" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

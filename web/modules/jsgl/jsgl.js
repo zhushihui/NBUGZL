@@ -13,12 +13,12 @@
             this.initView();
 
 			this.eventMap = {
-//				"[data-action=add]": this.actionAdd,
+				"[data-action=add]": this.actionAdd,
 				"[data-action=edit]": this.actionEdit,
 //				"[data-action=detail]": this.actionDetail,
 //				"[data-action=delete]": this.actionDelete,
-//				"[data-action=export]": this.actionExport,
-//				"[data-action=import]": this.actionImport,
+				"[data-action=export]": this.actionExport,
+				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn
 			};
 		},
@@ -28,21 +28,21 @@
             this._initTable();
         },
 
-//        actionAdd: function(){
-//        	var jsglNewTpl = utils.loadCompiledPage('jsglSave');
-//        	$.bhPaperPileDialog.show({
-//        		content: jsglNewTpl.render({}),
-//        		title: "新建",
-//        		ready: function($header, $body, $footer){
-//        			jsglSave.initialize();
-//            	}
-//            });
-//        },
+        actionAdd: function(){
+        	var jsglNewTpl = utils.loadCompiledPage('jsglSave');
+        	$.bhPaperPileDialog.show({
+        		content: jsglNewTpl.render({}),
+        		title: "新建",
+        		ready: function($header, $body, $footer){
+        			jsglSave.initialize();
+            	}
+            });
+        },
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
         	var jsglEditTpl = utils.loadCompiledPage('jsglSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'cxjsxx', {JG0101ID:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'cxjsxx', {JG0101ID_:id});
         	
         	$.bhPaperPileDialog.show({
         		content: jsglEditTpl.render({}),
@@ -83,27 +83,31 @@
 //    		}
 //        },
         
-//        actionExport: function(){
-//        	bs.exportData({}).done(function(data){
-//        	});
-//        },
+        actionExport: function(){
+        	bs.exportData({}).done(function(data){
+        	});
+        },
 
-//		actionImport: function(){
-//        	$.emapImport({
-//	        	"contextPath": contextPath,
-//	        	"app": "nbugzl",
-//	        	"module": "modules",
-//	        	"page": "jsgl",
-//	        	"action": "cxjsxx",
-//	        	//"tplUrl": "modules/htgl/dataModel.T_JZG_HT.xls",
-//	        	"preCallback": function() {
-//	        	},
-//	        	"closeCallback": function() {
-//	        		$('#emapdatatable').emapdatatable('reload');
-//	        	},
-//	    	});
-//        },
-//        
+		actionImport: function(){
+			var params = {
+					"save" : "NBUGZL.src.com.wisedu.emap.nbugzl.service.ExternalImportSave"
+			};
+        	$.emapImport({
+	        	"contextPath": contextPath,
+	        	"app": "nbugzl",
+	        	"params" : params,
+	        	"module": "modules",
+	        	"page": "jsgl",
+	        	"action": "wpjsdrdzl",
+	        	"tplUrl": "modules/jsgl/JG_WP_TEACHER.xls",
+	        	"preCallback": function() {
+	        	},
+	        	"closeCallback": function() {
+	        		$('#emapdatatable').emapdatatable('reload');
+	        	},
+	    	});
+        },
+        
         actionCustomColumn: function(){
         	$('#emapdatatable').emapdatatable('selectToShowColumns');
         },
@@ -142,7 +146,12 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.JG0101ID + '>' + '编辑' + '</a>';
+                        	if (rowData.STATUS_ == '外聘') {
+                        		 return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.JG0101ID_ + '>' + '编辑' + '</a>';
+                        	} else {
+                        		return '无';
+                        	}
+                           
                         }
                     }
                 }]

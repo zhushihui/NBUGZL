@@ -16,11 +16,15 @@
     </item>
     <item caption="证件类型码" colName="SFZJLXM" groupName="" length="1" name="SFZJLXM" type="String">
       <attribute name="enabled" value="true"/>
+      <attribute name="web.hidden" value="true"/>
+      <attribute name="web.grid.hidden" value="true"/>
+      <attribute name="web.form.hidden" value="true"/>
     </item>
     <item caption="身份证号" colName="SFZJH" groupName="" length="20" name="SFZJH" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.hidden" value="true"/>
       <attribute name="web.grid.hidden" value="true"/>
+      <attribute name="web.form.hidden" value="true"/>
     </item>
     <item caption="单位名称" colName="XX0301ID" groupName="" length="32" name="XX0301ID" type="String">
       <attribute name="enabled" value="true"/>
@@ -30,6 +34,7 @@
       <attribute name="builder" value="m_value_equal"/>
       <attribute name="dic" value="b96531c3-3a81-433a-ba36-aa8c5eec2c3f"/>
       <attribute name="web.readonly" value="true"/>
+      <attribute name="web.form.hidden" value="true"/>
     </item>
     <item caption="归口单位" colName="GKDW" groupName="" length="60" name="GKDW" type="String">
       <attribute name="enabled" value="true"/>
@@ -38,6 +43,9 @@
       <attribute name="web.search.quickSearchXtype" value="multi-select2"/>
       <attribute name="builder" value="m_value_equal"/>
       <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+      <attribute name="web.hidden" value="true"/>
+      <attribute name="web.grid.hidden" value="true"/>
+      <attribute name="web.search.hidden" value="true"/>
     </item>
     <rowFactors>
       <rowFactor id="fb0cc36a-914f-4e77-97ec-45e956842577" name="xueyuanguanliyuan">
