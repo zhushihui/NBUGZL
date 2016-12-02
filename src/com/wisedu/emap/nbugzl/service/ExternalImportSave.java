@@ -17,7 +17,6 @@ import com.wisedu.emap.pedestal.app.IEmapAppContext;
 public class ExternalImportSave implements IImportSave {
 	@Autowired
 	IEmapAppContext appContext;
-	@Override
 	public String save(IEmapModel arg0, Map<?, ?> arg1) {
 		DaoParam dao = new DaoParam();
 		for (Map.Entry<?, ?> entry : arg1.entrySet()) {
