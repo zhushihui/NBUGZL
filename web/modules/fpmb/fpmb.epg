@@ -4,6 +4,9 @@
     <params/>
     <actions>
       <action name="fpmb" ref="action:fpmb" url="src/action/fpmb.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_DIVIDE_TEMPLATE_QUERY" ref="model:NBU_DIVIDE_TEMPLATE.QUERY" url="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_DIVIDE_TEMPLATE_DELETE" ref="model:NBU_DIVIDE_TEMPLATE.DELETE" url="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_DIVIDE_TEMPLATE_SAVE" ref="model:NBU_DIVIDE_TEMPLATE.SAVE" url="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

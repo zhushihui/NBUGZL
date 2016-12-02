@@ -24,10 +24,6 @@
     <item caption="分配状态（默认值为0）" colName="STATUS" groupName="" length="5" name="STATUS" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="模板名称" colName="DTNAME" groupName="" length="80" name="DTNAME" type="String">
-      <attribute name="enabled" value="true"/>
-      <attribute name="web.quickSearch" value="true"/>
-    </item>
     <item caption="D1分配比例" colName="D1" groupName="教师分配信息" length="20" name="D1" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.checkType" value="custom[number]"/>

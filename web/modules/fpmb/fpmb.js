@@ -42,7 +42,7 @@
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
         	var fpmbEditTpl = utils.loadCompiledPage('fpmbSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'fpmb', {WID:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'fpmb', {DT_ID:id});
         	
         	$.bhPaperPileDialog.show({
         		content: fpmbEditTpl.render({}),
@@ -74,7 +74,7 @@
     		var row = $("#emapdatatable").emapdatatable("checkedRecords");
     		if(row.length > 0){
     			var params = row.map(function(el){
-//    				return {XSBH:el.XSBH, XXX:el.XXX};	//模型主键
+    				return {DT_ID:el.DT_ID, XXX:el.XXX};	//模型主键
     			});
     			bs.del(params).done(function(data){
     				alert("数据删除成功");
@@ -140,8 +140,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="detail" data-x-wid=' + rowData.WID + '>' + '详情' + '</a>'+ 
-                            ' | <a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.WID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.DT_ID + '>' + '编辑' + '</a>';
                         }
                     }
                 }]
