@@ -21,7 +21,11 @@
 //				"[data-action=delete]": this.actionDelete,
 //				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
-				"[data-action=custom-column]": this.actionCustomColumn
+				"[data-action=custom-column]": this.actionCustomColumn,
+				"[data-action=getType]": this.getType
+//				"[data-action=copy]": this.actionCopy
+				
+				
 			};
 		},
 
@@ -40,7 +44,13 @@
 //            	}
 //            });
 //        },
-        
+        getType :function() {
+        	alert("manual");
+        },
+//        actionCopy : function() {
+//        	alert("copy");
+//        }
+//        ,
         //打开分配界面
  	   actionEdit: function(e){
         	var twid = $(e.target).attr("data-x-wid");

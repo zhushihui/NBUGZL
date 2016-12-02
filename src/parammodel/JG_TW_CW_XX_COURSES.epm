@@ -39,12 +39,12 @@
       <item groupName="" name="REM" originName="REM"/>
       <item groupName="" name="LOCKS_1" originName="LOCKS"/>
       <item groupName="" name="D_1" originName="D"/>
-      <item groupName="二次分配比例" name="D1_1" originName="D1"/>
-      <item groupName="二次分配比例" name="D2_1" originName="D2"/>
-      <item groupName="二次分配比例" name="D3_1" originName="D3"/>
-      <item groupName="二次分配比例" name="D4_1" originName="D4"/>
-      <item groupName="二次分配比例" name="D5_1" originName="D5"/>
-      <item groupName="二次分配比例" name="D6_1" originName="D6"/>
+      <item groupName="手工拆分" name="D1_1" originName="D1"/>
+      <item groupName="手工拆分" name="D2_1" originName="D2"/>
+      <item groupName="手工拆分" name="D3_1" originName="D3"/>
+      <item groupName="手工拆分" name="D4_1" originName="D4"/>
+      <item groupName="手工拆分" name="D5_1" originName="D5"/>
+      <item groupName="手工拆分" name="D6_1" originName="D6"/>
       <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
       <item groupName="" name="XSFLID" originName="XSFLID"/>
       <item groupName="" name="FATHERID" originName="FATHERID"/>
@@ -52,7 +52,7 @@
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
       <item groupName="" name="XX0301ID" originName="XX0301ID"/>
       <item groupName="" name="DWH" originName="DWH"/>
-      <item groupName="教师信息" name="DWMC" originName="DWMC">
+      <item groupName="" name="DWMC" originName="DWMC">
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="builder" value="m_value_equal"/>
         <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
@@ -66,7 +66,7 @@
     <dataModelRef edmRef="src/datamodel/js/JG0101.edm" include="JG0101ID:JG0101ID_1,JGH:JGH,XM:XM,SFZJLXM:SFZJLXM,SFZJH:SFZJH,XX0301ID:XX0301ID_1,GKDW:GKDW_1" modelName="model:DB_EMAP_BIZ_BASE/JG0101" prjRef="nbugzl" tableAlias="JG0101">
       <item caption="分配人" groupName="" name="JG0101ID_1" originName="JG0101ID"/>
       <item groupName="" name="JGH" originName="JGH"/>
-      <item groupName="教师信息" name="XM" originName="XM">
+      <item groupName="手工拆分" name="XM" originName="XM">
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="web.xtype" value="select"/>
         <attribute name="builder" value="m_value_equal"/>
@@ -96,7 +96,7 @@
       <item groupName="" name="SXXS" originName="SXXS"/>
       <item groupName="" name="SXXXS" originName="SXXXS"/>
       <item groupName="" name="ZS" originName="ZS"/>
-      <item groupName="二次分配比例" name="WORKTYPE" originName="WORKTYPE">
+      <item groupName="" name="WORKTYPE" originName="WORKTYPE">
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="web.xtype" value="select"/>
         <attribute name="web.search.quickSearchXtype" value="text"/>
