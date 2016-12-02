@@ -19,10 +19,9 @@ define(function(require, exports, module) {
         	if( $("#emapForm").emapValidate('validate') ){
         		var formData = $("#emapForm").emapForm("getValue");
         		var convertData = {
-        				JG0101ID : formData.JG0101ID_,
-        				XM : formData.XM_,
-        				DWH : formData.DWH_,
-        				STATUS : formData.STATUS_	
+        				JG0101ID : formData.JG0101ID,
+        				XM : formData.XM,
+        				XX0301ID : formData.XX0301ID
         		}
         		bs.save(convertData).done(function(data){
     				//alert("数据保存成功");

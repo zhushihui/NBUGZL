@@ -42,7 +42,7 @@
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
         	var jsglEditTpl = utils.loadCompiledPage('jsglSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'cxjsxx', {JG0101ID_:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'cxjsxx', {JG0101ID:id});
         	
         	$.bhPaperPileDialog.show({
         		content: jsglEditTpl.render({}),
@@ -95,8 +95,8 @@
         	$.emapImport({
 	        	"contextPath": contextPath,
 	        	"app": "nbugzl",
-	        	"params" : params,
 	        	"module": "modules",
+	        	"params" : params,
 	        	"page": "jsgl",
 	        	"action": "wpjsdrdzl",
 	        	"tplUrl": "modules/jsgl/JG_WP_TEACHER.xls",
@@ -146,8 +146,8 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                        	if (rowData.STATUS_ == '外聘') {
-                        		 return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.JG0101ID_ + '>' + '编辑' + '</a>';
+                        	if (rowData.STATUS == '外聘') {
+                        		 return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.JG0101ID + '>' + '编辑' + '</a>';
                         	} else {
                         		return '无';
                         	}

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="查询教师信息" conditionIndex="1" displayRef="biz:JG_ZB_WP" displayRefInclude="JG0101ID_,XM_,DWH_,STATUS_" displayRefPath="src/parammodel/JG_ZB_WP.epm" displayRefPrj="nbugzl" name="cxjsxx" paramRef="biz:JG_ZB_WP" paramRefInclude="JG0101ID_,XM_,DWH_,STATUS_" paramRefPath="src/parammodel/JG_ZB_WP.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select JG0101ID_,XM_,DWH_,STATUS_&#xD;
-from (&#xD;
-select JGH as JG0101ID_,XM as XM_ ,XX0301ID as DWH_,'在编' as STATUS_ from jg0101&#xD;
-union all&#xD;
-select JG0101ID as JG0101ID_ ,XM as XM_,DWH as DWH_,STATUS AS STATUS_ from nbu_wp_jg0101&#xD;
-)&#xD;
+  <actionModel caption="查询教师信息" conditionIndex="1" displayRef="biz:JG_XX" displayRefInclude="JG0101ID,XM,XX0301ID,STATUS" displayRefPath="src/parammodel/JG_XX.epm" displayRefPrj="nbugzl" name="cxjsxx" paramRef="biz:JG_XX" paramRefInclude="DWH,DWMC,JG0101ID,JGH,XM,SFZJLXM,SFZJH,XX0301ID,GKDW,STATUS" paramRefPath="src/parammodel/JG_XX.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select JG0101ID,XM,XX0301ID,STATUS&#xD;
+from jg0101&#xD;
 #sub[where $]</sql>
   </actionModel>
 </model:Model>

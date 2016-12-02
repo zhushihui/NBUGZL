@@ -23,18 +23,17 @@ public class ExternalImportSave implements IImportSave {
 		for (Map.Entry<?, ?> entry : arg1.entrySet()) {
 			System.out.println("key= " + entry.getKey() + " and value= "
 					+ entry.getValue());
-			dao.addParam((String) entry.getKey(), entry.getValue());
-			if(((String)entry.getKey()).equals("JG0101ID_")){
-				dao.addParam("JG0101ID", entry.getValue());
-			} else if (((String)entry.getKey()).equals("XM_")) {
-				dao.addParam("XM", entry.getValue());
-			} else if (((String)entry.getKey()).equals("DWH_")) {
-				dao.addParam("DWH", entry.getValue());
-			} else if (((String)entry.getKey()).equals("STATUS_")) {
-				dao.addParam("STATUS", entry.getValue());
+			String s = (String) entry.getKey();
+			if (s.equals("STATUS")) {
+				if(entry.getValue() == null || entry.getValue() == "") 
+					continue;
+				else 
+					dao.addParam(s, entry.getValue());
+			} else {
+				dao.addParam(s, entry.getValue());
 			}
 		}
-		DataModelContainer d1 = appContext.getDataModel("NBU_WP_JG0101");
+		DataModelContainer d1 = appContext.getDataModel("JG0101");
 		IDataModelUpdateAction a1 = d1.getUpdateAction(ActionType.SAVE);
 		a1.execute(dao);
 		return null;
