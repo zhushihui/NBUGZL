@@ -35,7 +35,74 @@
 			};
 			//选择字段导出
 			$('#emapdatatable').emapdatatable('selectColumnsExport', params);	
-		}
+		},
+		//二次分配界面,输入比例为分数时运算方法
+        popupGetScore : function(score){
+        	var result = 0;
+        	if(score.indexOf('/') > 0){//包含分号
+        		var scoreList = score.split('/');
+        		result = scoreList[0] / scoreList[1];
+        	}else{
+        		result = score;
+        	}
+        	return result;
+        },
+        //二次分配界面,输入比例是否合理
+        popupDialogDanger : function(str,od) {
+        	var p = {};
+        	//是否包含中文和英文
+        	if (escape(str).indexOf("%u") <0 && str.search(/[a-zA-Z]+/)==-1){
+        		if(this.popupGetScore(str) >1){//是否大于1
+            		p = {
+                			title:'操作提示',
+                            content:od+'比例只能小于等于1',
+                            buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
+                	BH_UTILS.bhDialogDanger(
+                			p
+                	);
+                	return false;
+            	}else{
+            		return true;
+            	}
+            }else {
+            	p = {
+            			title:'操作提示',
+                        content:'比例不能含有汉字和字母',
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
+        		BH_UTILS.bhDialogDanger(
+            			p
+            	);
+        		return false;
+        	}
+        },
+        //二次分配修改界面,输入比例是否合理
+        popupEditDialogDanger : function(str,od,nd) {
+        	var p = {};
+        	//是否包含中文和英文
+        	if (escape(str).indexOf("%u") <0 && str.search(/[a-zA-Z]+/)==-1){
+        		if(this.popupGetScore(str) >nd){//是否大于nd
+            		p = {
+                			title:'操作提示',
+                            content:od+'比例不能大于' + nd,
+                            buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
+                	BH_UTILS.bhDialogDanger(
+                			p
+                	);
+                	return false;
+            	}else{
+            		return true;
+            	}
+            }else {
+            	p = {
+            			title:'操作提示',
+                        content:'比例不能含有汉字和字母',
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
+        		BH_UTILS.bhDialogDanger(
+            			p
+            	);
+        		return false;
+        	}
+        }
 	};
 
 	return bs;

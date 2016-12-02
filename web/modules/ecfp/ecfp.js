@@ -60,24 +60,24 @@
         			//主列表教师的工作量比例
         			$("#d_param").val(JSON.stringify(dataThree));
         			//设置工作量比例是否可修改
-        			if(dataThree.D1 == "0"){
-        				$('input[name="D1_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D2 == "0"){
-        				$('input[name="D2_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D3 == "0"){
-        				$('input[name="D3_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D4 == "0"){
-        				$('input[name="D4_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D5 == "0"){
-        				$('input[name="D5_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D6 == "0"){
-        				$('input[name="D6_1"]').attr("disabled","true"); 
-        			}
+//        			if(dataThree.D1 == "0"){
+//        				$('input[name="D1_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D2 == "0"){
+//        				$('input[name="D2_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D3 == "0"){
+//        				$('input[name="D3_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D4 == "0"){
+//        				$('input[name="D4_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D5 == "0"){
+//        				$('input[name="D5_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D6 == "0"){
+//        				$('input[name="D6_1"]').attr("disabled","true"); 
+//        			}
             	}
             });
         },
@@ -101,24 +101,24 @@
         			//主列表教师的工作量比例
         			$("#d_param").val(JSON.stringify(dataThree));
         			//设置工作量比例是否可修改
-        			if(dataThree.D1 == "0"){
-        				$('input[name="D1_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D2 == "0"){
-        				$('input[name="D2_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D3 == "0"){
-        				$('input[name="D3_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D4 == "0"){
-        				$('input[name="D4_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D5 == "0"){
-        				$('input[name="D5_1"]').attr("disabled","true"); 
-        			}
-        			if(dataThree.D6 == "0"){
-        				$('input[name="D6_1"]').attr("disabled","true"); 
-        			}
+//        			if(dataThree.D1 == "0"){
+//        				$('input[name="D1_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D2 == "0"){
+//        				$('input[name="D2_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D3 == "0"){
+//        				$('input[name="D3_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D4 == "0"){
+//        				$('input[name="D4_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D5 == "0"){
+//        				$('input[name="D5_1"]').attr("disabled","true"); 
+//        			}
+//        			if(dataThree.D6 == "0"){
+//        				$('input[name="D6_1"]').attr("disabled","true"); 
+//        			}
             	}
             });
         },
