@@ -52,8 +52,9 @@
     </item>
     <rowFactors>
       <rowFactor id="fb0cc36a-914f-4e77-97ec-45e956842577" name="xueyuanguanliyuan">
-        <sql>jg0101.xx0301id IN&#xD;
-(select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
+        <sql>(jg0101.XX0301ID IN&#xD;
+(select XX0301ID from jg0101 where jg0101id=${custom.currentUserId}) &#xD;
+or jg0101.status = '外聘')</sql>
       </rowFactor>
     </rowFactors>
   </dataModel>
