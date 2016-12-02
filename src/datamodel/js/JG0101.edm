@@ -10,10 +10,9 @@
       <attribute name="web.quickSearch" value="true"/>
       <attribute name="web.readonly" value="true"/>
     </item>
-    <item caption="姓名" colName="XM" groupName="" length="30" name="XM" type="String">
+    <item caption="教师姓名" colName="XM" groupName="" length="30" name="XM" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
-      <attribute name="web.readonly" value="true"/>
     </item>
     <item caption="证件类型码" colName="SFZJLXM" groupName="" length="1" name="SFZJLXM" type="String">
       <attribute name="enabled" value="true"/>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page:Pages xmlns:page="http://www.wisedu.com/emap/model/page">
+  <page name="fpmb" desc="分配模板" permissionLevel="">
+    <params/>
+    <actions>
+      <action name="fpmb" ref="action:fpmb" url="src/action/fpmb.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+    </actions>
+  </page>
+</page:Pages>

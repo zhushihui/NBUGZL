@@ -40,6 +40,7 @@
 //            	}
 //            });
 //        },
+        
         //打开分配界面
  	   actionEdit: function(e){
         	var twid = $(e.target).attr("data-x-wid");
