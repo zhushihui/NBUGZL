@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="分配模板之是否有教师" displayRef="model:DB_EMAP_BIZ_BASE/NBU_DIVIDE_TEMPLATE" displayRefInclude="DT_ID,KCID,JG0101ID" displayRefPath="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" displayRefPrj="nbugzl" name="fpmbzsfyjs" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_DIVIDE_TEMPLATE" paramFixRefInclude="KCID,JG0101ID" paramFixRefPath="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" paramFixRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select #auto[select] from nbu_divide_template &#xD;
+#check[append=where] #auto[and,dynamic] #check[end=true]</sql>
+  </actionModel>
+</model:Model>

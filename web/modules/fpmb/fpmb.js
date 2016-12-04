@@ -30,11 +30,15 @@
 
         actionAdd: function(){
         	var fpmbNewTpl = utils.loadCompiledPage('fpmbSave');
+        	var data ={D1:0,D2:0,D3:0,D4:0,D5:0,D6:0};
+        	var datatwo = {type:'add'};
         	$.bhPaperPileDialog.show({
         		content: fpmbNewTpl.render({}),
         		title: "新建",
         		ready: function($header, $body, $footer){
         			fpmbSave.initialize();
+        			$("#emapForm").emapForm("setValue", data);
+        			$("#d_param").val(JSON.stringify(datatwo));
             	}
             });
         },
@@ -43,15 +47,14 @@
         	var id = $(e.target).attr("data-x-wid");
         	var fpmbEditTpl = utils.loadCompiledPage('fpmbSave');
         	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'fpmb', {DT_ID:id});
-        	
+        	var datatwo = {type:'edit',KCID:data.rows[0].KCID,JG0101ID:data.rows[0].JG0101ID};
         	$.bhPaperPileDialog.show({
         		content: fpmbEditTpl.render({}),
         		title: "编辑",
         		ready: function($header, $body, $footer){
         			fpmbSave.initialize();
-        			
         			$("#emapForm").emapForm("setValue", data.rows[0]);
-        			
+        			$("#d_param").val(JSON.stringify(datatwo));
             	}
             });
         },
@@ -74,7 +77,7 @@
     		var row = $("#emapdatatable").emapdatatable("checkedRecords");
     		if(row.length > 0){
     			var params = row.map(function(el){
-    				return {DT_ID:el.DT_ID, XXX:el.XXX};	//模型主键
+    				return {DT_ID:el.DT_ID};	//模型主键
     			});
     			bs.del(params).done(function(data){
     				alert("数据删除成功");

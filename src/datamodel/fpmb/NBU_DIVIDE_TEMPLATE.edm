@@ -12,6 +12,7 @@
       <attribute name="web.search.xtype" value="multi-select2"/>
       <attribute name="builder" value="m_value_equal"/>
       <attribute name="dic" value="197d1a61-6e2d-43f7-bbca-9bb4c8779aeb"/>
+      <attribute name="web.required" value="true"/>
     </item>
     <item caption="教师号" colName="JG0101ID" groupName="教师分配信息" length="32" name="JG0101ID" type="String">
       <attribute name="enabled" value="true"/>
@@ -20,33 +21,28 @@
       <attribute name="web.search.xtype" value="multi-select2"/>
       <attribute name="builder" value="m_value_equal"/>
       <attribute name="dic" value="0ea35516-01c3-4889-96f4-ac7de7f80db9"/>
+      <attribute name="web.required" value="true"/>
     </item>
     <item caption="分配状态（默认值为0）" colName="STATUS" groupName="" length="5" name="STATUS" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <item caption="D1分配比例" colName="D1" groupName="教师分配信息" length="20" name="D1" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.checkType" value="custom[number]"/>
     </item>
     <item caption="D2分配比例" colName="D2" groupName="教师分配信息" length="20" name="D2" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.checkType" value="custom[number]"/>
     </item>
     <item caption="D3分配比例" colName="D3" groupName="教师分配信息" length="20" name="D3" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.checkType" value="custom[number]"/>
     </item>
     <item caption="D4分配比例" colName="D4" groupName="教师分配信息" length="20" name="D4" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.checkType" value="custom[number]"/>
     </item>
     <item caption="D5分配比例" colName="D5" groupName="教师分配信息" length="20" name="D5" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.checkType" value="custom[number]"/>
     </item>
     <item caption="D6分配比例" colName="D6" groupName="教师分配信息" length="20" name="D6" type="String">
       <attribute name="enabled" value="true"/>
-      <attribute name="web.checkType" value="custom[number]"/>
     </item>
     <rowFactors/>
   </dataModel>

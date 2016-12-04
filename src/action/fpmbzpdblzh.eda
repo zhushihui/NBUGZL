@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配模板之判断比例之和" conditionIndex="" displayRef="model:DB_EMAP_BIZ_BASE/NBU_DIVIDE_TEMPLATE" displayRefInclude="D1,D2,D3,D4,D5,D6" displayRefPath="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" displayRefPrj="nbugzl" name="fpmbzpdblzh" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_DIVIDE_TEMPLATE" paramFixRefInclude="KCID" paramFixRefPath="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="KCID" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select &#xD;
+ case when sum(D1)=0 or sum(D1)=1&#xD;
+     then to_char(sum(D1),'FM9')&#xD;
+     else to_char(sum(D1),'FM0.99999999')&#xD;
+     end as D1&#xD;
+,case when sum(D2)=0 or sum(D2)=1&#xD;
+     then to_char(sum(D2),'FM9')&#xD;
+     else to_char(sum(D2),'FM0.99999999')&#xD;
+     end as D2&#xD;
+,case when sum(D3)=0 or sum(D3)=1&#xD;
+     then to_char(sum(D3),'FM9')&#xD;
+     else to_char(sum(D3),'FM0.99999999')&#xD;
+     end as D3&#xD;
+,case when sum(D4)=0 or sum(D4)=1&#xD;
+     then to_char(sum(D4),'FM9')&#xD;
+     else to_char(sum(D4),'FM0.99999999')&#xD;
+     end as D4&#xD;
+,case when sum(D5)=0 or sum(D5)=1&#xD;
+     then to_char(sum(D5),'FM9')&#xD;
+     else to_char(sum(D5),'FM0.99999999')&#xD;
+     end as D5&#xD;
+,case when sum(D6)=0 or sum(D6)=1&#xD;
+     then to_char(sum(D6),'FM9')&#xD;
+     else to_char(sum(D6),'FM0.99999999')&#xD;
+     end as D6 &#xD;
+from nbu_divide_template&#xD;
+where KCID = ?  </sql>
+  </actionModel>
+</model:Model>

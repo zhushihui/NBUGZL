@@ -17,6 +17,7 @@ nbu_divide_template.kcid,&#xD;
 nbu_divide_template.jg0101id,&#xD;
 nbu_divide_template.D1,nbu_divide_template.D2,&#xD;
 nbu_divide_template.D3,nbu_divide_template.D4,&#xD;
-nbu_divide_template.D5,nbu_divide_template.D6</sql>
+nbu_divide_template.D5,nbu_divide_template.D6&#xD;
+order by nbu_divide_template.kcid</sql>
   </actionModel>
 </model:Model>

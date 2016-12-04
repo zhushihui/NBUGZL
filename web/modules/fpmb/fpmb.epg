@@ -7,6 +7,9 @@
       <action name="NBU_DIVIDE_TEMPLATE_QUERY" ref="model:NBU_DIVIDE_TEMPLATE.QUERY" url="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="NBU_DIVIDE_TEMPLATE_DELETE" ref="model:NBU_DIVIDE_TEMPLATE.DELETE" url="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="NBU_DIVIDE_TEMPLATE_SAVE" ref="model:NBU_DIVIDE_TEMPLATE.SAVE" url="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbzpdblzh" ref="action:fpmbzpdblzh" url="src/action/fpmbzpdblzh.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbzsfyjs" ref="action:fpmbzsfyjs" url="src/action/fpmbzsfyjs.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbzxgpdblzh" ref="action:fpmbzxgpdblzh" url="src/action/fpmbzxgpdblzh.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>
