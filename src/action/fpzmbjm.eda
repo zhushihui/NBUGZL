@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="分配之模板界面" displayRef="biz:DIVIDE_TEMPLATE_COURSE" displayRefInclude="KCID" displayRefPath="src/parammodel/DIVIDE_TEMPLATE_COURSE.epm" displayRefPrj="nbugzl" name="fpzmbjm" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select kcid from NBU_DIVIDE_TEMPLATE&#xD;
+group by kcid</sql>
+  </actionModel>
+</model:Model>

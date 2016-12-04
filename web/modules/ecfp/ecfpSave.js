@@ -11,7 +11,7 @@ define(function(require, exports, module) {
                 model: 'h',
                 root:WIS_EMAP_SERV.getContextPath()
             });
-            var modecopy = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'mbkc', 'form');
+            var modecopy = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'fpzmbjm', 'form');
             $("#copyForm").emapForm({
                 data: modecopy,
                 model: 'h',
@@ -32,6 +32,7 @@ define(function(require, exports, module) {
         ,
         //分配保存
         save: function(){
+        	var moderData = $("#copyForm").emapForm("getValue");
         	if( $("#emapForm").emapValidate('validate') ){
         		//获取界面参数
         		var formData = $("#emapForm").emapForm("getValue");
@@ -113,24 +114,24 @@ define(function(require, exports, module) {
         			var param = {'pdsfyjs':sendParam1,'pdfidsfxt':sendParam1_1,'xjjsgzl':sendParam2,'xgjsgzl':sendParam3,
         					'xgjjsgzl':sendParam4,'zhjsgzl':sendParam5,'gxjsgzld':sendParam6,'xgyfpkczt':sendParam7};
         			//使用二次分配工作流
-                			BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', param).done(function(data){
-                				if(data.code == "0"){
-//                					BH_UTILS.bhDialogSuccess({
+//                			BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', param).done(function(data){
+//                				if(data.code == "0"){
+////                					BH_UTILS.bhDialogSuccess({
+////                                        title:'操作提示',
+////                                        content:'二次分配成功',
+////                                        callback:function(){
+////                                        }
+////                                    });
+//                					$('#emapdatatable').emapdatatable('reload');
+//                					$.bhPaperPileDialog.hide();//关闭当前弹窗
+//                				}else{
+//                					BH_UTILS.bhDialogDanger({
 //                                        title:'操作提示',
-//                                        content:'二次分配成功',
-//                                        callback:function(){
-//                                        }
+//                                        content:'拆分失败',
+//                                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
 //                                    });
-                					$('#emapdatatable').emapdatatable('reload');
-                					$.bhPaperPileDialog.hide();//关闭当前弹窗
-                				}else{
-                					BH_UTILS.bhDialogDanger({
-                                        title:'操作提示',
-                                        content:'拆分失败',
-                                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-                                    });
-                				}
-                			});
+//                				}
+//                			});
                 			
 //                        }},{text:'取消',className:'bh-btn-warning',callback:function(){                        	
 //                        }}]
