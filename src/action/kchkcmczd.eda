@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
   <actionModel caption="课程号课程名称字典" conditionIndex="" displayRef="biz:COURSE_CW" displayRefInclude="KCID,KCMC" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="kchkcmczd" paramFixRef="" paramFixRefInclude="KCID,KCMC" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select  b.kcid,b.kcid ||'-'|| a.kcmc as kcmc&#xD;
-from nbu_courses a,nbu_course_workload b&#xD;
-where a.kcid = b.kcid&#xD;
-and a.type = '课堂教学'&#xD;
+    <sql>select  nbu_course_workload.kcid,nbu_course_workload.kcid ||'-'|| nbu_courses.kcmc as kcmc&#xD;
+from nbu_courses,nbu_course_workload&#xD;
+where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
+and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]</sql>
   </actionModel>
 </model:Model>
