@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="课程工作量" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCID,KCMC,GROUPS,R,D,D1,D2,D3,D4,D5,D6,WORKTYPE" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="kcgzl" paramRef="biz:COURSE_CW" paramRefInclude="YEAR,TERM,WORKTYPE,KCID,GROUPS,KCMC,R,WEEKS,D,D1,D2,D3,D4,D5,D6" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select #auto[select]&#xD;
+  <actionModel caption="课程工作量" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCHZH,KCMC,R,D,D1,D2,D3,D4,D5,D6,WORKTYPE" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="kcgzl" paramRef="biz:COURSE_CW" paramRefInclude="YEAR,TERM,WORKTYPE,KCID,GROUPS,KCMC,R,WEEKS,D,D1,D2,D3,D4,D5,D6" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select nbu_course_workload.YEAR,nbu_course_workload.TERM,&#xD;
+nbu_course_workload.KCID || '-' || nbu_course_workload.GROUPS as KCHZH,&#xD;
+nbu_courses.kcmc,nbu_course_workload.R,nbu_course_workload.D,&#xD;
+nbu_course_workload.D1,nbu_course_workload.D2,nbu_course_workload.D3,&#xD;
+nbu_course_workload.D4,nbu_course_workload.D5,nbu_course_workload.D6,&#xD;
+nbu_courses.WORKTYPE&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
 and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
