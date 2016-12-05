@@ -4,6 +4,7 @@
     <sql>select  b.kcid,b.kcid ||'-'|| a.kcmc as kcmc&#xD;
 from nbu_courses a,nbu_course_workload b&#xD;
 where a.kcid = b.kcid&#xD;
+and a.type = '课堂教学'&#xD;
 #sub[and $]</sql>
   </actionModel>
 </model:Model>
