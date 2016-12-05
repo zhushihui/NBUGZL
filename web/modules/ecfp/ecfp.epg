@@ -8,6 +8,9 @@
       <action name="ecfpxgdzl" ref="action:ecfpxgdzl" url="src/actionflow/ecfpxgdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfpxgscdzl" ref="action:ecfpxgscdzl" url="src/actionflow/ecfpxgscdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="fpzmbjm" ref="action:fpzmbjm" url="src/action/fpzmbjm.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbzpdblzh" ref="action:fpmbzpdblzh" url="src/action/fpmbzpdblzh.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="ecfpmbdzl" ref="action:ecfpmbdzl" url="src/actionflow/ecfpmbdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="ecfpmbqsdzl" ref="action:ecfpmbqsdzl" url="src/actionflow/ecfpmbqsdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

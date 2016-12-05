@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="分配模板" displayRef="biz:DT_JG_COURSES" displayRefInclude="DT_ID,KCID,JG0101ID,D1,D2,D4,D3,D5,D6" displayRefPath="src/parammodel/DT_JG_COURSES.epm" displayRefPrj="nbugzl" name="fpmb" paramRef="biz:DT_JG_COURSES" paramRefInclude="JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID,GKDW,DT_ID,KCID,JG0101ID,KCID_1,KCMC,KCYWMC,XX0301ID_1,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE_1,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,STATUS,D1,D2,D4,D3,D5,D6" paramRefPath="src/parammodel/DT_JG_COURSES.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+  <actionModel caption="分配模板" displayRef="biz:DT_JG_COURSES" displayRefInclude="DT_ID,KCID,JG0101ID,D1,D2,D3,D4,D5,D6" displayRefPath="src/parammodel/DT_JG_COURSES.epm" displayRefPrj="nbugzl" name="fpmb" paramRef="biz:DT_JG_COURSES" paramRefInclude="JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID,GKDW,DT_ID,KCID,JG0101ID,KCID_1,KCMC,KCYWMC,XX0301ID_1,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE_1,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,STATUS,D1,D2,D4,D3,D5,D6" paramRefPath="src/parammodel/DT_JG_COURSES.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
     <sql>select  nbu_divide_template.dt_id,&#xD;
 nbu_divide_template.kcid,&#xD;
 nbu_divide_template.jg0101id,&#xD;

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <bizModel name="DIVIDE_TEMPLATE_TEACHER">
+    <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR,TERM:TERM,JG0101ID:JG0101ID,CWID:CWID,GKDW:GKDW,REM:REM,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,XSFLID:XSFLID,FATHERID:FATHERID" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
+      <item groupName="" name="TW_ID" originName="TW_ID"/>
+      <item groupName="" name="YEAR" originName="YEAR"/>
+      <item groupName="" name="TERM" originName="TERM"/>
+      <item groupName="" name="JG0101ID" originName="JG0101ID"/>
+      <item groupName="" name="CWID" originName="CWID"/>
+      <item groupName="" name="GKDW" originName="GKDW"/>
+      <item groupName="" name="REM" originName="REM"/>
+      <item groupName="" name="LOCKS" originName="LOCKS"/>
+      <item groupName="" name="D" originName="D"/>
+      <item groupName="" name="D1" originName="D1"/>
+      <item groupName="" name="D2" originName="D2"/>
+      <item groupName="" name="D3" originName="D3"/>
+      <item groupName="" name="D4" originName="D4"/>
+      <item groupName="" name="D5" originName="D5"/>
+      <item groupName="" name="D6" originName="D6"/>
+      <item groupName="" name="JX0404ID" originName="JX0404ID"/>
+      <item groupName="" name="XSFLID" originName="XSFLID"/>
+      <item groupName="" name="FATHERID" originName="FATHERID"/>
+    </dataModelRef>
+    <dataModelRef edmRef="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" include="DT_ID:DT_ID,KCID:KCID,JG0101ID:JG0101ID_1,STATUS:STATUS,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1" modelName="model:DB_EMAP_BIZ_BASE/NBU_DIVIDE_TEMPLATE" prjRef="nbugzl" tableAlias="NBU_DIVIDE_TEMPLATE">
+      <item groupName="" name="DT_ID" originName="DT_ID"/>
+      <item groupName="课程信息" name="KCID" originName="KCID"/>
+      <item groupName="教师分配信息" name="JG0101ID_1" originName="JG0101ID"/>
+      <item groupName="" name="STATUS" originName="STATUS"/>
+      <item groupName="教师分配信息" name="D1_1" originName="D1"/>
+      <item groupName="教师分配信息" name="D2_1" originName="D2"/>
+      <item groupName="教师分配信息" name="D3_1" originName="D3"/>
+      <item groupName="教师分配信息" name="D4_1" originName="D4"/>
+      <item groupName="教师分配信息" name="D5_1" originName="D5"/>
+      <item groupName="教师分配信息" name="D6_1" originName="D6"/>
+    </dataModelRef>
+  </bizModel>
+</model:Model>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配调用模板之创建新教师" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpdymbzcjxjs" orderIndex="" paramFixRef="biz:DIVIDE_TEMPLATE_TEACHER" paramFixRefInclude="YEAR,TERM,CWID,D1,D2,D3,D4,D5,D6,JX0404ID,XSFLID,KCID" paramFixRefPath="src/parammodel/DIVIDE_TEMPLATE_TEACHER.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql> insert into nbu_teacher_workload &#xD;
+ (year,term,jg0101id,cwid,gkdw,locks,D,D1,D2,D3,D4,D5,D6,jx0404id,xsflid)&#xD;
+ select ?,?,p.JG0101ID,?,p.GKDW,'0',0,&#xD;
+ case when ?!=0 then p.D1 else '0' end as D1,&#xD;
+ case when ?!=0 then p.D2 else '0' end as D2,&#xD;
+ case when ?!=0 then p.D3 else '0' end as D3,&#xD;
+ case when ?!=0 then p.D4 else '0' end as D4,&#xD;
+ case when ?!=0 then p.D5 else '0' end as D5,&#xD;
+ case when ?!=0 then p.D6 else '0' end as D6,&#xD;
+  ?,? &#xD;
+ from (select a.KCID,a.JG0101ID,b.GKDW,a.D1,a.D2,a.D3,a.D4,a.D5,a.D6 &#xD;
+ from nbu_divide_template a,jg0101 b &#xD;
+ where a.jg0101id= b.jg0101id and  a.KCID = ?) p</sql>
+  </actionModel>
+</model:Model>
