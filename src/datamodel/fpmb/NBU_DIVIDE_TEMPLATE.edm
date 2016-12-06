@@ -44,6 +44,11 @@
     <item caption="D6分配比例" colName="D6" groupName="教师分配信息" length="20" name="D6" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <rowFactors/>
+    <rowFactors>
+      <rowFactor id="8f2db08b-5f18-4e05-9074-5188ba3faa8e" name="xueyuanguanliyuan">
+        <sql>nbu_courses.xx0301id IN&#xD;
+(select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
+      </rowFactor>
+    </rowFactors>
   </dataModel>
 </model:Model>

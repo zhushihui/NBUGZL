@@ -3,5 +3,6 @@
   <role id="xygly" name="学院管理员" type="DATA">
     <data edmRef="src/datamodel/kcgl/NBU_COURSES.edm" factor="xueyuanguanliyuan_ecfp" id="b430ad2a-88fc-4ad5-804e-d560f1ec53a2" model="NBU_COURSES" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/js/JG0101.edm" factor="xueyuanguanliyuan" id="4d85ea3a-dfff-4f6a-9bd2-1248530e53d7" model="JG0101" prjRef="nbugzl"/>
+    <data edmRef="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" factor="xueyuanguanliyuan" id="8f2db08b-5f18-4e05-9074-5188ba3faa8e" model="NBU_DIVIDE_TEMPLATE" prjRef="nbugzl"/>
   </role>
 </role:Roles>
