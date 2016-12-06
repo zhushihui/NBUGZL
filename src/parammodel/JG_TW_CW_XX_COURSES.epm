@@ -19,7 +19,7 @@
       <item groupName="" name="LOCKS" originName="LOCKS"/>
       <item groupName="" name="D" originName="D"/>
       <item caption="D1比例（理论）" groupName="" name="D1" originName="D1"/>
-      <item caption="D2比例（实践）" groupName="" name="D2" originName="D2"/>
+      <item caption="D2比例（实验）" groupName="" name="D2" originName="D2"/>
       <item caption="D3比例（实训）" groupName="" name="D3" originName="D3"/>
       <item caption="D4比例（实习）" groupName="" name="D4" originName="D4"/>
       <item caption="D5比例（毕业设计）" groupName="" name="D5" originName="D5"/>
@@ -39,12 +39,12 @@
       <item groupName="" name="REM" originName="REM"/>
       <item groupName="" name="LOCKS_1" originName="LOCKS"/>
       <item groupName="" name="D_1" originName="D"/>
-      <item groupName="手工拆分" name="D1_1" originName="D1"/>
-      <item groupName="手工拆分" name="D2_1" originName="D2"/>
-      <item groupName="手工拆分" name="D3_1" originName="D3"/>
-      <item groupName="手工拆分" name="D4_1" originName="D4"/>
-      <item groupName="手工拆分" name="D5_1" originName="D5"/>
-      <item groupName="手工拆分" name="D6_1" originName="D6"/>
+      <item caption="工作总量比例1（理论）" groupName="手工拆分" name="D1_1" originName="D1"/>
+      <item caption="工作总量比例2（实验）" groupName="手工拆分" name="D2_1" originName="D2"/>
+      <item caption="工作总量比例3（实训）" groupName="手工拆分" name="D3_1" originName="D3"/>
+      <item caption="工作总量比例4（实习）" groupName="手工拆分" name="D4_1" originName="D4"/>
+      <item caption="工作总量比例5（毕业设计）" groupName="手工拆分" name="D5_1" originName="D5"/>
+      <item caption="工作总量比例6（测试类教学）" groupName="手工拆分" name="D6_1" originName="D6"/>
       <item groupName="" name="JX0404ID_1" originName="JX0404ID"/>
       <item groupName="" name="XSFLID" originName="XSFLID"/>
       <item groupName="" name="FATHERID" originName="FATHERID"/>

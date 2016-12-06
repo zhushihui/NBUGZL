@@ -26,22 +26,22 @@
     <item caption="分配状态（默认值为0）" colName="STATUS" groupName="" length="5" name="STATUS" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D1分配比例" colName="D1" groupName="教师分配信息" length="20" name="D1" type="String">
+    <item caption="D1分配比例（理论）" colName="D1" groupName="教师分配信息" length="20" name="D1" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D2分配比例" colName="D2" groupName="教师分配信息" length="20" name="D2" type="String">
+    <item caption="D2分配比例（实验）" colName="D2" groupName="教师分配信息" length="20" name="D2" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D3分配比例" colName="D3" groupName="教师分配信息" length="20" name="D3" type="String">
+    <item caption="D3分配比例（实训）" colName="D3" groupName="教师分配信息" length="20" name="D3" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D4分配比例" colName="D4" groupName="教师分配信息" length="20" name="D4" type="String">
+    <item caption="D4分配比例（实习）" colName="D4" groupName="教师分配信息" length="20" name="D4" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D5分配比例" colName="D5" groupName="教师分配信息" length="20" name="D5" type="String">
+    <item caption="D5分配比例（毕业设计）" colName="D5" groupName="教师分配信息" length="20" name="D5" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="D6分配比例" colName="D6" groupName="教师分配信息" length="20" name="D6" type="String">
+    <item caption="D6分配比例（测试类教学）" colName="D6" groupName="教师分配信息" length="20" name="D6" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <rowFactors>
