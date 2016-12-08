@@ -56,6 +56,9 @@
 (select XX0301ID from jg0101 where jg0101id=${custom.currentUserId}) &#xD;
 or jg0101.status = '外聘')</sql>
       </rowFactor>
+      <rowFactor id="585eb693-f32b-449a-b5bd-944aed293d5c" name="xuexiaoguanliyuan">
+        <sql>1=1</sql>
+      </rowFactor>
     </rowFactors>
   </dataModel>
 </model:Model>

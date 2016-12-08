@@ -49,6 +49,9 @@
         <sql>nbu_courses.xx0301id IN&#xD;
 (select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
       </rowFactor>
+      <rowFactor id="51db8ac7-9ad9-4a06-822e-23a1e6a67529" name="xuexiaoguanliyuan">
+        <sql>1=1</sql>
+      </rowFactor>
     </rowFactors>
   </dataModel>
 </model:Model>
