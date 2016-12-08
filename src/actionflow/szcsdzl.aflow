@@ -311,8 +311,8 @@
         <expression>$szcskc.C4:=param.C4</expression>
         <expression>$szcskc.C6:=param.C6</expression>
         <expression>$szcsj.J:=param.J</expression>
-        <expression>$szcskc.KCID:=param.KCID</expression>
-        <expression>$szcsj.KCID:=param.KCID</expression>
+        <expression>$szcskc.KCID:=param.KCID1</expression>
+        <expression>$szcsj.KCID:=param.KCID1</expression>
         <expression>$szcskc.WORKTYPE:=param.WORKTYPE</expression>
         <expression>$szcskc.XYZCBL:=param.XYZCBL</expression>
       </assignment>

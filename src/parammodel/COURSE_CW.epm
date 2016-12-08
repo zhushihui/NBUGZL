@@ -5,11 +5,11 @@
       <item groupName="" name="CWID" originName="CWID">
         <attribute name="web.hidden" value="true"/>
       </item>
-      <item groupName="课程信息" name="YEAR" originName="YEAR">
+      <item groupName="" name="YEAR" originName="YEAR">
         <attribute name="web.quickSearch" value="true"/>
         <attribute name="web.readonly" value="true"/>
       </item>
-      <item groupName="课程信息" name="TERM" originName="TERM">
+      <item groupName="" name="TERM" originName="TERM">
         <attribute name="web.quickSearch" value="true"/>
         <attribute name="web.readonly" value="true"/>
       </item>
@@ -30,7 +30,7 @@
         <attribute name="web.checkType" value="custom[number]"/>
       </item>
       <item caption="自然年" groupName="" name="ZRN" originName="ZRN"/>
-      <item groupName="" name="KCMC1" originName="KCMC1">
+      <item groupName="课程信息" name="KCMC1" originName="KCMC1">
         <attribute name="web.quickSearch" value="true"/>
       </item>
       <item groupName="" name="KCID" originName="KCID">
@@ -86,9 +86,9 @@
         <attribute name="web.checkType" value="custom[number]"/>
       </item>
       <item groupName="课程信息" name="XYZCBL" originName="XYZCBL"/>
-      <item groupName="" name="KCID1" originName="KCID"/>
+      <item groupName="课程信息" name="KCID1" originName="KCID"/>
     </dataModelRef>
-    <item caption="课程号组号" colName="KCHZH" custom="true" name="KCHZH" type="String">
+    <item caption="课程号组号" colName="KCHZH" custom="true" groupName="" name="KCHZH" type="String">
       <attribute name="enabled" value="true"/>
     </item>
   </bizModel>

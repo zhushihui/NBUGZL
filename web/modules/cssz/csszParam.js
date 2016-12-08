@@ -22,7 +22,7 @@ define(function(require, exports, module) {
 
         		var row = $("#emapdatatable").emapdatatable("checkedRecords");
 				for (var i = 0; i < row.length; i++) {
-					var KCID = row[i].KCID;
+					var KCID = row[i].KCID1;
 					var params = {
 						K4 : formData.K4,
 						K5 : formData.K5,
@@ -32,7 +32,7 @@ define(function(require, exports, module) {
 						C4 : formData.C4,
 						C6 : formData.C6,
 						J : formData.J,
-						KCID : KCID
+						KCID1 : KCID
 					};
 	        		bs.save(params).done(function(params){
 

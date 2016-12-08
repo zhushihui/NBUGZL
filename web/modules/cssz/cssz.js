@@ -37,7 +37,7 @@
              	var csszEditTpl = utils.loadCompiledPage('csszParam');
              	if (row.length > 0) {
          			var params = row.map(function(el){
-         				return {KCID:el.KCID, XXX:el.XXX};	//模型主键
+         				return {KCID1:el.KCID1, XXX:el.XXX};	//模型主键
          			});
                  	$.bhPaperPileDialog.show({
                  		content: csszEditTpl.render({}),
@@ -162,7 +162,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.KCID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.KCID1 + '>' + '编辑' + '</a>';
                         }
                     }
                 }]
