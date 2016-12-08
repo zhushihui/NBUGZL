@@ -53,7 +53,7 @@ select case when  b.jxxs&lt;>0 or b.xxxs&lt;>0 &#xD;
             when  b.jxxs=0 and b.syxs=0 and b.sjxs=0 and b.xxxs=0 and b.sxxs=0 and b.sxxxs =0 and (b.worktype='实习' or b.worktype='5')&#xD;
             then &#xD;
               case when b.c4&lt;>0 &#xD;
-              then round(a.J*b.k4*20*(b.zxs/32)*decode(floor(a.r/b.c4),0,1,a.r/b.c4),3)&#xD;
+              then round(a.J*b.k4*20*b.xf*decode(floor(a.r/b.c4),0,1,a.r/b.c4),3)&#xD;
               else 0&#xD;
               end&#xD;
             else 0&#xD;
