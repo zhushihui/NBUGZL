@@ -3,22 +3,24 @@
 	var utils = require('utils');
 	var bs = require('./ecfpBS');
 	var ecfpSave = require('./ecfpSave');
-	var ecfpChange = require('./ecfpSaveChange');//js界面创建
+	var ecfpChange = require('./ecfpSaveChange');
+	var ecfpEdit = require('./ecfpEdit');//js界面创建
 	var ecfpView = require('./ecfpView');
 
 	var viewConfig = {
 		initialize: function() {
 			var view = utils.loadCompiledPage('ecfp');
             this.$rootElement.html(view.render({}), true);
-            this.pushSubView([ecfpSave,ecfpChange]);//js界面添加
+            this.pushSubView([ecfpSave,ecfpChange,ecfpEdit]);//js界面添加
             this.initView();
 
 			this.eventMap = {
 //				"[data-action=add]": this.actionAdd,
-				"[data-action=edit]": this.actionEdit,
+				"[data-action=allot]": this.actionAllot,
 				"[data-action=change]": this.actionChange,
 //				"[data-action=detail]": this.actionDetail,
-//				"[data-action=delete]": this.actionDelete,
+				"[data-action=edit]": this.actionEdit,
+				"[data-action=delete]": this.actionDelete,
 //				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn,
@@ -51,8 +53,8 @@
 //        	alert("copy");
 //        }
 //        ,
-        //打开分配界面
- 	   actionEdit: function(e){
+        //打开分配添加界面
+        actionAllot: function(e){
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpEditTpl = utils.loadCompiledPage('ecfpSave');
         	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfp', {TW_ID:twid});
@@ -63,7 +65,7 @@
         	dataThree ={D1:data.rows[0].D1_1,D2:data.rows[0].D2_1,D3:data.rows[0].D3_1,D4:data.rows[0].D4_1,D5:data.rows[0].D5_1,D6:data.rows[0].D6_1};
         	$.bhPaperPileDialog.show({
         		content: ecfpEditTpl.render({}),
-        		title: "添加教师",
+        		title: "添加分配教师",
         		ready: function($header, $body, $footer){
         			ecfpSave.initialize();	
         			$("#emapForm").emapForm("setValue", dataTwo);
@@ -91,7 +93,7 @@
             	}
             });
         },
-        //打开修改界面
+        //打开回退界面
         actionChange: function(e){
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpChangeTpl = utils.loadCompiledPage('ecfpSaveChange');//html界面创建
@@ -104,7 +106,7 @@
         	dataThree ={D1:data.rows[0].D1_1,D2:data.rows[0].D2_1,D3:data.rows[0].D3_1,D4:data.rows[0].D4_1,D5:data.rows[0].D5_1,D6:data.rows[0].D6_1};
         	$.bhPaperPileDialog.show({
         		content: ecfpChangeTpl.render({}),
-        		title: "修改教师",
+        		title: "回退教师比例",
         		ready: function($header, $body, $footer){
         			ecfpChange.initialize();	//js界面初始化方法
         			$("#emapForm").emapForm("setValue", dataTwo);
@@ -146,19 +148,36 @@
 //            	}
 //            });
 //        },
-//        
-//        actionDelete: function(){
-//    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
-//    		if(row.length > 0){
-//    			var params = row.map(function(el){
-////    				return {XSBH:el.XSBH, XXX:el.XXX};	//模型主键
-//    			});
-//    			bs.del(params).done(function(data){
-//    				alert("数据删除成功");
-//    				$('#emapdatatable').emapdatatable('reload');
-//    			});
-//    		}
-//        },
+        //修改界面
+        actionEdit: function(e){
+        	var twid = $(e.target).attr("data-x-wid");
+        	var ecfpEditTpl = utils.loadCompiledPage('ecfpEdit');//html界面创建
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfpxg', {TW_ID:twid});
+        	//数据整理
+        	dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
+        			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
+        			TW_ID:data.rows[0].TW_ID,D1_1:data.rows[0].D1_1,D2_1:data.rows[0].D2_1,D3_1:data.rows[0].D3_1,
+        			D4_1:data.rows[0].D4_1,D5_1:data.rows[0].D5_1,D6_1:data.rows[0].D6_1,FATHERID:data.rows[0].FATHERID};
+        	$.bhPaperPileDialog.show({
+        		content: ecfpEditTpl.render({}),
+        		title: "修改教师比例",
+        		ready: function($header, $body, $footer){
+        			ecfpEdit.initialize();	//js界面初始化方法
+        			$("#emapForm").emapForm("setValue", dataTwo);
+        			
+            	}
+            });
+        },
+        //删除功能
+        actionDelete: function(){
+        	var params = row.map(function(el){
+        		return {TW_ID:el.TW_ID};	//模型主键
+        	});
+        	bs.del(params).done(function(data){
+        		alert("数据删除成功");
+        		$('#emapdatatable').emapdatatable('reload');
+        	});
+        },
 //        
 //        actionExport: function(){
 //        	bs.exportData({}).done(function(data){
@@ -220,9 +239,11 @@
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
                         	if(rowData.FATHERID !=null){
-                        		return '<a href="javascript:void(0)" data-action="change"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>';
+                        		return '<a href="javascript:void(0)" data-action="change"  data-x-wid=' + rowData.TW_ID  +'>' + '回退' + '</a>';
                         	}else{
-                        		return '<a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '分配' + '</a>';
+                        		return '<a href="javascript:void(0)" data-action="allot"  data-x-wid=' + rowData.TW_ID  +'>' + '添加' + '</a>' +
+                        		' | <a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>' +
+                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid=' + rowData.TW_ID  +'>' + '删除' + '</a>' ;
                         	}
                         }
                     }

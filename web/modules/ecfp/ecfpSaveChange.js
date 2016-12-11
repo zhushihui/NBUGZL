@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     var bs = require('./ecfpBS');
 
     var viewConfig = {
-        //修改界面初始化
+        //回退界面初始化
         initialize: function() {
         	var mode = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'ecfpxg', 'form');
             $("#emapForm").emapForm({
