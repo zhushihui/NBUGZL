@@ -36,6 +36,18 @@
 			//选择字段导出
 			$('#emapdatatable').emapdatatable('selectColumnsExport', params);	
 		},
+		
+		exportJcData: function(obj){
+			var params = {
+					root: contextPath,
+					app : "nbugzl",
+					module : "modules",
+					page : 'ecfp',
+					action : 'jcsj'
+			};
+			//选择字段导出
+			$('#paramForm').emapdatatable('selectColumnsExport', params);	
+		},
 		//二次分配界面,输入比例为分数时运算方法
         popupGetScore : function(score){
         	if (score ==''){//是否为空

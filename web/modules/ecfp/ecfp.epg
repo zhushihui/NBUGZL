@@ -12,6 +12,7 @@
       <action name="ecfpmbdzl" ref="action:ecfpmbdzl" url="src/actionflow/ecfpmbdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfpmbqsdzl" ref="action:ecfpmbqsdzl" url="src/actionflow/ecfpmbqsdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfpdtxgdzl" ref="action:ecfpdtxgdzl" url="src/actionflow/ecfpdtxgdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="jcsj" ref="action:jcsj" url="src/action/jcsj.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

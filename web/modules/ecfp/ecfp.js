@@ -6,12 +6,14 @@
 	var ecfpChange = require('./ecfpSaveChange');
 	var ecfpEdit = require('./ecfpEdit');//js界面创建
 	var ecfpView = require('./ecfpView');
+	var ecfpJc = require('./ecfpJc');
 
 	var viewConfig = {
 		initialize: function() {
 			var view = utils.loadCompiledPage('ecfp');
             this.$rootElement.html(view.render({}), true);
             this.pushSubView([ecfpSave,ecfpChange,ecfpEdit]);//js界面添加
+            this.pushSubView([ecfpJc]);
             this.initView();
 
 			this.eventMap = {
@@ -24,9 +26,9 @@
 //				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn,
-				"[data-action=getType]": this.getType
+				"[data-action=getType]": this.getType,
 //				"[data-action=copy]": this.actionCopy
-				
+				"[data-action=jc]" : this.actionJc
 				
 			};
 		},
@@ -46,6 +48,18 @@
 //            	}
 //            });
 //        },
+        
+        actionJc:function() {
+         	var ecfpJcTpl = utils.loadCompiledPage('ecfpJc');
+             	$.bhPaperPileDialog.show({
+             		content: ecfpJcTpl.render({}),
+//             		title: "检查",
+             		ready: function($header, $body, $footer){
+             			ecfpJc.initialize();    		          			
+                 	}
+                 });
+        },
+        
         getType :function() {
         	alert("manual");
         },
