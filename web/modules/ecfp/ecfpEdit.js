@@ -42,13 +42,16 @@ define(function(require, exports, module) {
         			//修改旧教师信息
         			var oneData = {'D1':formData.D1_1,'D2':formData.D2_1,'D3':formData.D3_1,'D4':formData.D4_1,
         					'D5':formData.D5_1,'D6':formData.D6_1,'TW_ID':formData.TW_ID};
-        			//修改已分配课程状态
+        			//更新教师工作总量D
         			var twoData = {'CWID':formData.CWID};
+        			//修改已分配课程状态
+        			var threeData = {'CWID':formData.CWID};
         			//参数格式转换
         			var sendParam1 = JSON.stringify(oneData);
         			var sendParam2 = JSON.stringify(twoData);
+        			var sendParam3 = JSON.stringify(threeData);
         			//参数存入参数组中
-        			var param = {'xgjsgzbl':sendParam1,'xgyfpkczt':sendParam2};
+        			var param = {'xgjsgzbl':sendParam1,'gxgzld':sendParam2,'xgyfpkczt':sendParam3};
         			//使用二次分配工作流
         			BH_UTILS.doAjax('../modules/ecfp/ecfpdtxgdzl.do', param).done(function(data){
         				if(data.code == "0"){

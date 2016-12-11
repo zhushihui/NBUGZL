@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:model="http://www.wisedu.com/emap/model/model" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms">
-  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="actionflow" name="a" snapToGrid="true" pictogramLinks="/0/@children.0/@link /0/@children.0/@children.0/@link /0/@children.1/@link /0/@children.1/@children.0/@link /0/@children.2/@link /0/@children.2/@children.0/@link /0/@children.3/@link /0/@children.3/@children.0/@link /0/@connections.0/@link /0/@connections.1/@link /0/@connections.2/@link" version="0.10.0">
+  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="actionflow" name="a" snapToGrid="true" pictogramLinks="/0/@children.0/@link /0/@children.0/@children.0/@link /0/@children.1/@link /0/@children.1/@children.0/@link /0/@children.2/@link /0/@children.2/@children.0/@link /0/@children.3/@link /0/@children.3/@children.0/@link /0/@connections.0/@link /0/@connections.1/@link /0/@connections.2/@link /0/@children.4/@link /0/@children.4/@children.0/@link /0/@connections.3/@link" version="0.10.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
@@ -17,7 +17,7 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="56" x="829" y="269">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="56" x="1030" y="269">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.1" lineStyle="UNSPECIFIED" lineVisible="false" width="36" height="56" cornerHeight="5" cornerWidth="5">
           <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="36" height="36" id="com.wisedu.emap.studio.editor.actionfloweditor.end_large" stretchH="false" stretchV="false" proportional="true"/>
         </graphicsAlgorithmChildren>
@@ -41,14 +41,25 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="586" y="272">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="787" y="272">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
       </graphicsAlgorithm>
       <link businessObjects="/1/@actionFlow/@actionNode.1"/>
-      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.2" incomingConnections="/0/@connections.1"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.2" incomingConnections="/0/@connections.3"/>
       <children visible="true">
         <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="修改已分配课程状态"/>
         <link businessObjects="/1/@actionFlow/@actionNode.1"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="116" height="50" x="570" y="272">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" background="/0/@colors.5" lineWidth="1" lineStyle="UNSPECIFIED" width="110" height="50" style="/0/@styles.0/@styles.1" cornerHeight="5" cornerWidth="5"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@actionFlow/@actionNode.2"/>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.3" incomingConnections="/0/@connections.1"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" width="110" height="20" y="18" style="/0/@styles.0/@styles.0" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="更新工作量D"/>
+        <link businessObjects="/1/@actionFlow/@actionNode.2"/>
       </children>
     </children>
     <styles lineWidth="2" filled="true" lineVisible="true" transparency="0.0" id="COMMON-VALUES" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
@@ -222,7 +233,7 @@
         </graphicsAlgorithm>
       </connectionDecorators>
     </connections>
-    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@anchors.0" end="/0/@children.3/@anchors.0">
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@anchors.0" end="/0/@children.4/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
       <link businessObjects="/1/@actionFlow/@actionNode.0/@path"/>
       <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
@@ -252,6 +263,21 @@
         </graphicsAlgorithm>
       </connectionDecorators>
     </connections>
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.4/@anchors.0" end="/0/@children.3/@anchors.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" lineWidth="2" lineStyle="UNSPECIFIED" style="/0/@styles.0/@styles.1"/>
+      <link businessObjects="/1/@actionFlow/@actionNode.2/@path"/>
+      <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+        <graphicsAlgorithm xsi:type="al:Text" lineStyle="UNSPECIFIED" x="-15" y="15" style="/0/@styles.0/@styles.2" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+      </connectionDecorators>
+      <connectionDecorators visible="true" locationRelative="true" location="1.0">
+        <graphicsAlgorithm xsi:type="al:Polygon" lineWidth="1" filled="true" transparency="0.0">
+          <points x="-15" y="6"/>
+          <points/>
+          <points x="-15" y="-6"/>
+          <points x="-15" y="6"/>
+        </graphicsAlgorithm>
+      </connectionDecorators>
+    </connections>
     <colors red="227" green="238" blue="249"/>
     <colors red="255" green="255" blue="255"/>
     <colors/>
@@ -268,10 +294,13 @@
       </begin>
       <end id="end" name="结束"/>
       <actionNode id="xgjsgzbl" name="修改教师工作比例" edaRef="src/action/fpdymbzxgjjsxx.eda" multiple="false" prjRef="nbugzl" ref="action:fpdymbzxgjjsxx">
-        <path id="37b27d59-38f2-49ba-a401-fe9d3464dddc" name="" order="0" to="xgyfpkczt"/>
+        <path id="37b27d59-38f2-49ba-a401-fe9d3464dddc" name="" order="0" to="gxgzld"/>
       </actionNode>
       <actionNode id="xgyfpkczt" name="修改已分配课程状态" edaRef="src/action/fpzxgyfpkczt.eda" multiple="false" prjRef="nbugzl" ref="action:fpzxgyfpkczt">
         <path id="b1fe0c63-0caf-40e2-bb59-4a83f4fa320a" name="" order="0" to="end"/>
+      </actionNode>
+      <actionNode id="gxgzld" name="更新工作量D" edaRef="src/action/fpzgxjsgzldd.eda" multiple="false" prjRef="nbugzl" ref="action:fpzgxjsgzldd">
+        <path id="47c22a48-52d8-4307-866c-e28e50a8a598" name="" order="0" to="xgyfpkczt"/>
       </actionNode>
     </actionFlow>
   </model:Model>
