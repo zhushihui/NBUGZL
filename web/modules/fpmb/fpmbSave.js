@@ -11,7 +11,8 @@ define(function(require, exports, module) {
             });
             
             this.eventMap = {
-                '[data-action=save]': this.save
+                '[data-action=save]': this.save,
+                '[data-action=edit]': this.edit
             };
         },
         save: function(){
@@ -120,7 +121,7 @@ define(function(require, exports, module) {
                 						formData.D5 = bs.popupGetScore(formData.D5);
                 						formData.D6 = bs.popupGetScore(formData.D6);
                 						//模板保存
-                						bs.save(formData).done(function(data){
+                						bs.edit(formData).done(function(data){
                 							$('#emapdatatable').emapdatatable('reload');
                 							$.bhPaperPileDialog.hide();//关闭当前弹窗
                 						});
@@ -175,7 +176,7 @@ define(function(require, exports, module) {
                         						formData.D5 = bs.popupGetScore(formData.D5);
                         						formData.D6 = bs.popupGetScore(formData.D6);
                         						//模板保存
-                        						bs.save(formData).done(function(data){
+                        						bs.edit(formData).done(function(data){
                         							$('#emapdatatable').emapdatatable('reload');
                         							$.bhPaperPileDialog.hide();//关闭当前弹窗
                         						});
@@ -203,6 +204,7 @@ define(function(require, exports, module) {
         		
         	}
         }
+        
 
     };
     return viewConfig;

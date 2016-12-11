@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="编辑分配比例" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="bjfpbl" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_DIVIDE_TEMPLATE" paramFixRefInclude="KCID,JG0101ID,D1,D2,D3,D4,D5,D6,DT_ID" paramFixRefPath="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update NBU_DIVIDE_TEMPLATE&#xD;
+set KCID=?,JG0101ID=?,D1=?,D2=?,D3=?,D4=?,D5=?,D6=?&#xD;
+where DT_ID=?</sql>
+  </actionModel>
+</model:Model>

@@ -17,7 +17,11 @@
 		},
 		save: function(formData){
 			//TODO 将formData提交到后台动作上
-			return BH_UTILS.doAjax('../modules/fpmb/NBU_DIVIDE_TEMPLATE_SAVE.do', formData);
+			return BH_UTILS.doAjax('../modules/fpmb/xzfpblbc.do', formData);
+		},
+		edit: function(formData){
+			//TODO 将formData提交到后台动作上
+			return BH_UTILS.doAjax('../modules/fpmb/bjfpbl.do', formData);
 		},
 		del: function(params){
 			//TODO 添加删除动作
@@ -38,6 +42,9 @@
 		},
 		//分配模板界面,输入比例为分数时运算方法
         popupGetScore : function(score){
+        	if (score ==''){//是否为空
+        		score ='0';
+        	}
         	var result = 0;
         	if(score.indexOf('/') > 0){//包含分号
         		var scoreList = score.split('/');
@@ -52,10 +59,10 @@
         	var p = {};
         	//是否包含中文和英文
         	if (escape(str).indexOf("%u") <0 && str.search(/[a-zA-Z]+/)==-1){
-        		if(this.popupGetScore(str) >1){//是否大于1
+        		if(this.popupGetScore(str) >1 || this.popupGetScore(str) <0){//是否大于1
             		p = {
                 			title:'操作提示',
-                            content:od+'比例只能小于等于1',
+                            content:od+'比例不能大于1且不能小于0',
                             buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
                 	BH_UTILS.bhDialogDanger(
                 			p
@@ -78,7 +85,7 @@
         //分配模板界面,输入比例是否超出已有的模块比例之和
         popupSumDialogDanger : function(str,od,nd) {
         	var p = {};
-        	if( this.popupGetScore(str)*1+nd*1 >1){//输入比例与已有模板比例之和是否大于1
+        	if( this.popupGetScore(str)*1+nd*1 >1 || this.popupGetScore(str) <0){//输入比例与已有模板比例之和是否大于1
         		p = {
             			title:'操作提示',
                         content:od+'比例只能小于等于'+(1-nd).toFixed(3),
