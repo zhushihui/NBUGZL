@@ -61,8 +61,8 @@
         <sql>NBU_TEACHER_WORKLOAD.JG0101ID=${custom.currentUserId}</sql>
       </rowFactor>
       <rowFactor id="2f731544-127e-4181-aa1e-d2dd4a4fc0fd" name="xueyuanguanliyuan">
-        <sql>NBU_TEACHER_WORKLOAD.gkdw IN&#xD;
-(select gkdw from NBU_TEACHER_WORKLOAD where jg0101id=${custom.currentUserId})</sql>
+        <sql>jg0101.xx0301id IN&#xD;
+(select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
       </rowFactor>
       <rowFactor id="984dd788-297a-4d3d-9a23-7965104411b4" name="xuexiaoguanliyuan">
         <sql>1=1</sql>
