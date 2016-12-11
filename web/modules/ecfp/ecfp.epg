@@ -12,6 +12,9 @@
       <action name="ecfpmbdzl" ref="action:ecfpmbdzl" url="src/actionflow/ecfpmbdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfpmbqsdzl" ref="action:ecfpmbqsdzl" url="src/actionflow/ecfpmbqsdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfpdtxgdzl" ref="action:ecfpdtxgdzl" url="src/actionflow/ecfpdtxgdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpsczsffsj" ref="action:fpsczsffsj" url="src/action/fpsczsffsj.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpsczsfkcwysj" ref="action:fpsczsfkcwysj" url="src/action/fpsczsfkcwysj.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="NBU_TEACHER_WORKLOAD_DELETE" ref="model:NBU_TEACHER_WORKLOAD.DELETE" url="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

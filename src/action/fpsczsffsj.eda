@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="分配删除之是否父数据" displayRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" displayRefInclude="YEAR" displayRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" displayRefPrj="nbugzl" name="fpsczsffsj" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="FATHERID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select count(tw_id) as year from nbu_teacher_workload &#xD;
+where FATHERID = ?</sql>
+  </actionModel>
+</model:Model>

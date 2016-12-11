@@ -21,9 +21,9 @@
 		},
 		del: function(params){
 			//TODO 添加删除动作
-//			return BH_UTILS.doAjax('../modules/ecfp/T_PXXX_XSJBXX_DELETE.do', {
-//				T_PXXX_XSJBXX_DELETE:JSON.stringify(params)
-//			});
+			return BH_UTILS.doAjax('../modules/ecfp/NBU_TEACHER_WORKLOAD_DELETE.do', {
+				NBU_TEACHER_WORKLOAD_DELETE:JSON.stringify(params)
+			});
 		},
 		exportData: function(obj){
 			var params = {

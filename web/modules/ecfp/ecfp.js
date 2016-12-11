@@ -169,14 +169,56 @@
             });
         },
         //删除功能
-        actionDelete: function(){
-        	var params = row.map(function(el){
-        		return {TW_ID:el.TW_ID};	//模型主键
-        	});
-        	bs.del(params).done(function(data){
-        		alert("数据删除成功");
-        		$('#emapdatatable').emapdatatable('reload');
-        	});
+        actionDelete: function(e){
+        	var twid = $(e.target).attr("data-x-wid");
+        	var cwid = $(e.target).attr("data-x-cwid");
+        	var oneData ={'CWID':cwid};
+        	var twoData ={'FATHERID':twid};
+        	BH_UTILS.doAjax('../modules/ecfp/fpsczsfkcwysj.do', oneData).done(function(data){
+				if(data.code == "0"){//是否课程唯一数据
+					var countData = data.datas.fpsczsfkcwysj.rows[0];
+					if(countData.YEAR >1){
+						//是否为父数据
+						BH_UTILS.doAjax('../modules/ecfp/fpsczsffsj.do', twoData).done(function(data){
+							if(data.code == "0"){//是否为父数据
+								var countData = data.datas.fpsczsffsj.rows[0];
+								if(countData.YEAR == 0){//不为父数据
+									//删除动作
+									var params = {TW_ID:twid};	//删除主键
+						        	bs.del(params).done(function(data){
+//						        		alert("数据删除成功");
+						        		$('#emapdatatable').emapdatatable('reload');
+						        	});
+								}else{
+									BH_UTILS.bhDialogDanger({
+				                        title:'操作提示',
+				                        content:'此数据已分配，无法删除',
+				                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+				                    });
+								}
+							}else{
+								BH_UTILS.bhDialogDanger({
+			                        title:'操作提示',
+			                        content:'是否为父数据查询出错',
+			                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+			                    });
+							}
+						});
+					}else{
+						BH_UTILS.bhDialogDanger({
+	                        title:'操作提示',
+	                        content:'此为当前课程唯一数据，无法删除',
+	                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+	                    });
+					}
+				}else{
+					BH_UTILS.bhDialogDanger({
+                        title:'操作提示',
+                        content:'是否课程唯一数据查询出错',
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+                    });
+				}
+			});
         },
 //        
 //        actionExport: function(){
@@ -243,7 +285,7 @@
                         	}else{
                         		return '<a href="javascript:void(0)" data-action="allot"  data-x-wid=' + rowData.TW_ID  +'>' + '添加' + '</a>' +
                         		' | <a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>' +
-                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid=' + rowData.TW_ID  +'>' + '删除' + '</a>' ;
+                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid="' + rowData.TW_ID  +'" data-x-cwid=' + rowData.CWID  +'>' + '删除' + '</a>' ;
                         	}
                         }
                     }
