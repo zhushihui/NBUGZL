@@ -295,7 +295,9 @@
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
                         	if(rowData.FATHERID !=null){
-                        		return '<a href="javascript:void(0)" data-action="change"  data-x-wid=' + rowData.TW_ID  +'>' + '回退' + '</a>';
+//                        		return '<a href="javascript:void(0)" data-action="change"  data-x-wid=' + rowData.TW_ID  +'>' + '回退' + '</a>';
+                        		return '<a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>' +
+                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid="' + rowData.TW_ID  +'" data-x-cwid=' + rowData.CWID  +'>' + '删除' + '</a>' ;
                         	}else{
                         		return '<a href="javascript:void(0)" data-action="allot"  data-x-wid=' + rowData.TW_ID  +'>' + '添加' + '</a>' +
                         		' | <a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>' +
