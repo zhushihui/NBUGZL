@@ -4,7 +4,7 @@
     <item caption="课程编号" colName="KCID" groupName="" length="32" name="KCID" pK="true" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="课程名称" colName="KCMC" groupName="" length="60" name="KCMC" type="String">
+    <item caption="课程名称" colName="KCMC" groupName="" length="200" name="KCMC" type="String">
       <attribute name="enabled" value="true"/>
       <attribute name="web.quickSearch" value="true"/>
     </item>
