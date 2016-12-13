@@ -2,7 +2,6 @@
 <role:Roles xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:role="http://www.wisedu.com/emap/model/role">
   <role id="xygly" name="学院管理员" type="DATA">
     <data edmRef="src/datamodel/kcgl/NBU_COURSES.edm" factor="xueyuanguanliyuan_ecfp" id="b430ad2a-88fc-4ad5-804e-d560f1ec53a2" model="NBU_COURSES" prjRef="nbugzl"/>
-    <data edmRef="src/datamodel/js/JG0101.edm" factor="xueyuanguanliyuan" id="4d85ea3a-dfff-4f6a-9bd2-1248530e53d7" model="JG0101" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" factor="xueyuanguanliyuan" id="8f2db08b-5f18-4e05-9074-5188ba3faa8e" model="NBU_DIVIDE_TEMPLATE" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" factor="xueyuanguanliyuan" id="2f731544-127e-4181-aa1e-d2dd4a4fc0fd" model="NBU_TEACHER_WORKLOAD" prjRef="nbugzl"/>
   </role>

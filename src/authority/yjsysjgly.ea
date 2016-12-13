@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <role:Roles xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:role="http://www.wisedu.com/emap/model/role">
   <role id="yjsysjgly" name="研究生院数据管理员" type="DATA">
+    <data edmRef="src/datamodel/js/JG0101.edm" factor="yanjiushengyuanshujuguanliyuan" id="c2048132-1526-4916-903e-769b5b5371ea" model="JG0101" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/kcgl/NBU_COURSES.edm" factor="yanjiushengyuanshujuguanliyuan" id="25af303c-6dcf-49f4-83b3-ec70a530be6d" model="NBU_COURSES" prjRef="nbugzl"/>
   </role>
 </role:Roles>
