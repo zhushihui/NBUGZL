@@ -5,7 +5,7 @@ define(function(require, exports, module) {
     var viewConfig = {
         //分配界面初始化
         initialize: function() {
-        	var mode = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'ecfp', 'form');
+        	var mode = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'ecfptj', 'form');
             $("#emapForm").emapForm({
                 data: mode,
                 model: 'h',

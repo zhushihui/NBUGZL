@@ -23,7 +23,7 @@
 //				"[data-action=detail]": this.actionDetail,
 				"[data-action=edit]": this.actionEdit,
 				"[data-action=delete]": this.actionDelete,
-//				"[data-action=export]": this.actionExport,
+				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn,
 				"[data-action=getType]": this.getType,
@@ -71,7 +71,7 @@
         actionAllot: function(e){
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpEditTpl = utils.loadCompiledPage('ecfpSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfp', {TW_ID:twid});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfptj', {TW_ID:twid});
         	//数据整理
         	dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
         			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
@@ -235,10 +235,10 @@
 			});
         },
 //        
-//        actionExport: function(){
-//        	bs.exportData({}).done(function(data){
-//        	});
-//        },
+        actionExport: function(){
+        	bs.exportData({}).done(function(data){
+        	});
+        },
 //
 //		actionImport: function(){
 //        	$.emapImport({
@@ -292,6 +292,7 @@
                     column: {
                         text: '操作',
                         align: 'center',
+                        width: '120',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
                         	if(rowData.FATHERID !=null){
