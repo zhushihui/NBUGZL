@@ -61,7 +61,7 @@
     <item caption="此课程是否已分配,0:未分配，1：已分配" colName="ISFP" groupName="" length="2" name="ISFP" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <item caption="课程名称" colName="KCMC1" groupName="" length="100" name="KCMC1" type="String">
+    <item caption="课程名称" colName="KCMC1" groupName="" length="200" name="KCMC1" type="String">
       <attribute name="enabled" value="true"/>
     </item>
     <rowFactors/>

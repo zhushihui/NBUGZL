@@ -31,44 +31,45 @@ define(function(require, exports, module) {
         				result = true;
         			}
         			if(result){//所有参数输入都合理
+        				//比例分数转换成小数
+						formData.D1 = bs.popupGetScore(formData.D1);
+						formData.D2 = bs.popupGetScore(formData.D2);
+						formData.D3 = bs.popupGetScore(formData.D3);
+						formData.D4 = bs.popupGetScore(formData.D4);
+						formData.D5 = bs.popupGetScore(formData.D5);
+						formData.D6 = bs.popupGetScore(formData.D6);
+						//修改保存
+						bs.edit(formData).done(function(data){
+							$('#emapdatatable').emapdatatable('reload');
+							$.bhPaperPileDialog.hide();//关闭当前弹窗
+						});
         				//修改界面获取比例之和
-        				var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};
-        				BH_UTILS.doAjax('../modules/fpmb/fpmbzxgpdblzh.do', secondData).done(function(data){
-        					if(data.code == "0"){//模板比例之和对比
-        						var sumData = data.datas.fpmbzxgpdblzh.rows[0];
-        						//根据模板比例之和判断输入比例是否超限制
-        						var sumResult = false;
-        						var sumResult1 = bs.popupSumDialogDanger(formData.D1,'D1',sumData.D1);
-        						var sumResult2 = bs.popupSumDialogDanger(formData.D2,'D2',sumData.D2);
-        						var sumResult3 = bs.popupSumDialogDanger(formData.D3,'D3',sumData.D3);
-        						var sumResult4 = bs.popupSumDialogDanger(formData.D4,'D4',sumData.D4);
-        						var sumResult5 = bs.popupSumDialogDanger(formData.D5,'D5',sumData.D5);
-        						var sumResult6 = bs.popupSumDialogDanger(formData.D6,'D6',sumData.D6);
-        						if(sumResult1 && sumResult2 && sumResult3 && sumResult4 && sumResult5 && sumResult6){
-        							sumResult = true;
-        						}
-        						if(sumResult){//创建模板比例与已有模板比例之和不大于1
-        							//比例分数转换成小数
-        							formData.D1 = bs.popupGetScore(formData.D1);
-        							formData.D2 = bs.popupGetScore(formData.D2);
-        							formData.D3 = bs.popupGetScore(formData.D3);
-        							formData.D4 = bs.popupGetScore(formData.D4);
-        							formData.D5 = bs.popupGetScore(formData.D5);
-        							formData.D6 = bs.popupGetScore(formData.D6);
-        							//模板保存
-        							bs.edit(formData).done(function(data){
-        								$('#emapdatatable').emapdatatable('reload');
-        								$.bhPaperPileDialog.hide();//关闭当前弹窗
-        							});
-        						}
-        					}else{
-        						BH_UTILS.bhDialogDanger({
-        							title:'操作提示',
-        							content:'模板比例之和查询出错',
-        							buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-        						});
-        					}
-        				});
+//        				var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};
+//        				BH_UTILS.doAjax('../modules/fpmb/fpmbzxgpdblzh.do', secondData).done(function(data){
+//        					if(data.code == "0"){//模板比例之和对比
+//        						var sumData = data.datas.fpmbzxgpdblzh.rows[0];
+//        						//根据模板比例之和判断输入比例是否超限制
+//        						var sumResult = false;
+//        						var sumResult1 = bs.popupSumDialogDanger(formData.D1,'D1',sumData.D1);
+//        						var sumResult2 = bs.popupSumDialogDanger(formData.D2,'D2',sumData.D2);
+//        						var sumResult3 = bs.popupSumDialogDanger(formData.D3,'D3',sumData.D3);
+//        						var sumResult4 = bs.popupSumDialogDanger(formData.D4,'D4',sumData.D4);
+//        						var sumResult5 = bs.popupSumDialogDanger(formData.D5,'D5',sumData.D5);
+//        						var sumResult6 = bs.popupSumDialogDanger(formData.D6,'D6',sumData.D6);
+//        						if(sumResult1 && sumResult2 && sumResult3 && sumResult4 && sumResult5 && sumResult6){
+//        							sumResult = true;
+//        						}
+//        						if(sumResult){//创建模板比例与已有模板比例之和不大于1
+//        							
+//        						}
+//        					}else{
+//        						BH_UTILS.bhDialogDanger({
+//        							title:'操作提示',
+//        							content:'模板比例之和查询出错',
+//        							buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+//        						});
+//        					}
+//        				});
         			}
         		}else{//旧教师与当前选择教师不同时，无需判断教师是否重复
         			//判断模板教师是否重复
@@ -86,44 +87,45 @@ define(function(require, exports, module) {
         						result = true;
         					}
         					if(result){//所有参数输入都合理
+        						//比例分数转换成小数
+								formData.D1 = bs.popupGetScore(formData.D1);
+								formData.D2 = bs.popupGetScore(formData.D2);
+								formData.D3 = bs.popupGetScore(formData.D3);
+								formData.D4 = bs.popupGetScore(formData.D4);
+								formData.D5 = bs.popupGetScore(formData.D5);
+								formData.D6 = bs.popupGetScore(formData.D6);
+								//修改保存
+								bs.edit(formData).done(function(data){
+									$('#emapdatatable').emapdatatable('reload');
+									$.bhPaperPileDialog.hide();//关闭当前弹窗
+								});
         						//修改界面获取比例之和
-        						var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};
-        						BH_UTILS.doAjax('../modules/fpmb/fpmbzxgpdblzh.do', secondData).done(function(data){
-        							if(data.code == "0"){//模板比例之和对比
-        								var sumData = data.datas.fpmbzxgpdblzh.rows[0];
-        								//根据模板比例之和判断输入比例是否超限制
-        								var sumResult = false;
-        								var sumResult1 = bs.popupSumDialogDanger(formData.D1,'D1',sumData.D1);
-        								var sumResult2 = bs.popupSumDialogDanger(formData.D2,'D2',sumData.D2);
-        								var sumResult3 = bs.popupSumDialogDanger(formData.D3,'D3',sumData.D3);
-        								var sumResult4 = bs.popupSumDialogDanger(formData.D4,'D4',sumData.D4);
-        								var sumResult5 = bs.popupSumDialogDanger(formData.D5,'D5',sumData.D5);
-        								var sumResult6 = bs.popupSumDialogDanger(formData.D6,'D6',sumData.D6);
-        								if(sumResult1 && sumResult2 && sumResult3 && sumResult4 && sumResult5 && sumResult6){
-        									sumResult = true;
-        								}
-        								if(sumResult){//创建模板比例与已有模板比例之和不大于1
-        									//比例分数转换成小数
-        									formData.D1 = bs.popupGetScore(formData.D1);
-        									formData.D2 = bs.popupGetScore(formData.D2);
-        									formData.D3 = bs.popupGetScore(formData.D3);
-        									formData.D4 = bs.popupGetScore(formData.D4);
-        									formData.D5 = bs.popupGetScore(formData.D5);
-        									formData.D6 = bs.popupGetScore(formData.D6);
-        									//模板保存
-        									bs.edit(formData).done(function(data){
-        										$('#emapdatatable').emapdatatable('reload');
-        										$.bhPaperPileDialog.hide();//关闭当前弹窗
-        									});
-        								}
-        							}else{
-        								BH_UTILS.bhDialogDanger({
-        									title:'操作提示',
-        									content:'模板比例之和查询出错',
-        									buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-        								});
-        							}
-        						});
+//        						var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};
+//        						BH_UTILS.doAjax('../modules/fpmb/fpmbzxgpdblzh.do', secondData).done(function(data){
+//        							if(data.code == "0"){//模板比例之和对比
+//        								var sumData = data.datas.fpmbzxgpdblzh.rows[0];
+//        								//根据模板比例之和判断输入比例是否超限制
+//        								var sumResult = false;
+//        								var sumResult1 = bs.popupSumDialogDanger(formData.D1,'D1',sumData.D1);
+//        								var sumResult2 = bs.popupSumDialogDanger(formData.D2,'D2',sumData.D2);
+//        								var sumResult3 = bs.popupSumDialogDanger(formData.D3,'D3',sumData.D3);
+//        								var sumResult4 = bs.popupSumDialogDanger(formData.D4,'D4',sumData.D4);
+//        								var sumResult5 = bs.popupSumDialogDanger(formData.D5,'D5',sumData.D5);
+//        								var sumResult6 = bs.popupSumDialogDanger(formData.D6,'D6',sumData.D6);
+//        								if(sumResult1 && sumResult2 && sumResult3 && sumResult4 && sumResult5 && sumResult6){
+//        									sumResult = true;
+//        								}
+//        								if(sumResult){//创建模板比例与已有模板比例之和不大于1
+//        									
+//        								}
+//        							}else{
+//        								BH_UTILS.bhDialogDanger({
+//        									title:'操作提示',
+//        									content:'模板比例之和查询出错',
+//        									buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+//        								});
+//        							}
+//        						});
         					}
         				}else{
         					BH_UTILS.bhDialogDanger({
