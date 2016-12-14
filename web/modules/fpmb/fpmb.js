@@ -3,13 +3,14 @@
 	var utils = require('utils');
 	var bs = require('./fpmbBS');
 	var fpmbSave = require('./fpmbSave');
+	var fpmbEdit = require('./fpmbEdit');
 	var fpmbView = require('./fpmbView');
 
 	var viewConfig = {
 		initialize: function() {
 			var view = utils.loadCompiledPage('fpmb');
             this.$rootElement.html(view.render({}), true);
-            this.pushSubView([fpmbSave]);
+            this.pushSubView([fpmbSave,fpmbEdit]);
             this.initView();
 
 			this.eventMap = {
@@ -45,14 +46,14 @@
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
-        	var fpmbEditTpl = utils.loadCompiledPage('fpmbSave');
+        	var fpmbEditTpl = utils.loadCompiledPage('fpmbEdit');
         	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'fpmb', {DT_ID:id});
-        	var datatwo = {type:'edit',KCID:data.rows[0].KCID,JG0101ID:data.rows[0].JG0101ID};
+        	var datatwo = {KCID:data.rows[0].KCID,JG0101ID:data.rows[0].JG0101ID};
         	$.bhPaperPileDialog.show({
         		content: fpmbEditTpl.render({}),
         		title: "编辑",
         		ready: function($header, $body, $footer){
-        			fpmbSave.initialize();
+        			fpmbEdit.initialize(); //js界面初始化
         			$("#emapForm").emapForm("setValue", data.rows[0]);
         			$("#d_param").val(JSON.stringify(datatwo));
             	}

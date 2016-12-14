@@ -82,13 +82,29 @@
         		return false;
         	}
         },
-        //分配模板界面,输入比例是否超出已有的模块比例之和
+        //分配模板修改界面,输入比例是否超出已有的模块比例之和
         popupSumDialogDanger : function(str,od,nd) {
         	var p = {};
         	if( this.popupGetScore(str)*1+nd*1 >1 || this.popupGetScore(str) <0){//输入比例与已有模板比例之和是否大于1
         		p = {
             			title:'操作提示',
                         content:od+'比例只能小于等于'+(1-nd).toFixed(3),
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
+            	BH_UTILS.bhDialogDanger(
+            			p
+            	);
+            	return false;
+        	}else{
+        		return true;
+        	}
+        },
+        //分配模板新建界面,输入比例是否超出已有的模块比例之和
+        popupSaveDialogDanger : function(str,od,nd,num) {
+        	var p = {};
+        	if( this.popupGetScore(str)*num+nd*1 >1 || this.popupGetScore(str) <0){//输入比例与已有模板比例之和是否大于1
+        		p = {
+            			title:'操作提示',
+                        content:od+'比例只能小于等于'+((1-nd)/num).toFixed(3),
                         buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]}; 
             	BH_UTILS.bhDialogDanger(
             			p

@@ -11,6 +11,8 @@
       <action name="fpmbzxgpdblzh" ref="action:fpmbzxgpdblzh" url="src/action/fpmbzxgpdblzh.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="xzfpblbc" ref="action:xzfpblbc" url="src/action/xzfpblbc.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="bjfpbl" ref="action:bjfpbl" url="src/action/bjfpbl.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbdtxz" ref="action:fpmbdtxz" url="src/action/fpmbdtxz.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbxjdzl" ref="action:fpmbxjdzl" url="src/actionflow/fpmbxjdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>
