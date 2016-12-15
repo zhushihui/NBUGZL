@@ -142,6 +142,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'jsgrgzlhz',
                 height:null,
+                pageSize:50,
                 sortable: true,
 //                params : params1,
                 customColumns: [{

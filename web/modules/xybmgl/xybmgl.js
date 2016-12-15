@@ -129,6 +129,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'XX0301_QUERY',
                 height:null,
+                pageSize:50,
                 customColumns: [
 //                 {
 //                    colIndex: '0',

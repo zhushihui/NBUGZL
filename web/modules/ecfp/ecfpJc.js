@@ -8,6 +8,7 @@ define(function(require, exports, module) {
                        pagePath: bs.api.pageModel,
                        action: 'jcsj',
                        height:null,
+                       pageSize:50,
                        customColumns: [{
 //                           colIndex: '0',
 //                           type: 'checkbox'

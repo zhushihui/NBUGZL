@@ -281,6 +281,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'ecfp',
                 height:null,
+                pageSize:50,
                 customColumns: [
 //                                {
 //                    colIndex: '0',

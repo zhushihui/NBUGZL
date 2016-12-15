@@ -128,6 +128,7 @@
             var tableOptions = {
                 pagePath: bs.api.pageModel,
                 action: 'cscx',
+                pageSize:50,
                 customColumns: [
 //                                {
 //                    colIndex: '0',
