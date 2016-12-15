@@ -17,6 +17,7 @@
       <action name="fpsczsfkcwysj" ref="action:fpsczsfkcwysj" url="src/action/fpsczsfkcwysj.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="NBU_TEACHER_WORKLOAD_DELETE" ref="model:NBU_TEACHER_WORKLOAD.DELETE" url="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="ecfptj" ref="action:ecfptj" url="src/action/ecfptj.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="ecfpsc" ref="action:ecfpsc" url="src/action/ecfpsc.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>
