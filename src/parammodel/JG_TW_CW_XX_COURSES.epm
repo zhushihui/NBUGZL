@@ -27,7 +27,9 @@
       <item groupName="" name="JX0404ID" originName="JX0404ID"/>
       <item groupName="" name="J" originName="J"/>
       <item groupName="" name="ZRN" originName="ZRN"/>
-      <item groupName="" name="KCMC1" originName="KCMC1"/>
+      <item caption="项目名称" groupName="" name="KCMC1" originName="KCMC1">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,GKDW:GKDW,REM:REM,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1,XSFLID:XSFLID,FATHERID:FATHERID" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
       <item groupName="" name="TW_ID" originName="TW_ID"/>
