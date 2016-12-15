@@ -19,11 +19,9 @@
 			//TODO 将formData提交到自定义动作流上
 			return BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', formData);
 		},
-		del: function(params){
+		del: function(formData){
 			//TODO 添加删除动作
-			return BH_UTILS.doAjax('../modules/ecfp/NBU_TEACHER_WORKLOAD_DELETE.do', {
-				NBU_TEACHER_WORKLOAD_DELETE:JSON.stringify(params)
-			});
+			return BH_UTILS.doAjax('../modules/ecfp/ecfpsc.do', formData);
 		},
 		exportData: function(obj){
 			var params = {
