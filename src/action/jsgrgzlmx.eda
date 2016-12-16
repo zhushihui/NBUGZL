@@ -7,7 +7,7 @@ nbu_courses.kcid||'-'||nbu_course_workload.groups as kchzh,&#xD;
 nbu_courses.worktype,&#xD;
 nbu_courses.kcmc,nbu_course_workload.kcmc1,nbu_course_workload.D,&#xD;
 nvl(nbu_course_workload.D * func_get_split_division(nbu_courses.XYZCBL),0) as XYZCKCGZL,&#xD;
-nbu_teacher_workload.D as d_1,&#xD;
+round(nbu_teacher_workload.D,3) as d_1,&#xD;
 nvl(nbu_teacher_workload.D * func_get_split_division(nbu_courses.XYZCBL),0) as XYZCJSGZL,&#xD;
 nbu_teacher_workload.gkdw,&#xD;
 case when nbu_teacher_workload.d1 &lt;> 0 then 'D1'&#xD;
