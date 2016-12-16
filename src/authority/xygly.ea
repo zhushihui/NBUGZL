@@ -4,5 +4,6 @@
     <data edmRef="src/datamodel/kcgl/NBU_COURSES.edm" factor="xueyuanguanliyuan_ecfp" id="b430ad2a-88fc-4ad5-804e-d560f1ec53a2" model="NBU_COURSES" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/fpmb/NBU_DIVIDE_TEMPLATE.edm" factor="xueyuanguanliyuan" id="8f2db08b-5f18-4e05-9074-5188ba3faa8e" model="NBU_DIVIDE_TEMPLATE" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" factor="xueyuanguanliyuan" id="2f731544-127e-4181-aa1e-d2dd4a4fc0fd" model="NBU_TEACHER_WORKLOAD" prjRef="nbugzl"/>
+    <data edmRef="src/datamodel/js/JG0101.edm" factor="jiaoshixueyuan" id="3048d1b3-b765-45e6-8e8e-d790e6f38619" model="JG0101" prjRef="nbugzl"/>
   </role>
 </role:Roles>
