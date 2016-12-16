@@ -133,6 +133,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'cxjsxx',
                 height:null,
+                pageSize:50,
                 customColumns: [
 //                                {
 //                    colIndex: '0',

@@ -56,12 +56,20 @@ define(function(require, exports, module) {
 //                            buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
             			
             			//计算D1-D6
-            			formData.D1 = otherData.D1==null?0:bs.popupGetScore(otherData.D1)*bs.popupGetScore(formData.D1_1);
-            			formData.D2 = otherData.D2==null?0:bs.popupGetScore(otherData.D2)*bs.popupGetScore(formData.D2_1);
-            			formData.D3 = otherData.D3==null?0:bs.popupGetScore(otherData.D3)*bs.popupGetScore(formData.D3_1);
-            			formData.D4 = otherData.D4==null?0:bs.popupGetScore(otherData.D4)*bs.popupGetScore(formData.D4_1);
-            			formData.D5 = otherData.D5==null?0:bs.popupGetScore(otherData.D5)*bs.popupGetScore(formData.D5_1);
-            			formData.D6 = otherData.D6==null?0:bs.popupGetScore(otherData.D6)*bs.popupGetScore(formData.D6_1);
+//            			formData.D1 = otherData.D1==null?0:bs.popupGetScore(otherData.D1)*bs.popupGetScore(formData.D1_1);
+//            			formData.D2 = otherData.D2==null?0:bs.popupGetScore(otherData.D2)*bs.popupGetScore(formData.D2_1);
+//            			formData.D3 = otherData.D3==null?0:bs.popupGetScore(otherData.D3)*bs.popupGetScore(formData.D3_1);
+//            			formData.D4 = otherData.D4==null?0:bs.popupGetScore(otherData.D4)*bs.popupGetScore(formData.D4_1);
+//            			formData.D5 = otherData.D5==null?0:bs.popupGetScore(otherData.D5)*bs.popupGetScore(formData.D5_1);
+//            			formData.D6 = otherData.D6==null?0:bs.popupGetScore(otherData.D6)*bs.popupGetScore(formData.D6_1);
+            			//转换D1-D6的分数为小数
+            			formData.D1 = bs.popupGetScore(formData.D1_1);
+            			formData.D2 = bs.popupGetScore(formData.D2_1);
+            			formData.D3 = bs.popupGetScore(formData.D3_1);
+            			formData.D4 = bs.popupGetScore(formData.D4_1);
+            			formData.D5 = bs.popupGetScore(formData.D5_1);
+            			formData.D6 = bs.popupGetScore(formData.D6_1);
+            			
             			//判断是否有教师
             			var firstData ={};
             			firstData['CWID'] = formData.CWID;
@@ -95,8 +103,9 @@ define(function(require, exports, module) {
             			var thirdData = {'D1':formData.D1,'D2':formData.D2,'D3':formData.D3,'D4':formData.D4,
             					'D5':formData.D5,'D6':formData.D6};
             			//修改旧教师工作量
+            			//不修改了，tw_id设为空-----------------
             			var fourData = {'D1':formData.D1_1,'D2':formData.D2_1,'D3':formData.D3_1,'D4':formData.D4_1,
-            					'D5':formData.D5_1,'D6':formData.D6_1,'TW_ID':formData.TW_ID};
+            					'D5':formData.D5_1,'D6':formData.D6_1,'TW_ID':''};
             			//转换教师工作量
             			var fiveData = {'CWID':formData.CWID};
             			//更新教师D

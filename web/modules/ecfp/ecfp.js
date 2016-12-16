@@ -75,7 +75,8 @@
         	//数据整理
         	dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
         			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
-        			TW_ID:data.rows[0].TW_ID,D1_1:'0',D2_1:'0',D3_1:'0',D4_1:'0',D5_1:'0',D6_1:'0',FATHERID:data.rows[0].FATHERID};
+        			TW_ID:data.rows[0].TW_ID,D1_1:data.rows[0].D1_1,D2_1:data.rows[0].D2_1,D3_1:data.rows[0].D3_1,
+        			D4_1:data.rows[0].D4_1,D5_1:data.rows[0].D5_1,D6_1:data.rows[0].D6_1,FATHERID:data.rows[0].FATHERID};
         	dataThree ={D1:data.rows[0].D1_1,D2:data.rows[0].D2_1,D3:data.rows[0].D3_1,D4:data.rows[0].D4_1,D5:data.rows[0].D5_1,D6:data.rows[0].D6_1};
         	$.bhPaperPileDialog.show({
         		content: ecfpEditTpl.render({}),
@@ -112,9 +113,9 @@
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpChangeTpl = utils.loadCompiledPage('ecfpSaveChange');//html界面创建
         	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfpxg', {TW_ID:twid});
-        	//数据整理
+        	//数据整理 
         	dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
-        			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
+        			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID, 
         			TW_ID:data.rows[0].TW_ID,D1_1:data.rows[0].D1_1,D2_1:data.rows[0].D2_1,D3_1:data.rows[0].D3_1,
         			D4_1:data.rows[0].D4_1,D5_1:data.rows[0].D5_1,D6_1:data.rows[0].D6_1,FATHERID:data.rows[0].FATHERID};
         	dataThree ={D1:data.rows[0].D1_1,D2:data.rows[0].D2_1,D3:data.rows[0].D3_1,D4:data.rows[0].D4_1,D5:data.rows[0].D5_1,D6:data.rows[0].D6_1};
@@ -186,7 +187,8 @@
         actionDelete: function(e){
         	var twid = $(e.target).attr("data-x-wid");
         	var cwid = $(e.target).attr("data-x-cwid");
-        	var oneData ={'CWID':cwid};
+        	var xsflid = $(e.target).attr("data-x-xsflid");
+        	var oneData ={'CWID':cwid,'XSFLID':xsflid};
         	var twoData ={'FATHERID':twid};
         	BH_UTILS.doAjax('../modules/ecfp/fpsczsfkcwysj.do', oneData).done(function(data){
 				if(data.code == "0"){//是否课程唯一数据
@@ -206,7 +208,7 @@
 								}else{
 									BH_UTILS.bhDialogDanger({
 				                        title:'操作提示',
-				                        content:'此数据已分配，无法删除',
+				                        content:'此数据已分配子数据，无法删除',
 				                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
 				                    });
 								}
@@ -280,7 +282,11 @@
             var tableOptions = {
                 pagePath: bs.api.pageModel,
                 action: 'ecfp',
-                height:null,
+                height: null,
+                pageSize:50,
+//                autoRowHeight: true,
+//                altRows: true,
+//                columnsResize: true,
                 customColumns: [
 //                                {
 //                    colIndex: '0',
@@ -298,15 +304,16 @@
                         	if(rowData.FATHERID !=null){
 //                        		return '<a href="javascript:void(0)" data-action="change"  data-x-wid=' + rowData.TW_ID  +'>' + '回退' + '</a>';
                         		return '<a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>' +
-                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid="' + rowData.TW_ID  +'" data-x-cwid=' + rowData.CWID  +'>' + '删除' + '</a>' ;
+                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid="' + rowData.TW_ID  +'" data-x-cwid="' + rowData.CWID  +'" data-x-xsflid=' + rowData.XSFLID  +'>' + '删除' + '</a>' ;
                         	}else{
                         		return '<a href="javascript:void(0)" data-action="allot"  data-x-wid=' + rowData.TW_ID  +'>' + '添加' + '</a>' +
                         		' | <a href="javascript:void(0)" data-action="edit"  data-x-wid=' + rowData.TW_ID  +'>' + '修改' + '</a>' +
-                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid="' + rowData.TW_ID  +'" data-x-cwid=' + rowData.CWID  +'>' + '删除' + '</a>' ;
+                        		' | <a href="javascript:void(0)" data-action="delete"  data-x-wid="' + rowData.TW_ID  +'" data-x-cwid="' + rowData.CWID  +'" data-x-xsflid=' + rowData.XSFLID +'>' + '删除' + '</a>' ;
                         	}
                         }
                     }
-                }]
+                }] 
+                
             };
             $('#emapdatatable').emapdatatable(tableOptions);
         }

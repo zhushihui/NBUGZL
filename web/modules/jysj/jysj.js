@@ -180,6 +180,7 @@
 				pagePath : bs.api.pageModel,
 				action : 'jysjdr',
 				height : null,
+				pageSize:50,
 				customColumns : [
 				// {
 				// colIndex : '0',

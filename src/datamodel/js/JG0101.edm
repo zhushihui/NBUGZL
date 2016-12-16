@@ -50,6 +50,10 @@
     <item caption="教师类型" colName="STATUS" groupName="" length="20" name="STATUS" type="String">
       <attribute name="enabled" value="true"/>
     </item>
-    <rowFactors/>
+    <rowFactors>
+      <rowFactor id="3048d1b3-b765-45e6-8e8e-d790e6f38619" name="jiaoshixueyuan">
+        <sql>order by case JG0101.XX0301ID  when (select xx0301id from jg0101 where jg0101id = ${custom.currentUserId}) then 0 else 1 end,XX0301.DWMC,JG0101.jg0101id</sql>
+      </rowFactor>
+    </rowFactors>
   </dataModel>
 </model:Model>

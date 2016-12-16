@@ -162,6 +162,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'kcgzl',
                 height:null,
+                pageSize:50,
                 customColumns: [
 //                                {
 //                    colIndex: '0',

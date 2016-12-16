@@ -133,6 +133,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'fpmb',
                 height:null,
+                pageSize:50,
                 customColumns: [{
                     colIndex: '0',
                     type: 'checkbox'

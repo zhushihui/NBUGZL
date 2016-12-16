@@ -142,14 +142,15 @@
                 pagePath: bs.api.pageModel,
                 action: 'jsgrgzlmx',
                 height:null,
+                pageSize:50,
 //                params : params1,
                 sortable: true,
                 customColumns: [{
 //                    colIndex: '0',
 //                    type: 'checkbox'
                 }, {
-                    colIndex: '0',
-                    type: 'tpl',
+//                    colIndex: '0',
+//                    type: 'tpl',
                     column: {
                         text: '操作',
                         align: 'center',

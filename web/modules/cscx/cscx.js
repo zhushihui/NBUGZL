@@ -129,6 +129,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'cscx',
                 sortable: true,
+                pageSize:50,
                 customColumns: [
 //                                {
 //                    colIndex: '0',
