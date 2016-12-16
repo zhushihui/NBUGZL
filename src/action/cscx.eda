@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="参数查询" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCID1,KCMC1,K4,K5,C1,C2,C3,C4,C6,J,WORKTYPE,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="cscx" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select #auto[select]&#xD;
+  <actionModel caption="参数查询" displayRef="biz:COURSE_CW" displayRefInclude="YEAR,TERM,KCHZH,KCMC,R,XF,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,J,K4,K5,C1,C2,C3,C4,C6" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="cscx" orderIndex="2" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select nbu_course_workload.YEAR,nbu_course_workload.TERM,&#xD;
+nbu_course_workload.KCID || '-' || nbu_course_workload.GROUPS as KCHZH,&#xD;
+nbu_courses.kcmc,nbu_course_workload.R,nbu_courses.xf,nbu_courses.jxxs,nbu_courses.xxxs,nbu_courses.syxs,nbu_courses.sjxs,nbu_courses.sxxs,nbu_courses.sxxxs,&#xD;
+nbu_course_workload.J,nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
+nbu_courses.C2,nbu_courses.C3,nbu_courses.C4,nbu_courses.C6&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
- and nbu_courses.type = '课堂教学'&#xD;
+and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
+and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
-group by&#xD;
-NBU_COURSE_WORKLOAD.CWID,NBU_COURSE_WORKLOAD.YEAR,&#xD;
-NBU_COURSE_WORKLOAD.TERM, NBU_COURSES.KCID, &#xD;
-NBU_COURSE_WORKLOAD.KCMC1, NBU_COURSES.K4, &#xD;
-NBU_COURSES.K5, NBU_COURSES.C1, NBU_COURSES.C2, &#xD;
-NBU_COURSES.C3, NBU_COURSES.C4, NBU_COURSES.C6, &#xD;
-NBU_COURSE_WORKLOAD.J,NBU_COURSES.WORKTYPE,&#xD;
-NBU_COURSES.XYZCBL</sql>
+#sub[order by $]</sql>
   </actionModel>
 </model:Model>
