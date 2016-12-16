@@ -88,7 +88,7 @@
     </item>
     <rowFactors>
       <rowFactor id="b430ad2a-88fc-4ad5-804e-d560f1ec53a2" name="xueyuanguanliyuan_ecfp">
-        <sql>nbu_courses.TYPE =  '课堂教学' and nbu_courses.xx0301id IN&#xD;
+        <sql>nbu_courses.TYPE &lt;>  '研究生院' and nbu_courses.xx0301id IN&#xD;
 (select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
       </rowFactor>
       <rowFactor id="f6ee966b-34ec-4cc7-a029-8cfb4b8c7f82" name="xuexiaoguanliyuan_ecfp">
@@ -104,8 +104,11 @@
         <sql>nbu_courses.TYPE = '其他教学'</sql>
       </rowFactor>
       <rowFactor id="25af303c-6dcf-49f4-83b3-ec70a530be6d" name="yanjiushengyuanshujuguanliyuan">
-        <sql>nbu_courses.TYPE =  '研究生院' and nbu_courses.xx0301id IN&#xD;
+        <sql>nbu_courses.TYPE =  '鐮旂┒鐢熼櫌' and nbu_courses.xx0301id IN&#xD;
 (select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
+      </rowFactor>
+      <rowFactor id="f8dc830d-98bc-478c-9fcb-eed3a1060cbd" name="js">
+        <sql>1=1</sql>
       </rowFactor>
     </rowFactors>
   </dataModel>
