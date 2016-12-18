@@ -72,10 +72,25 @@
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpEditTpl = utils.loadCompiledPage('ecfpSave');
         	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfptj', {TW_ID:twid});
+        	//获取工作总量D的类型
+        	var Dtype ='(理论)';
+            if(data.rows[0].D1_1 !="0"){
+            	Dtype ='(理论)';
+            }else if (data.rows[0].D2_1 !="0"){
+            	Dtype ='(实验)';
+            }else if (data.rows[0].D3_1 !="0"){
+            	Dtype ='(实训)';
+            }else if (data.rows[0].D4_1 !="0"){
+            	Dtype ='(实习)';
+            }else if (data.rows[0].D5_1 !="0"){
+            	Dtype ='(毕业设计)';
+            }else if (data.rows[0].D6_1 !="0"){
+            	Dtype ='(测试类教学)';
+            }
         	//数据整理
         	dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
         			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
-        			TW_ID:data.rows[0].TW_ID,D1_1:data.rows[0].D1_1,D2_1:data.rows[0].D2_1,D3_1:data.rows[0].D3_1,
+        			TW_ID:data.rows[0].TW_ID,D_1:data.rows[0].D_1+Dtype,D1_1:data.rows[0].D1_1,D2_1:data.rows[0].D2_1,D3_1:data.rows[0].D3_1,
         			D4_1:data.rows[0].D4_1,D5_1:data.rows[0].D5_1,D6_1:data.rows[0].D6_1,FATHERID:data.rows[0].FATHERID};
         	dataThree ={D1:data.rows[0].D1_1,D2:data.rows[0].D2_1,D3:data.rows[0].D3_1,D4:data.rows[0].D4_1,D5:data.rows[0].D5_1,D6:data.rows[0].D6_1};
         	$.bhPaperPileDialog.show({
