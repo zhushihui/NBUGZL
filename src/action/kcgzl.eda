@@ -4,8 +4,9 @@
     <sql>select nbu_course_workload.YEAR,nbu_course_workload.TERM,&#xD;
 nbu_course_workload.KCID || '-' || nbu_course_workload.GROUPS as KCHZH,&#xD;
 nbu_courses.kcmc,nbu_course_workload.R,nbu_course_workload.D,&#xD;
-nbu_course_workload.D1,nbu_course_workload.D2,nbu_course_workload.D3,&#xD;
-nbu_course_workload.D4,nbu_course_workload.D5,nbu_course_workload.D6&#xD;
+round(nbu_course_workload.D1,3) as d1,round(nbu_course_workload.D2,3) as d2,&#xD;
+round(nbu_course_workload.D3,3) as d3,round(nbu_course_workload.D4,3) as d4,&#xD;
+round(nbu_course_workload.D5,3) as d5,round(nbu_course_workload.D6,3) as d6&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
 and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
