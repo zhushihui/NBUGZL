@@ -67,6 +67,10 @@
       <rowFactor id="984dd788-297a-4d3d-9a23-7965104411b4" name="xuexiaoguanliyuan">
         <sql>1=1</sql>
       </rowFactor>
+      <rowFactor id="353ff65c-61dc-400e-a40d-c660973d18d9" name="yanjiushengyuan">
+        <sql>nbu_courses.type='研究生院' and jg0101.xx0301id IN&#xD;
+(select xx0301id from jg0101 where jg0101id=${custom.currentUserId})</sql>
+      </rowFactor>
     </rowFactors>
   </dataModel>
 </model:Model>
