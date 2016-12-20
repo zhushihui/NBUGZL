@@ -194,7 +194,7 @@
 						align : 'center',
 						cellsAlign : 'center',
 						cellsRenderer : function(row, column, value, rowData) {
-							if(pageMeta.params.roleId=='xxgly'){
+							if(pageMeta.params.roleId=='20161020132326593'){
 							return '<a href="javascript:void(0)" data-action="edit" data-x-wid='
 									+ rowData.CWID + '>' + '编辑' + '</a>';
 							}else{
