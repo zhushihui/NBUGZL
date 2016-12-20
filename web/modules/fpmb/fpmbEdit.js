@@ -41,7 +41,7 @@ define(function(require, exports, module) {
 						//修改保存
 						bs.edit(formData).done(function(data){
 							$('#emapdatatable').emapdatatable('reload');
-							$.bhPaperPileDialog.hide();//关闭当前弹窗
+							$.bhPaperPileDialog.close();//关闭当前弹窗
 						});
         				//修改界面获取比例之和
 //        				var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};
@@ -97,7 +97,7 @@ define(function(require, exports, module) {
 								//修改保存
 								bs.edit(formData).done(function(data){
 									$('#emapdatatable').emapdatatable('reload');
-									$.bhPaperPileDialog.hide();//关闭当前弹窗
+									$.bhPaperPileDialog.close();//关闭当前弹窗
 								});
         						//修改界面获取比例之和
 //        						var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};

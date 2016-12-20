@@ -135,7 +135,7 @@ define(function(require, exports, module) {
 //                                            }
 //                                        });
             					$('#emapdatatable').emapdatatable('reload');
-            					$.bhPaperPileDialog.hide();//关闭当前弹窗
+            					$.bhPaperPileDialog.close();//关闭当前弹窗
             				}else{
             					BH_UTILS.bhDialogDanger({
             						title:'操作提示',
@@ -191,7 +191,7 @@ define(function(require, exports, module) {
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbdzl.do', param1).done(function(data){
                     				if(data.code == "0"){
                     					$('#emapdatatable').emapdatatable('reload');
-                    					$.bhPaperPileDialog.hide();//关闭当前弹窗
+                    					$.bhPaperPileDialog.close();//关闭当前弹窗
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',
@@ -204,7 +204,7 @@ define(function(require, exports, module) {
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbqsdzl.do', param2).done(function(data){
                     				if(data.code == "0"){
                     					$('#emapdatatable').emapdatatable('reload');
-                    					$.bhPaperPileDialog.hide();//关闭当前弹窗
+                    					$.bhPaperPileDialog.close();//关闭当前弹窗
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',
