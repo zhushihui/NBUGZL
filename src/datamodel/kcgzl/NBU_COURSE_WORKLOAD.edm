@@ -64,6 +64,9 @@
     <item caption="课程名称" colName="KCMC1" groupName="" length="200" name="KCMC1" type="String">
       <attribute name="enabled" value="true"/>
     </item>
+    <item caption="实验课程参数" colName="J2" groupName="" length="" name="J2" type="double">
+      <attribute name="enabled" value="true"/>
+    </item>
     <rowFactors/>
   </dataModel>
 </model:Model>
