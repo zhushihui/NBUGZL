@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="教师归口单位字典" displayRef="biz:JG_XX" displayRefInclude="JG0101ID,XM" displayRefPath="src/parammodel/JG_XX.epm" displayRefPrj="nbugzl" name="jsgkdwzd" paramRef="biz:JG_XX" paramRefInclude="XM" paramRefPath="src/parammodel/JG_XX.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select  JG0101.jg0101id||'-'||JG0101.GKDW as jg0101id,JG0101.xm ||'-'|| XX0301.DWMC as xm&#xD;
+from JG0101,XX0301 where JG0101.XX0301ID= XX0301.XX0301ID&#xD;
+and（JG0101.status = '在职' or JG0101.status = '外聘'）&#xD;
+#sub[$]</sql>
+  </actionModel>
+</model:Model>

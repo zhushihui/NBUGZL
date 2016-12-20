@@ -3,5 +3,6 @@
   <role id="yjsysjgly" name="研究生院数据管理员" type="DATA">
     <data edmRef="src/datamodel/kcgl/NBU_COURSES.edm" factor="yanjiushengyuanshujuguanliyuan" id="25af303c-6dcf-49f4-83b3-ec70a530be6d" model="NBU_COURSES" prjRef="nbugzl"/>
     <data edmRef="src/datamodel/js/JG0101.edm" factor="jiaoshixueyuan" id="3048d1b3-b765-45e6-8e8e-d790e6f38619" model="JG0101" prjRef="nbugzl"/>
+    <data edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" factor="yanjiushengyuan" id="353ff65c-61dc-400e-a40d-c660973d18d9" model="NBU_TEACHER_WORKLOAD" prjRef="nbugzl"/>
   </role>
 </role:Roles>

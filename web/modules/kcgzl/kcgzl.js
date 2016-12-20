@@ -17,7 +17,7 @@
 //				"[data-action=edit]": this.actionEdit,
 //				"[data-action=detail]": this.actionDetail,
 //				"[data-action=delete]": this.actionDelete,
-//				"[data-action=export]": this.actionExport,
+				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn,
 				"[data-action=reckon]": this.actionReckon

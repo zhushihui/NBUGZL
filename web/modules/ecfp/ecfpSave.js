@@ -95,8 +95,9 @@ define(function(require, exports, module) {
             			}
             			//判断父ID是否相同
             			var firstDataTwo ={'FATHERID':formData.TW_ID};
-            			//新建教师工作量,注意JG0101ID为分配界面选择的教工ID对应字段XM
-            			var secondData ={'YEAR':formData.YEAR,'TERM':formData.TERM,'JG0101ID':formData.XM,'CWID':formData.CWID,
+            			//新建教师工作量,注意JG0101ID为分配界面选择的教工ID对应字段XM,包括归口单位
+            			var xmData = formData.XM.split('-');
+            			var secondData ={'YEAR':formData.YEAR,'TERM':formData.TERM,'JG0101ID':xmData[0],'GKDW':xmData[1],'CWID':formData.CWID,
             					'JX0404ID':formData.JX0404ID,'XSFLID':formData.XSFLID,'D1':formData.D1,'D2':formData.D2,'D3':formData.D3,
             					'D4':formData.D4,'D5':formData.D5,'D6':formData.D6,'FATHERID':formData.TW_ID};
             			//修改教师工作量,TW_ID从动作流的第二步判断父ID是否相同中获取TW_ID
