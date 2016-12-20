@@ -60,7 +60,7 @@ define(function(require, exports, module) {
 									BH_UTILS.doAjax('../modules/fpmb/fpmbxjdzl.do', param).done(function(data){
 			            				if(data.code == "0"){
 			            					$('#emapdatatable').emapdatatable('reload');
-			            					$.bhPaperPileDialog.hide();//关闭当前弹窗
+			            					$.bhPaperPileDialog.close();//关闭当前弹窗
 			            				}else{
 			            					BH_UTILS.bhDialogDanger({
 			            						title:'操作提示',

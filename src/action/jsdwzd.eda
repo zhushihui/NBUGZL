@@ -3,7 +3,7 @@
   <actionModel caption="教师单位字典" conditionIndex="" displayRef="biz:JG_XX" displayRefInclude="JG0101ID,XM" displayRefPath="src/parammodel/JG_XX.epm" displayRefPrj="nbugzl" name="jsdwzd" paramFixRef="" paramFixRefInclude="XM" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:JG_XX" paramRefInclude="XM" paramRefPath="src/parammodel/JG_XX.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
     <sql>select  JG0101.jg0101id,JG0101.xm ||'-'|| XX0301.DWMC as xm&#xD;
 from JG0101,XX0301 where JG0101.XX0301ID= XX0301.XX0301ID&#xD;
-and（JG0101.status = '在职' or JG0101.status = '外聘'）&#xD;
+and（JG0101.status = '离职' or JG0101.status = '在职' or JG0101.status = '外聘'）&#xD;
 #sub[$]</sql>
   </actionModel>
 </model:Model>
