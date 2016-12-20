@@ -134,8 +134,8 @@ define(function(require, exports, module) {
 //                                            callback:function(){
 //                                            }
 //                                        });
+            					$.bhPaperPileDialog.hide();//关闭当前弹窗
             					$('#emapdatatable').emapdatatable('reload');
-            					$.bhPaperPileDialog.close();//关闭当前弹窗
             				}else{
             					BH_UTILS.bhDialogDanger({
             						title:'操作提示',
@@ -190,8 +190,8 @@ define(function(require, exports, module) {
         					if(resultData.isAll){//删除部分旧教师信息,调用二次分配模板动作流
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbdzl.do', param1).done(function(data){
                     				if(data.code == "0"){
+                    					$.bhPaperPileDialog.hide();//关闭当前弹窗
                     					$('#emapdatatable').emapdatatable('reload');
-                    					$.bhPaperPileDialog.close();//关闭当前弹窗
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',
@@ -203,8 +203,8 @@ define(function(require, exports, module) {
         					}else{//删除全部旧教师信息,调用二次分配模板全删动作流
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbqsdzl.do', param2).done(function(data){
                     				if(data.code == "0"){
+                    					$.bhPaperPileDialog.hide();//关闭当前弹窗
                     					$('#emapdatatable').emapdatatable('reload');
-                    					$.bhPaperPileDialog.close();//关闭当前弹窗
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',

@@ -39,9 +39,9 @@ define(function(require, exports, module) {
 						formData.D5 = bs.popupGetScore(formData.D5);
 						formData.D6 = bs.popupGetScore(formData.D6);
 						//修改保存
-						bs.edit(formData).done(function(data){
+						bs.edit(formData).done(function(data){						
+							$.bhPaperPileDialog.hide();//关闭当前弹窗
 							$('#emapdatatable').emapdatatable('reload');
-							$.bhPaperPileDialog.close();//关闭当前弹窗
 						});
         				//修改界面获取比例之和
 //        				var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};
@@ -95,9 +95,9 @@ define(function(require, exports, module) {
 								formData.D5 = bs.popupGetScore(formData.D5);
 								formData.D6 = bs.popupGetScore(formData.D6);
 								//修改保存
-								bs.edit(formData).done(function(data){
+								bs.edit(formData).done(function(data){								
+									$.bhPaperPileDialog.hide();//关闭当前弹窗
 									$('#emapdatatable').emapdatatable('reload');
-									$.bhPaperPileDialog.close();//关闭当前弹窗
 								});
         						//修改界面获取比例之和
 //        						var secondData ={'KCID':formData.KCID,'JG0101ID':otherData.JG0101ID};

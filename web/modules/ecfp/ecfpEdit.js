@@ -60,9 +60,9 @@ define(function(require, exports, module) {
 //                                        content:'二次分配成功',
 //                                        callback:function(){
 //                                        }
-//                                    });
-        					$('#emapdatatable').emapdatatable('reload');
+//                                    });       					
         					$.bhPaperPileDialog.hide();//关闭当前弹窗
+        					$('#emapdatatable').emapdatatable('reload');
         				}else{
         					BH_UTILS.bhDialogDanger({
         						title:'操作提示',
