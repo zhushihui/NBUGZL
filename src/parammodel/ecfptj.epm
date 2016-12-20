@@ -62,7 +62,7 @@
         <attribute name="web.xtype" value="select"/>
         <attribute name="web.search.xtype" value="multi-select2"/>
         <attribute name="builder" value="m_value_equal"/>
-        <attribute name="dic" value="0ea35516-01c3-4889-96f4-ac7de7f80db9"/>
+        <attribute name="dic" value="f71e5299-0bd5-40cb-9798-9a4c798c6422"/>
       </item>
       <item groupName="" name="SFZJLXM" originName="SFZJLXM"/>
       <item groupName="" name="SFZJH" originName="SFZJH"/>
