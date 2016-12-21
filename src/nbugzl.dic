@@ -10,5 +10,5 @@
   </dictionaryTable>
   <dictionaryTable dataModelPath="src/action/kchkcmczd.eda" dataModelProject="nbugzl" dicType="BASIC" id="197d1a61-6e2d-43f7-bbca-9bb4c8779aeb" keyColumn="KCID" name="课程号课程名称字典" orderColumn="KCID" ref="" refAction="action:kchkcmczd" refAllFields="true" valueColumn="KCMC"/>
   <dictionaryTable dataModelPath="src/action/mbkc.eda" dataModelProject="nbugzl" dicType="BASIC" id="0367e1af-f886-450d-bea2-71adf09d27f4" keyColumn="KCID" name="模板课程" orderColumn="KCID" ref="" refAction="action:mbkc" refAllFields="true" valueColumn="KCMC"/>
-  <dictionaryTable dataModelPath="src/action/jsgkdwzd.eda" dataModelProject="nbugzl" dicType="BASIC" id="f71e5299-0bd5-40cb-9798-9a4c798c6422" keyColumn="JG0101ID" name="教师归口单位" ref="" refAction="action:jsgkdwzd" refAllFields="true" valueColumn="XM"/>
+  <dictionaryTable dataModelPath="src/action/jsgkdwzd.eda" dataModelProject="nbugzl" dicType="BASIC" id="f71e5299-0bd5-40cb-9798-9a4c798c6422" keyColumn="JG0101ID" name="教师归口单位" orderColumn="JG0101ID" ref="" refAction="action:jsgkdwzd" refAllFields="true" valueColumn="XM"/>
 </dictionary:DictionaryTables>
