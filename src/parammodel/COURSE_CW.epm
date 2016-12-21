@@ -85,9 +85,7 @@
       <item groupName="工作量计算参数" name="C6" originName="C6">
         <attribute name="web.checkType" value="custom[number]"/>
       </item>
-      <item groupName="课程信息" name="XYZCBL" originName="XYZCBL">
-        <attribute name="web.readonly" value="true"/>
-      </item>
+      <item groupName="课程信息" name="XYZCBL" originName="XYZCBL"/>
       <item groupName="" name="KCID" originName="KCID">
         <attribute name="web.quickSearch" value="true"/>
       </item>
