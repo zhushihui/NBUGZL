@@ -302,8 +302,19 @@
         <path id="cf0b653c-bf5e-4c44-b645-fcdecccc6135" name="" order="0" to="end"/>
       </actionNode>
       <assignment id="d5608458_e5da_4294_ae59_3823a2471645" name="赋值">
-        <expression>$szcskc.K4:=param.K4</expression>
         <path id="3c9b3251-ed94-4566-a2b1-27027dc64ab2" name="" order="0" to="szcskc"/>
+        <expression>$szcskc.KCID:=param.KCID</expression>
+        <expression>$szcsj.CWID:=param.CWID</expression>
+        <expression>$szcsj.R:=param.R</expression>
+        <expression>$szcskc.XF:=param.XF</expression>
+        <expression>$szcskc.JXXS:=param.JXXS</expression>
+        <expression>$szcskc.XXXS:=param.XXXS</expression>
+        <expression>$szcskc.SYXS:=param.SYXS</expression>
+        <expression>$szcskc.SJXS:=param.SJXS</expression>
+        <expression>$szcskc.SXXS:=param.SXXS</expression>
+        <expression>$szcskc.SXXXS:=param.SXXXS</expression>
+        <expression>$szcskc.XYZCBL:=param.XYZCBL</expression>
+        <expression>$szcskc.K4:=param.K4</expression>
         <expression>$szcskc.K5:=param.K5</expression>
         <expression>$szcskc.C1:=param.C1</expression>
         <expression>$szcskc.C2:=param.C2</expression>
@@ -311,10 +322,6 @@
         <expression>$szcskc.C4:=param.C4</expression>
         <expression>$szcskc.C6:=param.C6</expression>
         <expression>$szcsj.J:=param.J</expression>
-        <expression>$szcskc.KCID:=param.KCID1</expression>
-        <expression>$szcsj.KCID:=param.KCID1</expression>
-        <expression>$szcskc.WORKTYPE:=param.WORKTYPE</expression>
-        <expression>$szcskc.XYZCBL:=param.XYZCBL</expression>
       </assignment>
     </actionFlow>
   </model:Model>

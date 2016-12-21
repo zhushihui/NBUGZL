@@ -37,7 +37,7 @@
              	var csszEditTpl = utils.loadCompiledPage('csszParam');
              	if (row.length > 0) {
          			var params = row.map(function(el){
-         				return {KCID1:el.KCID1, XXX:el.XXX};	//模型主键
+         				return {KCID:el.KCID, CWID:el.CWID, XXX:el.XXX};	//模型主键
          			});
                  	$.bhPaperPileDialog.show({
                  		content: csszEditTpl.render({}),
@@ -63,8 +63,9 @@
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
+        	var cwid = $(e.target).attr("data-x-cwid");
         	var csszEditTpl = utils.loadCompiledPage('csszSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'szcs', {KCID:id});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'szcs', {KCID:id,CWID:cwid});
         	
         	$.bhPaperPileDialog.show({
         		content: csszEditTpl.render({}),
@@ -163,7 +164,7 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.KCID1 + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid="' + rowData.KCID +'" data-x-cwid=' + rowData.CWID +'>' + '编辑' + '</a>';
                         }
                     }
                 }]

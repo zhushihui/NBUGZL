@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
-  <bizModel mainDataModel="NBU_COURSES" name="COURSE_CW" order="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL,KCID,KCID1,KCHZH">
-    <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,GROUPS:GROUPS,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN,KCMC1:KCMC1,KCID:KCID" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
+  <bizModel mainDataModel="NBU_COURSES" name="COURSE_CW" order="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL,KCID1,KCID,KCHZH">
+    <dataModelRef edmRef="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" include="CWID:CWID,YEAR:YEAR,TERM:TERM,GROUPS:GROUPS,R:R,WEEKS:WEEKS,LXSRS:LXSRS,LOCKS:LOCKS,D:D,D1:D1,D2:D2,D3:D3,D4:D4,D5:D5,D6:D6,JX0404ID:JX0404ID,J:J,ZRN:ZRN,KCMC1:KCMC1,KCID:KCID1" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_COURSE_WORKLOAD">
       <item groupName="" name="CWID" originName="CWID">
         <attribute name="web.hidden" value="true"/>
       </item>
@@ -14,7 +14,9 @@
         <attribute name="web.readonly" value="true"/>
       </item>
       <item groupName="" name="GROUPS" originName="GROUPS"/>
-      <item groupName="" name="R" originName="R"/>
+      <item groupName="工作量计算参数" name="R" originName="R">
+        <attribute name="web.readonly" value="true"/>
+      </item>
       <item groupName="" name="WEEKS" originName="WEEKS"/>
       <item groupName="" name="LXSRS" originName="LXSRS"/>
       <item groupName="" name="LOCKS" originName="LOCKS"/>
@@ -31,32 +33,30 @@
       </item>
       <item caption="自然年" groupName="" name="ZRN" originName="ZRN"/>
       <item groupName="课程信息" name="KCMC1" originName="KCMC1">
-        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.readonly" value="true"/>
       </item>
-      <item groupName="" name="KCID" originName="KCID">
-        <attribute name="web.quickSearch" value="true"/>
-      </item>
+      <item groupName="" name="KCID1" originName="KCID"/>
     </dataModelRef>
-    <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCMC:KCMC,KCYWMC:KCYWMC,XX0301ID:XX0301ID,XF:XF,ZXS:ZXS,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6,XYZCBL:XYZCBL,KCID:KCID1" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
+    <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCMC:KCMC,KCYWMC:KCYWMC,XX0301ID:XX0301ID,XF:XF,ZXS:ZXS,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6,XYZCBL:XYZCBL,KCID:KCID" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">
       <item groupName="" name="KCMC" originName="KCMC"/>
       <item groupName="" name="KCYWMC" originName="KCYWMC"/>
       <item groupName="" name="XX0301ID" originName="XX0301ID"/>
-      <item groupName="" name="XF" originName="XF"/>
-      <item groupName="" name="ZXS" originName="ZXS"/>
-      <item groupName="" name="JXXS" originName="JXXS"/>
-      <item groupName="" name="SYXS" originName="SYXS"/>
-      <item groupName="" name="SJXS" originName="SJXS"/>
-      <item groupName="" name="XXXS" originName="XXXS"/>
-      <item groupName="" name="SXXS" originName="SXXS"/>
-      <item groupName="" name="SXXXS" originName="SXXXS"/>
+      <item groupName="工作量计算参数" name="XF" originName="XF"/>
+      <item groupName="工作量计算参数" name="ZXS" originName="ZXS"/>
+      <item groupName="工作量计算参数" name="JXXS" originName="JXXS"/>
+      <item groupName="工作量计算参数" name="SYXS" originName="SYXS"/>
+      <item groupName="工作量计算参数" name="SJXS" originName="SJXS"/>
+      <item groupName="工作量计算参数" name="XXXS" originName="XXXS"/>
+      <item groupName="工作量计算参数" name="SXXS" originName="SXXS"/>
+      <item groupName="工作量计算参数" name="SXXXS" originName="SXXXS"/>
       <item groupName="" name="ZS" originName="ZS"/>
-      <item groupName="工作量计算参数" name="WORKTYPE" originName="WORKTYPE">
-        <attribute name="web.quickSearch" value="true"/>
+      <item groupName="" name="WORKTYPE" originName="WORKTYPE">
         <attribute name="useDicType" value="toDisplay"/>
         <attribute name="web.xtype" value="select"/>
         <attribute name="web.search.quickSearchXtype" value="text"/>
         <attribute name="builder" value="equal"/>
         <attribute name="dic" value="f41622c3-475d-4804-99fb-64f982a749ab"/>
+        <attribute name="web.quickSearch" value="false"/>
       </item>
       <item groupName="" name="TYPE" originName="TYPE"/>
       <item groupName="" name="REM" originName="REM"/>
@@ -85,8 +85,12 @@
       <item groupName="工作量计算参数" name="C6" originName="C6">
         <attribute name="web.checkType" value="custom[number]"/>
       </item>
-      <item groupName="课程信息" name="XYZCBL" originName="XYZCBL"/>
-      <item groupName="课程信息" name="KCID1" originName="KCID"/>
+      <item groupName="课程信息" name="XYZCBL" originName="XYZCBL">
+        <attribute name="web.readonly" value="true"/>
+      </item>
+      <item groupName="" name="KCID" originName="KCID">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
     </dataModelRef>
     <item caption="课程号组号" colName="KCHZH" custom="true" groupName="" name="KCHZH" type="String">
       <attribute name="enabled" value="true"/>
