@@ -78,8 +78,8 @@ define(function(require, exports, module) {
 //        									callback:function(){
 //        									}
 //        								});
+        								$.bhPaperPileDialog.hide();//关闭当前弹窗
         								$('#emapdatatable').emapdatatable('reload');
-        								$.bhPaperPileDialog.close();//关闭当前弹窗
         							}else{
         								BH_UTILS.bhDialogDanger({
         									title:'操作提示',
@@ -98,8 +98,8 @@ define(function(require, exports, module) {
 //        									callback:function(){
 //        									}
 //        								});
+        								$.bhPaperPileDialog.hide();//关闭当前弹窗
         								$('#emapdatatable').emapdatatable('reload');
-        								$.bhPaperPileDialog.close();//关闭当前弹窗
         							}else{
         								BH_UTILS.bhDialogDanger({
         									title:'操作提示',
