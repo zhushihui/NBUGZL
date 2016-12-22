@@ -23,11 +23,9 @@
 			//TODO 将formData提交到后台动作上
 			return BH_UTILS.doAjax('../modules/fpmb/bjfpbl.do', formData);
 		},
-		del: function(params){
+		del: function(formData){
 			//TODO 添加删除动作
-			return BH_UTILS.doAjax('../modules/fpmb/NBU_DIVIDE_TEMPLATE_DELETE.do', {
-				NBU_DIVIDE_TEMPLATE_DELETE:JSON.stringify(params)
-			});
+			return BH_UTILS.doAjax('../modules/fpmb/fpmbsc.do', formData);
 		},
 		exportData: function(obj){
 			var params = {

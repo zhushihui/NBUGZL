@@ -25,6 +25,7 @@ define(function(require, exports, module) {
 					var strKCID = row[i].KCID;
 					var strCWID = row[i].CWID;
 					var params = {
+						XX0301ID : formData.XX0301ID,
 						R : formData.R,
 						XF : formData.XF,
 						JXXS : formData.JXXS,

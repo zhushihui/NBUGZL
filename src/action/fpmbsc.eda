@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="分配模板删除" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="fpmbsc" orderIndex="" paramFixRef="biz:DT_JG_COURSES" paramFixRefInclude="DT_ID" paramFixRefPath="src/parammodel/DT_JG_COURSES.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>delete from NBU_DIVIDE_TEMPLATE where DT_ID = ?</sql>
+  </actionModel>
+</model:Model>

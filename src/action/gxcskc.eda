@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel authorityIndex="" caption="更新参数KC" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxcskc" orderIndex="" paramFixRef="biz:COURSE_CW" paramFixRefInclude="XF,JXXS,XXXS,SYXS,SJXS,SXXS,SXXXS,K4,K5,C1,C2,C3,C4,C6,XYZCBL,KCID" paramFixRefPath="src/parammodel/COURSE_CW.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+  <actionModel authorityIndex="" caption="更新参数KC" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxcskc" orderIndex="" paramFixRef="biz:COURSE_CW" paramFixRefInclude="XX0301ID,XF,JXXS,XXXS,SYXS,SJXS,SXXS,SXXXS,K4,K5,C1,C2,C3,C4,C6,XYZCBL,KCID" paramFixRefPath="src/parammodel/COURSE_CW.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update NBU_COURSES set&#xD;
+XX0301ID=nvl(?,XX0301ID),&#xD;
 XF=nvl(?,XF),JXXS=nvl(?,JXXS),&#xD;
 XXXS=nvl(?,XXXS),SYXS=nvl(?,SYXS),&#xD;
 SJXS=nvl(?,SJXS),SXXS=nvl(?,SXXS),&#xD;

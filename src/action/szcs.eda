@@ -3,9 +3,9 @@
   <bizModel name="b7fa2d53-c144-475c-ba98-8c4e6424bb5b">
     <item name="cusName" type="String"/>
   </bizModel>
-  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="CWID,ZRN,KCHZH,KCMC1,KCID,R,XF,JXXS,XXXS,SYXS,SJXS,SXXS,SXXXS,K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL,KCID,KCID1,KCHZH" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="CWID,ZRN,KCHZH,KCMC1,XX0301ID,KCID,R,XF,JXXS,XXXS,SYXS,SJXS,SXXS,SXXXS,K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL,KCID,KCID1,KCHZH" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
     <sql>select NBU_COURSE_WORKLOAD.CWID,NBU_COURSE_WORKLOAD.ZRN, nbu_courses.kcid||'-'||nbu_course_workload.groups as kchzh,&#xD;
-NBU_COURSE_WORKLOAD.KCMC1,nbu_courses.kcid,&#xD;
+NBU_COURSE_WORKLOAD.KCMC1,nbu_courses.xx0301id,nbu_courses.kcid,&#xD;
 nbu_course_workload.R,nbu_courses.xf,&#xD;
 nbu_courses.jxxs,nbu_courses.xxxs,&#xD;
 nbu_courses.syxs,nbu_courses.sjxs,&#xD;
@@ -21,7 +21,7 @@ and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
 group by NBU_COURSE_WORKLOAD.CWID,&#xD;
 NBU_COURSE_WORKLOAD.ZRN, nbu_courses.kcid||'-'||nbu_course_workload.groups, &#xD;
-NBU_COURSE_WORKLOAD.KCMC1,nbu_courses.kcid,&#xD;
+NBU_COURSE_WORKLOAD.KCMC1,nbu_courses.xx0301id,nbu_courses.kcid,&#xD;
 nbu_course_workload.R,nbu_courses.xf,&#xD;
 nbu_courses.jxxs,nbu_courses.xxxs,&#xD;
 nbu_courses.syxs,nbu_courses.sjxs,&#xD;

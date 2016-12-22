@@ -322,6 +322,7 @@
         <expression>$szcskc.C4:=param.C4</expression>
         <expression>$szcskc.C6:=param.C6</expression>
         <expression>$szcsj.J:=param.J</expression>
+        <expression>$szcskc.XX0301ID:=param.XX0301ID</expression>
       </assignment>
     </actionFlow>
   </model:Model>

@@ -74,17 +74,27 @@
             });
         },
         
-        actionDelete: function(){
-    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
-    		if(row.length > 0){
-    			var params = row.map(function(el){
-    				return {DT_ID:el.DT_ID};	//模型主键
-    			});
+        actionDelete: function(e){
+        	BH_UTILS.bhDialogDanger({
+        		title:'操作提示',
+        		content:'是否进行删除',
+        		buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
+        			var dt_id = $(e.target).attr("data-x-wid");
+//    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
+//    		if(row.length > 0){
+//    			var params = row.map(function(el){
+//    				return {DT_ID:el.DT_ID};	//模型主键
+//    			});
+    			var params = {DT_ID:dt_id};
     			bs.del(params).done(function(data){
-    				alert("数据删除成功");
+//    				alert("数据删除成功");
     				$('#emapdatatable').emapdatatable('reload');
     			});
-    		}
+//    		}
+        	
+        }},{text:'取消',className:'bh-btn-warning',callback:function(){                        	
+        		}}]
+        	});
         },
         
         actionExport: function(){
@@ -145,7 +155,8 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.DT_ID + '>' + '编辑' + '</a>';
+                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.DT_ID + '>' + '编辑' + '</a>' + 
+                            ' | <a href="javascript:void(0)" data-action="delete"  data-x-wid=' + rowData.DT_ID + '>' + '删除' + '</a>' ;
                         }
                     }
                 }]
