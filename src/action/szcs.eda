@@ -3,21 +3,34 @@
   <bizModel name="b7fa2d53-c144-475c-ba98-8c4e6424bb5b">
     <item name="cusName" type="String"/>
   </bizModel>
-  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="ZRN,KCID1,KCMC1,WORKTYPE,K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select  #auto[select]&#xD;
+  <actionModel caption="设置参数" displayRef="biz:COURSE_CW" displayRefInclude="CWID,ZRN,KCHZH,KCMC1,XX0301ID,KCID,R,XF,JXXS,XXXS,SYXS,SJXS,SXXS,SXXXS,K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="szcs" orderIndex="" paramFixRef="" paramFixRefPath="" paramFixRefPrj="" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCMC,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,XYZCBL,KCID,KCID1,KCHZH" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select NBU_COURSE_WORKLOAD.CWID,NBU_COURSE_WORKLOAD.ZRN, nbu_courses.kcid||'-'||nbu_course_workload.groups as kchzh,&#xD;
+NBU_COURSE_WORKLOAD.KCMC1,nbu_courses.xx0301id,nbu_courses.kcid,&#xD;
+nbu_course_workload.R,nbu_courses.xf,&#xD;
+nbu_courses.jxxs,nbu_courses.xxxs,&#xD;
+nbu_courses.syxs,nbu_courses.sjxs,&#xD;
+nbu_courses.sxxs,nbu_courses.sxxxs,&#xD;
+NBU_COURSES.K4, NBU_COURSES.K5, NBU_COURSES.C1, &#xD;
+NBU_COURSES.C2, NBU_COURSES.C3, NBU_COURSES.C4, &#xD;
+NBU_COURSES.C6, NBU_COURSE_WORKLOAD.J,&#xD;
+NBU_COURSES.XYZCBL&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
 and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
 and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
-group by&#xD;
-NBU_COURSE_WORKLOAD.ZRN, NBU_COURSES.KCID, &#xD;
-NBU_COURSE_WORKLOAD.KCMC1, NBU_COURSES.WORKTYPE,&#xD;
+group by NBU_COURSE_WORKLOAD.CWID,&#xD;
+NBU_COURSE_WORKLOAD.ZRN, nbu_courses.kcid||'-'||nbu_course_workload.groups, &#xD;
+NBU_COURSE_WORKLOAD.KCMC1,nbu_courses.xx0301id,nbu_courses.kcid,&#xD;
+nbu_course_workload.R,nbu_courses.xf,&#xD;
+nbu_courses.jxxs,nbu_courses.xxxs,&#xD;
+nbu_courses.syxs,nbu_courses.sjxs,&#xD;
+nbu_courses.sxxs,nbu_courses.sxxxs,&#xD;
 NBU_COURSES.K4, NBU_COURSES.K5, NBU_COURSES.C1, &#xD;
 NBU_COURSES.C2, NBU_COURSES.C3, NBU_COURSES.C4, &#xD;
 NBU_COURSES.C6, NBU_COURSE_WORKLOAD.J,&#xD;
 NBU_COURSES.XYZCBL&#xD;
-order by nbu_course_workload.kcmc1&#xD;
+order by KCHZH&#xD;
 </sql>
   </actionModel>
 </model:Model>

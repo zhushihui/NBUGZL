@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="更新参数保存" displayRef="biz:COURSE_CW" displayRefInclude="K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="gxcsbc" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
-    <sql>select  nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
+  <actionModel caption="更新参数保存" displayRef="biz:COURSE_CW" displayRefInclude="XX0301ID,XF,JXXS,XXXS,SYXS,SJXS,SXXS,SXXXS,K4,K5,C1,C2,C3,C4,C6,J,XYZCBL" displayRefPath="src/parammodel/COURSE_CW.epm" displayRefPrj="nbugzl" name="gxcsbc" paramRef="biz:COURSE_CW" paramRefInclude="CWID,YEAR,TERM,GROUPS,KCMC,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,KCID,KCYWMC,XX0301ID,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,XYZCBL" paramRefPath="src/parammodel/COURSE_CW.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+    <sql>select  &#xD;
+nbu_courses.xx0301id,&#xD;
+nbu_courses.xf,&#xD;
+nbu_courses.jxxs,nbu_courses.xxxs,&#xD;
+nbu_courses.syxs,nbu_courses.sjxs,&#xD;
+nbu_courses.sxxs,nbu_courses.sxxxs,&#xD;
+nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
 nbu_courses.C2,nbu_courses.C3,nbu_courses.C4,nbu_courses.C6,nbu_course_workload.J &#xD;
 ,nbu_courses.XYZCBL&#xD;
 from &#xD;
@@ -9,6 +15,11 @@ nbu_courses,nbu_course_workload&#xD;
 where nbu_courses.KCID = nbu_course_workload.KCID&#xD;
 #sub[and $]&#xD;
 group by&#xD;
+nbu_courses.xx0301id,&#xD;
+nbu_courses.xf,&#xD;
+nbu_courses.jxxs,nbu_courses.xxxs,&#xD;
+nbu_courses.syxs,nbu_courses.sjxs,&#xD;
+nbu_courses.sxxs,nbu_courses.sxxxs,&#xD;
 nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
 nbu_courses.C2,nbu_courses.C3,nbu_courses.C4,nbu_courses.C6,nbu_course_workload.J,&#xD;
 nbu_courses.XYZCBL</sql>

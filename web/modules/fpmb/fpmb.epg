@@ -13,6 +13,7 @@
       <action name="bjfpbl" ref="action:bjfpbl" url="src/action/bjfpbl.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
       <action name="fpmbdtxz" ref="action:fpmbdtxz" url="src/action/fpmbdtxz.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="fpmbxjdzl" ref="action:fpmbxjdzl" url="src/actionflow/fpmbxjdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="fpmbsc" ref="action:fpmbsc" url="src/action/fpmbsc.eda" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

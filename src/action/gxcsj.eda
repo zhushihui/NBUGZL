@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel authorityIndex="" caption="更新参数J" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxcsj" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" paramFixRefInclude="J,KCID" paramFixRefPath="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+  <actionModel authorityIndex="" caption="更新参数J" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="gxcsj" orderIndex="" paramFixRef="biz:COURSE_CW" paramFixRefInclude="R,J,CWID" paramFixRefPath="src/parammodel/COURSE_CW.epm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update NBU_COURSE_WORKLOAD&#xD;
-set J=nvl(?,J)&#xD;
-where KCID=?</sql>
+set R=nvl(?,R),J=nvl(?,J)&#xD;
+where CWID=?</sql>
   </actionModel>
 </model:Model>

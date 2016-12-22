@@ -22,8 +22,18 @@ define(function(require, exports, module) {
 
         		var row = $("#emapdatatable").emapdatatable("checkedRecords");
 				for (var i = 0; i < row.length; i++) {
-					var KCID = row[i].KCID1;
+					var strKCID = row[i].KCID;
+					var strCWID = row[i].CWID;
 					var params = {
+						XX0301ID : formData.XX0301ID,
+						R : formData.R,
+						XF : formData.XF,
+						JXXS : formData.JXXS,
+						XXXS : formData.XXXS,
+						SYXS : formData.SYXS,
+						SJXS : formData.SJXS,
+						SXXS : formData.SXXS,
+						SXXXS : formData.SXXXS,
 						K4 : formData.K4,
 						K5 : formData.K5,
 						C1 : formData.C1,
@@ -32,7 +42,8 @@ define(function(require, exports, module) {
 						C4 : formData.C4,
 						C6 : formData.C6,
 						J : formData.J,
-						KCID1 : KCID
+						KCID : strKCID,
+						CWID : strCWID
 					};
 	        		bs.save(params).done(function(params){
 
