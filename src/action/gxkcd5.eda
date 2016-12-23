@@ -11,6 +11,6 @@ where a.kcid = b.kcid and a.zrn = to_char(sysdate,'YYYY')&#xD;
 and (b.kcmc like '%毕业设计%' or b.kcmc like '%毕业论文%' or b.kcmc like '%毕业创作%')&#xD;
 ) where a.jx0404id is not null &#xD;
 and a.zrn = to_char(sysdate,'YYYY')&#xD;
-and (a.kcmc1 like '%毕业设计%' or a.kcmc1 like '%毕业论文%' or b.kcmc like '%毕业创作%')</sql>
+and (a.kcmc1 like '%毕业设计%' or a.kcmc1 like '%毕业论文%' or a.kcmc1 like '%毕业创作%')</sql>
   </actionModel>
 </model:Model>
