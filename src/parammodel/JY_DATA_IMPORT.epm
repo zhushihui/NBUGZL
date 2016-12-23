@@ -28,7 +28,9 @@
       <item groupName="" name="J" originName="J"/>
       <item caption="年份" groupName="" name="ZRN" originName="ZRN"/>
       <item groupName="" name="ISFP" originName="ISFP"/>
-      <item caption="项目名称" groupName="" name="KCMC1" originName="KCMC1"/>
+      <item caption="项目名称" groupName="" name="KCMC1" originName="KCMC1">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
       <item groupName="" name="KCID_1" originName="KCID"/>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" include="TW_ID:TW_ID,YEAR:YEAR_1,TERM:TERM_1,JG0101ID:JG0101ID,CWID:CWID_1,GKDW:GKDW,LOCKS:LOCKS_1,D:D_1,D1:D1_1,D2:D2_1,D3:D3_1,D4:D4_1,D5:D5_1,D6:D6_1,JX0404ID:JX0404ID_1,XSFLID:XSFLID,FATHERID:FATHERID" modelName="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" prjRef="nbugzl" tableAlias="NBU_TEACHER_WORKLOAD">
@@ -36,7 +38,7 @@
       <item groupName="" name="YEAR_1" originName="YEAR"/>
       <item groupName="" name="TERM_1" originName="TERM"/>
       <item groupName="" name="JG0101ID" originName="JG0101ID">
-        <attribute name="web.quickSearch" value="false"/>
+        <attribute name="web.quickSearch" value="true"/>
       </item>
       <item groupName="" name="CWID_1" originName="CWID"/>
       <item groupName="" name="GKDW" originName="GKDW">
@@ -63,7 +65,7 @@
         <attribute name="web.hidden" value="true"/>
       </item>
       <item caption="类别名称" groupName="" name="KCMC" originName="KCMC">
-        <attribute name="web.quickSearch" value="false"/>
+        <attribute name="web.quickSearch" value="true"/>
       </item>
       <item groupName="" name="KCYWMC" originName="KCYWMC"/>
       <item caption="学院" groupName="" name="XX0301ID" originName="XX0301ID">
@@ -84,7 +86,9 @@
       <item groupName="" name="SXXXS" originName="SXXXS"/>
       <item groupName="" name="ZS" originName="ZS"/>
       <item groupName="" name="WORKTYPE" originName="WORKTYPE"/>
-      <item caption="数据类型" groupName="" name="TYPE" originName="TYPE"/>
+      <item caption="数据类型" groupName="" name="TYPE" originName="TYPE">
+        <attribute name="web.quickSearch" value="true"/>
+      </item>
       <item groupName="" name="REM" originName="REM"/>
       <item groupName="" name="INTRODUCE" originName="INTRODUCE"/>
       <item groupName="" name="SUBJECTCLASS" originName="SUBJECTCLASS"/>
