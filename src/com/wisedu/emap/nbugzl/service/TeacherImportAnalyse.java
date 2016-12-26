@@ -29,6 +29,7 @@ public class TeacherImportAnalyse implements IImportAnalyse {
 		arg0.put("KCID", GuidUtil.getRandomGuid());//增加courses表的唯一主键
 		arg0.put("TW_ID", GuidUtil.getRandomGuid());//增加nbu_teacher_workload表的唯一主键
 		arg0.put("ZRN", c.get(Calendar.YEAR));//增加导入的年份
+		arg0.put("XSFLID", 1);
 		return null;
 	}
 
