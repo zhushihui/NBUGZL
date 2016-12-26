@@ -4,12 +4,12 @@
     <sql> insert into nbu_teacher_workload &#xD;
  (year,term,jg0101id,cwid,gkdw,locks,D,D1,D2,D3,D4,D5,D6,jx0404id,xsflid)&#xD;
  select ?,?,p.JG0101ID,?,p.GKDW,'0',0,&#xD;
- case when ?!=0 then p.D1 else '0' end as D1,&#xD;
- case when ?!=0 then p.D2 else '0' end as D2,&#xD;
- case when ?!=0 then p.D3 else '0' end as D3,&#xD;
- case when ?!=0 then p.D4 else '0' end as D4,&#xD;
- case when ?!=0 then p.D5 else '0' end as D5,&#xD;
- case when ?!=0 then p.D6 else '0' end as D6,&#xD;
+ case when ?&lt;>0 then p.D1 else '0' end as D1,&#xD;
+ case when ?&lt;>0 then p.D2 else '0' end as D2,&#xD;
+ case when ?&lt;>0 then p.D3 else '0' end as D3,&#xD;
+ case when ?&lt;>0 then p.D4 else '0' end as D4,&#xD;
+ case when ?&lt;>0 then p.D5 else '0' end as D5,&#xD;
+ case when ?&lt;>0 then p.D6 else '0' end as D6,&#xD;
   ?,? &#xD;
  from (select a.KCID,a.JG0101ID,b.GKDW,a.D1,a.D2,a.D3,a.D4,a.D5,a.D6 &#xD;
  from nbu_divide_template a,jg0101 b &#xD;
