@@ -26,6 +26,7 @@
 				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
 				"[data-action=custom-column]": this.actionCustomColumn,
+				"[data-action=custom-columnn]": this.actionCustomColumnn,
 				"[data-action=getType]": this.getType,
 //				"[data-action=copy]": this.actionCopy
 				"[data-action=jc]" : this.actionJc
@@ -282,6 +283,10 @@
         
         actionCustomColumn: function(){
         	$('#emapdatatable').emapdatatable('selectToShowColumns');
+        },
+        
+        actionCustomColumnn: function(){
+        	$('#paramForm').emapdatatable('selectToShowColumns');
         },
         
 		_initAdvanceQuery: function() {
