@@ -65,8 +65,8 @@ select case when b.rem like '%科技学院%'&#xD;
              end &#xD;
        end as D6 &#xD;
 from nbu_courses b  &#xD;
-where a.kcid = b.kcid and a.zrn = to_char(sysdate,'YYYY') &#xD;
+where a.kcid = b.kcid and a.zrn = get_year &#xD;
 ) where a.jx0404id is not null &#xD;
-and a.zrn = to_char(sysdate,'YYYY')</sql>
+and a.zrn = get_year</sql>
   </actionModel>
 </model:Model>

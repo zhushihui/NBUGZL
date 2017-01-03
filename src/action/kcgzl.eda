@@ -9,7 +9,7 @@ round(nbu_course_workload.D3,3) as d3,round(nbu_course_workload.D4,3) as d4,&#xD
 round(nbu_course_workload.D5,3) as d5,round(nbu_course_workload.D6,3) as d6&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
-and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
+and nbu_course_workload.zrn = get_year&#xD;
 and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
 order by kchzh,nbu_courses.kcmc</sql>

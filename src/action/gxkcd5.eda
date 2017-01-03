@@ -7,10 +7,10 @@
         else round(b.k5*a.r*b.xf,3)&#xD;
         end as D5&#xD;
 from nbu_courses b  &#xD;
-where a.kcid = b.kcid and a.zrn = to_char(sysdate,'YYYY')&#xD;
+where a.kcid = b.kcid and a.zrn = get_year&#xD;
 and (b.kcmc like '%毕业设计%' or b.kcmc like '%毕业论文%' or b.kcmc like '%毕业创作%')&#xD;
 ) where a.jx0404id is not null &#xD;
-and a.zrn = to_char(sysdate,'YYYY')&#xD;
+and a.zrn = get_year&#xD;
 and (a.kcmc1 like '%毕业设计%' or a.kcmc1 like '%毕业论文%' or a.kcmc1 like '%毕业创作%')</sql>
   </actionModel>
 </model:Model>
