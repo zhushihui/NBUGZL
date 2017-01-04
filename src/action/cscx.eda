@@ -8,7 +8,7 @@ nbu_course_workload.J,nbu_courses.K4,nbu_courses.K5,nbu_courses.C1,&#xD;
 nbu_courses.C2,nbu_courses.C3,nbu_courses.C4,nbu_courses.C6&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
-and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
+and nbu_course_workload.zrn = get_year&#xD;
 and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
 #sub[order by $]</sql>
