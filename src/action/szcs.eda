@@ -16,7 +16,7 @@ NBU_COURSES.C6, NBU_COURSE_WORKLOAD.J,&#xD;
 NBU_COURSES.XYZCBL&#xD;
 from nbu_courses , nbu_course_workload &#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
-and nbu_course_workload.zrn = to_char(sysdate,'yyyy')&#xD;
+and nbu_course_workload.zrn = get_year&#xD;
 and nbu_courses.type = '课堂教学'&#xD;
 #sub[and $]&#xD;
 group by NBU_COURSE_WORKLOAD.CWID,&#xD;
