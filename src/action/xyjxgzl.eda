@@ -11,6 +11,7 @@ from nbu_courses,nbu_teacher_workload,&#xD;
 nbu_course_workload&#xD;
 where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;
 and nbu_course_workload.kcid = nbu_courses.kcid&#xD;
+and nbu_course_workload.locks = 0&#xD;
 #sub[and $]&#xD;
 group by nbu_teacher_workload.gkdw,nbu_course_workload.zrn,nbu_courses.type&#xD;
 #sub[order by $]) a where a.xueyuanD > 0</sql>
