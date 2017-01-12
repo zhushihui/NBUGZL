@@ -389,6 +389,7 @@
                 pagePath: bs.api.pageModel,
                 action: 'ecfp',
                 height: null,
+                sortable: true,
                 pageSize:50,
 //                autoRowHeight: true,
 //                altRows: true,

@@ -12,6 +12,7 @@ where nbu_teacher_workload.cwid = nbu_course_workload.cwid &#xD;
 and nbu_course_workload.kcid = nbu_courses.kcid &#xD;
 and nbu_teacher_workload.jg0101id = jg0101.jg0101id&#xD;
 and nbu_courses.xx0301id = xx0301.xx0301id&#xD;
+and nbu_course_workload.locks = 0&#xD;
 #sub[and $]&#xD;
 group by nbu_course_workload.zrn,&#xD;
 nbu_teacher_workload.jg0101id,jg0101.xm,nbu_courses.type,&#xD;

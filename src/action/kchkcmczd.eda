@@ -4,6 +4,7 @@
     <sql>select  nbu_course_workload.kcid,nbu_course_workload.kcid ||'-'|| nbu_courses.kcmc as kcmc&#xD;
 from nbu_courses,nbu_course_workload&#xD;
 where nbu_courses.kcid = nbu_course_workload.kcid&#xD;
+and nbu_course_workload.zrn = get_year&#xD;
 #sub[and $]</sql>
   </actionModel>
 </model:Model>

@@ -98,8 +98,21 @@
         },
         
         actionExport: function(){
-        	bs.exportData({}).done(function(data){
-        	});
+        	var params = {
+        			root: contextPath,
+					app : "nbugzl",
+					module : "modules",
+					page : 'fpmb',
+					action : 'fpmb'
+			};
+			var querySetting = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+			if (querySetting) {
+				params['querySetting'] = querySetting;
+			}
+			//选择字段导出
+			$('#emapdatatable').emapdatatable('selectColumnsExport', params);
+//        	bs.exportData({}).done(function(data){
+//        	});
         },
 
 		actionImport: function(){
