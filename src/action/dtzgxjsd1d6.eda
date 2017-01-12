@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel authorityIndex="" caption="单条之更新教师D1D6" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="dtzgxjsd1d6" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_TEACHER_WORKLOAD" paramFixRefInclude="CWID" paramFixRefPath="src/datamodel/jsgzl/NBU_TEACHER_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
+    <sql>update nbu_teacher_workload t set (t.D1,t.D2,t.D3,t.D4,t.D5,t.D6)= (&#xD;
+ select case when p.isfp ='0' and (p.xsflid ='1' or p.xsflid ='2' )&#xD;
+            then case when 1/p.num =1&#xD;
+              then to_char(1/p.num,'FM9')&#xD;
+              else to_char(1/p.num ,'FM9999990.99999999')&#xD;
+              end&#xD;
+            when p.isfp ='1' and (p.xsflid ='1' or p.xsflid ='2' )&#xD;
+            then t.D1&#xD;
+            else '0'&#xD;
+            end as D1,&#xD;
+        case when p.isfp ='0' and (p.xsflid ='3' or p.xsflid ='4')   &#xD;
+            then case when 1/p.num =1&#xD;
+              then to_char(1/p.num,'FM9')&#xD;
+              else to_char(1/p.num ,'FM9999990.99999999')&#xD;
+              end&#xD;
+            when p.isfp ='1' and (p.xsflid ='3' or p.xsflid ='4')   &#xD;
+            then t.D2&#xD;
+            else '0'&#xD;
+            end as D2,&#xD;
+        case when p.isfp ='0' and  p.xsflid ='6' &#xD;
+            then case when 1/p.num =1&#xD;
+              then to_char(1/p.num,'FM9')&#xD;
+              else to_char(1/p.num ,'FM9999990.99999999')&#xD;
+              end&#xD;
+            when p.isfp ='1' and  p.xsflid ='6' &#xD;
+            then t.D3&#xD;
+            else '0'&#xD;
+            end as D3, &#xD;
+        case when p.isfp ='0' and p.xsflid ='5' &#xD;
+            then case when 1/p.num =1&#xD;
+              then to_char(1/p.num,'FM9')&#xD;
+              else to_char(1/p.num ,'FM9999990.99999999')&#xD;
+              end&#xD;
+            when p.isfp ='1' and p.xsflid ='5' &#xD;
+            then t.D4&#xD;
+            else '0'&#xD;
+            end as D4,&#xD;
+        case when p.isfp ='0' and p.xsflid ='11' &#xD;
+            then case when 1/p.num =1&#xD;
+              then to_char(1/p.num,'FM9')&#xD;
+              else to_char(1/p.num ,'FM9999990.99999999')&#xD;
+              end&#xD;
+            when p.isfp ='1' and p.xsflid ='11' &#xD;
+            then t.D5&#xD;
+            else '0'&#xD;
+            end as D5,&#xD;
+        case when p.isfp ='0' and p.xsflid ='12'         &#xD;
+            then case when 1/p.num =1&#xD;
+              then to_char(1/p.num,'FM9')&#xD;
+              else to_char(1/p.num ,'FM9999990.99999999')&#xD;
+              end&#xD;
+            when p.isfp ='1' and p.xsflid ='12'         &#xD;
+            then t.D6&#xD;
+            else '0'&#xD;
+            end as D6&#xD;
+from  (select a.cwid,count(a.cwid) as num,a.xsflid,b.isfp&#xD;
+from  nbu_teacher_workload a &#xD;
+inner join nbu_course_workload b on a.cwid = b.cwid&#xD;
+where b.zrn = get_year&#xD;
+group by a.cwid,a.xsflid,b.isfp ) p  &#xD;
+where t.cwid = p.cwid and t.xsflid =p.xsflid  )&#xD;
+where t.jx0404id is not null&#xD;
+ and exists (select * from nbu_course_workload c where t.cwid= c.cwid and c.zrn = get_year )&#xD;
+and t.cwid = ?</sql>
+  </actionModel>
+</model:Model>

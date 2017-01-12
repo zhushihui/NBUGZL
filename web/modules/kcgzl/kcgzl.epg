@@ -4,6 +4,8 @@
     <actions>
       <action name="kcgzl" ref="action:kcgzl" url="src/action/kcgzl.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
       <action name="gzljsdzl" ref="action:gzljsdzl" url="src/actionflow/gzljsdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
+      <action name="dtzsfecfp" ref="action:dtzsfecfp" url="src/action/dtzsfecfp.eda" multiple="true" prjRef="nbugzl" canAccess="true"/>
+      <action name="gzldtjsdzl" ref="action:gzldtjsdzl" url="src/actionflow/gzldtjsdzl.aflow" multiple="false" prjRef="nbugzl" canAccess="true"/>
     </actions>
   </page>
 </page:Pages>

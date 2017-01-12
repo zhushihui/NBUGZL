@@ -62,7 +62,12 @@ define(function(require, exports, module) {
 //                                        }
 //                                    });       					
         					$.bhPaperPileDialog.hide();//关闭当前弹窗
-        					$('#emapdatatable').emapdatatable('reload');
+//        					$('#emapdatatable').emapdatatable('reload');
+        					//回退到有搜索数据的列表中
+        					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+        		            $('#emapdatatable').emapdatatable('reload', {
+        		                querySetting: search
+        		            });
         				}else{
         					BH_UTILS.bhDialogDanger({
         						title:'操作提示',

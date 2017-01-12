@@ -19,6 +19,7 @@
 //				"[data-action=delete]": this.actionDelete,
 				"[data-action=export]": this.actionExport,
 //				"[data-action=import]": this.actionImport,
+				"[data-action=change]": this.actionChange,
 				"[data-action=custom-column]": this.actionCustomColumn,
 				"[data-action=reckon]": this.actionReckon
 			};
@@ -83,7 +84,74 @@
     			});
     		}
         },
-        
+      //单条课程工作量计算
+        actionChange: function(e){
+        	//获取关键ID
+        	var cwid = $(e.target).attr("data-x-cwid");
+        	var testData ={'CWID':cwid};
+        	//单条数据是否二次分配
+        	BH_UTILS.doAjax('../modules/kcgzl/dtzsfecfp.do', testData).done(function(data){
+				if(data.code == "0"){//单条数据是否二次分配
+					var countData = data.datas.dtzsfecfp.rows[0];
+					if(countData != null && countData .ISFP == 0){//没有二次分配
+						//更新课程D1D6
+						var oneData ={'CWID':cwid};
+						//更新课程D5
+						var twoData ={'CWID':cwid};
+						//更新课程D
+						var threeData ={'CWID':cwid};
+						//更新教师D1D6
+						var fourData ={'CWID':cwid};
+						//更新教师D
+						var fiveData ={'CWID':cwid};
+						//参数格式转换
+            			var sendParam1 = JSON.stringify(oneData);
+            			var sendParam2 = JSON.stringify(twoData);
+            			var sendParam3 = JSON.stringify(threeData);
+            			var sendParam4 = JSON.stringify(fourData);
+            			var sendParam5 = JSON.stringify(fiveData);
+            			//参数存入参数组中
+            			var param = {'dtgxkcd1d6':sendParam1,'dtgxkcd5':sendParam2,'dtgxkcd':sendParam3,'dtgxjsd1d6':sendParam4,'dtgxjsd':sendParam5};
+						//调用工作量单条计算工作流
+						BH_UTILS.doAjax('../modules/kcgzl/gzldtjsdzl.do', param).done(function(data){
+							if(data.code == "0"){
+								$.bhPaperPileDialog.hide();//关闭当前弹窗
+								BH_UTILS.bhDialogSuccess({
+									title:'操作提示',
+									content:'单条数据工作量计算成功',
+									callback:function(){
+									}
+								}); 
+								//回退到有搜索数据的列表中
+								var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+								$('#emapdatatable').emapdatatable('reload', {
+									querySetting: search
+								});
+							}else{
+								BH_UTILS.bhDialogDanger({
+									title:'操作提示',
+									content:'单条数据工作量计算失败',
+									buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+								});
+							}
+						});
+					}else{
+						BH_UTILS.bhDialogDanger({
+	                        title:'操作提示',
+	                        content:'此单条数据已二次分配，无法计算工作量',
+	                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+	                    });
+					}
+				}else{
+					BH_UTILS.bhDialogDanger({
+                        title:'操作提示',
+                        content:'单条数据是否二次分配查询出错',
+                        buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+                    });
+				}
+			});
+        		
+        },
         actionExport: function(){
         	bs.exportData({}).done(function(data){
         	});
@@ -108,7 +176,7 @@
         actionCustomColumn: function(){
         	$('#emapdatatable').emapdatatable('selectToShowColumns');
         },
-        
+        //课程工作量批量计算
         actionReckon: function(){
         	BH_UTILS.bhDialogSuccess({
                 title:'操作提示',
@@ -169,14 +237,14 @@
 //                    type: 'checkbox'
 //                }, 
                 {
-                   
+                	colIndex: '0',
+                    type: 'tpl',
                     column: {
                         text: '操作',
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="detail" data-x-wid=' + rowData.WID + '>' + '详情' + '</a>'+ 
-                            ' | <a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.WID + '>' + '编辑' + '</a>';
+                        	return '<a href="javascript:void(0)" data-action="change" data-x-cwid=' + rowData.CWID + '>' + '计算' + '</a>'; 
                         }
                     }
                 }]
