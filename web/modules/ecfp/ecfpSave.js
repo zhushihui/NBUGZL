@@ -50,18 +50,6 @@ define(function(require, exports, module) {
             			result = true;
             		}
             		if(result){//所有参数输入都合理
-//            		  BH_UTILS.bhDialogSuccess({
-//                            title:'操作提示',
-//                            content:'是否进行二次分配',
-//                            buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
-            			
-            			//计算D1-D6
-//            			formData.D1 = otherData.D1==null?0:bs.popupGetScore(otherData.D1)*bs.popupGetScore(formData.D1_1);
-//            			formData.D2 = otherData.D2==null?0:bs.popupGetScore(otherData.D2)*bs.popupGetScore(formData.D2_1);
-//            			formData.D3 = otherData.D3==null?0:bs.popupGetScore(otherData.D3)*bs.popupGetScore(formData.D3_1);
-//            			formData.D4 = otherData.D4==null?0:bs.popupGetScore(otherData.D4)*bs.popupGetScore(formData.D4_1);
-//            			formData.D5 = otherData.D5==null?0:bs.popupGetScore(otherData.D5)*bs.popupGetScore(formData.D5_1);
-//            			formData.D6 = otherData.D6==null?0:bs.popupGetScore(otherData.D6)*bs.popupGetScore(formData.D6_1);
             			//转换D1-D6的分数为小数
             			formData.D1 = bs.popupGetScore(formData.D1_1);
             			formData.D2 = bs.popupGetScore(formData.D2_1);
@@ -70,63 +58,72 @@ define(function(require, exports, module) {
             			formData.D5 = bs.popupGetScore(formData.D5_1);
             			formData.D6 = bs.popupGetScore(formData.D6_1);
             			
-            			//判断是否有教师
-            			var firstData ={};
-            			firstData['CWID'] = formData.CWID;
-            			firstData['JG0101ID'] = formData.XM;
-            			firstData['FATHERID'] = formData.TW_ID;
-            			if(formData.D1_1 == 0){
-            				firstData['D1'] = 0;
+            			var teacherlist= formData.XM.split(",");//教师ID
+            			var teacherData = new Array(); 
+            			for (var i=0;i<teacherlist.length;i++){
+            				var xmData = teacherlist[i].split('-'); 
+            				//判断是否有教师
+            				var firstData ={};
+            				firstData['CWID'] = formData.CWID;
+            				firstData['JG0101ID'] = xmData[0];//注意JG0101ID为分配界面选择的教工ID对应字段XM,包括归口单位
+            				firstData['FATHERID'] = formData.TW_ID;
+            				if(formData.D1_1 == 0){
+            					firstData['D1'] = 0;
+            				}
+            				if(formData.D2_1 == 0){
+            					firstData['D2'] = 0;
+            				}
+            				if(formData.D3_1 == 0){
+            					firstData['D3'] = 0;
+            				}
+            				if(formData.D4_1 == 0){
+            					firstData['D4'] = 0;
+            				}
+            				if(formData.D5_1 == 0){
+            					firstData['D5'] = 0;
+            				}
+            				if(formData.D6_1 == 0){
+            					firstData['D6'] = 0;
+            				}
+            				//判断父ID是否相同
+            				var firstDataTwo ={'FATHERID':formData.TW_ID};
+            				//新建教师工作量,注意JG0101ID为分配界面选择的教工ID对应字段XM,包括归口单位
+            				var secondData ={'YEAR':formData.YEAR,'TERM':formData.TERM,'JG0101ID':xmData[0],'GKDW':xmData[1],'CWID':formData.CWID,
+            						'JX0404ID':formData.JX0404ID,'XSFLID':formData.XSFLID,'D1':formData.D1,'D2':formData.D2,'D3':formData.D3,
+            						'D4':formData.D4,'D5':formData.D5,'D6':formData.D6,'FATHERID':formData.TW_ID};
+            				//修改教师工作量,TW_ID从动作流的第二步判断父ID是否相同中获取TW_ID
+            				var thirdData = {'D1':formData.D1,'D2':formData.D2,'D3':formData.D3,'D4':formData.D4,
+            						'D5':formData.D5,'D6':formData.D6};
+            				//修改旧教师工作量
+            				//不修改了，tw_id设为空-----------------
+            				var fourData = {'D1':formData.D1_1,'D2':formData.D2_1,'D3':formData.D3_1,'D4':formData.D4_1,
+            						'D5':formData.D5_1,'D6':formData.D6_1,'TW_ID':''};
+            				//转换教师工作量
+            				var fiveData = {'CWID':formData.CWID};
+            				//更新教师D
+            				var sixData = {'CWID':formData.CWID};
+            				//修改已分配课程状态
+            				var sevenData = {'CWID':formData.CWID};
+            				//参数格式转换
+            				var sendParam1 = JSON.stringify(firstData);
+            				var sendParam1_1 = JSON.stringify(firstDataTwo);
+            				var sendParam2 = JSON.stringify(secondData);
+            				var sendParam3 = JSON.stringify(thirdData);
+            				var sendParam4 = JSON.stringify(fourData);
+            				var sendParam5 = JSON.stringify(fiveData);
+            				var sendParam6 = JSON.stringify(sixData);
+            				var sendParam7 = JSON.stringify(sevenData);
+            				//参数存入参数组中
+            				var param = {'pdsfyjs':sendParam1,'pdfidsfxt':sendParam1_1,'xjjsgzl':sendParam2,'xgjsgzl':sendParam3,
+            						'xgjjsgzl':sendParam4,'zhjsgzl':sendParam5,'gxjsgzld':sendParam6,'xgyfpkczt':sendParam7};
+            				teacherData[i] =param;
             			}
-            			if(formData.D2_1 == 0){
-            				firstData['D2'] = 0;
-            			}
-            			if(formData.D3_1 == 0){
-            				firstData['D3'] = 0;
-            			}
-            			if(formData.D4_1 == 0){
-            				firstData['D4'] = 0;
-            			}
-            			if(formData.D5_1 == 0){
-            				firstData['D5'] = 0;
-            			}
-            			if(formData.D6_1 == 0){
-            				firstData['D6'] = 0;
-            			}
-            			//判断父ID是否相同
-            			var firstDataTwo ={'FATHERID':formData.TW_ID};
-            			//新建教师工作量,注意JG0101ID为分配界面选择的教工ID对应字段XM,包括归口单位
-            			var xmData = formData.XM.split('-');
-            			var secondData ={'YEAR':formData.YEAR,'TERM':formData.TERM,'JG0101ID':xmData[0],'GKDW':xmData[1],'CWID':formData.CWID,
-            					'JX0404ID':formData.JX0404ID,'XSFLID':formData.XSFLID,'D1':formData.D1,'D2':formData.D2,'D3':formData.D3,
-            					'D4':formData.D4,'D5':formData.D5,'D6':formData.D6,'FATHERID':formData.TW_ID};
-            			//修改教师工作量,TW_ID从动作流的第二步判断父ID是否相同中获取TW_ID
-            			var thirdData = {'D1':formData.D1,'D2':formData.D2,'D3':formData.D3,'D4':formData.D4,
-            					'D5':formData.D5,'D6':formData.D6};
-            			//修改旧教师工作量
-            			//不修改了，tw_id设为空-----------------
-            			var fourData = {'D1':formData.D1_1,'D2':formData.D2_1,'D3':formData.D3_1,'D4':formData.D4_1,
-            					'D5':formData.D5_1,'D6':formData.D6_1,'TW_ID':''};
-            			//转换教师工作量
-            			var fiveData = {'CWID':formData.CWID};
-            			//更新教师D
-            			var sixData = {'CWID':formData.CWID};
-            			//修改已分配课程状态
-            			var sevenData = {'CWID':formData.CWID};
             			//参数格式转换
-            			var sendParam1 = JSON.stringify(firstData);
-            			var sendParam1_1 = JSON.stringify(firstDataTwo);
-            			var sendParam2 = JSON.stringify(secondData);
-            			var sendParam3 = JSON.stringify(thirdData);
-            			var sendParam4 = JSON.stringify(fourData);
-            			var sendParam5 = JSON.stringify(fiveData);
-            			var sendParam6 = JSON.stringify(sixData);
-            			var sendParam7 = JSON.stringify(sevenData);
+            			var teacherParam = JSON.stringify(teacherData); 
             			//参数存入参数组中
-            			var param = {'pdsfyjs':sendParam1,'pdfidsfxt':sendParam1_1,'xjjsgzl':sendParam2,'xgjsgzl':sendParam3,
-            					'xgjjsgzl':sendParam4,'zhjsgzl':sendParam5,'gxjsgzld':sendParam6,'xgyfpkczt':sendParam7};
-            			//使用二次分配工作流
-            			BH_UTILS.doAjax('../modules/ecfp/ecfpdzl.do', param).done(function(data){
+            			var param = {'modelList':teacherParam};
+            			//使用二次分配多条添加工作流
+            			BH_UTILS.doAjax('../modules/ecfp/ecfpdttjdzl.do', param).done(function(data){
             				if(data.code == "0"){
 //                    					BH_UTILS.bhDialogSuccess({
 //                                            title:'操作提示',
@@ -196,7 +193,12 @@ define(function(require, exports, module) {
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbdzl.do', param1).done(function(data){
                     				if(data.code == "0"){
                     					$.bhPaperPileDialog.hide();//关闭当前弹窗
-                    					$('#emapdatatable').emapdatatable('reload');
+//                    					$('#emapdatatable').emapdatatable('reload');
+                    					//回退到有搜索数据的列表中
+                    					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+                    		            $('#emapdatatable').emapdatatable('reload', {
+                    		                querySetting: search
+                    		            });
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',
@@ -209,7 +211,12 @@ define(function(require, exports, module) {
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbqsdzl.do', param2).done(function(data){
                     				if(data.code == "0"){
                     					$.bhPaperPileDialog.hide();//关闭当前弹窗
-                    					$('#emapdatatable').emapdatatable('reload');
+//                    					$('#emapdatatable').emapdatatable('reload');
+                    					//回退到有搜索数据的列表中
+                    					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+                    		            $('#emapdatatable').emapdatatable('reload', {
+                    		                querySetting: search
+                    		            });
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',

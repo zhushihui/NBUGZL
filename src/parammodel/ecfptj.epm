@@ -59,7 +59,7 @@
       <item groupName="" name="JGH" originName="JGH"/>
       <item groupName="手工拆分" name="XM" originName="XM">
         <attribute name="useDicType" value="toDisplay"/>
-        <attribute name="web.xtype" value="select"/>
+        <attribute name="web.xtype" value="multi-select2"/>
         <attribute name="web.search.xtype" value="multi-select2"/>
         <attribute name="builder" value="m_value_equal"/>
         <attribute name="dic" value="f71e5299-0bd5-40cb-9798-9a4c798c6422"/>
