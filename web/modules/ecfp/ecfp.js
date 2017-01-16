@@ -212,62 +212,64 @@
         	if( $("#emapdatatable").emapdatatable('validateTable') ){
         		//把修改的列表数据数据集合整合成批量修改需要的数据集合
         		var formData =$('#emapdatatable').emapdatatable('getChangedRows');
-        		//三个参数
-        		var teacherData = new Array(); 
-        		for(var i=0;i<formData.length;i++){
-        			//获取单个数据集合
-        			var oneData = formData[i];
-        			//转换D1-D6的比例
-        			oneData.D1_1 = bs.popupGetScore(oneData.D1_1);
-        			oneData.D2_1 = bs.popupGetScore(oneData.D2_1);
-        			oneData.D3_1 = bs.popupGetScore(oneData.D3_1);
-        			oneData.D4_1 = bs.popupGetScore(oneData.D4_1);
-        			oneData.D5_1 = bs.popupGetScore(oneData.D5_1);
-        			oneData.D6_1 = bs.popupGetScore(oneData.D6_1);
-        			//修改旧教师信息
-        			var teacherOne = {'D1':oneData.D1_1,'D2':oneData.D2_1,'D3':oneData.D3_1,'D4':oneData.D4_1,
-        					'D5':oneData.D5_1,'D6':oneData.D6_1,'TW_ID':oneData.TW_ID};
-        			//更新教师工作总量D
-        			var editOne = {'CWID':oneData.CWID};
-        			//修改已分配课程状态
-        			var statusOne = {'CWID':oneData.CWID};
-        			
-        			//参数格式转换,用于二次分配单条修改工作流
-        			var sendParam1 = JSON.stringify(teacherOne);
-        			var sendParam2 = JSON.stringify(editOne);
-        			var sendParam3 = JSON.stringify(statusOne);
-        			var paramOne = {'xgjsgzbl':sendParam1,'gxgzld':sendParam2,'xgyfpkczt':sendParam3};
-        			//存入list集合
-        			teacherData[i] = paramOne;
-        		}
-        		//参数格式转换
-    			var teacherParam = JSON.stringify(teacherData); 
-    			//参数存入参数组中
-    			var param = {'teacherList':teacherParam};
-    			//使用二次分配批量修改工作流
-    			BH_UTILS.doAjax('../modules/ecfp/ecfpplxgdzl.do', param).done(function(data){
-    				if(data.code == "0"){
+        		if(formData != null){//修改数据是否为空
+        			//三个参数
+        			var teacherData = new Array(); 
+        			for(var i=0;i<formData.length;i++){
+        				//获取单个数据集合
+        				var oneData = formData[i];
+        				//转换D1-D6的比例
+        				oneData.D1_1 = bs.popupGetScore(oneData.D1_1);
+        				oneData.D2_1 = bs.popupGetScore(oneData.D2_1);
+        				oneData.D3_1 = bs.popupGetScore(oneData.D3_1);
+        				oneData.D4_1 = bs.popupGetScore(oneData.D4_1);
+        				oneData.D5_1 = bs.popupGetScore(oneData.D5_1);
+        				oneData.D6_1 = bs.popupGetScore(oneData.D6_1);
+        				//修改旧教师信息
+        				var teacherOne = {'D1':oneData.D1_1,'D2':oneData.D2_1,'D3':oneData.D3_1,'D4':oneData.D4_1,
+        						'D5':oneData.D5_1,'D6':oneData.D6_1,'TW_ID':oneData.TW_ID};
+        				//更新教师工作总量D
+        				var editOne = {'CWID':oneData.CWID};
+        				//修改已分配课程状态
+        				var statusOne = {'CWID':oneData.CWID};
+        				
+        				//参数格式转换,用于二次分配单条修改工作流
+        				var sendParam1 = JSON.stringify(teacherOne);
+        				var sendParam2 = JSON.stringify(editOne);
+        				var sendParam3 = JSON.stringify(statusOne);
+        				var paramOne = {'xgjsgzbl':sendParam1,'gxgzld':sendParam2,'xgyfpkczt':sendParam3};
+        				//存入list集合
+        				teacherData[i] = paramOne;
+        			}
+        			//参数格式转换
+        			var teacherParam = JSON.stringify(teacherData); 
+        			//参数存入参数组中
+        			var param = {'teacherList':teacherParam};
+        			//使用二次分配批量修改工作流
+        			BH_UTILS.doAjax('../modules/ecfp/ecfpplxgdzl.do', param).done(function(data){
+        				if(data.code == "0"){
 //            					BH_UTILS.bhDialogSuccess({
 //                                    title:'操作提示',
 //                                    content:'修改成功',
 //                                    callback:function(){
 //                                    }
 //                                });       					
-    					$.bhPaperPileDialog.hide();//关闭当前弹窗
-    					//回退到有搜索数据的列表中
-    					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
-    		            $('#emapdatatable').emapdatatable('reload', {
-    		                querySetting: search
-    		            });
-    				}else{
-    					BH_UTILS.bhDialogDanger({
-    						title:'操作提示',
-    						content:'修改失败',
-    						buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
-    					});
-    				}
-    			});
-        		$('#emapdatatable').emapdatatable('leaveEditMode');
+        					$.bhPaperPileDialog.hide();//关闭当前弹窗
+        					//回退到有搜索数据的列表中
+        					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+        					$('#emapdatatable').emapdatatable('reload', {
+        						querySetting: search
+        					});
+        				}else{
+        					BH_UTILS.bhDialogDanger({
+        						title:'操作提示',
+        						content:'修改失败',
+        						buttons:[{text:'确认',className:'bh-btn-warning',callback:function(){}}]
+        					});
+        				}
+        			});
+        			$('#emapdatatable').emapdatatable('leaveEditMode');
+        		}
         	}
         },
         //删除功能
