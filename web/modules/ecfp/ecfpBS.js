@@ -119,34 +119,55 @@
       //二次分配界面，调用模板时,输入比例是否合理
         popupModelDialogDanger : function(sumData,otherData) {
         	var isAll = false;
-        	//比例之和是否为1,且是当前课程比例
-        	if(sumData.D1 >0 && sumData.D1 <1 && otherData.D1 !=0){
-        		otherData.D1 = (1-sumData.D1).toFixed(3);
+        	var resultData={'D1':'0','D2':'0','D3':'0','D4':'0','D5':'0','D6':'0'};
+        	//比例之和是否为1,且是当前课程比
+        	if(sumData.D1 >0 && otherData.D1 !=0){
+        		resultData.D1= (1-sumData.D1).toFixed(3);
+        		if(resultData.D1=='0.'){
+        			resultData.D1='0';
+        		}
         		isAll = true;
         	}
-        	if(sumData.D2 >0 && sumData.D2 <1 && otherData.D2 !=0){
-        		otherData.D2 = (1-sumData.D2).toFixed(3);
+        	if(sumData.D2 >0 && otherData.D2 !=0){
+        		resultData.D2= (1-sumData.D2).toFixed(3);
+        		if(resultData.D2=='0.'){
+        			resultData.D2='0';
+        		}
         		isAll = true;
         	}
-        	if(sumData.D3 >0 && sumData.D3 <1 && otherData.D3 !=0){
-        		otherData.D3 = (1-sumData.D3).toFixed(3);
+        	if(sumData.D3 >0 && otherData.D3 !=0){
+        		resultData.D3= (1-sumData.D3).toFixed(3);
+        		if(resultData.D3=='0.'){
+        			resultData.D3='0';
+        		}
         		isAll = true;
         	}
-        	if(sumData.D4 >0 && sumData.D4 <1 && otherData.D4 !=0){
-        		otherData.D4 = (1-sumData.D4).toFixed(3);
-        		isAll = true;
-        	}
-        	if(sumData.D5 >0 && sumData.D5 <1 && otherData.D5 !=0){
-        		otherData.D5 = (1-sumData.D5).toFixed(3);
-        		isAll = true;
-        	}
-        	if(sumData.D6 >0 && sumData.D6 <1 && otherData.D6 !=0){
-        		otherData.D6 = (1-sumData.D6).toFixed(3);
+        	if(sumData.D4 >0 && otherData.D4 !=0){
+        		resultData.D4= (1-sumData.D4).toFixed(3);
+        		if(resultData.D4=='0.'){
+        			resultData.D4='0';
+        		}
         		isAll = true;
         	}
         	
-        	otherData['isAll'] = isAll;
-        	return otherData;
+        	if(sumData.D5 >0 && otherData.D5 !=0){
+        		resultData.D5= (1-sumData.D5).toFixed(3);
+        		if(resultData.D5=='0.'){
+        			resultData.D5='0';
+        		}
+        		isAll = true;
+        	}
+        	
+        	if(sumData.D6 >0 && otherData.D6 !=0){
+        		resultData.D6= (1-sumData.D6).toFixed(3);
+        		if(resultData.D6=='0.'){
+        			resultData.D6='0';
+        		}
+        		isAll = true;
+        	}
+        	
+        	resultData['isAll'] = isAll;
+        	return resultData;
         }
 	};
 

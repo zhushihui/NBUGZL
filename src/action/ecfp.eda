@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
-  <actionModel caption="二次分配" displayRef="biz:JG_TW_CW_XX_COURSES" displayRefInclude="YEAR,TERM,KCHZH,KCMC,KCMC1,JG0101ID,XM,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,TYPE,FATHERID,CWID,TW_ID,JX0404ID,XSFLID" displayRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" displayRefPrj="nbugzl" name="ecfp" orderIndex="2" paramRef="biz:JG_TW_CW_XX_COURSES" paramRefInclude="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,XX0301ID,DWH,DWMC,BZ,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC,KCYWMC,XX0301ID_2,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,FATHERID,KCHZH" paramRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
+  <actionModel caption="二次分配" displayRef="biz:JG_TW_CW_XX_COURSES" displayRefInclude="YEAR,TERM,KCHZH,KCMC,KCMC1,GKDW,JG0101ID,XM,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,TYPE,FATHERID,CWID,TW_ID,JX0404ID,XSFLID" displayRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" displayRefPrj="nbugzl" name="ecfp" orderIndex="2" paramRef="biz:JG_TW_CW_XX_COURSES" paramRefInclude="CWID,YEAR,TERM,KCID,GROUPS,R,WEEKS,LXSRS,LOCKS,D,D1,D2,D3,D4,D5,D6,JX0404ID,J,ZRN,XX0301ID,DWH,DWMC,BZ,JG0101ID_1,JGH,XM,SFZJLXM,SFZJH,XX0301ID_1,GKDW_1,KCID_1,KCMC,KCYWMC,XX0301ID_2,XF,ZXS,JXXS,SYXS,SJXS,XXXS,SXXS,SXXXS,ZS,WORKTYPE,TYPE,REM_1,INTRODUCE,SUBJECTCLASS,CREATETIME,BBKY,K4,K5,C1,C2,C3,C4,C6,KCMC1,TW_ID,YEAR_1,TERM_1,JG0101ID,CWID_1,GKDW,REM,LOCKS_1,D_1,D1_1,D2_1,D3_1,D4_1,D5_1,D6_1,JX0404ID_1,XSFLID,FATHERID,KCHZH" paramRefPath="src/parammodel/JG_TW_CW_XX_COURSES.epm" paramRefPrj="nbugzl" saveLog="true" totalCountType="AUTO" type="QUERY">
     <sql>select p.year,p.term,p.cwid,p.tw_id,p.jg0101id,p.jx0404id,&#xD;
-p.xsflid,p.fatherid,&#xD;
-p.kcid || '-' || p.groups as KCHZH,p.kcmc,p.kcmc1,p.xm,p.d_1,p.d1_1,p.d2_1,p.d3_1,p.d4_1&#xD;
+p.xsflid,q.xm as fatherid,&#xD;
+p.kcid || '-' || p.groups as KCHZH,p.kcmc,p.kcmc1,p.gkdw,p.xm,p.d_1,p.d1_1,p.d2_1,p.d3_1,p.d4_1&#xD;
 ,p.d5_1,p.d6_1,p.type&#xD;
 from (&#xD;
 select nbu_course_workload.YEAR,nbu_course_workload.TERM,&#xD;
@@ -11,7 +11,7 @@ nbu_teacher_workload.cwid ,nbu_teacher_workload.tw_id ,&#xD;
 nbu_teacher_workload.jg0101id,nbu_courses.kcid || '-' || nbu_course_workload.groups as KCHZH,nbu_teacher_workload.jx0404id,&#xD;
 nbu_teacher_workload.xsflid,nbu_teacher_workload.fatherid,&#xD;
 nbu_courses.worktype,nbu_courses.kcid,&#xD;
-nbu_courses.kcmc,nbu_course_workload.kcmc1,jg0101.xm,&#xD;
+nbu_courses.kcmc,nbu_course_workload.kcmc1,nbu_teacher_workload.gkdw,jg0101.xm,&#xD;
 round(nbu_teacher_workload.d,3) as d_1,&#xD;
 case when (nbu_teacher_workload.d1 = '1' or nbu_teacher_workload.d1 = '0')&#xD;
        then nbu_teacher_workload.d1&#xD;
@@ -52,12 +52,15 @@ nbu_teacher_workload.cwid ,nbu_teacher_workload.tw_id ,&#xD;
 nbu_teacher_workload.jg0101id,nbu_teacher_workload.jx0404id,&#xD;
 nbu_teacher_workload.xsflid,nbu_teacher_workload.fatherid,&#xD;
 nbu_courses.worktype,nbu_courses.kcid,&#xD;
-nbu_courses.kcmc,nbu_course_workload.kcmc1,jg0101.xm,nbu_teacher_workload.d,&#xD;
+nbu_courses.kcmc,nbu_course_workload.kcmc1,nbu_teacher_workload.gkdw,jg0101.xm,nbu_teacher_workload.d,&#xD;
 nbu_teacher_workload.d1,nbu_teacher_workload.d2,&#xD;
 nbu_teacher_workload.d3,nbu_teacher_workload.d4,&#xD;
 nbu_teacher_workload.d5,nbu_teacher_workload.d6,&#xD;
 nbu_course_workload.groups,nbu_courses.type&#xD;
 #sub[order by $]&#xD;
-) p left join nbu_teacher_workload q on p.fatherid=q.tw_id</sql>
+) p left join (&#xD;
+select a.tw_id,a.jg0101id,b.xm &#xD;
+from nbu_teacher_workload a ,jg0101 b where a.jg0101id=b.jg0101id ) &#xD;
+q on p.fatherid=q.tw_id</sql>
   </actionModel>
 </model:Model>

@@ -10,6 +10,7 @@ nbu_divide_template.D5,nbu_divide_template.D6&#xD;
 from nbu_divide_template,nbu_course_workload&#xD;
 where nbu_course_workload.kcid = nbu_divide_template.kcid&#xD;
 and nbu_course_workload.zrn = get_year&#xD;
+and NBU_DIVIDE_TEMPLATE.status = 0&#xD;
 #sub[and $]&#xD;
 group by&#xD;
 nbu_divide_template.dt_id,&#xD;

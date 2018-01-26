@@ -2,10 +2,7 @@
 <model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
   <actionModel authorityIndex="" caption="单条之更新课程D5" conditionIndex="" displayRef="" displayRefInclude="" displayRefPath="" displayRefPrj="" name="dtzgxkcd5" orderIndex="" paramFixRef="model:DB_EMAP_BIZ_BASE/NBU_COURSE_WORKLOAD" paramFixRefInclude="CWID" paramFixRefPath="src/datamodel/kcgzl/NBU_COURSE_WORKLOAD.edm" paramFixRefPrj="nbugzl" paramRef="" paramRefExtra="" paramRefExtraPath="" paramRefExtraPrj="" paramRefInclude="" paramRefPath="" paramRefPrj="" saveLog="true" totalCountType="AUTO" type="UPDATE">
     <sql>update nbu_course_workload a set a.D5  =  &#xD;
-(select case when b.rem like '%科技学院%'&#xD;
-        then a.D5&#xD;
-        else round(b.k5*a.r*b.xf,3)&#xD;
-        end as D5&#xD;
+(select round(b.k5*a.r*b.xf,3) as D5&#xD;
 from nbu_courses b  &#xD;
 where a.kcid = b.kcid and a.zrn = get_year&#xD;
 and (b.kcmc like '%毕业设计%' or b.kcmc like '%毕业论文%' or b.kcmc like '%毕业创作%')&#xD;

@@ -12,7 +12,7 @@ and &#xD;
 or nbu_courses.TYPE = '学生指导'&#xD;
 or nbu_courses.TYPE = '其他教学'&#xD;
 or nbu_courses.TYPE = '研究生院')&#xD;
-and nbu_course_workload.LOCKS = 1&#xD;
+and nbu_teacher_workload.fatherid is null&#xD;
 and nbu_course_workload.zrn = get_year&#xD;
 #sub[and $]&#xD;
 order by nbu_teacher_workload.jg0101id</sql>

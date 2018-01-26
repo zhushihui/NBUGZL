@@ -28,13 +28,13 @@ define(function(require, exports, module) {
         },
         actionCopy : function() {
         	alert("copy");
-        }
-        ,
+        },
         //分配保存
         save: function(){
         	//获取界面参数
         	var formData = $("#emapForm").emapForm("getValue");
         	var otherData = JSON.parse($('#d_param').val());  
+        	var rowNum = $('#row_num').val();
         	//分配是手工输入还是导入分配模板
         	if($('#check_one').prop("checked")){//手工输入
         		if( $("#emapForm").emapValidate('validate') ){
@@ -122,6 +122,7 @@ define(function(require, exports, module) {
             			var teacherParam = JSON.stringify(teacherData); 
             			//参数存入参数组中
             			var param = {'modelList':teacherParam};
+                        
             			//使用二次分配多条添加工作流
             			BH_UTILS.doAjax('../modules/ecfp/ecfpdttjdzl.do', param).done(function(data){
             				if(data.code == "0"){
@@ -131,13 +132,25 @@ define(function(require, exports, module) {
 //                                            callback:function(){
 //                                            }
 //                                        });
-            					$.bhPaperPileDialog.hide();//关闭当前弹窗
-//            					$('#emapdatatable').emapdatatable('reload');
             					//回退到有搜索数据的列表中
-            					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
-            		            $('#emapdatatable').emapdatatable('reload', {
-            		                querySetting: search
-            		            });
+//            					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+//            		            $('#emapdatatable').emapdatatable('reload', {
+//            		                querySetting: search
+//            		            });
+            					
+            					$('#emapdatatable').emapdatatable('reload');//刷新界面
+                    			$.bhPaperPileDialog.hide();//关闭当前弹窗
+                    			//列表滚动到操作条
+                    			var height = 220+ rowNum*25;
+                    			var interTimes = setInterval(function time(){
+                    				//判断列表显示的行数
+                    				if( $("#emapdatatable").find("tr :visible").length >0){
+                    					//列表距顶部间距220; 一行列表高25 
+                    					
+                    			         $("body").context.scrollingElement.scrollTop = height ;
+        								clearInterval(interTimes);//取消遍历
+                    				} 
+                    	        },100); 
             				}else{
             					BH_UTILS.bhDialogDanger({
             						title:'操作提示',
@@ -157,7 +170,7 @@ define(function(require, exports, module) {
         		if( $("#copyForm").emapValidate('validate') ){
         			var moderData = $("#copyForm").emapForm("getValue");
         			//获取模板比例之和
-        			var firstData ={'KCID':moderData.KCID};
+        			var firstData ={'KCID':moderData.KCID,pageNumber:1};
         			BH_UTILS.doAjax('../modules/ecfp/fpmbzpdblzh.do', firstData).done(function(data){
         				if(data.code == "0"){//模板比例之和对比
         					var sumData = data.datas.fpmbzpdblzh.rows[0];
@@ -172,9 +185,10 @@ define(function(require, exports, module) {
                 			var threeData = {'CWID':formData.CWID};
                 			//创建新教师信息
                 			var fourData = {'YEAR':formData.YEAR,'TERM':formData.TERM,'CWID':formData.CWID,
-                					'JX0404ID':formData.JX0404ID,'XSFLID':formData.XSFLID,
                 					'D1':otherData.D1,'D2':otherData.D2,'D3':otherData.D3,'D4':otherData.D4,
-                					'D5':otherData.D5,'D6':otherData.D6,'KCID':moderData.KCID};
+                					'D5':otherData.D5,'D6':otherData.D6,
+                					'JX0404ID':formData.JX0404ID,'XSFLID':formData.XSFLID,'FATHERID':formData.TW_ID,
+                					'KCID':moderData.KCID};
                 			//更新教师工作量D
                 			var fiveData = {'CWID':formData.CWID};
                 			//修改已分配课程状态
@@ -187,13 +201,14 @@ define(function(require, exports, module) {
                 			var sendParam5 = JSON.stringify(fiveData);
                 			var sendParam6 = JSON.stringify(sixData);
                 			//参数存入参数组中
-                			var param1 = {'scjjsxx':sendParam1,'xgjjsxx':sendParam2,'cjxjsxx':sendParam4,'gxjsgzld':sendParam5,'xgyfpkczt':sendParam6};
-                			var param2 = {'qsjjsxx':sendParam3,'cjxjsxx':sendParam4,'gxjsgzld':sendParam5,'xgyfpkczt':sendParam6};
-        					if(resultData.isAll){//删除部分旧教师信息,调用二次分配模板动作流
+                			var param1 = {'scjjsxx':sendParam1,'xgjjsxx':sendParam2,'cjxjsxx':sendParam4,'gxjsgzld':sendParam5,'xgyfpkczt':sendParam6,pageNumber:1};
+                			var param2 = {'qsjjsxx':sendParam3,'cjxjsxx':sendParam4,'gxjsgzld':sendParam5,'xgyfpkczt':sendParam6,pageNumber:1};
+        					//if(resultData.isAll){//删除部分旧教师信息,调用二次分配模板动作流
+        				    if(true){//删除部分旧教师信息,调用二次分配模板动作流
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbdzl.do', param1).done(function(data){
                     				if(data.code == "0"){
                     					$.bhPaperPileDialog.hide();//关闭当前弹窗
-//                    					$('#emapdatatable').emapdatatable('reload');
+                    					$('#emapdatatable').emapdatatable('reload');
                     					//回退到有搜索数据的列表中
                     					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
                     		            $('#emapdatatable').emapdatatable('reload', {
@@ -210,13 +225,25 @@ define(function(require, exports, module) {
         					}else{//删除全部旧教师信息,调用二次分配模板全删动作流
         						BH_UTILS.doAjax('../modules/ecfp/ecfpmbqsdzl.do', param2).done(function(data){
                     				if(data.code == "0"){
-                    					$.bhPaperPileDialog.hide();//关闭当前弹窗
-//                    					$('#emapdatatable').emapdatatable('reload');
                     					//回退到有搜索数据的列表中
-                    					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
-                    		            $('#emapdatatable').emapdatatable('reload', {
-                    		                querySetting: search
-                    		            });
+//                    					var search = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
+//                    		            $('#emapdatatable').emapdatatable('reload', {
+//                    		                querySetting: search
+//                    		            });
+                    		            
+                    		            $('#emapdatatable').emapdatatable('reload');//刷新界面
+                            			$.bhPaperPileDialog.hide();//关闭当前弹窗
+                            			//列表滚动到操作条
+                            			var height = 220+ rowNum*25;
+                            			var interTimes = setInterval(function time(){
+                            				//判断列表显示的行数
+                            				if( $("#emapdatatable").find("tr :visible").length >0){
+                            					//列表距顶部间距220; 一行列表高25 
+                            					
+                            			         $("body").context.scrollingElement.scrollTop = height ;
+                								clearInterval(interTimes);//取消遍历
+                            				} 
+                            	        },100); 
                     				}else{
                     					BH_UTILS.bhDialogDanger({
                     						title:'操作提示',

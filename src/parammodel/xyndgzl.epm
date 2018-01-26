@@ -52,7 +52,7 @@
         <attribute name="web.search.xtype" value="multi-select2"/>
         <attribute name="builder" value="m_value_equal"/>
         <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
-        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.quickSearch" value="false"/>
       </item>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/xybm/XX0301.edm" include="XX0301ID:XX0301ID,DWH:DWH,DWMC:DWMC,BZ:BZ" modelName="model:DB_EMAP_BIZ_BASE/XX0301" prjRef="nbugzl" tableAlias="XX0301">
@@ -89,14 +89,18 @@
       <item groupName="" name="SFZJH" originName="SFZJH">
         <attribute name="web.quickSearch" value="false"/>
       </item>
-      <item groupName="" name="XX0301ID_1" originName="XX0301ID"/>
+      <item groupName="" name="XX0301ID_1" originName="XX0301ID">
+        <attribute name="web.quickSearch" value="false"/>
+      </item>
       <item groupName="" name="GKDW" originName="GKDW">
         <attribute name="web.quickSearch" value="false"/>
-        <attribute name="useDicType" value="toDisplay"/>
+        <attribute name="useDicType" value="none"/>
         <attribute name="web.xtype" value="select"/>
         <attribute name="web.search.quickSearchXtype" value="select"/>
-        <attribute name="builder" value="equal"/>
-        <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
+        <attribute name="builder" value=""/>
+        <attribute name="web.hidden" value="true"/>
+        <attribute name="web.required" value="false"/>
+        <attribute name="web.grid.hidden" value="true"/>
       </item>
     </dataModelRef>
     <dataModelRef edmRef="src/datamodel/kcgl/NBU_COURSES.edm" include="KCID:KCID_1,KCMC:KCMC,KCYWMC:KCYWMC,XX0301ID:XX0301ID_2,XF:XF_1,ZXS:ZXS_1,JXXS:JXXS,SYXS:SYXS,SJXS:SJXS,XXXS:XXXS,SXXS:SXXS,SXXXS:SXXXS,ZS:ZS,WORKTYPE:WORKTYPE,TYPE:TYPE,REM:REM_1,INTRODUCE:INTRODUCE,SUBJECTCLASS:SUBJECTCLASS,CREATETIME:CREATETIME,BBKY:BBKY,K4:K4,K5:K5,C1:C1,C2:C2,C3:C3,C4:C4,C6:C6" modelName="model:DB_EMAP_BIZ_BASE/NBU_COURSES" prjRef="nbugzl" tableAlias="NBU_COURSES">

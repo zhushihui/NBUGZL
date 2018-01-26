@@ -88,7 +88,7 @@
         actionChange: function(e){
         	//获取关键ID
         	var cwid = $(e.target).attr("data-x-cwid");
-        	var testData ={'CWID':cwid};
+        	var testData ={'CWID':cwid,pageNumber:1};
         	//单条数据是否二次分配
         	BH_UTILS.doAjax('../modules/kcgzl/dtzsfecfp.do', testData).done(function(data){
 				if(data.code == "0"){//单条数据是否二次分配
@@ -105,13 +105,13 @@
 						//更新教师D
 						var fiveData ={'CWID':cwid};
 						//参数格式转换
-            			var sendParam1 = JSON.stringify(oneData);
-            			var sendParam2 = JSON.stringify(twoData);
-            			var sendParam3 = JSON.stringify(threeData);
-            			var sendParam4 = JSON.stringify(fourData);
-            			var sendParam5 = JSON.stringify(fiveData);
-            			//参数存入参数组中
-            			var param = {'dtgxkcd1d6':sendParam1,'dtgxkcd5':sendParam2,'dtgxkcd':sendParam3,'dtgxjsd1d6':sendParam4,'dtgxjsd':sendParam5};
+						var sendParam1 = JSON.stringify(oneData);
+						var sendParam2 = JSON.stringify(twoData);
+						var sendParam3 = JSON.stringify(threeData);
+						var sendParam4 = JSON.stringify(fourData);
+						var sendParam5 = JSON.stringify(fiveData);
+						//参数存入参数组中
+						var param = {'dtgxkcd1d6':sendParam1,'dtgxkcd5':sendParam2,'dtgxkcd':sendParam3,'dtgxjsd1d6':sendParam4,'dtgxjsd':sendParam5};
 						//调用工作量单条计算工作流
 						BH_UTILS.doAjax('../modules/kcgzl/gzldtjsdzl.do', param).done(function(data){
 							if(data.code == "0"){
@@ -244,6 +244,12 @@
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
+                        	//学院管理员或学校管理员才可以单条工作量计算
+                        	/*if(pageMeta.params.roleId =='20161020132326593' || pageMeta.params.roleId =='20161020131636264' ){
+                        		return '<a href="javascript:void(0)" data-action="change" data-x-cwid=' + rowData.CWID + '>' + '计算' + '</a>'; 
+                        	}else{
+                        		return '';
+                        	}*/
                         	return '<a href="javascript:void(0)" data-action="change" data-x-cwid=' + rowData.CWID + '>' + '计算' + '</a>'; 
                         }
                     }

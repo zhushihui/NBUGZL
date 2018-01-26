@@ -72,9 +72,11 @@
 //        ,
         //打开分配添加界面
         actionAllot: function(e){
+        	var rowNum = $(e.target).parent().parent().attr("data-key");
+        	//alert(rowNum);
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpEditTpl = utils.loadCompiledPage('ecfpSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfptj', {TW_ID:twid});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfptj', {TW_ID:twid,pageNumber:1});
         	//获取工作总量D的类型
         	var Dtype ='(理论)';
             if(data.rows[0].D1_1 !="0"){
@@ -104,6 +106,7 @@
         			$("#emapForm").emapForm("setValue", dataTwo);
         			//主列表教师的工作量比例
         			$("#d_param").val(JSON.stringify(dataThree));
+        			$("#row_num").val(rowNum);
         			//设置工作量比例是否可修改
 //        			if(dataThree.D1 == "0"){
 //        				$('input[name="D1_1"]').attr("disabled","true"); 
@@ -185,7 +188,7 @@
         actionEdit: function(e){
         	var twid = $(e.target).attr("data-x-wid");
         	var ecfpEditTpl = utils.loadCompiledPage('ecfpEdit');//html界面创建
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfpxg', {TW_ID:twid});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'ecfpxg', {TW_ID:twid,pageNumber:1});
         	//数据整理
         	dataTwo = {YEAR:data.rows[0].YEAR,TERM:data.rows[0].TERM,JG0101ID:data.rows[0].JG0101ID,
         			CWID:data.rows[0].CWID,JX0404ID:data.rows[0].JX0404ID,XSFLID:data.rows[0].XSFLID,
@@ -281,8 +284,8 @@
         			var twid = $(e.target).attr("data-x-wid");
                 	var cwid = $(e.target).attr("data-x-cwid");
                 	var xsflid = $(e.target).attr("data-x-xsflid");
-                	var oneData ={'CWID':cwid,'XSFLID':xsflid};
-                	var twoData ={'FATHERID':twid};
+                	var oneData ={'CWID':cwid,'XSFLID':xsflid,pageNumber:1};
+                	var twoData ={'FATHERID':twid,pageNumber:1};
                 	BH_UTILS.doAjax('../modules/ecfp/fpsczsfkcwysj.do', oneData).done(function(data){
         				if(data.code == "0"){//是否课程唯一数据
         					var countData = data.datas.fpsczsfkcwysj.rows[0];
@@ -384,6 +387,13 @@
             $('#emapdatatable').emapdatatable('reloadFirstPage', {
                 querySetting: data
             });
+            
+//            var row = $("#emapdatatable").find("tr :visible").length ;
+//            alert(row);
+            //var tab = $('#emapdatatable');
+           // scrollTo = $('#row_n'); //获取指定行的元素
+            //列表距顶部间距220; 一行列表高25 
+           //$("body").context.scrollingElement.scrollTop = 1470 ;
         },
 
         _initTable: function() {

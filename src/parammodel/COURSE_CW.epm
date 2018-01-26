@@ -48,7 +48,7 @@
         <attribute name="web.search.xtype" value="multi-select2"/>
         <attribute name="builder" value="m_value_equal"/>
         <attribute name="dic" value="4e7f5269-2bd4-4b32-a057-0d327539a262"/>
-        <attribute name="web.quickSearch" value="true"/>
+        <attribute name="web.quickSearch" value="false"/>
       </item>
       <item groupName="课程属性" name="XF" originName="XF"/>
       <item groupName="课程属性" name="ZXS" originName="ZXS"/>

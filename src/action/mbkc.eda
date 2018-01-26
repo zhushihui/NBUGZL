@@ -6,6 +6,7 @@ from nbu_courses,NBU_DIVIDE_TEMPLATE,nbu_course_workload&#xD;
 where nbu_courses.kcid = NBU_DIVIDE_TEMPLATE.kcid&#xD;
 and nbu_course_workload.kcid = nbu_courses.kcid&#xD;
 and nbu_course_workload.zrn = get_year&#xD;
+and NBU_DIVIDE_TEMPLATE.status = 0&#xD;
 #sub[and $]&#xD;
 group by nbu_courses.kcid, nbu_courses.kcid || '-' || nbu_courses.kcmc</sql>
   </actionModel>

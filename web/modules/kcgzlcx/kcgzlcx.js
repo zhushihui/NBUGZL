@@ -1,16 +1,15 @@
 ﻿define(function(require, exports, module) {
 
 	var utils = require('utils');
-	var bs = require('./fpmbBS');
-	var fpmbSave = require('./fpmbSave');
-	var fpmbEdit = require('./fpmbEdit');
-	var fpmbView = require('./fpmbView');
+	var bs = require('./kcgzlcxBS');
+	var kcgzlcxSave = require('./kcgzlcxSave');
+	var kcgzlcxView = require('./kcgzlcxView');
 
 	var viewConfig = {
 		initialize: function() {
-			var view = utils.loadCompiledPage('fpmb');
+			var view = utils.loadCompiledPage('kcgzlcx');
             this.$rootElement.html(view.render({}), true);
-            this.pushSubView([fpmbSave,fpmbEdit]);
+            this.pushSubView([kcgzlcxSave]);
             this.initView();
 
 			this.eventMap = {
@@ -30,89 +29,63 @@
         },
 
         actionAdd: function(){
-        	var fpmbNewTpl = utils.loadCompiledPage('fpmbSave');
-        	var data ={D1:0,D2:0,D3:0,D4:0,D5:0,D6:0};
-        	var datatwo = {type:'add'};
+        	var kcgzlcxNewTpl = utils.loadCompiledPage('kcgzlcxSave');
         	$.bhPaperPileDialog.show({
-        		content: fpmbNewTpl.render({}),
+        		content: kcgzlcxNewTpl.render({}),
         		title: "新建",
         		ready: function($header, $body, $footer){
-        			fpmbSave.initialize();
-        			$("#emapForm").emapForm("setValue", data);
-        			$("#d_param").val(JSON.stringify(datatwo));
+        			kcgzlcxSave.initialize();
             	}
             });
         },
         
  	   actionEdit: function(e){
         	var id = $(e.target).attr("data-x-wid");
-        	var fpmbEditTpl = utils.loadCompiledPage('fpmbEdit');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'fpmb', {DT_ID:id,pageNumber:1});
-        	var datatwo = {KCID:data.rows[0].KCID,JG0101ID:data.rows[0].JG0101ID};
+        	var kcgzlcxEditTpl = utils.loadCompiledPage('kcgzlcxSave');
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'kcgzlcx', {WID:id});
+        	
         	$.bhPaperPileDialog.show({
-        		content: fpmbEditTpl.render({}),
+        		content: kcgzlcxEditTpl.render({}),
         		title: "编辑",
         		ready: function($header, $body, $footer){
-        			fpmbEdit.initialize(); //js界面初始化
+        			kcgzlcxSave.initialize();
+        			
         			$("#emapForm").emapForm("setValue", data.rows[0]);
-        			$("#d_param").val(JSON.stringify(datatwo));
+        			
             	}
             });
         },
         
         actionDetail: function(e){
         	var id = $(e.target).attr("data-x-wid");
-        	var fpmbViewTpl = utils.loadCompiledPage('fpmbSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'fpmb', {WID:id});
+        	var kcgzlcxViewTpl = utils.loadCompiledPage('kcgzlcxSave');
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'kcgzlcx', {WID:id});
         	
         	$.bhPaperPileDialog.show({
-        		content: fpmbViewTpl.render({}),
+        		content: kcgzlcxViewTpl.render({}),
         		title: "查看",
         		ready: function($header, $body, $footer){
-        			fpmbView.initialize(data.rows[0]);
+        			kcgzlcxView.initialize(data.rows[0]);
             	}
             });
         },
         
-        actionDelete: function(e){
-        	BH_UTILS.bhDialogDanger({
-        		title:'操作提示',
-        		content:'是否进行删除',
-        		buttons:[{text:'确认',className:'bh-btn-success',callback:function(){
-        			var dt_id = $(e.target).attr("data-x-wid");
-//    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
-//    		if(row.length > 0){
-//    			var params = row.map(function(el){
-//    				return {DT_ID:el.DT_ID};	//模型主键
-//    			});
-    			var params = {DT_ID:dt_id};
+        actionDelete: function(){
+    		var row = $("#emapdatatable").emapdatatable("checkedRecords");
+    		if(row.length > 0){
+    			var params = row.map(function(el){
+//    				return {XSBH:el.XSBH, XXX:el.XXX};	//模型主键
+    			});
     			bs.del(params).done(function(data){
-//    				alert("数据删除成功");
+    				alert("数据删除成功");
     				$('#emapdatatable').emapdatatable('reload');
     			});
-//    		}
-        	
-        }},{text:'取消',className:'bh-btn-warning',callback:function(){                        	
-        		}}]
-        	});
+    		}
         },
         
         actionExport: function(){
-        	var params = {
-        			root: contextPath,
-					app : "nbugzl",
-					module : "modules",
-					page : 'fpmb',
-					action : 'fpmb'
-			};
-			var querySetting = $('#emapAdvancedQuery').emapAdvancedQuery('getValue');
-			if (querySetting) {
-				params['querySetting'] = querySetting;
-			}
-			//选择字段导出
-			$('#emapdatatable').emapdatatable('selectColumnsExport', params);
-//        	bs.exportData({}).done(function(data){
-//        	});
+        	bs.exportData({}).done(function(data){
+        	});
         },
 
 		actionImport: function(){
@@ -120,8 +93,8 @@
 	        	"contextPath": contextPath,
 	        	"app": "nbugzl",
 	        	"module": "modules",
-	        	"page": "fpmb",
-	        	"action": "fpmb",
+	        	"page": "kcgzlcx",
+	        	"action": "kcgzlcx",
 	        	//"tplUrl": "modules/htgl/dataModel.T_JZG_HT.xls",
 	        	"preCallback": function() {
 	        	},
@@ -136,7 +109,7 @@
         },
         
 		_initAdvanceQuery: function() {
-            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'fpmb', "search");
+            var searchData = WIS_EMAP_SERV.getModel(bs.api.pageModel, 'kcgzlcx', "search");
             var $query = $('#emapAdvancedQuery').emapAdvancedQuery({
                 data: searchData,
                 contextPath : contextPath,
@@ -154,22 +127,24 @@
         _initTable: function() {
             var tableOptions = {
                 pagePath: bs.api.pageModel,
-                action: 'fpmb',
+                action: 'kcgzlcx',
                 height:null,
                 pageSize:50,
-                customColumns: [{
-                    colIndex: '0',
-                    type: 'checkbox'
-                }, {
-                    colIndex: '1',
-                    type: 'tpl',
+                customColumns: [
+//                {
+//                    colIndex: '0',
+//                    type: 'checkbox'
+//                }, 
+                {
+//                    colIndex: '1',
+//                    type: 'tpl',
                     column: {
                         text: '操作',
                         align: 'center',
                         cellsAlign: 'center',
                         cellsRenderer: function(row, column, value, rowData) {
-                            return '<a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.DT_ID + '>' + '编辑' + '</a>' + 
-                            ' | <a href="javascript:void(0)" data-action="delete"  data-x-wid=' + rowData.DT_ID + '>' + '删除' + '</a>' ;
+                            return '<a href="javascript:void(0)" data-action="detail" data-x-wid=' + rowData.WID + '>' + '详情' + '</a>'+ 
+                            ' | <a href="javascript:void(0)" data-action="edit" data-x-wid=' + rowData.WID + '>' + '编辑' + '</a>';
                         }
                     }
                 }]

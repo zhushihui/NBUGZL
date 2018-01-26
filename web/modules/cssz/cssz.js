@@ -65,14 +65,13 @@
         	var id = $(e.target).attr("data-x-wid");
         	var cwid = $(e.target).attr("data-x-cwid");
         	var csszEditTpl = utils.loadCompiledPage('csszSave');
-        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'szcs', {KCID:id,CWID:cwid});
+        	var data = WIS_EMAP_SERV.getData(bs.api.pageModel, 'szcs', {KCID:id,CWID:cwid,pageNumber:1});
         	
         	$.bhPaperPileDialog.show({
         		content: csszEditTpl.render({}),
         		title: "编辑",
         		ready: function($header, $body, $footer){
         			csszSave.initialize();
-        			
         			$("#emapForm").emapForm("setValue", data.rows[0]);
         			
             	}
